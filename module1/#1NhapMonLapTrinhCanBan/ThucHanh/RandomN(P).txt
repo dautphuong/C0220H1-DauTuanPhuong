@@ -1,0 +1,8 @@
+Begin
+	Input N random
+	Input M
+	IF(N==M)
+		Display True
+	ELSE
+		Dislay False
+END
