@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <!--Hien Thi ket qua bang alert-->
+    <button type ="button" onclick="showAlert();">Show by Alert!</button>
+        <script>
+            function showAlert() {
+                alert('Xin chào!');
+            }
+        </script>
+    <!--Hien thi ket qua bang Html-->
+    <div id="messageDiv"></div>
+    <button type="button" onclick="showHTML();">Show by HTML!</button>
+    <script>
+        function showHTML() {
+            document.getElementById('messageDiv').innerHTML='Xin chào!';
+        }
+    </script>
+    <!--Hien thi ket qua bang document-->
+    <button type="button" onclick="showD();">Show by Document!</button>
+    <script>
+        function showD(){
+            document.writeln('Xin chào!');
+        }
+    </script>
+    <!--Hien thi bang console-->
+    <button type="button" onclick="showConsole();"></button>
+    <script>
+        function  showConsole() {
+            console.log('Xin chào!');
+        }
+    </script>
+    <!--Nhung JS-->
+    <button type ="button" onclick="showMesage();">Click Me!</button>
+    <script src="Nhung_JS.js"></script>
+</body>
+</html>
