@@ -23,12 +23,13 @@ function run2() {
     document.writeln('0F ='+F);
 }
 
-//Bai3
+//Bai3 +Bai 4
 function run3() {
     document.writeln('Bai 3 :'+'<br/>');
-    let n=3.14,r,A;
+    let n=3.14,r,A,C;
     r=prompt('Nhap ban kinh :');
     A=n*r*r;
-
-    document.writeln('Dien tich hinh tron ='+A);
+    C=2*r*n;
+    document.writeln('Dien tich hinh tron ='+A+'<br/>');
+    document.writeln('Chu vi hinh tron ='+C);
 }
