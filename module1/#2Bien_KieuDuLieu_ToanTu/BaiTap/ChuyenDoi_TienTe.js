@@ -5,6 +5,7 @@ function custom() {
     var result = document.getElementById('result');
     var money=parseInt(number.value);
     var n_money;
+
     if(fromCurrency.value==="VN"){
         if(toCurrency.value==="VN"){
             n_money=money;
