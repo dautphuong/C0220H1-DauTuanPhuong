@@ -19,5 +19,5 @@ function custom() {
             n_money=money;
         }
     }
-    result.innerText=n_money;
+    result.innerText='Result :'+n_money;
 }
