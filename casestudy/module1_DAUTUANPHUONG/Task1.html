@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+    <script>
+        let name = prompt('Nhap ten :');
+        let CMND = prompt('Nhap CMND');
+        let date = prompt('Nhap ngay thang nam sinh');
+        let sale = prompt('Giam gia');
+        let people = prompt('So Luong di kem');
+        let rentDay = prompt('So ngay thue');
+        let service = prompt('Loai dich vu (Villa, House, Room)');
+        let sRoom = prompt('Loai phong thue (Vip, Business,  Normal)');
+        let price;
+        if(service==='Villa'){
+            price=500;
+        }else if(service==='House'){
+            price=300;
+        }else if(service==='Room'){
+            price=100;
+        }
+        let total =price*rentDay*(1-sale/100);
+        alert('Ten :'+name+
+                '\nCMND :'+CMND+
+            '\nNgay sinh :'+date+
+            '\nGiamGia :'+sale+
+            '\nSo nguoi :'+people+
+            '\nSo ngay thue :'+rentDay+
+            '\nDIch vu :'+service+
+            '\nPhong :'+sRoom+
+            '\nChi phi :'+total
+        );
+    </script>
+</body>
+</html>
