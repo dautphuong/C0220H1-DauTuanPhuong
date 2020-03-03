@@ -21,3 +21,4 @@ function Cal() {
             result.innerText='Tháng '+month.value+' không tồn tại!';
     }
 }
+

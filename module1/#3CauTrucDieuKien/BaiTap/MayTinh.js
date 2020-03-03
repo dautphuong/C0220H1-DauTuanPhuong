@@ -1,5 +1,5 @@
 let result = document.getElementById('result');
-let text = '';
+
 
 function clickN(cal) {
     result.innerText = result.value + cal;
