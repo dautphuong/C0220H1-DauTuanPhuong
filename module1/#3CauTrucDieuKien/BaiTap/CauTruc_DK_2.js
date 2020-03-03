@@ -99,3 +99,17 @@ function Bai10() {
     alert('Gia dien :'+total);
 }
 
+function Bai12() {
+    let amount =prompt('So tien vay')*1;
+    let month =prompt('So thang')*1;
+    let interestRate=prompt('Lai suat hang thang')/100;
+    let nMonth=month;
+    let total=amount;
+    while(nMonth>0){
+        total+=total*interestRate;
+        nMonth--;
+    }
+    alert('Tien lai sau '+month +' thang la '+(total-amount));
+
+}
+
