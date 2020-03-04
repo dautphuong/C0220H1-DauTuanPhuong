@@ -3,9 +3,7 @@ var nb2=document.getElementById('num2');
 var result=document.getElementById('result');
 
 //phep cong
-function Addition() {
-    result.innerText=nb1.value*1 + nb2.value*1
-}
+
 //phep tru
 function Subtraction() {
     result.innerText=nb1.value-nb2.value;
@@ -18,6 +16,12 @@ function Mutiplication() {
 function Division() {
     result.innerText=nb1.value/nb2.value;
 }
+
+
+
+
+
+
 
 //cong_tru_nhan_chia
 function caculation(cal) {
