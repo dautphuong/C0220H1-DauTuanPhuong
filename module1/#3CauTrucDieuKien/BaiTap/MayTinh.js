@@ -10,5 +10,5 @@ function getResult() {
 }
 
 function getC() {
-    result.innerText="";
+    result.innerText = "";
 }

@@ -1,12 +1,12 @@
 function Bai1() {
-    let num=prompt("Enter a number: ")*1;
-    let total=0;
-    while( num !== -1 ) {
+    let num = prompt("Enter a number: ") * 1;
+    let total = 0;
+    while (num !== -1) {
         alert(num);
         total += num;
-        num = prompt("Enter a number: ")*1;
+        num = prompt("Enter a number: ") * 1;
     }
-    alert('Sum ='+(total));
+    alert('Sum =' + (total));
 }
 
 function Bai2() {
