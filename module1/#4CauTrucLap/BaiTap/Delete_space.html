@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        let name=prompt('Nhap');
+        let result='';
+        for(let i=0;i<name.length;i++){
+            if(name.charAt(i)===' '){
+                continue;
+            }else{
+                result+=name.charAt(i);
+                if(name.charAt(i+1)===' '){
+                    result+=' ';
+                }
+            }
+        }
+        document.write(result);
+    </script>
+</body>
+</html>
