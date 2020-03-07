@@ -86,7 +86,7 @@ function Bai4() {
         }
         result.value += '\n';
     }
-    console.log(result.value);
+    document.write(result.value);
 }
 
 //Bài 5: Viết chương trình tính lãi ngân hàng (lãi mẹ đẻ lại con)

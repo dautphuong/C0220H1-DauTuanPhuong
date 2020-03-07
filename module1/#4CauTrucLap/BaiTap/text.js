@@ -2,7 +2,7 @@
 // Bai 2:nhập chuỗi mã hóa theo yêu cầu (aabccaabb ->a2b1c2a2b2)
 // Bài 3:Nhập 1 số kiểm tra có phải số chính phương (số chính phương có căn bâc 2 của nó = số nguyên)
 // Bài 4:Nhập 1 sô kiểm tra có phải số nguyên tố ko ?
-
+alert
 function Bai1() {
     let string = prompt('Nhap chuoi');
     let result = "";

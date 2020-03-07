@@ -1,10 +1,10 @@
 function custom() {
-    var number = document.getElementById('number');
-    var fromCurrency = document.getElementById('fromCurrency');
-    var toCurrency = document.getElementById('toCurrency');
-    var result = document.getElementById('result');
-    var money = parseInt(number.value);
-    var n_money;
+    let number = document.getElementById('number');
+    let fromCurrency = document.getElementById('fromCurrency');
+    let toCurrency = document.getElementById('toCurrency');
+    let result = document.getElementById('result');
+    let money = parseInt(number.value);
+    let n_money;
 
     if (fromCurrency.value === "VN") {
         if (toCurrency.value === "VN") {
