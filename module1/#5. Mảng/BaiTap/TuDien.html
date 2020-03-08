@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let str = prompt('Nhap tu can tim');
+    let english = ['cat', 'dog', 'fish', 'bird', 'mouse'];
+    let vietnamese = ['mèo', 'chó', 'cá', 'chim', 'chuột'];
+    for (let i = 0; i < english.length; i++) {
+        if (str === english[i]) {
+            alert(vietnamese[i]);
+            break;
+        } else {
+            if (i === english.length - 1) {
+                alert('Tu can tim khong co trong tu dien');
+            }
+        }
+
+    }
+</script>
+</body>
+</html>

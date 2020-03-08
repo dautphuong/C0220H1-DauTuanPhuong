@@ -7,14 +7,11 @@
 <body>
 
 <script>
+    //input name Customer
     let nameCustomer = prompt('Enter name Customer');
-    let emailCustomer = prompt('Enter email Customer');
-    let idCard = prompt('Enter Id Card');
-    let birthdayCustomer = prompt('Enter Birday (DD/MM/YYYY)');
-    let numberOfAccompanying = prompt('Enter number of accompanying :');
-    let rentDay = prompt('Enter rent day');
 
     //check email
+    let emailCustomer = prompt('Enter email Customer');
     let flagEmailCustomer = false;
     let i = 0;
     while (flagEmailCustomer === false) {
@@ -28,7 +25,8 @@
     }
 
     //check idcard
-     let flagidCard = false;
+    let idCard = prompt('Enter Id Card');
+    let flagidCard = false;
     while (flagidCard === false) {
         let filter = /^([0-9])+$/;
         if (!filter.test(idCard) || idCard.length !== 9) {
@@ -40,6 +38,7 @@
     }
 
     //check birthday
+    let birthdayCustomer = prompt('Enter Birday (DD/MM/YYYY)');
     let flagBirday = false;
     while (flagBirday === false) {
         let filter = /^[\d]{2}\/[\d]{2}\/[\d]{4}$/;
@@ -50,43 +49,73 @@
             flagBirday = true;
         }
     }
+    //input addressCustomer+typeCustomer
+    let addressCustomer = prompt('Enter Address Customer');
+    let typeCustomer = prompt('type Customer');
 
     //check numberOfAccompanying
-    while (numberOfAccompanying < 0) {
-        alert('Number Of Accompanying is invalid!Please Try Again!');
-        numberOfAccompanying = prompt('Enter number of accompanying :');
+    let numberOfAccompanying = prompt('Enter number of accompanying :');
+    let flagNumAccompanying = false;
+    while (flagNumAccompanying === false) {
+        let filter = /^([0-9])+$/;
+        if (!filter.test(numberOfAccompanying)) {
+            alert('Number of Accompanying is invalid!Please Try Again!');
+            numberOfAccompanying = prompt('Enter number of accompanying :');
+        } else {
+            flagNumAccompanying = true;
+        }
     }
 
     //check rentDay
-    while (rentDay < 0) {
-        alert('Rent Day is invalid!Please Try Again!');
-        rentDay = prompt('Enter rent day')
+    let rentDay = prompt('Enter rent day');
+    let flagrentDay = false;
+    while (flagrentDay === false) {
+        let filter = /^([0-9])+$/;
+        if (!filter.test(rentDay)) {
+            alert('Rent Day is invalid!Please Try Again!');
+            rentDay = prompt('Enter rent day');
+        } else {
+            flagrentDay = true;
+        }
     }
 
+
     //xóa khoảng trắng thừa
-    function check_delete_space(str) {
-        var result = '';
+    function check_delete_UpLower(str) {
+        str = str.toLowerCase();
+        var result = [];
         for (let i = 0; i < str.length; i++) {
             if (str.charAt(i) === ' ') {
                 continue;
             } else {
-                result += str.charAt(i);
+                if (str.charAt(i - 1) === ' ') {
+                    result.push(str.charAt(i).toUpperCase());
+                } else {
+                    result.push(str.charAt(i));
+                }
                 if (str.charAt(i + 1) === ' ') {
-                    result += ' ';
+                    result.push(' ');
                 }
             }
         }
-        return result;
+
+        return result.join('');
     }
 
-    nameCustomer = check_delete_space(nameCustomer);
+    //chuan hoa du lieu
+    nameCustomer = check_delete_UpLower(nameCustomer);
+    emailCustomer = check_delete_UpLower(emailCustomer);
+    addressCustomer = check_delete_UpLower(addressCustomer);
+    typeCustomer = check_delete_UpLower(typeCustomer);
     alert('nameCustomer :' + nameCustomer +
         '\nemailCustomer :' + emailCustomer +
         '\nidCard :' + idCard +
         '\nbirthdayCustomer :' + birthdayCustomer +
+        '\naddressCustomer :' + addressCustomer +
+        '\ntypeCustomer :' + typeCustomer +
         '\nnumberOfAccompanying :' + numberOfAccompanying +
         '\nrentDay :' + rentDay
-    );
+    )
 
 </script>
 </body>

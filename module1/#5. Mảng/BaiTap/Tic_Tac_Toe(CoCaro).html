@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>Caro Game Simple</h3>
+<p id="carogame"></p>
+<button onclick="loadGame()">New Game</button>
+
+<script>
+    var b = document.getElementById("carogame");
+    var board = new Array(10);
+    var data = "";
+    var last = 'X';
+    var value = "";
+
+    function loadGame() {
+        data = "";
+        for (let i = 0; i < 10; i++) {
+            board[i] = ['.', ' .', ' .', ' .', ' .', ' .', ' .', ' .', ' .', ' .'];
+        }
+        for (let i = 0; i < 10; i++) {
+            data += "<br/>";
+            for (let j = 0; j < 10; j++) {
+                data += board[i][j] + "&nbsp;&nbsp;";
+            }
+        }
+        data += "<br/><br/><input type='button' value='Change Value' onclick='changeValue()'>";
+        b.innerHTML = data;
+    }
+
+    function changeLast() {
+        let lastValue = last;
+        if (last === "X") {
+            last = "O";
+        } else {
+            last = "X";
+        }
+        return lastValue;
+    }
+
+
+
+    function changeValue() {
+        let positionX = prompt('Enter X');
+        let positionY = prompt('Enter Y');
+        data = '';
+        board[positionX][positionY] = changeLast();
+        for (let i = 0; i < 10; i++) {
+            data += "<br/>";
+            for (let j = 0; j < 10; j++) {
+                data += board[i][j] + "&nbsp;&nbsp;&nbsp;&nbsp;";
+            }
+        }
+
+
+        data += "<br/><br/><input type='button' value='Change Value' onclick='changeValue()'>";
+        b.innerHTML = "<hr/>" + data;
+
+
+    }
+
+
+</script>
+</body>
+</html>
