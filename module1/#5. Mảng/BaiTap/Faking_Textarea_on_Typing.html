@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<textarea name="txt" id="result" onkeydown="myFunction()"></textarea>
+
+<script>
+    let txt=['T','Ô','I',' ','L','À',' ','M','Ộ','T',' ','Đ','Ồ',' ','N','G','Ố','C','!'];
+
+    function myFunction() {
+        let str='';
+        let n=result.value.length;
+        result.value='';
+        if(n>=0){
+            for(let i=0;i<n;i++){
+                str+=txt[i];
+                if(i === txt.length)
+                {
+                    result.value = "";
+                    str="";
+                }
+
+            }
+        }
+        result.value=str;
+    }
+</script>
+</body>
+</html>
+

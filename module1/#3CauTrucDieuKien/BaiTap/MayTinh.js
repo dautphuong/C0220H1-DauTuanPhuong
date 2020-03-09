@@ -2,7 +2,7 @@ let result = document.getElementById('result');
 
 
 function clickN(cal) {
-    result.innerText = result.value + cal;
+    result.value+=  cal;
 }
 
 function getResult() {

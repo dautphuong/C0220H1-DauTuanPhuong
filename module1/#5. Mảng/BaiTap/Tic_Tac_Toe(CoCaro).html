@@ -14,16 +14,16 @@
     var board = new Array(10);
     var data = "";
     var last = 'X';
-    var value = "";
 
+    // Enter a new Game
     function loadGame() {
         data = "";
-        for (let i = 0; i < 10; i++) {
-            board[i] = ['.', ' .', ' .', ' .', ' .', ' .', ' .', ' .', ' .', ' .'];
+        for (let i = 0; i < 5; i++) {
+            board[i] = ['.', ' .', ' .', ' .', ' .'];
         }
-        for (let i = 0; i < 10; i++) {
+        for (let i = 0; i < 5; i++) {
             data += "<br/>";
-            for (let j = 0; j < 10; j++) {
+            for (let j = 0; j < 5; j++) {
                 data += board[i][j] + "&nbsp;&nbsp;";
             }
         }
@@ -31,6 +31,7 @@
         b.innerHTML = data;
     }
 
+    // X && O
     function changeLast() {
         let lastValue = last;
         if (last === "X") {
@@ -42,24 +43,41 @@
     }
 
 
-
     function changeValue() {
         let positionX = prompt('Enter X');
         let positionY = prompt('Enter Y');
         data = '';
         board[positionX][positionY] = changeLast();
-        for (let i = 0; i < 10; i++) {
+        checkWin();
+        for (let i = 0; i < 5; i++) {
             data += "<br/>";
-            for (let j = 0; j < 10; j++) {
+            for (let j = 0; j < 5; j++) {
                 data += board[i][j] + "&nbsp;&nbsp;&nbsp;&nbsp;";
             }
         }
-
-
         data += "<br/><br/><input type='button' value='Change Value' onclick='changeValue()'>";
         b.innerHTML = "<hr/>" + data;
+    }
 
-
+    function checkWin() {
+        let n=board.length;
+        let value='';
+        for(let i=0;i<n;i++){
+            for(let j=0;j<n;j++){
+                value=board[i][j];
+                if(value!==''){
+                    if(board[i][j+1]==value && board[i][j+2]==value){
+                        alert(board[i][j]+' won!');break;
+                    }
+                    if(board[i+1][j]==value&&board[i+2][j]==value){
+                        alert(board[i][j]+' won!');break;
+                    }
+                    if(board[i+1][j+1]==value && board[i+2][j+2]==value){
+                        alert(board[i][j]+' won!');break;
+                    }
+                }
+            }
+        }
     }
 
 
