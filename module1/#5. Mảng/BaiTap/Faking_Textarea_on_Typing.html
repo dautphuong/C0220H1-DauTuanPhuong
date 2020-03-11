@@ -5,7 +5,7 @@
     <title>Title</title>
 </head>
 <body>
-<textarea name="txt" id="result" onkeydown="myFunction()"></textarea>
+<textarea id="result" onkeyup="myFunction()"></textarea>
 
 <script>
     let txt=['T','Ô','I',' ','L','À',' ','M','Ộ','T',' ','Đ','Ồ',' ','N','G','Ố','C','!'];
@@ -13,7 +13,6 @@
     function myFunction() {
         let str='';
         let n=result.value.length;
-        result.value='';
         if(n>=0){
             for(let i=0;i<n;i++){
                 str+=txt[i];

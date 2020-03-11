@@ -11,7 +11,7 @@
 
 <script>
     var b = document.getElementById("carogame");
-    var board = new Array(10);
+    var board = new Array(5);
     var data = "";
     var last = 'X';
 
@@ -19,7 +19,7 @@
     function loadGame() {
         data = "";
         for (let i = 0; i < 5; i++) {
-            board[i] = ['.', ' .', ' .', ' .', ' .'];
+            board[i] = ['.', '.', '.', '.', '.'];
         }
         for (let i = 0; i < 5; i++) {
             data += "<br/>";
@@ -42,11 +42,15 @@
         return lastValue;
     }
 
-
+    //enter location
     function changeValue() {
         let positionX = prompt('Enter X');
         let positionY = prompt('Enter Y');
         data = '';
+        while(board[positionX][positionY]!=='.') {
+            positionX = prompt('Enter X');
+            positionY = prompt('Enter Y');
+        }
         board[positionX][positionY] = changeLast();
         checkWin();
         for (let i = 0; i < 5; i++) {
@@ -59,13 +63,14 @@
         b.innerHTML = "<hr/>" + data;
     }
 
+    //how to win
     function checkWin() {
         let n=board.length;
         let value='';
         for(let i=0;i<n;i++){
             for(let j=0;j<n;j++){
                 value=board[i][j];
-                if(value!==''){
+                if(value!=='.'){
                     if(board[i][j+1]==value && board[i][j+2]==value){
                         alert(board[i][j]+' won!');break;
                     }

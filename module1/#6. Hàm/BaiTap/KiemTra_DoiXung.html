@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let string=prompt('Nhap chuoi');
+    alert('Chuoi doi xung: '+isPalindrome(string));
+    function isPalindrome(str){
+        let flag=true;
+        let mid=parseInt((str.length/2));
+        for(let i=0;i<mid;i++){
+            if(str.charAt(i)!==str.charAt(str.length-i-1)){
+                flag=false;break;
+            }
+        }
+        return flag;
+    }
+
+
+</script>
+
+</body>
+</html>
