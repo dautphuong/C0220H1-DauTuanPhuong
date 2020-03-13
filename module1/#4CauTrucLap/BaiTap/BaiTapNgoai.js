@@ -29,6 +29,7 @@ function Bai1_2() {
 }
 
 
+
 function Bai2() {
     let string = prompt('Nhap chuoi');
     let result = "";

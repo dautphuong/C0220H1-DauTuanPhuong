@@ -6,7 +6,7 @@
 </head>
 <body>
 <script>
-    var arrListCustomers = new Array();
+    let arrListCustomers = [];
 
     function displayMainMenu() {
         let num = prompt('1. Add New Customer.' +
@@ -18,16 +18,142 @@
     }
 
     function addNewCustomer() {
-        this.nameCustomer = prompt('Enter name Customer');
-        this.idCard = prompt('Enter Id Card');
-        this.birthdayCustomer = prompt('Enter Birday (DD/MM/YYYY)');
-        this.numberOfAccompanying = prompt('Enter number of accompanying :');
-        this.rentDay = prompt('Enter rent day');
-        this.typeService = prompt('Enter type service (Villa, House, Room)');
-        this.typeRoom = prompt('Enter type room (Vip, Business,  Normal)');
-
+        let arrCustomers = [];
+        arrCustomers.push(prompt('Enter name Customer'));
+        arrCustomers.push(prompt('Enter Id Card'));
+        arrCustomers.push(prompt('Enter Email Customer'));
+        arrCustomers.push(prompt('Enter Address Customer'));
+        arrCustomers.push(prompt('Enter Birday (DD/MM/YYYY)'));
+        arrCustomers.push(prompt('Enter number of accompanying :'));
+        arrCustomers.push(prompt('Enter rent day'));
+        arrCustomers.push(prompt('Enter type service (Villa, House, Room)'));
+        arrCustomers.push(prompt('Enter type room (Vip, Business,  Normal)'));
+        arrListCustomers.push(arrCustomers);
     }
-    
+
+    function displayCustomers() {
+        let displayAllCustomers = '';
+        for (let i = 0; i < arrListCustomers.length; i++) {
+            displayAllCustomers += (i + 1) + '.Name: ' + arrListCustomers[i][0] + ' IdCard: ' + arrListCustomers[i][1] + '\n';
+        }
+        displayAllCustomers += (arrListCustomers.length + 1) + '. Back to menu';
+        let num = prompt(displayAllCustomers);
+        if (num != (arrListCustomers.length + 1)) {
+            alert('1.nameCustomer: ' + arrListCustomers[num - 1][0] +
+                '\n2.idCard: ' + arrListCustomers[num - 1][1] +
+                '\n3.Birthday: ' + arrListCustomers[num - 1][2] +
+                '\n4.Email: ' + arrListCustomers[num - 1][3] +
+                '\n5.Address: ' + arrListCustomers[num - 1][4] +
+                '\n6.Number Of Accompanying: ' + arrListCustomers[num - 1][5] +
+                '\n7.Rent Day: ' + arrListCustomers[num - 1][6] +
+                '\n8.Type Service: ' + arrListCustomers[num - 1][7] +
+                '\n9.Type Room: ' + arrListCustomers[num - 1][8]
+            )
+        }
+    }
+
+    function editCustomer() {
+        let displayAllCustomers = '';
+        for (let i = 0; i < arrListCustomers.length; i++) {
+            displayAllCustomers += (i + 1) + '.Name: ' + arrListCustomers[i][0] + ' IdCard: ' + arrListCustomers[i][1] + '\n';
+        }
+        displayAllCustomers += (arrListCustomers.length + 1) + '. Back to menu';
+        let num = prompt(displayAllCustomers);
+        let edit = '';
+        if (num == arrListCustomers.length + 1) {
+            return;
+        } else {
+            if (num < 10 && num > 0) {
+                edit = prompt(('1.nameCustomer: ' + arrListCustomers[num - 1][0] +
+                    '\n2.idCard: ' + arrListCustomers[num - 1][1] +
+                    '\n3.Birthday: ' + arrListCustomers[num - 1][2] +
+                    '\n4.Email: ' + arrListCustomers[num - 1][3] +
+                    '\n5.Address: ' + arrListCustomers[num - 1][4] +
+                    '\n6.Number Of Accompanying: ' + arrListCustomers[num - 1][5] +
+                    '\n7.Rent Day: ' + arrListCustomers[num - 1][6] +
+                    '\n8.Type Service: ' + arrListCustomers[num - 1][7] +
+                    '\n9.Type Room: ' + arrListCustomers[num - 1][8] +
+                    '\n10. Back to menu'
+                ));
+            }
+        }
+        switch (edit) {
+            case '1':
+                arrListCustomers[num - 1][0] = prompt('Enter Name You Want Edit :');
+                break;
+            case '2':
+                arrListCustomers[num - 1][1] = prompt('Enter IdCard You Want Edit :');
+                break;
+            case '3':
+                arrListCustomers[num - 1][2] = prompt('Enter Birthday You Want Edit :');
+                break;
+            case '4':
+                arrListCustomers[num - 1][3] = prompt('Enter Email You Want Edit :');
+                break;
+            case '5':
+                arrListCustomers[num - 1][4] = prompt('Enter Address You Want Edit :');
+                break;
+            case '6':
+                arrListCustomers[num - 1][5] = prompt('Enter Number Of Accompanying You Want Edit :');
+                break;
+            case '7':
+                arrListCustomers[num - 1][6] = prompt('Enter Rent Day You Want Edit :');
+                break;
+            case '8':
+                arrListCustomers[num - 1][7] = prompt('Enter Type Service You Want Edit :')
+                break;
+            case '9':
+                arrListCustomers[num - 1][8] = prompt('Enter Type Room You Want Edit :');
+                break;
+            default :
+                alert('Please Enter Again');
+        }
+    }
+
+    function deleteCustomer() {
+        let displayAllCustomers = '';
+        for (let i = 0; i < arrListCustomers.length; i++) {
+            displayAllCustomers += (i + 1) + '.Name: ' + arrListCustomers[i][0] + ' IdCard: ' + arrListCustomers[i][1] + '\n';
+        }
+        displayAllCustomers += (arrListCustomers.length + 1) + '. Back to menu';
+        let deleteN = prompt(displayAllCustomers);
+        if (deleteN == arrListCustomers.length + 1) {
+            return;
+        } else {
+            let check = prompt('Are you sure delete Customer ' + 'Name: ' + arrListCustomers[deleteN - 1][0] +
+                ' IdCard: ' + arrListCustomers[deleteN - 1][1] +
+                '\n1. Yes' + '\n2. No');
+            if (check == 1) {
+                for (let i = deleteN; i < arrListCustomers.length; i++) {
+                    arrListCustomers[i] = arrListCustomers[i + 1];
+                }
+                arrListCustomers.pop();
+            }
+        }
+    }
+
+    let number;
+    do {
+        number = displayMainMenu();
+        switch (number) {
+            case '1':
+                addNewCustomer();
+                break;
+            case '2':
+                displayCustomers();
+                break;
+            case '3':
+                editCustomer();
+                break;
+            case '4':
+                deleteCustomer();
+                break;
+            case '5':
+                break;
+            default:
+                alert('Please Enter Again');
+        }
+    } while (number !== '5');
 </script>
 </body>
 </html>
