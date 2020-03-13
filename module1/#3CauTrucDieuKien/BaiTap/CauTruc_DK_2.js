@@ -120,6 +120,7 @@ function Bai12() {
     let interestRate = prompt('Lai suat hang thang') / 100;
     let nMonth = month;
     let total = amount;
+
     while (nMonth > 0) {
         total += total * interestRate;
         nMonth--;

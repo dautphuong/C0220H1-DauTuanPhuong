@@ -16,6 +16,7 @@
 <p id="count"></p>
 <p id="result"></p>
 <script>
+    //readonly
     let array = [];
     let editN=[];
     let deleteN=[];
@@ -26,6 +27,7 @@
     }
 
     function Display() {
+
         editN="<input type='button' value='Edit' onclick='editName()'>";
         deleteN="<input type='button' value='Delete' onclick='deleteName()'>";
         let n = array.length;
@@ -33,6 +35,7 @@
         for (let i = 0; i < n; i++) {
             tab += array[i] + "&emsp;&emsp;" +editN+ "&emsp;&emsp;"+deleteN+"<br>";
         }
+
         document.getElementById("count").innerText = array.length + ' products';
         document.getElementById("result").innerHTML = tab;
     }

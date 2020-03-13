@@ -1,3 +1,4 @@
+//Bài 1: Viết hàm tính bình phương của một số bất kỳ được đưa vào.
 function Bai1() {
     function square(num) {
         return num * num;
@@ -6,7 +7,7 @@ function Bai1() {
     let num = prompt('Nhap gia tri');
     alert('Result: ' + square(num));
 }
-
+//Bài 2: Viết hàm tính diện tích, hàm tính chu vi hình tròn.
 function Bai2() {
     function acreage(r) {
         return 3.14 * r * r;
@@ -20,7 +21,7 @@ function Bai2() {
     alert('Dien tich hinh tron ' + acreage(r) +
         '\nChu vi hinh tron ' + perimeter(r));
 }
-
+//Bài 3: Viết hàm tính giai thừa của một số nguyên bất kỳ được đưa vào.
 function Bai3() {
     function factorial(num) {
         if (num == 1) {
@@ -33,7 +34,7 @@ function Bai3() {
     let num = prompt('Nhap gia tri');
     alert(num + '! =' + factorial(num));
 }
-
+//Bài 4: Viết hàm kiểm tra xem ký tự nhập vào có phải là ký tự số không. Nếu là ký tự số hàm trả về true, ngược lại trả về false.
 function Bai4() {
     function checkNum(num) {
         if (num * 1 >= 0 || num * 1 < 0) {
@@ -49,7 +50,7 @@ function Bai4() {
         alert(str + ' khong phai ki tu so');
     }
 }
-
+//Bài 5: Viết hàm nhận vào 3 số nguyên bất kỳ, trả về số nguyên có giá trị nhỏ nhất.
 function Bai5() {
     function min(a, b, c) {
         if (a < b) {
@@ -72,7 +73,8 @@ function Bai5() {
     let c = prompt('Gia tri thu ba');
     alert('Gia tri nho nhat la ' + min(a, b, c));
 }
-
+//Bài 6: Viết hàm nhận vào một số, kiểm tra xem nếu số đưa vào có phải là nguyên dương không.
+//Nếu là nguyên dương trả về true, ngược lại trả về false.
 function Bai6() {
     function positive_int(num) {
         if (num == parseInt(num)) {
@@ -92,7 +94,7 @@ function Bai6() {
         alert(num + ' khong phai so nguyen duong');
     }
 }
-
+//Bài 7: Viết hàm truyền vào 2 số nguyên bất kì, thực hiện đổi chỗ hai số nguyên đó.
 function Bai7() {
     let a = Number(prompt("Nhập a"));
     let b = Number(prompt("Nhập b"));
@@ -108,7 +110,7 @@ function Bai7() {
         obj.bVal = temp;
     }
 }
-
+//Bài 8: Viết hàm truyền vào mảng số nguyên bất kỳ, sau đó đảo ngược mảng số nguyên đó.
 function Bai8() {
     function reverse(array) {
         return array.reverse();
@@ -116,7 +118,8 @@ function Bai8() {
     let array=[1,2,3,4,5,6,7,8,9];
     alert(reverse(array));
 }
-
+//Bài 9: Viết hàm truyền vào một mảng ký tự, và một ký tự bất kỳ, kiểm tra xem ký tự bất kỳ đó có nằm trong mảng không.
+//Nếu có trả về số lần xuất hiện của ký tự đó, nếu không trả về -1.
 function Bai9() {
     function checkChar(array,char) {
         let count=0;

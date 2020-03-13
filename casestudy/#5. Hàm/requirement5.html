@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var arrListCustomers = new Array();
+
+    function displayMainMenu() {
+        let num = prompt('1. Add New Customer.' +
+            '\n2. Display Information Customer.' +
+            '\n3. Edit Information Customer.' +
+            '\n4. Delete Customer.' +
+            '\n5. Exit');
+        return num;
+    }
+
+    function addNewCustomer() {
+        this.nameCustomer = prompt('Enter name Customer');
+        this.idCard = prompt('Enter Id Card');
+        this.birthdayCustomer = prompt('Enter Birday (DD/MM/YYYY)');
+        this.numberOfAccompanying = prompt('Enter number of accompanying :');
+        this.rentDay = prompt('Enter rent day');
+        this.typeService = prompt('Enter type service (Villa, House, Room)');
+        this.typeRoom = prompt('Enter type room (Vip, Business,  Normal)');
+
+    }
+    
+</script>
+</body>
+</html>
