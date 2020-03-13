@@ -6,7 +6,7 @@
 </head>
 <body>
 <label>Add New Product</label><br>
-<input type="text" id="name" placeholder="New Product">
+<input type="text" id="nameProduct" placeholder="New Product">
 
 <button onclick="addProduct()">Add</button>
 <br><br>
@@ -16,38 +16,52 @@
 <p id="count"></p>
 <p id="result"></p>
 <script>
-    //readonly
-    let array = [];
-    let editN=[];
-    let deleteN=[];
+    var arrayProduct = [];
+
     function addProduct() {
-        let name = document.getElementById('name').value;
-        array.push(name);
+        let name = document.getElementById('nameProduct');
+        arrayProduct.push(name.value);
         Display();
     }
 
     function Display() {
-
-        editN="<input type='button' value='Edit' onclick='editName()'>";
-        deleteN="<input type='button' value='Delete' onclick='deleteName()'>";
-        let n = array.length;
         let tab = "";
-        for (let i = 0; i < n; i++) {
-            tab += array[i] + "&emsp;&emsp;" +editN+ "&emsp;&emsp;"+deleteN+"<br>";
+        for (let i = 0; i < arrayProduct.length; i++) {
+            tab += (i + 1) + "<input type='text' id =" + i + " value=" + arrayProduct[i] + " readonly>" + "<button onclick='changeSubmit(" + i + ")'>Edit</buton>"
+                + "<button onclick='deleteName(" + i + ")'>Delete</button><br>";
         }
-
-        document.getElementById("count").innerText = array.length + ' products';
+        document.getElementById("count").innerText = arrayProduct.length + ' products';
         document.getElementById("result").innerHTML = tab;
     }
 
-    function editName() {
-
+    function changeSubmit(num) {
+        let tab = "";
+        let idProduct = document.getElementById(num);
+        idProduct.readOnly = false;
+        for (let i = 0; i < arrayProduct.length; i++) {
+            if (i == num) {
+                tab += (i + 1) + "<input type='text' id =" + i + " value=" + arrayProduct[i] + ">" + "<button onclick='updateProduct(" + i + ")'>Submit</buton>"
+                    + "<button onclick='deleteName(" + i + ")'>Delete</button><br>";
+            } else {
+                tab += (i + 1) + "<input type='text' id =" + i + " value=" + arrayProduct[i] + " readonly>" + "<button onclick='changeSubmit(" + i + ")'>Edit</buton>"
+                    + "<button onclick='deleteName(" + i + ")'>Delete</button><br>";
+            }
+        }
+        document.getElementById("count").innerText = arrayProduct.length + ' products';
+        document.getElementById("result").innerHTML = tab;
     }
 
-    function deleteName() {
-        for(let i=0;i<array.length-1;i++){
-            array[i]=array[i+1];
+    function updateProduct(num) {
+        let idProduct = document.getElementById(num);
+        arrayProduct[num] = idProduct.value;
+        Display();
+    }
+
+    function deleteName(num) {
+        for (let i = num; i < arrayProduct.length; i++) {
+            arrayProduct[i] = arrayProduct[i + 1];
         }
+        arrayProduct.pop();
         Display();
     }
 </script>
