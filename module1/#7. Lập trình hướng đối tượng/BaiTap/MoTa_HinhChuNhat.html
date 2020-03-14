@@ -23,10 +23,8 @@
 
         this.getCreate = function () {
             let ctx = document.getElementById("myRectangle").getContext("2d");
-            ctx.beginPath();
-            //rect(left,top,width,length)
-            ctx.rect(100, 200, this.width, this.length);
-            ctx.stroke();
+            ctx.canvas.width=this.width;
+            ctx.canvas.height=this.length;
         };
     };
 
