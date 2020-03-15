@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<label>Nokia</label><br><label>Status </label>
+<input id="CheckNokia" value="" disabled>
+<button onclick="ChangeStatus()">On/Off</button>
+<br>
+<label>Energy</label>
+<input id="Energy" value="" disabled>
+<button onclick="chargeEnergy()">Charge</button>
+<br>
+<textarea id="Draft"></textarea><br>
+<button onclick="sendMess()">Send</button>
+<br><br>
+<button onclick="viewInbox()">Inbox</button>
+<textarea id="Inbox" disabled></textarea><br>
+<br><br>
+<button onclick="viewSend()">Send</button>
+<textarea id="Send" disabled></textarea><br>
+<br><br><br><br><br>
+
+<label>Iphone</label><br><label>Status </label>
+<input id="CheckIphone" value="" disabled>
+<button onclick="ChangeStatus1()">On/Off</button>
+<br>
+<label>Energy</label>
+<input id="Energy1" value="" disabled>
+<button onclick="chargeEnergy1()">Charge</button>
+<br>
+<textarea id="Draft1"></textarea><br>
+<button onclick="sendMess1()">Send</button>
+<br><br>
+<button onclick="viewInbox1()">Inbox</button>
+<textarea id="Inbox1" disabled></textarea><br>
+<br><br>
+<button onclick="viewSend1()">Send</button>
+<textarea id="Send1" disabled></textarea><br>
+<script>
+    let Mobile = function () {
+        this.battery = 100;//trạng thái pin
+        this.draft = "";//vùng nhớ dùng để lưu tin nhắn đang soạn thảo.
+        this.inbox = [];//vùng nhớ dùng để lưu tin nhắn trong hộp thư đến.
+        this.sent = [];// vùng nhớ dùng để lưu tin nhắn đã gửi.
+        this.status = "Off";
+        //Có chức năng bật và tắt điện thoại.
+        this.changeStatus = function () {
+            this.battery--;
+            if (this.status == "On") {
+                this.status = "Off";
+            } else {
+                this.status = "On";
+            }
+            return this.status;
+        };
+        // kiểm tra trạng thái điện thoại bật hay tắt
+        this.checkStatus = function () {
+            return this.status;
+        };
+
+        //Có chức năng xạc pin điện thoại.
+        this.charge = function () {
+            this.battery = 100;
+        };
+        //Có chức năng soạn tin nhắn.
+        this.saveDraft = function (message) {
+            this.battery--;
+            this.draft = message;
+        };
+        //Có chức năng gửi tin nhắn tới một chiếc mobile khác.
+        //Có chức năng nhận tin nhắn từ một chiếc mobile khác.
+        this.sendMessage = function (target, message) {
+            this.sent.push(message);
+            target.inbox.push(message);
+            this.battery--;
+        };
+        //Có chức năng xem tin trong hộp thư đến.
+        this.viewInbox = function () {
+            this.battery--;
+            return this.inbox;
+        };
+        //Có chức năng xem tin đã gửi.
+        this.viewSent = function () {
+            this.battery--;
+            return this.sent;
+        }
+        //Sau mỗi lần sử dụng một chức năng, năng lượng pin sẽ giảm đi một đơn vị.
+        //Các chức năng không thể hoạt động nếu điện thoại chưa bật.
+
+    };
+
+
+    //Nokia
+    let nokia = new Mobile();
+    //trang thai ban dau
+    let Energy = document.getElementById('Energy');
+    Energy.value = nokia.battery;
+    document.getElementById('CheckNokia').value = nokia.checkStatus();
+
+    //on & off
+    function ChangeStatus() {
+        nokia.changeStatus();
+        document.getElementById('CheckNokia').value = nokia.checkStatus();
+        Energy.value = nokia.battery;
+    }
+
+    //sac pin
+    function chargeEnergy() {
+        document.getElementById('Energy').value = nokia.charge();
+        Energy.value = nokia.battery;
+    }
+
+    //gui tin nhan
+    function sendMess() {
+        if (nokia.checkStatus() == 'On') {
+            let draft = document.getElementById('Draft').value;
+            nokia.sendMessage(iphone, draft);
+            Energy.value = nokia.battery;
+        }
+    }
+
+    //xem thu den
+    function viewInbox() {
+        if (nokia.checkStatus() == 'On') {
+            document.getElementById('Inbox').value = nokia.viewInbox();
+            Energy.value = nokia.battery;
+        }
+    }
+
+    //xem thu da gui
+    function viewSend() {
+        if (nokia.checkStatus() == 'On') {
+            document.getElementById('Send').value = nokia.viewSent();
+            Energy.value = nokia.battery;
+        }
+    }
+
+
+    //Iphone
+    let iphone = new Mobile();
+    //trang thai ban dau
+    let Energy1 = document.getElementById('Energy1');
+    Energy1.value = iphone.battery;
+    document.getElementById('CheckIphone').value = iphone.checkStatus();
+
+    //on & off
+    function ChangeStatus1() {
+        iphone.changeStatus();
+        document.getElementById('CheckIphone').value = iphone.checkStatus();
+        Energy1.value = iphone.battery;
+    }
+
+    //sac pin
+    function chargeEnergy1() {
+        document.getElementById('Energy1').value = iphone.charge();
+        Energy1.value = iphone.battery;
+    }
+
+    //gui tin nhan
+    function sendMess1() {
+        if (iphone.checkStatus() == 'On') {
+            let draft1 = document.getElementById('Draft1').value;
+            iphone.sendMessage(nokia, draft1);
+            Energy1.value = iphone.battery;
+        }
+    }
+
+    //xem thu den
+    function viewInbox1() {
+        if (iphone.checkStatus() == 'On') {
+            document.getElementById('Inbox1').value = iphone.viewInbox();
+            Energy1.value = iphone.battery;
+        }
+    }
+
+    //xem thu da gui
+    function viewSend1() {
+        if (iphone.checkStatus() == 'On') {
+            document.getElementById('Send1').value = iphone.viewSent();
+            Energy1.value = iphone.battery;
+        }
+    }
+</script>
+</body>
+</html>
