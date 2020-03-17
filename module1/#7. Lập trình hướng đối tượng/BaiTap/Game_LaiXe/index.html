@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="gameCanvas" width="1200px" height="400px" style="border:1px solid #000000;"></canvas>
+<div id="game"></div>
+<script>
+    let car = function () {
+        this.positionX = 100;
+        this.positionY = 100;
+        this.speed = 20;
+        this.orientation = "up";
+        this.buidImages = function () {
+            this.image = this.orientation + '.png';
+        };
+        this.buidImages();
+
+        this.move = function () {
+            switch (this.orientation) {
+                case "down":
+                    this.positionY += this.speed;
+                    break;
+                case "up":
+                    this.positionY -= this.speed;
+                    break;
+                case "left":
+                    this.positionX -= this.speed;
+                    break;
+                case "right":
+                    this.positionX += this.speed;
+                    break;
+            }
+            this.buidImages();
+        };
+
+
+        this.show = function (ctx) {
+            let image = new Image();
+            let xPosition = this.positionX;
+            let yPosition = this.positionY;
+            image.onload = function () {
+                ctx.drawImage(image, xPosition, yPosition);
+            };
+            image.src = this.image;
+        }
+    };
+
+    function GameBoard() {
+        this.car = new car();
+        this.ctx = document.getElementById('gameCanvas').getContext('2d');
+        this.start = function () {
+            this.car.show(this.ctx);
+        };
+        this.boom=function (ctx) {
+            let image = new Image();
+            let x = Math.random()*ctx.canvas.width;
+            let y = Math.random()*ctx.canvas.height;
+            image.src = 'boom.png';
+            image.onload = function () {
+                ctx.drawImage(image, x, y);
+            };
+        };
+
+        this.render = function () {
+            this.ctx.clearRect(0, 0, 1200, 400);
+            this.car.show(this.ctx);
+            this.boom(this.ctx);
+        };
+
+        this.moveCar = function (event) {
+            var orientation = 0;
+            switch (event.keyCode) {
+                case 37:
+                    orientation = 'left';
+                    break;
+                case 38:
+                    orientation = 'up';
+                    break;
+                case 39:
+                    orientation = 'right';
+                    break;
+                case 40:
+                    orientation = 'down';
+                    break;
+            }
+            if (orientation) {
+                if (this.car.orientation !== orientation) {
+                    this.car.orientation = orientation;
+                } else {
+                    this.car.move();
+                }
+                this.render();
+            }
+        }
+    }
+
+
+    var gameBoard = new GameBoard();
+    gameBoard.start();
+    document.onkeydown = gameBoard.moveCar;
+
+</script>
+</body>
+</html>
