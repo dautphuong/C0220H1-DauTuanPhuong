@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let filter = /^[A-Za-z0-9]+[A-Za-z0-9]*@[A-Za-z0-9]+(\.[A-Za-z0-9]+)$/;
+
+    function invalid(email) {
+        if (!filter.test(email)) {
+            console.log('Email is invalid!');
+        } else {
+            console.log('Email is valid');
+        }
+    }
+
+    invalid('a@gmail.com');
+    invalid('ab@yahoo.com');
+    invalid('abc@hotmail.com');
+    invalid('@gmail.com');
+    invalid('ab@gmail.');
+    invalid('@#abc@gmail.com');
+</script>
+</body>
+</html>

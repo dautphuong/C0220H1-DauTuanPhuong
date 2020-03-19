@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let filter=/^[_a-z0-9]{6,}$/;
+    function invalid(account) {
+        if (!filter.test(account)) {
+            console.log('Account is invalid!');
+        } else {
+            console.log('Account is valid');
+        }
+    }
+
+    invalid('123abc_');
+    invalid('_abc123');
+    invalid('______');
+    invalid('123456');
+    invalid('abcdefg');
+    invalid('.@');
+    invalid('12345');
+    invalid('1234_');
+    invalid('abcde');
+
+
+</script>
+</body>
+</html>

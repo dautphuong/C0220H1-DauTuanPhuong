@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let filter=/^([ACP][0-9]{4}[GHIKLM])+$/;
+    function invalid(name) {
+        if (!filter.test(name)) {
+            console.log('Account is invalid!');
+        } else {
+            console.log('Account is valid');
+        }
+    }
+    invalid('C0318G');
+    invalid('M0318G');
+    invalid('P0323A');
+</script>
+</body>
+</html>
