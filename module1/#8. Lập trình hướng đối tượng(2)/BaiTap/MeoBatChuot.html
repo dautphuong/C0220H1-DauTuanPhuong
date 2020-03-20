@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let Rat = function (name, mass, speed) {
+        this.name = name;
+        this.mass = mass;
+        this.speed = speed;
+        this.live = true;
+        this.say = function () {
+            console.log('chít, chít');
+        }
+
+    };
+    let Cat = function (name, mass, speed) {
+        this.name = name;
+        this.mass = mass;
+        this.speed = speed;
+        this.say = function () {
+            console.log('meo, meo');
+        };
+        var count = 0;
+        this.catch = function (mouse) {
+            if (this.speed > mouse.speed) {
+                if (count === 0) {
+                    count++;
+                    console.log('Catch success');
+                }
+            }
+        };
+        this.eat = function (mouse) {
+            mouse.live = false;
+            this.mass+=mouse.mass;
+            count--;
+            console.log('The mouse is gone now');
+        }
+    };
+
+    let Jerry = new Rat('Jerry', 5, 10);
+    let Tom = new Cat('Tom', 30, 15);
+    Jerry.say();
+    Tom.say();
+    Tom.catch(Jerry);
+    Tom.eat(Jerry);
+    console.log('Mouse live: '+Jerry.live);
+</script>
+</body>
+</html>

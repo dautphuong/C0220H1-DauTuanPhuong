@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let remote=function (id) {
+        this.id=id;
+        this.changeChannel=function (target,num) {
+            target.channel=num;
+        };
+        this.changeVolume=function (target,num) {
+            target.volume+=num;
+        }
+        this.status=function (target) {
+            if(target.status===false){
+                return target.status=true;
+            }else{
+                return target.status=false;
+            }
+        }
+    };
+    let tivi=function () {
+        this.channel=0;
+        this.volume=50;
+        this.status=false;
+        this.moveChannel=function (num) {
+            this.channel=num;
+        };
+        this.moveVolume=function (num) {
+            this.volume+=num;
+        };
+        this.changeStatus=function () {
+            if(this.status===false){
+                return this.status=true;
+            }else{
+                this.status=false;
+            }
+        }
+    };
+    let TVsamsung=new tivi();
+    let Rsamsung=new remote(0);
+    TVsamsung.changeStatus();
+    console.log('Status: '+TVsamsung.status);
+    TVsamsung.moveChannel(7);
+    console.log('Channel: '+TVsamsung.channel);
+    Rsamsung.changeChannel(TVsamsung,3);
+    console.log('Channel: '+TVsamsung.channel);
+    Rsamsung.changeVolume(TVsamsung,2);
+    console.log('Volume: '+TVsamsung.volume);
+    Rsamsung.status(TVsamsung);
+    console.log('Status: '+TVsamsung.status);
+</script>
+</body>
+</html>
