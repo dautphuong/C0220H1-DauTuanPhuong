@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    function binarySearch(arr, i) {
+        var mid = Math.floor(arr.length / 2);
+        console.log(arr[mid], i);
+        if (arr[mid] === i) {
+            return arr[mid];
+        } else if (arr[mid] < i && arr.length > 1) {
+            return binarySearch(arr.splice(mid, Number.MAX_VALUE), i);
+        } else if (arr[mid] > i && arr.length > 1) {
+            return binarySearch(arr.splice(0, mid), i);
+        } else {
+            return -1;
+        }
+
+    }
+
+    function count(arr, data) {
+        let count = 0;
+        let position = binarySearch(arr, data);
+        if (position > -1) {
+            count++;
+            for (let i = position-1 ; i > 0; i--) {
+                if (arr[i] == data) {
+                    count++;
+                } else {
+                    break;
+                }
+            }
+
+            for (let i = position+1 ; i < arr.length; i++) {
+                if (arr[i] == data) {
+                    count++;
+                } else {
+                    break;
+                }
+            }
+        } //end if
+        alert(count);
+        return count;
+    }
+
+
+    function insertionsort(arr) {
+        let len = arr.length;
+        for (let i = 1; i < len; i++) {
+            let value = arr[i];
+            let j = i - 1;
+            while (j >= 0 && arr[j] > value) {
+                arr[j + 1] = arr[j];
+                j--;
+            }
+            arr[j + 1] = value;
+        }
+        return arr
+    }
+
+    function dispArr(arr) {
+        for (var i = 0; i < arr.length; ++i) {
+            document.write(arr[i] + " ");
+            if (i % 10 == 9) {
+                document.write("<br>");
+            }
+        }
+        if (i % 10 != 0) {
+            document.write("<br>");
+        }
+    } //end function dispArr()
+    var nums = [];
+    for (var i = 0; i < 100; ++i) {
+        nums[i] = Math.floor(Math.random() * 101)
+    }
+    insertionsort(nums);
+    dispArr(nums);
+    document.write("<br/>");
+    var val = parseInt(prompt("Enter a value to count: "));
+    var retVal = count(nums, val);
+    document.write("Found " + retVal + " occurrences of " + val + ".");
+
+</script>
+</body>
+</html>

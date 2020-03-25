@@ -4,39 +4,37 @@
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
-<body>
+
+<body onkeydown="gameBoard.moveCar(event)">
 <canvas id="gameCanvas" width="1200px" height="400px" style="border:1px solid #000000;"></canvas>
 
-<div id="game"></div>
 <script>
+    const GAMEBOARD_WIDTH = 1200;
+    const GAMEBOARD_HEIGHT = 500;
+    const ORIENTATION_LEFT = "left";
+    const ORIENTATION_RIGHT = "right";
+    const ORIENTATION_UP = "up";
+    const ORIENTATION_DOWN = "down";
+
+    const CAR_WIDTH = 59;
+    const CAR_HEIGHT = 86;
+
+    const DEFAULT_CAR_X_POSITION = 100;
+    const DEFAULT_CAR_Y_POSITION = 100;
+    const DEFAULT_CAR_ORIENTATION = ORIENTATION_DOWN;
+    const DEFAULT_NINJA_SPEED = 20;
+
+
+    //tao doi tuong xe
     let car = function () {
-        this.positionX = 100;
-        this.positionY = 100;
-        this.speed = 20;
-        this.orientation = "up";
-        this.buidImages = function () {
+        this.positionX = DEFAULT_CAR_X_POSITION;
+        this.positionY = DEFAULT_CAR_Y_POSITION;
+        this.speed = DEFAULT_NINJA_SPEED;
+        this.orientation = DEFAULT_CAR_ORIENTATION;
+        this.buildImages = function () {
             this.image = this.orientation + '.png';
         };
-        this.buidImages();
-
-        this.move = function () {
-            switch (this.orientation) {
-                case "down":
-                    this.positionY += this.speed;
-                    break;
-                case "up":
-                    this.positionY -= this.speed;
-                    break;
-                case "left":
-                    this.positionX -= this.speed;
-                    break;
-                case "right":
-                    this.positionX += this.speed;
-                    break;
-            }
-            this.buidImages();
-        };
-
+        this.buildImages();
 
         this.show = function (ctx) {
             let image = new Image();
@@ -46,64 +44,114 @@
                 ctx.drawImage(image, xPosition, yPosition);
             };
             image.src = this.image;
-        }
+        };
+
+        // this.eat = function (item) {
+        //     if (item.name === "coin") {
+        //         this.coin++;
+        //     } else {
+        //
+        //     }
+        // };
+        this.move = function () {
+            switch (this.orientation) {
+                case ORIENTATION_DOWN:
+                    this.positionY += this.speed;
+                    break;
+                case ORIENTATION_UP:
+                    this.positionY -= this.speed;
+                    break;
+                case ORIENTATION_LEFT:
+                    this.positionX -= this.speed;
+                    break;
+                case ORIENTATION_RIGHT:
+                    this.positionX += this.speed;
+                    break;
+            }
+            this.buildImages();
+        };
     };
 
+
+    //tao vat can
+    let boom = function () {
+        let ctx = document.getElementById('gameCanvas').getContext('2d');
+        this.name = "boom";
+        this.positionX = Math.random() * ctx.canvas.width;
+        this.positionY = Math.random() * ctx.canvas.height;
+        this.show = function (ctx) {
+            let image = new Image();
+            let positionX = this.positionX;
+            let positionY = this.positionY;
+            image.onload = function () {
+                ctx.drawImage(image, positionX, positionY,10,10);
+            };
+
+            image.src = "boom.png";
+        };
+    };
+
+
+
+    //tao coin
+    let coin = function () {
+        let ctx = document.getElementById('gameCanvas').getContext('2d');
+        this.name = "coin";
+        this.positionX = Math.random() * ctx.canvas.width;
+        this.positionY = Math.random() * ctx.canvas.height;
+        this.show = function (ctx) {
+            let image = new Image();
+            let positionX = this.positionX;
+            let positionY = this.positionY;
+            image.onload = function () {
+                ctx.drawImage(image, positionX, positionY);
+            };
+
+            image.src = "coin.png";
+        };
+    };
+
+
+
+    //Game
     function GameBoard() {
         this.car = new car();
-        this.ctx = document.getElementById('gameCanvas').getContext('2d');
+        this.ctx = undefined;
+        this.boom = new boom();
+        this.coin = new coin();
         this.start = function () {
+            this.ctx = document.getElementById('gameCanvas').getContext('2d');
             this.car.show(this.ctx);
+            this.boom.show(this.ctx);
+            this.coin.show(this.ctx)
         };
-        //
-        this.boom=function (ctx) {
-            let image = new Image();
-            let x = Math.random()*ctx.canvas.width;
-            let y = Math.random()*ctx.canvas.height;
-            image.src = 'boom.png';
-            image.onload = function () {
-                ctx.drawImage(image, x, y);
-            };
-        };
-
         this.render = function () {
-            this.ctx.clearRect(0, 0, 1200, 400);
+            this.ctx.clearRect(0, 0, GAMEBOARD_WIDTH, GAMEBOARD_HEIGHT);
             this.car.show(this.ctx);
-            this.boom(this.ctx);
+            this.boom.show(this.ctx);
+            this.coin.show(this.ctx);
         };
+        this.moveCar = function (e) {
+            e = e || window.event;
 
-        this.moveCar = function (event) {
-            var orientation = 0;
-            switch (event.keyCode) {
-                case 37:
-                    orientation = 'left';
-                    break;
-                case 38:
-                    orientation = 'up';
-                    break;
-                case 39:
-                    orientation = 'right';
-                    break;
-                case 40:
-                    orientation = 'down';
-                    break;
+            if (e.keyCode == '38') {
+                this.car.orientation = ORIENTATION_UP;
+            } else if (e.keyCode == '40') {
+                this.car.orientation = ORIENTATION_DOWN;
+            } else if (e.keyCode == '37') {
+                this.car.orientation = ORIENTATION_LEFT;
+            } else if (e.keyCode == '39') {
+                this.car.orientation = ORIENTATION_RIGHT;
             }
-            if (orientation) {
-                if (this.car.orientation !== orientation) {
-                    this.car.orientation = orientation;
-                } else {
-                    this.car.move();
-                }
-                this.render();
-            }
+            this.car.move();
+            this.render();
         }
     }
 
 
-    var gameBoard = new GameBoard();
+    let gameBoard = new GameBoard();
     gameBoard.start();
     document.onkeydown = gameBoard.moveCar;
-
 </script>
 </body>
 </html>

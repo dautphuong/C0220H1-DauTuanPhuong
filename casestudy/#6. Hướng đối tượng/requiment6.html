@@ -6,7 +6,446 @@
 </head>
 <body>
 <script>
-    
+    let arrListCustomers = [];
+    let listEmployees = [];
+
+    let Customer = function () {
+        this.nameCustomer = "";
+        this.emailCustomer = "";
+        this.idCard = "";
+        this.birthdayCustomer = "";
+        this.addressCustomer = "";
+        this.typeCustomer = "";
+        this.typeRoom = "";
+        this.numberOfAccompanying = "";
+        this.rentDay = "";
+        this.typeService = "";
+        this.discount = 0;
+        this.moneyPerDay = function (price, sale) {
+            this.discount = sale;
+            return price * this.rentDay - this.discount;
+        }
+    };
+
+    function addNewCustomer() {
+        let customer = new Customer();
+        //input name Customer
+        let nameCustomer = prompt('Enter name Customer');
+        customer.nameCustomer = nameCustomer;
+        //input + check email
+        let emailCustomer = prompt('Enter email Customer');
+        let flagEmailCustomer = false;
+        while (flagEmailCustomer === false) {
+            let filter = /^([a-zA-Z0-9_.-])+@(([a-zA-Z0-9-])+.)+[.]([a-zA-Z0-9]{2,4})+$/;
+            if (!filter.test(emailCustomer)) {
+                alert('Email is invalid!Please Try Again!');
+                emailCustomer = prompt('Enter email Customer');
+            } else {
+                flagEmailCustomer = true;
+            }
+        }
+        customer.emailCustomer = emailCustomer;
+
+        //input + check idcard
+        let idCard = prompt('Enter Id Card');
+        let flagidCard = false;
+        while (flagidCard === false) {
+            let filter = /^([0-9]{9})+$/;
+            if (!filter.test(idCard)) {
+                alert('idCard is invalid!Please Try Again!');
+                idCard = prompt('Enter Id Card');
+            } else {
+                flagidCard = true;
+            }
+        }
+        customer.idCard = idCard;
+        //input check birthday
+        let birthdayCustomer = prompt('Enter Birday (DD/MM/YYYY)');
+        let flagBirday = false;
+        while (flagBirday === false) {
+            let filter = /^[\d]{2}\/[\d]{2}\/[\d]{4}$/;
+            if (!filter.test(birthdayCustomer)) {
+                alert('Birthday is invalid!Please Try Again!');
+                birthdayCustomer = prompt('Enter Birday (DD/MM/YYYY)');
+            } else {
+                flagBirday = true;
+            }
+        }
+        customer.birthdayCustomer = birthdayCustomer;
+        //input addressCustomer
+        let addressCustomer = prompt('Enter Address Customer');
+        customer.addressCustomer = addressCustomer;
+        //input check typeCustomer
+        let typeCustomer = prompt('type Customer (Diamond,Platium,Gold,Silver)');
+        while (typeCustomer !== 'Diamond' && typeCustomer !== 'Platium' && typeCustomer !== 'Gold' && typeCustomer !== 'Silver') {
+            alert('Type of Customer invalid!Please Try Again!');
+            typeCustomer = prompt('type Customer (Diamond,Platium,Gold,Silver)');
+        }
+        customer.typeCustomer = typeCustomer;
+        //input + check typeRoom
+        let typeRoom = prompt('type Room (Vip,Business,Normal)');
+        while (typeRoom !== 'Vip' && typeRoom !== 'Business' && typeRoom !== 'Normal') {
+            alert('Type Room invalid!Please Try Again!');
+            typeRoom = prompt('type Room (Vip,Business,Normal)');
+        }
+        customer.typeRoom = typeRoom;
+        //input + check numberOfAccompanying
+        let numberOfAccompanying = prompt('Enter number of accompanying :');
+        let flagNumAccompanying = false;
+        while (flagNumAccompanying === false) {
+            let filter = /^([0-9])+$/;
+            if (!filter.test(numberOfAccompanying)) {
+                alert('Number of Accompanying is invalid!Please Try Again!');
+                numberOfAccompanying = prompt('Enter number of accompanying :');
+            } else {
+                flagNumAccompanying = true;
+            }
+        }
+        customer.numberOfAccompanying = numberOfAccompanying;
+        //input + check rentDay
+        let rentDay = prompt('Enter rent day');
+        let flagrentDay = false;
+        while (flagrentDay === false) {
+            let filter = /^([0-9])+$/;
+            if (!filter.test(rentDay)) {
+                alert('Rent Day is invalid!Please Try Again!');
+                rentDay = prompt('Enter rent day');
+            } else {
+                flagrentDay = true;
+            }
+        }
+        customer.rentDay = rentDay * 1;
+        //input + check typeService
+        let typeService = prompt('type Service (Villa,House,Room)');
+        while (typeService !== 'Villa' && typeService !== 'House' && typeService !== 'Room') {
+            alert('Type of Customer invalid!Please Try Again!');
+            typeService = prompt('type Service (Villa,House,Room)');
+        }
+        customer.typeService = typeService;
+
+        arrListCustomers.push(customer);
+        selectMainMenu();
+    }
+
+    function displayCustomers() {
+        let displayAllCustomers = '';
+        for (let i = 0; i < arrListCustomers.length; i++) {
+            displayAllCustomers += (i + 1) + '.Name: ' + arrListCustomers[i].nameCustomer + ' IdCard: ' + arrListCustomers[i].idCard + '\n';
+        }
+        displayAllCustomers += (arrListCustomers.length + 1) + '. Back to menu';
+        let num = prompt(displayAllCustomers);
+        if (num != (arrListCustomers.length + 1)) {
+            alert('1.nameCustomer: ' + arrListCustomers[num - 1].nameCustomer +
+                '\n2.idCard: ' + arrListCustomers[num - 1].idCard +
+                '\n3.Birthday: ' + arrListCustomers[num - 1].birthdayCustomer +
+                '\n4.Email: ' + arrListCustomers[num - 1].emailCustomer +
+                '\n5.typeCustomer: ' + arrListCustomers[num - 1].typeCustomer +
+                '\n6.typeRoom: ' + arrListCustomers[num - 1].typeRoom +
+                '\n7.Address: ' + arrListCustomers[num - 1].addressCustomer +
+                '\n8.Number Of Accompanying: ' + arrListCustomers[num - 1].numberOfAccompanying +
+                '\n9.Rent Day: ' + arrListCustomers[num - 1].rentDay +
+                '\n10.Type Service: ' + arrListCustomers[num - 1].typeService);
+        }
+        selectMainMenu();
+    }
+
+    function editCustomer() {
+        let displayAllCustomers = '';
+        for (let i = 0; i < arrListCustomers.length; i++) {
+            displayAllCustomers += (i + 1) + '.Name: ' + arrListCustomers[i].nameCustomer + ' IdCard: ' + arrListCustomers[i].idCard + '\n';
+        }
+        displayAllCustomers += (arrListCustomers.length + 1) + '. Back to menu';
+        let num = prompt(displayAllCustomers);
+        let edit = '';
+        if (num == arrListCustomers.length + 1) {
+            selectMainMenu();
+        } else {
+            if (num < 11 && num > 0) {
+                edit = prompt(('1.nameCustomer: ' + arrListCustomers[num - 1].nameCustomer +
+                    '\n2.idCard: ' + arrListCustomers[num - 1].idCard +
+                    '\n3.Birthday: ' + arrListCustomers[num - 1].birthdayCustomer +
+                    '\n4.Email: ' + arrListCustomers[num - 1].emailCustomer +
+                    '\n5.typeCustomer: ' + arrListCustomers[num - 1].typeCustomer +
+                    '\n6.typeRoom: ' + arrListCustomers[num - 1].typeRoom +
+                    '\n7.Address: ' + arrListCustomers[num - 1].addressCustomer +
+                    '\n8.Number Of Accompanying: ' + arrListCustomers[num - 1].numberOfAccompanying +
+                    '\n9.Rent Day: ' + arrListCustomers[num - 1].rentDay +
+                    '\n10.Type Service: ' + arrListCustomers[num - 1].typeService +
+                    '\n11. Back to menu'
+                ));
+            }
+        }
+        switch (edit) {
+            case '1':
+                arrListCustomers[num - 1].nameCustomer = prompt('Enter Name You Want Edit :');
+                break;
+            case '2':
+                arrListCustomers[num - 1].idCard = prompt('Enter IdCard You Want Edit :');
+                break;
+            case '3':
+                arrListCustomers[num - 1].birthdayCustomer = prompt('Enter Birthday You Want Edit :');
+                break;
+            case '4':
+                arrListCustomers[num - 1].emailCustomer = prompt('Enter Email You Want Edit :');
+                break;
+            case'5':
+                arrListCustomers[num - 1].typeCustomer = prompt('type Customer (Diamond,Platium,Gold,Silver)');
+                break;
+            case '6':
+                arrListCustomers[num - 1].typeRoom = prompt('type Room (Vip,Business,Normal)');
+                break;
+            case '7':
+                arrListCustomers[num - 1].addressCustomer = prompt('Enter Address You Want Edit :');
+                break;
+            case '8':
+                arrListCustomers[num - 1].numberOfAccompanying = prompt('Enter Number Of Accompanying You Want Edit :');
+                break;
+            case '9':
+                arrListCustomers[num - 1].rentDay = prompt('Enter Rent Day You Want Edit :');
+                break;
+            case '10':
+                arrListCustomers[num - 1].typeService = prompt('Enter Type Service You Want Edit :');
+                break;
+            case '11':
+                break;
+            default :
+                alert('Please Enter Again');
+        }
+        selectMainMenu();
+    }
+
+    function deleteCustomer() {
+        let displayAllCustomers = '';
+        for (let i = 0; i < arrListCustomers.length; i++) {
+            displayAllCustomers += (i + 1) + '.Name: ' + arrListCustomers[i].nameCustomer + ' IdCard: ' + arrListCustomers[i].idCard + '\n';
+        }
+        displayAllCustomers += (arrListCustomers.length + 1) + '. Back to menu';
+        let deleteN = prompt(displayAllCustomers);
+        if (deleteN == arrListCustomers.length + 1) {
+            selectMainMenu();
+        } else {
+            let check = prompt('Are you sure delete Customer ' + 'Name: ' + arrListCustomers[deleteN - 1].nameCustomer +
+                ' IdCard: ' + arrListCustomers[deleteN - 1].idCard +
+                '\n1. Yes' + '\n2. No');
+            if (check == 1) {
+                for (let i = deleteN; i < arrListCustomers.length; i++) {
+                    arrListCustomers[i] = arrListCustomers[i + 1];
+                }
+                arrListCustomers.pop();
+            }
+
+        }
+        selectMainMenu();
+    }
+
+    function totalPayOfCustomer() {
+        //discount + moneyPerDay
+        let displayAllCustomers = '';
+        for (let i = 0; i < arrListCustomers.length; i++) {
+            displayAllCustomers += (i + 1) + '.Name: ' + arrListCustomers[i].nameCustomer + ' IdCard: ' + arrListCustomers[i].idCard + '\n';
+        }
+        displayAllCustomers += (arrListCustomers.length + 1) + '. Back to menu';
+        let totalCustomer = prompt(displayAllCustomers);
+        if (totalCustomer == arrListCustomers.length + 1) {
+            selectMainMenu();
+        } else {
+            let price = 0;
+            let sale = 0;
+            if (arrListCustomers[totalCustomer - 1].typeService === 'Villa') {
+                price = 500;
+            } else if (arrListCustomers[totalCustomer - 1].typeService === 'House') {
+                price = 300;
+            } else if (arrListCustomers[totalCustomer - 1].typeService === 'Room') {
+                price = 100;
+            }
+            if (arrListCustomers[totalCustomer - 1].rentDay > 7) {
+                sale += 30;
+            } else if (arrListCustomers[totalCustomer - 1].rentDay > 4) {
+                sale += 20;
+            } else if (arrListCustomers[totalCustomer - 1].rentDay > 1) {
+                sale += 10;
+            } else {
+                sale += 0;
+            }
+            if (arrListCustomers[totalCustomer - 1].typeCustomer === 'Diamond') {
+                sale += 15;
+            } else if (arrListCustomers[totalCustomer - 1].typeCustomer === 'Platium') {
+                sale += 10;
+            } else if (arrListCustomers[totalCustomer - 1].typeCustomer === 'Gold') {
+                sale += 5;
+            } else if (arrListCustomers[totalCustomer - 1].typeCustomer === 'Silver') {
+                sale += 2;
+            } else {
+                sale += 0;
+            }
+            alert('Name: ' + arrListCustomers[totalCustomer - 1].nameCustomer + ' IdCard: ' + arrListCustomers[totalCustomer - 1].idCard + '\nTotal pay: ' + arrListCustomers[totalCustomer - 1].moneyPerDay(price, sale));
+        }
+        selectMainMenu();
+    }
+
+    //Employees--------------------------------------------------------------------------------------
+    let Employees = function () {
+        this.nameEmployees = "";
+        this.emailEmployees = "";
+        this.idCard = "";
+        this.birthdayEmployees = "";
+        this.addressEmployees = "";
+        this.typeEmployees = "";
+        this.salary = function (money) {
+            return money;
+        };
+    };
+
+    function addNewEmployee() {
+        let employees = new Employees();
+        //input name Employees
+        let nameEmployees = prompt('Enter name Customer');
+        employees.nameEmployees = nameEmployees;
+        //input + check email
+        let emailEmployees = prompt('Enter email Customer');
+        let flagEmailEmployees = false;
+        while (flagEmailEmployees === false) {
+            let filter = /^([a-zA-Z0-9_.-])+@(([a-zA-Z0-9-])+.)+[.]([a-zA-Z0-9]{2,4})+$/;
+            if (!filter.test(emailEmployees)) {
+                alert('Email is invalid!Please Try Again!');
+                emailEmployees = prompt('Enter email Customer');
+            } else {
+                flagEmailEmployees = true;
+            }
+        }
+        employees.emailEmployees = emailEmployees;
+
+        //input + check idcard
+        let idCard = prompt('Enter Id Card');
+        let flagidCard = false;
+        while (flagidCard === false) {
+            let filter = /^([0-9]{9})+$/;
+            if (!filter.test(idCard)) {
+                alert('idCard is invalid!Please Try Again!');
+                idCard = prompt('Enter Id Card');
+            } else {
+                flagidCard = true;
+            }
+        }
+        employees.idCard = idCard;
+        //input check birthday
+        let birthdayEmployees = prompt('Enter Birday (DD/MM/YYYY)');
+        let flagBirday = false;
+        while (flagBirday === false) {
+            let filter = /^[\d]{2}\/[\d]{2}\/[\d]{4}$/;
+            if (!filter.test(birthdayEmployees)) {
+                alert('Birthday is invalid!Please Try Again!');
+                birthdayEmployees = prompt('Enter Birday (DD/MM/YYYY)');
+            } else {
+                flagBirday = true;
+            }
+        }
+        employees.birthdayEmployees = birthdayEmployees;
+        //input addressEmployees
+        let addressEmployees = prompt('Enter Address Employees');
+        employees.addressEmployees = addressEmployees;
+        //input check typeEmployees
+        let typeEmployees = prompt('type Employees (Manager,Sale,Marketing)');
+        while (typeEmployees !== 'Manager' && typeEmployees !== 'Sale' && typeEmployees !== 'Marketing') {
+            alert('Type of Employees invalid!Please Try Again!');
+            typeEmployees = prompt('type Employees (Manager,Sale,Marketing)');
+        }
+        employees.typeEmployees = typeEmployees;
+
+        listEmployees.push(employees);
+        selectMainMenu();
+    }
+
+    function displayEmployee() {
+        let displayAllEmployees = '';
+        for (let i = 0; i < listEmployees.length; i++) {
+            displayAllEmployees += (i + 1) + '.Name: ' + listEmployees[i].nameEmployees + ' IdCard: ' + listEmployees[i].idCard + '\n';
+        }
+        displayAllEmployees += (listEmployees.length + 1) + '. Back to menu';
+        let num = prompt(displayAllEmployees);
+        if (num != (listEmployees.length + 1)) {
+            alert('1.nameCustomer: ' + listEmployees[num - 1].nameEmployees +
+                '\n2.idCard: ' + listEmployees[num - 1].idCard +
+                '\n3.Birthday: ' + listEmployees[num - 1].birthdayEmployees +
+                '\n4.Email: ' + listEmployees[num - 1].emailEmployees +
+                '\n5.typeEmployee: ' + listEmployees[num - 1].typeEmployees +
+                '\n6.Address: ' + listEmployees[num - 1].addressEmployees)
+        }
+        selectMainMenu();
+    }
+
+    function salaryEmployee() {
+        //discount + moneyPerDay
+        let displayAllEmployees = '';
+        for (let i = 0; i < listEmployees.length; i++) {
+            displayAllEmployees += (i + 1) + '.Name: ' + listEmployees[i].nameEmployees + ' IdCard: ' + listEmployees[i].idCard + '\n';
+        }
+        displayAllEmployees += (listEmployees.length + 1) + '. Back to menu';
+        let totalEmployees = prompt(displayAllEmployees);
+        if (totalEmployees == listEmployees.length + 1) {
+            selectMainMenu();
+        } else {
+            let money = 0;
+            if (arrListCustomers[totalEmployees - 1].typeService === 'Manager') {
+                money = 500;
+            } else if (arrListCustomers[totalEmployees - 1].typeService === 'Sale') {
+                money = 300;
+            } else if (arrListCustomers[totalEmployees - 1].typeService === 'Marketing') {
+                money = 200;
+            }
+            alert('Name: ' + listEmployees[totalEmployees - 1].nameEmployees + ' IdCard: ' + listEmployees[totalEmployees - 1].idCard + '\nSalary: ' + listEmployees[totalEmployees - 1].salary(money));
+        }
+        selectMainMenu();
+    }
+
+    //hien thi menu
+    function selectMainMenu() {
+        let num = prompt('1. Add New Customer.' +
+            '\n2. Display Information Customer.' +
+            '\n3. Display total pay of customer.' +
+            '\n4. Edit Information Customer.' +
+            '\n5. Delete Customer.' +
+            '\n6. Add new Employees' +
+            '\n7. Display information Employees' +
+            '\n8. Salary of Employees' +
+            '\n9. Exit');
+        do {
+            switch (num) {
+                case '1':
+                    addNewCustomer();
+                    break;
+                case '2':
+                    displayCustomers();
+                    break;
+                case '3':
+                    totalPayOfCustomer();
+                    break;
+                case '4':
+                    editCustomer();
+                    break;
+                case '5':
+                    deleteCustomer();
+                    break;
+                case '6':
+                    addNewEmployee();
+                    break;
+                case '7':
+                    displayEmployee();
+                    break;
+                case '8':
+                    salaryEmployee();
+                    break;
+                case '9':
+                    break;
+                default:
+                    alert('Please Enter Again');
+                    selectMainMenu();
+            }
+        } while (num !== '9');
+    }
+
+    //run
+    selectMainMenu();
 </script>
 </body>
 </html>
