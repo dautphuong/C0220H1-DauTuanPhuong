@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+
+<h3>Add New Product</h3>
+<div class="container">
+    <form action="javascript:void(0);" method="POST" onsubmit="app.add()">
+        <input type="text" id="add-name" placeholder="New Product">
+        <input type="submit" value="Add">
+    </form>
+</div>
+
+<h3>Display All Product</h3>
+<table>
+    <tr>
+        <th style="text-align: left;">Product Name</th>
+        <th style="text-align: right; color:brown" colspan="2"><p id="counter"></p></th>
+    </tr>
+    <tbody id="products">
+    </tbody>
+</table>
+
+</p>
+<script>
+    var app = new function () {
+        this.el = document.getElementById('products');
+        this.products = ['Sony Xperia', 'Samsung Galaxy', 'Nokia 6', 'Xiaomi Redmi Note 4', 'Apple iPhone 6S', 'Xiaomi Mi 5s Plus'];
+
+        this.count = function (data) {
+            var el = document.getElementById('counter');
+            var name = 'product';
+            if (data) {
+                if (data > 1) {
+                    name = 'products';
+                }
+                el.innerHTML = data + ' ' + name;
+            } else {
+                el.innerHTML = 'No ' + name;
+            }
+        };
+
+        this.fetchAll = function () {
+            var data = '';
+            if (this.products.length > 0) {
+                for (let i = 0; i < this.products.length; i++) {
+                    data += '<tr>';
+                    data += '<td>' + this.products[i] + '</td>';
+                    data += '<td><button onclick="app.submit(' + i + ')">Edit</button></td>';
+                    data += '<td><button onclick="app.delete(' + i + ')">Delete</button></td>';
+                    data += '</tr>';
+                }
+            }
+            this.count(this.products.length);
+            return this.el.innerHTML = data;
+        };
+
+        this.submit = function (num) {
+            var data = '';
+            for (let i = 0; i < this.products.length; i++) {
+                if (i == num) {
+                    data += '<tr>';
+                    data += '<td>' + "<input type='text' id =" + i + " value=" + this.products[i] + ">" + '</td>';
+                    data += '<td><button onclick="app.updateSubmit(' + i + ')">Submit</button></td>';
+                    data += '<td><button onclick="app.delete(' + i + ')">Delete</button></td>';
+                    data += '</tr>';
+                } else {
+                    data += '<tr>';
+                    data += '<td>' + this.products[i] + '</td>';
+                    data += '<td><button onclick="app.submit(' + i + ')">Edit</button></td>';
+                    data += '<td><button onclick="app.delete(' + i + ')">Delete</button></td>';
+                    data += '</tr>';
+                }
+            }
+            this.count(this.products.length);
+            return this.el.innerHTML = data;
+        };
+        this.updateSubmit=function(num) {
+            let idProduct = document.getElementById(num);
+            this.products[num] = idProduct.value;
+            this.fetchAll();
+        };
+        this.add = function () {
+            el = document.getElementById('add-name');
+            var product = el.value;
+            if (product) {
+                this.products.push(product.trim());
+                el.value = '';
+                this.fetchAll();
+            }
+        };
+        this.delete = function (item) {
+            this.products.splice(item, 1);
+            this.fetchAll();
+        };
+
+    };
+    app.fetchAll();
+
+
+</script>
+</body>
+</html>

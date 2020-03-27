@@ -6,7 +6,15 @@
 </head>
 <body>
 <script>
-
+    let str='';
+    let phoneNumber=['0905123390','0979044143','0974753836','0782364818','0905065283'];
+    let filter=/^(096|097|098|086|032|033|034|035|036|037|038|039|03966)/;
+    for(let i=0;i<phoneNumber.length;i++){
+        if(filter.test(phoneNumber[i])){
+            str+=phoneNumber[i]+'\n';
+        }
+    }
+    alert(str);
 </script>
 </body>
 </html>
