@@ -68,6 +68,68 @@
                 alert('Birthday is invalid!Please Try Again!');
                 birthdayCustomer = prompt('Enter Birday (DD/MM/YYYY)');
             } else {
+                let date = new Date();
+                let day = birthdayCustomer.substring(0, 2) * 1;
+                let month = birthdayCustomer.substring(3, 5) * 1;
+                let year = birthdayCustomer.substring(6, 10) * 1;
+                if (year <= date.getFullYear() && year >= 1900) {
+                    switch (month) {
+                        case 1:
+                        case 3:
+                        case 5:
+                        case 7:
+                        case 8:
+                        case 10:
+                        case 12:
+                            if (day < 0 || day > 31) {
+                                alert('Birthday is invalid!Please Try Again!');
+                                birthdayCustomer = prompt('Enter Birday (DD/MM/YYYY)');
+                            }
+                            break;
+                        case 4:
+                        case 6:
+                        case 9:
+                        case 11:
+                            if (day < 0 || day > 30) {
+                                alert('Birthday is invalid!Please Try Again!');
+                                birthdayCustomer = prompt('Enter Birday (DD/MM/YYYY)');
+                            }
+                            break;
+                        case 2:
+                            if (year % 4 === 0) {
+                                if (year % 100 === 0) {
+                                    if (year % 400 === 0) {
+                                        if (day > 29 || day < 0) {
+                                            alert('Birthday is invalid!Please Try Again!');
+                                            birthdayCustomer = prompt('Enter Birday (DD/MM/YYYY)');
+                                        }
+                                    } else {
+                                        if (day > 28 || day < 0) {
+                                            alert('Birthday is invalid!Please Try Again!');
+                                            birthdayCustomer = prompt('Enter Birday (DD/MM/YYYY)');
+                                        }
+                                    }
+                                } else {
+                                    if (day > 29 || day < 0) {
+                                        alert('Birthday is invalid!Please Try Again!');
+                                        birthdayCustomer = prompt('Enter Birday (DD/MM/YYYY)');
+                                    }
+                                }
+                            } else {
+                                if (day > 28 || day < 0) {
+                                    alert('Birthday is invalid!Please Try Again!');
+                                    birthdayCustomer = prompt('Enter Birday (DD/MM/YYYY)');
+                                }
+                            }
+                            break;
+                        default:
+                            alert('Birthday is invalid!Please Try Again!');
+                            birthdayCustomer = prompt('Enter Birday (DD/MM/YYYY)');
+                    }
+                } else {
+                    alert('Birthday is invalid!Please Try Again!');
+                    birthdayCustomer = prompt('Enter Birday (DD/MM/YYYY)');
+                }
                 flagBirday = true;
             }
         }
@@ -283,6 +345,7 @@
         selectMainMenu();
     }
 
+
     //Employees--------------------------------------------------------------------------------------
     let Employees = function () {
         this.nameEmployees = "";
@@ -337,6 +400,68 @@
                 alert('Birthday is invalid!Please Try Again!');
                 birthdayEmployees = prompt('Enter Birday (DD/MM/YYYY)');
             } else {
+                let date = new Date();
+                let day = birthdayEmployees.substring(0, 2) * 1;
+                let month = birthdayEmployees.substring(3, 5) * 1;
+                let year = birthdayEmployees.substring(6, 10) * 1;
+                if (year <= date.getFullYear() && year >= 1900) {
+                    switch (month) {
+                        case 1:
+                        case 3:
+                        case 5:
+                        case 7:
+                        case 8:
+                        case 10:
+                        case 12:
+                            if (day < 0 || day > 31) {
+                                alert('Birthday is invalid!Please Try Again!');
+                                birthdayEmployees = prompt('Enter Birday (DD/MM/YYYY)');
+                            }
+                            break;
+                        case 4:
+                        case 6:
+                        case 9:
+                        case 11:
+                            if (day < 0 || day > 30) {
+                                alert('Birthday is invalid!Please Try Again!');
+                                birthdayEmployees = prompt('Enter Birday (DD/MM/YYYY)');
+                            }
+                            break;
+                        case 2:
+                            if (year % 4 === 0) {
+                                if (year % 100 === 0) {
+                                    if (year % 400 === 0) {
+                                        if (day > 29 || day < 0) {
+                                            alert('Birthday is invalid!Please Try Again!');
+                                            birthdayEmployees = prompt('Enter Birday (DD/MM/YYYY)');
+                                        }
+                                    } else {
+                                        if (day > 28 || day < 0) {
+                                            alert('Birthday is invalid!Please Try Again!');
+                                            birthdayEmployees = prompt('Enter Birday (DD/MM/YYYY)');
+                                        }
+                                    }
+                                } else {
+                                    if (day > 29 || day < 0) {
+                                        alert('Birthday is invalid!Please Try Again!');
+                                        birthdayEmployees = prompt('Enter Birday (DD/MM/YYYY)');
+                                    }
+                                }
+                            } else {
+                                if (day > 28 || day < 0) {
+                                    alert('Birthday is invalid!Please Try Again!');
+                                    birthdayEmployees = prompt('Enter Birday (DD/MM/YYYY)');
+                                }
+                            }
+                            break;
+                        default:
+                            alert('Birthday is invalid!Please Try Again!');
+                            birthdayEmployees = prompt('Enter Birday (DD/MM/YYYY)');
+                    }
+                } else {
+                    alert('Birthday is invalid!Please Try Again!');
+                    birthdayEmployees = prompt('Enter Birday (DD/MM/YYYY)');
+                }
                 flagBirday = true;
             }
         }
@@ -386,16 +511,17 @@
             selectMainMenu();
         } else {
             let money = 0;
-            if (arrListCustomers[totalEmployees - 1].typeService === 'Manager') {
+            if (listEmployees[totalEmployees - 1].typeEmployees === 'Manager') {
                 money = 500;
-            } else if (arrListCustomers[totalEmployees - 1].typeService === 'Sale') {
+            } else if (listEmployees[totalEmployees - 1].typeEmployees === 'Sale') {
                 money = 300;
-            } else if (arrListCustomers[totalEmployees - 1].typeService === 'Marketing') {
+            } else if (listEmployees[totalEmployees - 1].typeEmployees === 'Marketing') {
                 money = 200;
             }
             alert('Name: ' + listEmployees[totalEmployees - 1].nameEmployees + ' IdCard: ' + listEmployees[totalEmployees - 1].idCard + '\nSalary: ' + listEmployees[totalEmployees - 1].salary(money));
         }
         selectMainMenu();
+
     }
 
     //hien thi menu

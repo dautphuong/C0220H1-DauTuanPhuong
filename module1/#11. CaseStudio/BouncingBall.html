@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body onkeydown="onKeyPressed(event)">
+<canvas id="gameBoard" height="500" width="700" style="border: 1px solid red" ></canvas>
+<script>
+    canvas = document.getElementById("gameBoard");
+    ctx = canvas.getContext("2d");
+    window.onload = draw;
+
+    function draw() {
+        game.update();
+
+        ctx.beginPath();
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        ctx.fillStyle = "darkred";
+        ctx.fillRect(game.bar.x, game.bar.y, game.bar.width, game.bar.height);
+        ctx.rect(game.bar.x, game.bar.y, game.bar.width, game.bar.height);
+        ctx.stroke();
+
+
+        ctx.beginPath();
+        ctx.arc(game.ball.x, game.ball.y, game.ball.r, 0, Math.PI * 2);
+        ctx.stroke();
+
+        ctx.font = "10px Arial";
+        ctx.fillStyle = "black";
+        ctx.fillText("score : " + score, 650, 10, 40);
+        ctx.fillText("hight score : " + hightScore, 570, 10, 70);
+
+
+        if (game.status === GAME_STATUS_OVER) {
+            ctx.font = "30px Arial";
+            ctx.fillStyle = "black";
+            ctx.fillText("Enter to Play!", 270, 250, 500);
+        }
+
+        requestAnimationFrame(draw)
+    }
+    function onKeyPressed(event) {
+        switch (event.keyCode) {
+            case 37:
+                game.onLeftArrowPressed();
+                break;
+            case 39:
+                game.onRightArrowPressed();
+                break;
+            case 13:
+                game.onEnterButtonPressed();
+                break;
+        }
+    }
+</script>
+<script src="script.js"></script>
+</body>
+</html>
