@@ -1,22 +1,25 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
 <body>
-
-<p>Subtract the numbers in the array, starting from the left:</p>
-
-<p id="demo"></p>
-
 <script>
-    var numbers = [175, 175, 25,25,35];
-    Object.defineProperties(Array.prototype, {
-        count: {
-            value: function(value) {
-                return this.reduce(...);
-            }
-        }
-    });
-
+    let a=3;
+    let b=a++ + ++a - a-- + a-- + ++a +a++;
+    console.log(a+','+b);
+    let c=b-- + --a + b++ - --b + a++;
+    console.log(a+','+b+','+c);
+    let d= c++ + a-- + b-- - --c + --c + c--;
+    console.log(a+','+b+','+c+','+d);
 </script>
-
 </body>
 </html>
+a=3
+b=a++ + ++a - a-- + a-- + ++a +a++
+3  4    5   5  4  4  3    4  4  5   a=5,b=15
+c=b-- + --a + b++ - --b + a++
+15       4  14       14  4       a=5,b=14,c=23
+d= c++ + a-- + b-- - --c + --c + c--
+23     5    14      23    22  22      a=4,b=13,c=21,d=63
