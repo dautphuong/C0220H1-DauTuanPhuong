@@ -42,11 +42,18 @@ class Ball {
             this.orientation[0] = y;
             this.orientation[1] = x;
         };
-        this.update = function () {
+        this.update = function (target) {
             if (this.x > 700 || this.x < 0) {
                 this.changeOrientation(this.orientation[0], (-1 * this.orientation[1]));
             }
             if (this.y > 500 || this.y < 0) {
+                this.changeOrientation((-1 * this.orientation[0]), this.orientation[1]);
+            }
+            if(this.x>=target.x&&this.y>=target.y&&this.x<=target.x+target.width&&this.y>target.y-target.height){
+                score++;
+                if (hightScore < score) {
+                    hightScore = score;
+                }
                 this.changeOrientation((-1 * this.orientation[0]), this.orientation[1]);
             }
             this.moving();
@@ -60,16 +67,23 @@ const GAME_STATUS_OVER = 2;
 class GameBoard {
     constructor() {
         this.bar = new Bar();
-        this.ball = new Ball(400, 30, 10);
+        this.ball = new Ball(500, 30, 10);
         this.status = GAME_STATUS_OVER;
         this.update = function () {
             if (this.status === GAME_STATUS_PLAYING) {
                 this.bar.update();
-                this.ball.update();
+                this.ball.update(this.bar);
             }
+            this.check();
         };
 
         //check lose
+        this.check=function () {
+            if(this.ball.y+this.ball.r>500){
+                this.status = GAME_STATUS_OVER;
+            }
+        };
+
 
         this.onLeftArrowPressed = function () {
             this.bar.direction = MOVE_LEFT;

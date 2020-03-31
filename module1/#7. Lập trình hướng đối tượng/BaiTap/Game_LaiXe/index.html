@@ -22,14 +22,14 @@
     const DEFAULT_CAR_X_POSITION = 100;
     const DEFAULT_CAR_Y_POSITION = 100;
     const DEFAULT_CAR_ORIENTATION = ORIENTATION_DOWN;
-    const DEFAULT_NINJA_SPEED = 20;
+    const DEFAULT_CAR_SPEED = 20;
 
 
     //tao doi tuong xe
     let car = function () {
         this.positionX = DEFAULT_CAR_X_POSITION;
         this.positionY = DEFAULT_CAR_Y_POSITION;
-        this.speed = DEFAULT_NINJA_SPEED;
+        this.speed = DEFAULT_CAR_SPEED;
         this.orientation = DEFAULT_CAR_ORIENTATION;
         this.buildImages = function () {
             this.image = this.orientation + '.png';
@@ -84,7 +84,7 @@
             let positionX = this.positionX;
             let positionY = this.positionY;
             image.onload = function () {
-                ctx.drawImage(image, positionX, positionY,10,10);
+                ctx.drawImage(image, positionX, positionY,50,50);
             };
 
             image.src = "boom.png";
@@ -104,7 +104,7 @@
             let positionX = this.positionX;
             let positionY = this.positionY;
             image.onload = function () {
-                ctx.drawImage(image, positionX, positionY);
+                ctx.drawImage(image, positionX, positionY,50,50);
             };
 
             image.src = "coin.png";
@@ -117,18 +117,24 @@
     function GameBoard() {
         this.car = new car();
         this.ctx = undefined;
-        this.boom = new boom();
+        this.boom = [new boom(),new boom(),new boom(),new boom(),new boom(),new boom(),];
         this.coin = new coin();
         this.start = function () {
             this.ctx = document.getElementById('gameCanvas').getContext('2d');
             this.car.show(this.ctx);
-            this.boom.show(this.ctx);
+            for (let i = 0; i < this.boom.length; i++) {
+                this.boom[i].show(this.ctx);
+            }
+
             this.coin.show(this.ctx)
         };
         this.render = function () {
             this.ctx.clearRect(0, 0, GAMEBOARD_WIDTH, GAMEBOARD_HEIGHT);
             this.car.show(this.ctx);
-            this.boom.show(this.ctx);
+            this.car.show(this.ctx);
+            for (let i = 0; i < this.boom.length; i++) {
+                this.boom[i].show(this.ctx);
+            }
             this.coin.show(this.ctx);
         };
         this.moveCar = function (e) {
