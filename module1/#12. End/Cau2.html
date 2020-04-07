@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let n=prompt('Nhap so co 4 chu so')*1;
+    function check(n) {
+        let a=Math.floor(n/10)%10-n%10;
+        let b=(Math.floor(n/100)%10)+Math.floor(n/1000);
+        if(a===b){
+            return true
+        }
+        return (n+'('+a+','+b+')');
+    }
+    alert(check(n));
+</script>
+</body>
+</html>

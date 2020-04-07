@@ -6,20 +6,28 @@
 </head>
 <body>
 <script>
-    let a=3;
-    let b=a++ + ++a - a-- + a-- + ++a +a++;
-    console.log(a+','+b);
-    let c=b-- + --a + b++ - --b + a++;
-    console.log(a+','+b+','+c);
-    let d= c++ + a-- + b-- - --c + --c + c--;
-    console.log(a+','+b+','+c+','+d);
+    class people3{
+        name;
+        age;
+        constructor(name,age) {
+            this.name=name;
+            this.age=age;
+        }
+    }
+
+
+    var people2={
+        name:"Tan",
+        age:"20",
+    };
+
+
+    var people1=function (name,age) {
+        this.name=name;
+        this.age=age;
+    }
+
+
 </script>
 </body>
 </html>
-a=3
-b=a++ + ++a - a-- + a-- + ++a +a++
-3  4    5   5  4  4  3    4  4  5   a=5,b=15
-c=b-- + --a + b++ - --b + a++
-15       4  14       14  4       a=5,b=14,c=23
-d= c++ + a-- + b-- - --c + --c + c--
-23     5    14      23    22  22      a=4,b=13,c=21,d=63

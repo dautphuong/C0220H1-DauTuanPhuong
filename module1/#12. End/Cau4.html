@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button type="button" onclick="addEmployee()">register new account</button>
+<br>
+<label>UserName</label>
+<input id="user"><br>
+<label>Password</label>
+<input id="pass">
+<button type="button" onclick="login()">Login</button>
+<script>
+    class Employee {
+        get name() {
+            return this._name;
+        }
+
+        set name(value) {
+            this._name = value;
+        }
+
+        get id() {
+            return this._id;
+        }
+
+        set id(value) {
+            this._id = value;
+        }
+
+        get pass() {
+            return this._pass;
+        }
+
+        set pass(value) {
+            this._pass = value;
+        }
+
+        get birthday() {
+            return this._birthday;
+        }
+
+        set birthday(value) {
+            this._birthday = value;
+        }
+
+        get cmnd() {
+            return this._cmnd;
+        }
+
+        set cmnd(value) {
+            this._cmnd = value;
+        }
+
+        get gender() {
+            return this._gender;
+        }
+
+        set gender(value) {
+            this._gender = value;
+        }
+
+        get address() {
+            return this._address;
+        }
+
+        set address(value) {
+            this._address = value;
+        }
+
+        get numberphone() {
+            return this._numberphone;
+        }
+
+        set numberphone(value) {
+            this._numberphone = value;
+        }
+
+        constructor() {
+            this._name = '';
+            this._id = '';
+            this._pass = '';
+            this._birthday = '';
+            this._cmnd = '';
+            this._gender = '';
+            this._address = '';
+            this._numberphone = '';
+        }
+    }
+
+    let arrayEmployee = [];
+
+    function addEmployee() {
+        let people = new Employee();
+        people.name = prompt('Nhap ten');
+        people.id = prompt('Nhap id');
+        people.pass = prompt('Nhap pass');
+        //check birthay
+        people.birthday = prompt('Nhap ngay sinh(dd/mm/yyyy)');
+        let filter = /^[0-9]{2}\/[0-9]{2}\/[0-9]{4}$/;
+        while (true) {
+            if (!filter.test(people.birthday)) {
+                people.birthday = prompt('Nhap  lai ngay sinh(dd/mm/yyyy)');
+            } else {
+                let bir = people.birthday;
+                let date = new Date();
+                let day = bir.substr(0, 2);
+                console.log(day);
+                let month = bir.substr(3, 2);
+                console.log(month);
+                let year = bir.substr(6, 10);
+                console.log(year);
+                if (year < 1900 || year > date.getFullYear()) {
+                    people.birthday = prompt('Nhap  lai ngay sinh(dd/mm/yyyy)');
+                } else {
+                    switch (month) {
+                        case 1:
+                        case 3:
+                        case 5:
+                        case 7:
+                        case 8:
+                        case 10:
+                        case 12:
+                            if (day < 0 || day > 31) {
+                                people.birthday = prompt('Nhap  lai ngay sinh(dd/mm/yyyy)');
+                            }
+                            break;
+                        case 4:
+                        case 6:
+                        case 9:
+                        case 11:
+                            if (day < 0 || day > 30) {
+                                people.birthday = prompt('Nhap  lai ngay sinh(dd/mm/yyyy)');
+                            }
+                            break;
+                        case 2:
+                            if (year % 4 === 0) {
+                                if (year % 100) {
+                                    if (day < 0 || day > 28) {
+                                        people.birthday = prompt('Nhap  lai ngay sinh(dd/mm/yyyy)');
+                                        break;
+                                    }
+                                } else {
+                                    if (day < 0 || day > 29) {
+                                        people.birthday = prompt('Nhap  lai ngay sinh(dd/mm/yyyy)');
+                                        break;
+                                    }
+                                }
+                            } else {
+                                if (day < 0 || day > 29) {
+                                    people.birthday = prompt('Nhap  lai ngay sinh(dd/mm/yyyy)');
+                                    break;
+                                }
+                            }
+
+                    }
+                    break;
+                }
+            }
+        }
+        people.numberphone = prompt('Nhap so dien thoai');
+        people.address = prompt('Nhap dia chi');
+        people.cmnd = prompt('Nhap CMND');
+        people.gender = prompt('Nhap gioi tinh');
+        arrayEmployee.push(people);
+    }
+
+
+    function login() {
+        let user = document.getElementById('user');
+        let pass = document.getElementById('pass');
+        console.log(user.value);
+        console.log(arrayEmployee[0].id);
+        console.log(pass.value);
+        console.log(arrayEmployee[0].pass);
+        for (let i = 0; i < arrayEmployee.length; i++) {
+            if (user.value == arrayEmployee[i].id) {
+                if (pass.value == arrayEmployee[i].pass) {
+                    alert('Dang nhap thanh cong');
+                    break;
+                } else {
+                    alert('password wrong');
+                    break;
+                }
+            } else {
+                alert('username wrong');
+                break;
+            }
+        }
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let n = parseInt(prompt('Nhap n'));
+    var array = [];
+    while (true) {
+        if (n < 0 || n > 6) {
+            n = parseInt(prompt('Nhap n'));
+        } else {
+            for (let i = 0; i < n; i++) {
+                array[i] = prompt('nhap phan tu thu ' + (i + 1))*1;
+            }
+            break;
+        }
+    }
+    alert('Mang truoc khi sap xep:' + array.join(','));
+    array.sort();
+    alert('Mang sau khi sap xep:' + array.join(','));
+</script>
+</body>
+</html>
