@@ -29,7 +29,8 @@ public class Point2D_Point3D {
             this.y = y;
         }
 
-        public float[] getXY(float[] arr) {
+        public float[] getXY() {
+            float[] arr={getX(),getY()};
             return arr;
         }
 
@@ -63,7 +64,8 @@ public class Point2D_Point3D {
             this.z = z;
         }
 
-        public float[] getXYZ(float[] arr) {
+        public float[] getXYZ() {
+            float[]arr={getX(),getY(),getZ()};
             return arr;
         }
 
