@@ -1,11 +1,9 @@
 package BaiTap;
 
+class StopWatch {
+    private double startTime, endTime;
 
-import java.util.Date;
-
- class StopWatch {
-    private double startTime,endTime;
-    public StopWatch(){
+    public StopWatch() {
     }
 
     public double getStartTime() {
@@ -24,22 +22,26 @@ import java.util.Date;
         this.endTime = endTime;
     }
 
-    public StopWatch(double startTime, double endTime){
-        this.startTime=startTime;
-        this.endTime=endTime;
+    public StopWatch(double startTime, double endTime) {
+        this.startTime = startTime;
+        this.endTime = endTime;
     }
-    public double start(){
-        this.startTime=System.currentTimeMillis();
+
+    public double start() {
+        this.startTime = System.currentTimeMillis();
         return this.startTime;
     }
-    public double endTime(){
-        this.endTime=System.currentTimeMillis();
+
+    public double endTime() {
+        this.endTime = System.currentTimeMillis();
         return this.endTime;
     }
-    public String getElapsedTime(){
-        return (this.endTime-this.startTime)/1000+" Seconds";
+
+    public String getElapsedTime() {
+        return (this.endTime - this.startTime) / 1000 + " Seconds";
     }
 }
+
 public class OOPStopWatch {
     public static int[] selectionSort(int[] a) {
         for (int i = 0; i < a.length - 1; i++) {

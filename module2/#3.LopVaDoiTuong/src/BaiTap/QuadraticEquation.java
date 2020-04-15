@@ -1,6 +1,7 @@
 package BaiTap;
 
 import java.util.Scanner;
+
 //phuong trinh bac 2
 public class QuadraticEquation {
     private double a, b, c;
@@ -57,11 +58,11 @@ public class QuadraticEquation {
         double b = scanner.nextDouble();
         double c = scanner.nextDouble();
         QuadraticEquation equation = new QuadraticEquation(a, b, c);
-        if(equation.getDiscriminant()>0){
-            System.out.println("The equation has two roots "+equation.getRoot1()+" and "+equation.getRoot2());
-        }else if(equation.getDiscriminant()==0){
-            System.out.println("The equation has one roots "+equation.getRoot1());
-        }else{
+        if (equation.getDiscriminant() > 0) {
+            System.out.println("The equation has two roots " + equation.getRoot1() + " and " + equation.getRoot2());
+        } else if (equation.getDiscriminant() == 0) {
+            System.out.println("The equation has one roots " + equation.getRoot1());
+        } else {
             System.out.println("The equation has no roots");
         }
     }
