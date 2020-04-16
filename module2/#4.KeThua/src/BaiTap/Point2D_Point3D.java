@@ -30,7 +30,7 @@ public class Point2D_Point3D {
         }
 
         public float[] getXY() {
-            float[] arr={getX(),getY()};
+            float[] arr = {getX(), getY()};
             return arr;
         }
 
@@ -65,7 +65,7 @@ public class Point2D_Point3D {
         }
 
         public float[] getXYZ() {
-            float[]arr={getX(),getY(),getZ()};
+            float[] arr = {getX(), getY(), getZ()};
             return arr;
         }
 

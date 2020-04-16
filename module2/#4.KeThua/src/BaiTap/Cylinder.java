@@ -1,9 +1,10 @@
 package BaiTap;
 
-class Circle{
+class Circle {
     private double r;
     private String color;
-    public Circle(){
+
+    public Circle() {
     }
 
     public double getR() {
@@ -22,21 +23,25 @@ class Circle{
         this.color = color;
     }
 
-    public Circle(double r, String color){
-        this.r=r;
-        this.color=color;
+    public Circle(double r, String color) {
+        this.r = r;
+        this.color = color;
     }
-    public double acreage(){
-        return this.r*this.r*3.14;
+
+    public double acreage() {
+        return this.r * this.r * 3.14;
     }
+
     @Override
-    public String toString(){
-        return "A Circle with color of "+getColor()+" and radius "+ getR();
+    public String toString() {
+        return "A Circle with color of " + getColor() + " and radius " + getR();
     }
 }
-public class Cylinder extends Circle{
+
+public class Cylinder extends Circle {
     private double height;
-    public Cylinder(){
+
+    public Cylinder() {
     }
 
     public double getHeight() {
@@ -47,20 +52,22 @@ public class Cylinder extends Circle{
         this.height = height;
     }
 
-    public Cylinder(int r, String color, int height){
-        super(r,color);
-        this.height=height;
+    public Cylinder(int r, String color, int height) {
+        super(r, color);
+        this.height = height;
     }
+
     @Override
-    public String toString(){
-        return "A Cylender height "+getHeight()+", which is a subclass of "+super.toString();
+    public String toString() {
+        return "A Cylender height " + getHeight() + ", which is a subclass of " + super.toString();
     }
+
     public static void main(String[] args) {
         //Circle
-        Circle circle = new Circle(3,"red");
+        Circle circle = new Circle(3, "red");
         System.out.println(circle);
         //Cylinder
-        Cylinder cylinder=new Cylinder(4,"blue",5);
+        Cylinder cylinder = new Cylinder(4, "blue", 5);
         System.out.println(cylinder);
     }
 }
