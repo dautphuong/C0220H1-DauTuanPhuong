@@ -66,8 +66,8 @@ public class Triangle extends Shape {
     }
 
     public double getArea() {
-        double h = Math.sqrt(side1 * side1 - side2 * side2 / 4);
-        return side2 * h / 2;
+        double p = (side1 + side2 + side3) / 2;
+        return Math.sqrt(p * (p - side1) * (p - side2) * (p - side3));
     }
 
     public double getPerimeter() {
@@ -76,7 +76,7 @@ public class Triangle extends Shape {
 
     @Override
     public String toString() {
-        return "Triangle Area:" + getArea() + "and Perimeter:" + getPerimeter() + ", " + super.toString();
+        return "Triangle Area: " + getArea() + "and Perimeter: " + getPerimeter() + ", " + super.toString();
     }
 
     public static void main(String[] args) {

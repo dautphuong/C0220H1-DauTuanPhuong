@@ -11,12 +11,12 @@ public class IllegalTriangle_TryCatch {
     }
 
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Nhap 3 canh Tam Giac: ");
+        int a = scanner.nextInt();
+        int b = scanner.nextInt();
+        int c = scanner.nextInt();
         try {
-            Scanner scanner = new Scanner(System.in);
-            System.out.println("Nhap 3 canh Tam Giac: ");
-            int a = scanner.nextInt();
-            int b = scanner.nextInt();
-            int c = scanner.nextInt();
             Error(a, b, c);
             System.out.println("la 3 canh Tam giac");
         } catch (Exception e) {
