@@ -1,9 +1,10 @@
 package BaiTap;
 
-public class Resizeable {
-    //Resizeable
-    public interface Res {
-        public void resize(double percent);
+public class Colorable {
+    //Colorable
+    public interface Color {
+        public void howToColor();
+
     }
 
     //Shape
@@ -44,7 +45,7 @@ public class Resizeable {
         }
     }
 
-    static class Circle extends Shape implements Res {
+    static class Circle extends Shape {
         private double radius = 1.0;
 
         public Circle() {
@@ -75,10 +76,6 @@ public class Resizeable {
             return 2 * radius * Math.PI;
         }
 
-        @Override
-        public void resize(double percent) {
-            this.radius *= (percent / 200);
-        }
 
         @Override
         public String toString() {
@@ -89,7 +86,7 @@ public class Resizeable {
         }
     }
 
-    static class Rectangle extends Shape implements Res {
+    static class Rectangle extends Shape {
         private double width = 1.0;
         private double length = 1.0;
 
@@ -131,11 +128,6 @@ public class Resizeable {
             return 2 * (width + this.length);
         }
 
-        @Override
-        public void resize(double percent) {
-            this.length *= percent;
-            this.width *= percent;
-        }
 
         @Override
         public String toString() {
@@ -148,7 +140,7 @@ public class Resizeable {
         }
     }
 
-     static class Square extends Shape implements Res{
+    static class Square extends Shape implements Color {
         private double side;
 
         public Square() {
@@ -159,7 +151,7 @@ public class Resizeable {
         }
 
         public Square(double side, String color, boolean filled) {
-            super(color,filled);
+            super(color, filled);
             this.side = side;
         }
 
@@ -171,6 +163,15 @@ public class Resizeable {
             this.side = side;
         }
 
+        double getArea() {
+            return side * side;
+        }
+
+        @Override
+        public void howToColor() {
+            System.out.println("Color all four sides.");
+        }
+
         @Override
         public String toString() {
             return "A Square with side="
@@ -178,24 +179,17 @@ public class Resizeable {
                     + ", which is a subclass of "
                     + super.toString();
         }
-
-        double getArea() {
-            return side * side;
-        }
-
-        @Override
-        public void resize(double percent) {
-            this.side *= percent ;
-        }
     }
 
     public static void main(String[] args) {
-        Shape[] shapes = new Shape[3];
+        Shape[] shapes = new Square[3];
         shapes[0] = new Circle(3, "yellow", false);
-        shapes[1] = new Rectangle(3,3, "infinity", true);
+        shapes[1] = new Rectangle(3, 3, "infinity", true);
         shapes[2] = new Square(3, "melinda", true);
-        for (int i=0;i<shapes.length;i++){
-            //shapes.
+        for(int i=0;i<shapes.length;i++){
+            if(shapes[i] instanceof Color){
+                //shapes[i].
+            }
         }
     }
 }
