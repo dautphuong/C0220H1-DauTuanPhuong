@@ -3,8 +3,7 @@ package BaiTap;
 public class Colorable {
     //Colorable
     public interface Color {
-        public void howToColor();
-
+        void howToColor();
     }
 
     //Shape
@@ -80,7 +79,7 @@ public class Colorable {
         @Override
         public String toString() {
             return "A Circle with radius="
-                    + getRadius()
+                    + getRadius() + "and Area: " + getArea()
                     + ", which is a subclass of "
                     + super.toString();
         }
@@ -134,7 +133,7 @@ public class Colorable {
             return "A Rectangle with width="
                     + getWidth()
                     + " and length="
-                    + getLength()
+                    + getLength() + "and Area: " + getArea()
                     + ", which is a subclass of "
                     + super.toString();
         }
@@ -175,7 +174,7 @@ public class Colorable {
         @Override
         public String toString() {
             return "A Square with side="
-                    + getSide()
+                    + getSide() + "and Area: " + getArea()
                     + ", which is a subclass of "
                     + super.toString();
         }
@@ -186,9 +185,11 @@ public class Colorable {
         shapes[0] = new Circle(3, "yellow", false);
         shapes[1] = new Rectangle(3, 3, "infinity", true);
         shapes[2] = new Square(3, "melinda", true);
-        for(int i=0;i<shapes.length;i++){
-            if(shapes[i] instanceof Color){
-                //shapes[i].
+        for (int i = 0; i < shapes.length; i++) {
+            System.out.println(shapes[i]);
+            if (shapes[i] instanceof Square) {
+                Color color = (Square) shapes[i];
+                color.howToColor();
             }
         }
     }

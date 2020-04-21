@@ -2,7 +2,7 @@ package ThucHanh;
 
 import java.util.Arrays;
 
-public class ComparableCircle extends CacDoiTuongHinhHoc_Comparator.Circle
+public class ComparableCircle extends ThucHanh.CacDoiTuongHinhHoc_Comparator.Circle
     implements Comparable<ComparableCircle> {
 
     public ComparableCircle() {
