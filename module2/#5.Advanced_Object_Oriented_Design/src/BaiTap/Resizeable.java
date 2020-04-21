@@ -3,11 +3,11 @@ package BaiTap;
 public class Resizeable {
     //Resizeable
     public interface Res {
-        public void resize(double percent);
+         void resize(double percent);
     }
 
     //Shape
-    static class Shape {
+    static class Shape implements Res{
         private String color = "green";
         private boolean filled = true;
 
@@ -42,9 +42,13 @@ public class Resizeable {
                     + " and "
                     + (isFilled() ? "filled" : "not filled");
         }
+
+        @Override
+        public void resize(double percent) {
+        }
     }
 
-    static class Circle extends Shape implements Res {
+    static class Circle extends Shape  {
         private double radius = 1.0;
 
         public Circle() {
@@ -77,7 +81,7 @@ public class Resizeable {
 
         @Override
         public void resize(double percent) {
-            this.radius *= (percent / 200);
+            this.radius *= percent;
         }
 
         @Override
@@ -89,7 +93,7 @@ public class Resizeable {
         }
     }
 
-    static class Rectangle extends Shape implements Res {
+    static class Rectangle extends Shape  {
         private double width = 1.0;
         private double length = 1.0;
 
@@ -148,7 +152,7 @@ public class Resizeable {
         }
     }
 
-     static class Square extends Shape implements Res{
+     static class Square extends Shape {
         private double side;
 
         public Square() {
@@ -194,8 +198,15 @@ public class Resizeable {
         shapes[0] = new Circle(3, "yellow", false);
         shapes[1] = new Rectangle(3,3, "infinity", true);
         shapes[2] = new Square(3, "melinda", true);
+        System.out.println("Truoc resize:");
         for (int i=0;i<shapes.length;i++){
-            //shapes.
+            System.out.println(shapes[i]);
         }
+        System.out.println("Sau resize");
+        for (int i=0;i<shapes.length;i++){
+            shapes[i].resize(3);
+            System.out.println(shapes[i]);
+        }
+
     }
 }
