@@ -1,9 +1,9 @@
 package models;
 
 public class House extends Services {
-    public String criteria;//Tiêu chuẩn phòng
-    public String descriptionOfAmenities;//Mô tả tiện nghi khác
-    public int numFloor;//Số tầng
+    private String criteria;//Tiêu chuẩn phòng
+    private String descriptionOfAmenities;//Mô tả tiện nghi khác
+    private int numFloor;//Số tầng
 
     public House() {
     }

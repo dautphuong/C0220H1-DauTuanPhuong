@@ -1,10 +1,10 @@
 package models;
 
 public class Villa extends Services {
-    public String criteria;//Tiêu chuẩn phòng
-    public String descriptionOfAmenities;//Mô tả tiện nghi khác
-    public double areaPool;//Pool area
-    public int numFloor;//Số tầng
+    private String criteria;//Tiêu chuẩn phòng
+    private String descriptionOfAmenities;//Mô tả tiện nghi khác
+    private double areaPool;//Pool area
+    private int numFloor;//Số tầng
 
     public Villa() {
     }

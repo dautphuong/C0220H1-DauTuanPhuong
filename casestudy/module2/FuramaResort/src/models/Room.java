@@ -1,9 +1,9 @@
 package models;
 
 public class Room extends Services {
-    public String accompaniedService;//Tên dịch vụ đi kèm
-    public int unit;//Đơn vị
-    public double costAccompanied;//Giá tiền
+    private String accompaniedService;//Tên dịch vụ đi kèm
+    private int unit;//Đơn vị
+    private double costAccompanied;//Giá tiền
 
     public Room() {
     }
