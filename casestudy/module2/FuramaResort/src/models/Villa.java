@@ -9,8 +9,8 @@ public class Villa extends Services {
     public Villa() {
     }
 
-    public Villa(String id, double area, double cost, int numberOfAccompanying, String typeRoom, String criteria, String descriptionOfAmenities, double areaPool, int numFloor) {
-        super(id, "Villa", area, cost, numberOfAccompanying, typeRoom);
+    public Villa(String id, String typeService,double area, double cost, int numberOfAccompanying, String typeRoom, String criteria, String descriptionOfAmenities, double areaPool, int numFloor) {
+        super(id, typeService, area, cost, numberOfAccompanying, typeRoom);
         this.criteria = criteria;
         this.descriptionOfAmenities = descriptionOfAmenities;
         this.areaPool = areaPool;

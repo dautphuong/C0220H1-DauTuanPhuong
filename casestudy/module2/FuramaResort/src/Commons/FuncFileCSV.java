@@ -4,6 +4,7 @@ import javafx.concurrent.Service;
 import models.Services;
 import models.Villa;
 
+import java.io.BufferedReader;
 import java.io.FileWriter;
 import java.util.ArrayList;
 
@@ -20,28 +21,33 @@ public class FuncFileCSV {
     //header file CSV Room
     private static final String FILE_HEADER_ROOM="id,typeService,area,cost,numberOfAccompanying,typeRoom,accompaniedService,unit,costAccompanied";
 
-
-    public static void writeServiceFileCSV(ArrayList<Services> listService){
+    //ghi file Villa.csv
+    public static void writeVillaFileCSV(ArrayList<Villa> listVilla){
         FileWriter fileWriter=null;
         try{
-            for (Services services : listService){
-                if(services instanceof Villa){
-                    fileWriter=new FileWriter(fileVilla);
-                    fileWriter.append(FILE_HEADER_VILLA);
-                    fileWriter.append(NEW_LINE_SEPARATOR);
-                    for(Services services1:listService){
-                        fileWriter.append(services1.getId());
-                        fileWriter.append(services1.getTypeService());
-                        fileWriter.append((char) services1.getArea());
-                        fileWriter.append((char) services1.getCost());
-                        fileWriter.append((char) services1.getNumberOfAccompanying());
-                        fileWriter.append(services1.getTypeRoom());
-                        fileWriter.append(services1.getId());
-                        fileWriter.append(services1.getId());
-                        fileWriter.append(services1.getId());
-                        fileWriter.append(services1.getId());
-                    }
-                }
+            fileWriter=new FileWriter(fileVilla);
+            fileWriter.append(FILE_HEADER_VILLA);
+            fileWriter.append(NEW_LINE_SEPARATOR);
+            for(Villa villa:listVilla){
+                fileWriter.append(villa.getId());
+                fileWriter.append(COMMA_DELIMITER);
+                fileWriter.append(villa.getTypeService());
+                fileWriter.append(COMMA_DELIMITER);
+                fileWriter.append(String.valueOf(villa.getArea()));
+                fileWriter.append(COMMA_DELIMITER);
+                fileWriter.append(String.valueOf(villa.getCost()));
+                fileWriter.append(COMMA_DELIMITER);
+                fileWriter.append(String.valueOf(villa.getNumberOfAccompanying()));
+                fileWriter.append(COMMA_DELIMITER);
+                fileWriter.append(villa.getTypeRoom());
+                fileWriter.append(COMMA_DELIMITER);
+                fileWriter.append(villa.getCriteria());
+                fileWriter.append(COMMA_DELIMITER);
+                fileWriter.append(villa.getDescriptionOfAmenities());
+                fileWriter.append(COMMA_DELIMITER);
+                fileWriter.append(String.valueOf(villa.getAreaPool()));
+                fileWriter.append(COMMA_DELIMITER);
+                fileWriter.append(String.valueOf(villa.getNumFloor()));
             }
 
         }catch (Exception e){
@@ -55,4 +61,8 @@ public class FuncFileCSV {
             }
         }
     }
+    //doc file Villa.csv
+//    public static ArrayList<Villa> readVillaFileCSV(){
+//        BufferedReader br=null;
+//    }
 }

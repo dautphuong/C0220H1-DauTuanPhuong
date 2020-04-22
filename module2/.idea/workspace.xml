@@ -2,22 +2,38 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5f4d1d25-e7a2-4d69-96c3-2635c89ae70c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../casestudy/module2/FuramaResort/src/Commons/FuncFileCSV.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/#6.CauTrucDuLieu_GiaiThuatCoBan/.idea/#6.CauTrucDuLieu_GiaiThuatCoBan.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/#6.CauTrucDuLieu_GiaiThuatCoBan/src/ThucHanh/MyListTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DemoTest/DemoTest.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../casestudy/module2/FuramaResort/out/production/FuramaResort/Controllers/MainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../casestudy/module2/FuramaResort/out/production/FuramaResort/Controllers/MainController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../casestudy/module2/FuramaResort/out/production/FuramaResort/Models/House.class" beforeDir="false" afterPath="$PROJECT_DIR$/../casestudy/module2/FuramaResort/out/production/FuramaResort/Models/House.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../casestudy/module2/FuramaResort/out/production/FuramaResort/Models/Room.class" beforeDir="false" afterPath="$PROJECT_DIR$/../casestudy/module2/FuramaResort/out/production/FuramaResort/Models/Room.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../casestudy/module2/FuramaResort/out/production/FuramaResort/Models/Villa.class" beforeDir="false" afterPath="$PROJECT_DIR$/../casestudy/module2/FuramaResort/out/production/FuramaResort/Models/Villa.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../casestudy/module2/FuramaResort/src/Commons/FuncFileCSV.java" beforeDir="false" afterPath="$PROJECT_DIR$/../casestudy/module2/FuramaResort/src/Commons/FuncFileCSV.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../casestudy/module2/FuramaResort/src/Controllers/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../casestudy/module2/FuramaResort/src/Controllers/MainController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../casestudy/module2/FuramaResort/src/models/House.java" beforeDir="false" afterPath="$PROJECT_DIR$/../casestudy/module2/FuramaResort/src/models/House.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../casestudy/module2/FuramaResort/src/models/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/../casestudy/module2/FuramaResort/src/models/Room.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../casestudy/module2/FuramaResort/src/models/RunTask1.java" beforeDir="false" afterPath="$PROJECT_DIR$/../casestudy/module2/FuramaResort/src/models/RunTask1.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../casestudy/module2/FuramaResort/src/models/Villa.java" beforeDir="false" afterPath="$PROJECT_DIR$/../casestudy/module2/FuramaResort/src/models/Villa.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/#1.NgonNguLapTrinhJava/out/production/module2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/#1.NgonNguLapTrinhJava/out/production/module2/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/#1.NgonNguLapTrinhJava/out/production/module2/BaiTap/Colorable$Circle.class" beforeDir="false" afterPath="$PROJECT_DIR$/#1.NgonNguLapTrinhJava/out/production/module2/BaiTap/Colorable$Circle.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/#1.NgonNguLapTrinhJava/out/production/module2/BaiTap/Colorable$Rectangle.class" beforeDir="false" afterPath="$PROJECT_DIR$/#1.NgonNguLapTrinhJava/out/production/module2/BaiTap/Colorable$Rectangle.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/#1.NgonNguLapTrinhJava/out/production/module2/BaiTap/Colorable$Shape.class" beforeDir="false" afterPath="$PROJECT_DIR$/#1.NgonNguLapTrinhJava/out/production/module2/BaiTap/Colorable$Shape.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/#1.NgonNguLapTrinhJava/out/production/module2/BaiTap/Colorable$Square.class" beforeDir="false" afterPath="$PROJECT_DIR$/#1.NgonNguLapTrinhJava/out/production/module2/BaiTap/Colorable$Square.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/#1.NgonNguLapTrinhJava/out/production/module2/BaiTap/Colorable.class" beforeDir="false" afterPath="$PROJECT_DIR$/#1.NgonNguLapTrinhJava/out/production/module2/BaiTap/Colorable.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/#5.Advanced_Object_Oriented_Design/src/BaiTap/Colorable.java" beforeDir="false" afterPath="$PROJECT_DIR$/#5.Advanced_Object_Oriented_Design/src/BaiTap/Colorable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/#1.NgonNguLapTrinhJava/out/production/module2/#1.NgonNguLapTrinhJava/#1.NgonNguLapTrinhJava.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/#1.NgonNguLapTrinhJava/out/production/module2/#1.NgonNguLapTrinhJava/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/#1.NgonNguLapTrinhJava/out/production/module2/#1.NgonNguLapTrinhJava/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/#1.NgonNguLapTrinhJava/out/production/module2/#1.NgonNguLapTrinhJava/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/#1.NgonNguLapTrinhJava/out/production/module2/#1.NgonNguLapTrinhJava/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/#1.NgonNguLapTrinhJava/out/production/module2/#1.NgonNguLapTrinhJava/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/#1.NgonNguLapTrinhJava/out/production/module2/#2.MangVaPhuongThuc/#2.MangVaPhuongThuc.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/#1.NgonNguLapTrinhJava/out/production/module2/#3.LopVaDoiTuong/#3.LopVaDoiTuong.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/#1.NgonNguLapTrinhJava/out/production/module2/#4.KeThua/#4.KeThua.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/#1.NgonNguLapTrinhJava/out/production/module2/#4.KeThua/src/BaiTap/Cylinder_Circle.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/#1.NgonNguLapTrinhJava/out/production/module2/#5.Advanced_Object_Oriented_Design/#5.Advanced_Object_Oriented_Design.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/#1.NgonNguLapTrinhJava/out/production/module2/#6.CauTrucDuLieu_GiaiThuatCoBan/#6.CauTrucDuLieu_GiaiThuatCoBan.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/#1.NgonNguLapTrinhJava/out/production/module2/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/#1.NgonNguLapTrinhJava/out/production/module2/.idea/module2.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/#1.NgonNguLapTrinhJava/out/production/module2/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/#1.NgonNguLapTrinhJava/out/production/module2/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/#1.NgonNguLapTrinhJava/out/production/module2/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/#1.NgonNguLapTrinhJava/out/production/module2/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/#1.NgonNguLapTrinhJava/out/production/module2/ThucHanh/ComparableCircle.class" beforeDir="false" afterPath="$PROJECT_DIR$/#1.NgonNguLapTrinhJava/out/production/module2/ThucHanh/ComparableCircle.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/#1.NgonNguLapTrinhJava/out/production/module2/fix_newOpen.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/module2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/module2.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -25,6 +41,13 @@
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -46,7 +69,7 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
@@ -63,7 +86,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Colorable">
+  <component name="RunManager" selected="Application.MainClass">
     <configuration name="CacDoiTuongHinhHoc_Comparator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ThucHanh.CacDoiTuongHinhHoc_Comparator" />
       <module name="module2" />
@@ -103,12 +126,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Hello" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="BaiTap.Hello" />
-      <module name="module2" />
+    <configuration name="MainClass" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="exception_test.MainClass" />
+      <module name="DemoTest" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="BaiTap.*" />
+          <option name="PATTERN" value="exception_test.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -116,12 +139,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Resizeable" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="BaiTap.Resizeable" />
+    <configuration name="MyListTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ThucHanh.MyListTest" />
       <module name="module2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="BaiTap.*" />
+          <option name="PATTERN" value="ThucHanh.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -131,11 +154,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.MainClass" />
+        <item itemvalue="Application.MyListTest" />
         <item itemvalue="Application.Colorable" />
         <item itemvalue="Application.ComparableCircle" />
         <item itemvalue="Application.CacDoiTuongHinhHoc_Comparator" />
-        <item itemvalue="Application.Resizeable" />
-        <item itemvalue="Application.Hello" />
       </list>
     </recent_temporary>
   </component>
@@ -164,7 +187,9 @@
       <workItem from="1587436708511" duration="5085000" />
       <workItem from="1587476697194" duration="24000" />
       <workItem from="1587484501880" duration="1218000" />
-      <workItem from="1587518597713" duration="111000" />
+      <workItem from="1587518597713" duration="237000" />
+      <workItem from="1587519649746" duration="1061000" />
+      <workItem from="1587528065654" duration="1283000" />
     </task>
     <servers />
   </component>
