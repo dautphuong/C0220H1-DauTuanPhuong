@@ -3,7 +3,6 @@ package Controllers;
 import Commons.FuncFileCSV;
 import models.House;
 import models.Room;
-import models.Services;
 import models.Villa;
 
 import java.util.ArrayList;
@@ -47,7 +46,6 @@ public class MainController {
     }
 
 
-
     private static void addNewServices() {
         ArrayList<Villa>listVilla=new ArrayList<Villa>();
         ArrayList<House>listHouse=new ArrayList<House>();
@@ -74,11 +72,11 @@ public class MainController {
                 System.out.print("Enter Number Of Accompanying: ");
                 villa.setNumberOfAccompanying(scanner.nextInt());
                 System.out.print("Enter Type Room: ");
-                villa.setTypeRoom(scanner.nextLine());
+                villa.setTypeRoom(scanner.next());
                 System.out.print("Enter Criteria: ");
-                villa.setCriteria(scanner.nextLine());
+                villa.setCriteria(scanner.next());
                 System.out.print("Enter Description Of Amenities: ");
-                villa.setDescriptionOfAmenities(scanner.nextLine());
+                villa.setDescriptionOfAmenities(scanner.next());
                 System.out.print("Enter Area Pool: ");
                 villa.setAreaPool(scanner.nextInt());
                 System.out.print("Enter Num Floor: ");
@@ -87,7 +85,9 @@ public class MainController {
                 FuncFileCSV.writeVillaFileCSV(listVilla);
                 displayMainMenu();
             }break;
-            case 2:
+            case 2:{
+
+            }
             case 3:
             case 4:
                 displayMainMenu();break;

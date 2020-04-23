@@ -5,13 +5,16 @@ import java.util.Arrays;
 class MyList<E> {
     private int size = 0;
     private static final int DEFAULT_CAPACITY = 10;
-    private Object elements[];
+    private Object[] elements;
 
     public MyList() {
         elements = new Object[DEFAULT_CAPACITY];
     }
+
+    //Tang kich thuoc mac dinh
     private void ensureCapa() {
         int newSize = elements.length * 2;
+        //Mảng gồm giá trị cũ, nhưng size*2
         elements = Arrays.copyOf(elements, newSize);
     }
     public void add(E e) {
@@ -20,6 +23,7 @@ class MyList<E> {
         }
         elements[size++] = e;
     }
+
     public E get(int i) {
         if (i>= size || i <0) {
             throw new IndexOutOfBoundsException("Index: " + i + ", Size " + i );
@@ -27,6 +31,7 @@ class MyList<E> {
         return (E) elements[i];
     }
 }
+
 public class MyListTest {
     public static void main(String[] args) {
         MyList<Integer> listInteger = new MyList<Integer>();
@@ -41,9 +46,9 @@ public class MyListTest {
         System.out.println("element 2: "+listInteger.get(2));
 
 
-        listInteger.get(6);
-        System.out.println("element 6: "+listInteger.get(6));
-        listInteger.get(-1);
-        System.out.println("element -1: " + listInteger.get(-1));
+//        listInteger.get(6);
+//        System.out.println("element 6: "+listInteger.get(6));
+//        listInteger.get(-1);
+//        System.out.println("element -1: " + listInteger.get(-1));
     }
 }
