@@ -2,20 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5f4d1d25-e7a2-4d69-96c3-2635c89ae70c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/#6.CauTrucDuLieu_GiaiThuatCoBan/src/BaiTap/MyListTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/#6.CauTrucDuLieu_GiaiThuatCoBan/src/ThucHanh/TestMyLinkedList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../casestudy/module2/FuramaResort/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/#6.CauTrucDuLieu_GiaiThuatCoBan/src/BaiTap/LinkedListTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/#7.CleanCode_Refactoring/#7.CleanCode_Refactoring.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../casestudy/module2/FuramaResort/out/production/FuramaResort/Commons/FuncFileCSV.class" beforeDir="false" afterPath="$PROJECT_DIR$/../casestudy/module2/FuramaResort/out/production/FuramaResort/Commons/FuncFileCSV.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../casestudy/module2/FuramaResort/out/production/FuramaResort/Controllers/MainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../casestudy/module2/FuramaResort/out/production/FuramaResort/Controllers/MainController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../casestudy/module2/FuramaResort/out/production/FuramaResort/Models/House.class" beforeDir="false" afterPath="$PROJECT_DIR$/../casestudy/module2/FuramaResort/out/production/FuramaResort/Models/House.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../casestudy/module2/FuramaResort/out/production/FuramaResort/Models/Room.class" beforeDir="false" afterPath="$PROJECT_DIR$/../casestudy/module2/FuramaResort/out/production/FuramaResort/Models/Room.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../casestudy/module2/FuramaResort/out/production/FuramaResort/Models/RunTask1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../casestudy/module2/FuramaResort/out/production/FuramaResort/Models/RunTask1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../casestudy/module2/FuramaResort/out/production/FuramaResort/Models/Villa.class" beforeDir="false" afterPath="$PROJECT_DIR$/../casestudy/module2/FuramaResort/out/production/FuramaResort/Models/Villa.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../casestudy/module2/FuramaResort/out/production/FuramaResort/data/Villa.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../casestudy/module2/FuramaResort/out/production/FuramaResort/data/Villa.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../casestudy/module2/FuramaResort/src/Commons/FuncFileCSV.java" beforeDir="false" afterPath="$PROJECT_DIR$/../casestudy/module2/FuramaResort/src/Commons/FuncFileCSV.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../casestudy/module2/FuramaResort/src/Controllers/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../casestudy/module2/FuramaResort/src/Controllers/MainController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../casestudy/module2/FuramaResort/src/data/Villa.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../casestudy/module2/FuramaResort/src/data/Villa.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/#1.NgonNguLapTrinhJava/out/production/module2/ThucHanh/MyList.class" beforeDir="false" afterPath="$PROJECT_DIR$/#1.NgonNguLapTrinhJava/out/production/module2/ThucHanh/MyList.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/#1.NgonNguLapTrinhJava/out/production/module2/ThucHanh/MyListTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/#1.NgonNguLapTrinhJava/out/production/module2/ThucHanh/MyListTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/#6.CauTrucDuLieu_GiaiThuatCoBan/src/ThucHanh/MyListTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/#6.CauTrucDuLieu_GiaiThuatCoBan/src/ThucHanh/MyListTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/#1.NgonNguLapTrinhJava/out/production/module2/BaiTap/MyList.class" beforeDir="false" afterPath="$PROJECT_DIR$/#1.NgonNguLapTrinhJava/out/production/module2/BaiTap/MyList.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/#1.NgonNguLapTrinhJava/out/production/module2/BaiTap/MyListTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/#1.NgonNguLapTrinhJava/out/production/module2/BaiTap/MyListTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/#6.CauTrucDuLieu_GiaiThuatCoBan/src/BaiTap/MyListTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/#6.CauTrucDuLieu_GiaiThuatCoBan/src/BaiTap/MyListTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -44,7 +43,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/#7.CleanCode_Refactoring" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -68,26 +67,13 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.TestMyLinkedList">
-    <configuration name="Colorable" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="BaiTap.Colorable" />
+  <component name="RunManager" selected="Application.LinkedListTest">
+    <configuration name="LinkedListTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="BaiTap.LinkedListTest" />
       <module name="module2" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="BaiTap.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ComparableCircle" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ThucHanh.ComparableCircle" />
-      <module name="module2" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ThucHanh.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -101,6 +87,19 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="exception_test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MyListTest (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="BaiTap.MyListTest" />
+      <module name="module2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="BaiTap.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -136,11 +135,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.LinkedListTest" />
+        <item itemvalue="Application.MyListTest (1)" />
         <item itemvalue="Application.TestMyLinkedList" />
         <item itemvalue="Application.MyListTest" />
         <item itemvalue="Application.MainClass" />
-        <item itemvalue="Application.Colorable" />
-        <item itemvalue="Application.ComparableCircle" />
       </list>
     </recent_temporary>
   </component>
@@ -173,6 +172,9 @@
       <workItem from="1587519649746" duration="1061000" />
       <workItem from="1587528065654" duration="2314000" />
       <workItem from="1587605280384" duration="9624000" />
+      <workItem from="1587690489794" duration="5733000" />
+      <workItem from="1587907187026" duration="4238000" />
+      <workItem from="1587948450485" duration="690000" />
     </task>
     <servers />
   </component>

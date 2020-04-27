@@ -1,6 +1,8 @@
 package Commons;
 
 import javafx.concurrent.Service;
+import models.House;
+import models.Room;
 import models.Services;
 import models.Villa;
 
@@ -66,4 +68,80 @@ public class FuncFileCSV {
 //        BufferedReader br=null;
 //
 //    }
+
+    //ghi file House.csv
+    public static void writeHouseFileCSV(ArrayList<House> listHouse){
+        FileWriter fileWriter=null;
+        try{
+            fileWriter=new FileWriter(fileHouse);
+            fileWriter.append(FILE_HEADER_HOUSE);
+            fileWriter.append(NEW_LINE_SEPARATOR);
+            for(House house:listHouse){
+                fileWriter.append(house.getId());
+                fileWriter.append(COMMA_DELIMITER);
+                fileWriter.append(house.getTypeService());
+                fileWriter.append(COMMA_DELIMITER);
+                fileWriter.append(String.valueOf(house.getArea()));
+                fileWriter.append(COMMA_DELIMITER);
+                fileWriter.append(String.valueOf(house.getCost()));
+                fileWriter.append(COMMA_DELIMITER);
+                fileWriter.append(String.valueOf(house.getNumberOfAccompanying()));
+                fileWriter.append(COMMA_DELIMITER);
+                fileWriter.append(house.getTypeRoom());
+                fileWriter.append(COMMA_DELIMITER);
+                fileWriter.append(house.getCriteria());
+                fileWriter.append(COMMA_DELIMITER);
+                fileWriter.append(house.getDescriptionOfAmenities());
+                fileWriter.append(COMMA_DELIMITER);
+                fileWriter.append(String.valueOf(house.getNumFloor()));
+            }
+        }catch (Exception e){
+            System.out.println("Error in CsvFileWriter !");
+        }finally {
+            try{
+                fileWriter.flush();
+                fileWriter.close();
+            }catch (Exception e){
+                System.out.println("Error when flush or close");
+            }
+        }
+    }
+
+    //ghi file Room.csv
+    public static void writeRoomFileCSV(ArrayList<Room> listRoom){
+        FileWriter fileWriter=null;
+        try{
+            fileWriter=new FileWriter(fileRoom);
+            fileWriter.append(FILE_HEADER_ROOM);
+            fileWriter.append(NEW_LINE_SEPARATOR);
+            for(Room room:listRoom){
+                fileWriter.append(room.getId());
+                fileWriter.append(COMMA_DELIMITER);
+                fileWriter.append(room.getTypeService());
+                fileWriter.append(COMMA_DELIMITER);
+                fileWriter.append(String.valueOf(room.getArea()));
+                fileWriter.append(COMMA_DELIMITER);
+                fileWriter.append(String.valueOf(room.getCost()));
+                fileWriter.append(COMMA_DELIMITER);
+                fileWriter.append(String.valueOf(room.getNumberOfAccompanying()));
+                fileWriter.append(COMMA_DELIMITER);
+                fileWriter.append(room.getTypeRoom());
+                fileWriter.append(COMMA_DELIMITER);
+                fileWriter.append(room.getAccompaniedService());
+                fileWriter.append(COMMA_DELIMITER);
+                fileWriter.append(String.valueOf(room.getUnit()));
+                fileWriter.append(COMMA_DELIMITER);
+                fileWriter.append(String.valueOf(room.getCostAccompanied()));
+            }
+        }catch (Exception e){
+            System.out.println("Error in CsvFileWriter !");
+        }finally {
+            try{
+                fileWriter.flush();
+                fileWriter.close();
+            }catch (Exception e){
+                System.out.println("Error when flush or close");
+            }
+        }
+    }
 }
