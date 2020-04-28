@@ -3,13 +3,14 @@ package Controllers;
 import Commons.FuncFileCSV;
 import models.House;
 import models.Room;
+import models.Services;
 import models.Villa;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class MainController {
-
+    static ArrayList<Services>listServices=new ArrayList<>();
     public static void main(String[] args) {
         displayMainMenu();
     }
@@ -46,9 +47,9 @@ public class MainController {
     }
 
     private static void addNewServices() {
-        ArrayList<Villa>listVilla=new ArrayList<Villa>();
-        ArrayList<House>listHouse=new ArrayList<House>();
-        ArrayList<Room>listRoom=new ArrayList<Room>();
+        //doc file
+        listServices=FuncFileCSV.getfileVillaToListService();
+
         System.out.println("1.Add New Villa\n" +
                 "2.Add New House\n" +
                 "3.Add New Room\n" +
@@ -60,7 +61,7 @@ public class MainController {
         switch (choose) {
             case "1":{
                 System.out.println("New Service Villa: ");
-                Villa villa=new Villa();
+                Services villa=new Villa();
                 System.out.print("Enter Id: ");
                 villa.setId(scanner.next());
                 villa.setTypeService("Villa");
@@ -73,20 +74,20 @@ public class MainController {
                 System.out.print("Enter Type Room: ");
                 villa.setTypeRoom(scanner.next());
                 System.out.print("Enter Criteria: ");
-                villa.setCriteria(scanner.next());
+                ((Villa) villa).setCriteria(scanner.next());
                 System.out.print("Enter Description Of Amenities: ");
-                villa.setDescriptionOfAmenities(scanner.next());
+                ((Villa) villa).setDescriptionOfAmenities(scanner.next());
                 System.out.print("Enter Area Pool: ");
-                villa.setAreaPool(scanner.nextInt());
+                ((Villa) villa).setAreaPool(scanner.nextInt());
                 System.out.print("Enter Num Floor: ");
-                villa.setNumFloor(scanner.nextInt());
-                listVilla.add(villa);
-                FuncFileCSV.writeVillaFileCSV(listVilla);
+                ((Villa) villa).setNumFloor(scanner.nextInt());
+                listServices.add(villa);
+                FuncFileCSV.writeVillaFileCSV(listServices);
                 addNewServices();
             }break;
             case "2":{
                 System.out.println("New Service House: ");
-                House house=new House();
+                Services house=new House();
                 System.out.print("Enter Id: ");
                 house.setId(scanner.next());
                 house.setTypeService("House");
@@ -99,18 +100,18 @@ public class MainController {
                 System.out.print("Enter Type Room: ");
                 house.setTypeRoom(scanner.next());
                 System.out.print("Enter Criteria: ");
-                house.setCriteria(scanner.next());
+                ((House) house).setCriteria(scanner.next());
                 System.out.print("Enter Description Of Amenities: ");
-                house.setDescriptionOfAmenities(scanner.next());
+                ((House) house).setDescriptionOfAmenities(scanner.next());
                 System.out.print("Enter Num Floor: ");
-                house.setNumFloor(scanner.nextInt());
-                listHouse.add(house);
-                FuncFileCSV.writeHouseFileCSV(listHouse);
+                ((House) house).setNumFloor(scanner.nextInt());
+                listServices.add(house);
+                FuncFileCSV.writeHouseFileCSV(listServices);
                 addNewServices();
             }break;
             case "3":{
                 System.out.println("New Service Room: ");
-                Room room=new Room();
+                Services room=new Room();
                 System.out.print("Enter Id: ");
                 room.setId(scanner.next());
                 room.setTypeService("House");
@@ -123,13 +124,13 @@ public class MainController {
                 System.out.print("Enter Type Room: ");
                 room.setTypeRoom(scanner.next());
                 System.out.print("Enter Accompanied Service: ");
-                room.setAccompaniedService(scanner.next());
+                ((Room) room).setAccompaniedService(scanner.next());
                 System.out.print("Enter Unit: ");
-                room.setUnit(scanner.nextInt());
+                ((Room) room).setUnit(scanner.nextInt());
                 System.out.print("Enter Cost Accompanied: ");
-                room.setCostAccompanied(scanner.nextDouble());
-                listRoom.add(room);
-                FuncFileCSV.writeRoomFileCSV(listRoom);
+                ((Room) room).setCostAccompanied(scanner.nextDouble());
+                listServices.add(room);
+                FuncFileCSV.writeRoomFileCSV(listServices);
                 addNewServices();
             }break;
             case "4":
@@ -145,6 +146,50 @@ public class MainController {
     }
 
     private static void showServices() {
-
+        listServices=FuncFileCSV.getfileVillaToListService();
+        System.out.println("1.Show all Villa\n" +
+                "2.Show all House\n" +
+                "3.Show all Room\n" +
+                "4.Show All Name Villa Not Duplicate\n" +
+                "5.Show All Name House Not Duplicate\n" +
+                "6.Show All Name Name Not Duplicate\n" +
+                "7.Back to menu\n" +
+                "8.Exit");
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter choose: ");
+        String choose = scanner.next();
+        switch (choose){
+            case "1":{
+                for(Services villa:listServices){
+                    if(villa instanceof Villa) {
+                        System.out.println("Id: "+villa.getId());
+                        System.out.println("Type Service:"+ villa.getTypeService());
+                        System.out.println("Area: "+villa.getArea());
+                        System.out.println("Cost: "+villa.getCost());
+                        System.out.println("Number Of Accompanying: "+villa.getNumberOfAccompanying());
+                        System.out.println("Type Room: "+villa.getTypeRoom());
+                        System.out.println("Criteria: "+((Villa) villa).getCriteria());
+                        System.out.println("Description Of Amenities: "+((Villa) villa).getDescriptionOfAmenities());
+                        System.out.println("Area Pool: "+((Villa) villa).getAreaPool());
+                        System.out.println("Num Floor: "+((Villa) villa).getNumFloor());
+                        System.out.println("------------------------------------------------");
+                    }
+                }
+            }break;
+            case "2":
+            case "3":
+            case "4":
+            case "5":
+            case "6":
+            case "7":
+                displayMainMenu();break;
+            case "8":
+                System.exit(0);
+                break;
+            default:
+                System.out.println("Fail! Please choose again!");
+                showServices();
+        }
     }
+
 }

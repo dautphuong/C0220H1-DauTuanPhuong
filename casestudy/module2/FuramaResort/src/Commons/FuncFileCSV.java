@@ -6,31 +6,33 @@ import models.Room;
 import models.Services;
 import models.Villa;
 
-import java.io.BufferedReader;
-import java.io.FileWriter;
+import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 
 public class FuncFileCSV {
-    private static final String COMMA_DELIMITER=",";
-    private static final String NEW_LINE_SEPARATOR="\n";
-    private static final String fileVilla="src/data/Villa.csv";
-    private static final String fileHouse="src/data/House.csv";
-    private static final String fileRoom="src/data/Room.csv";
+    private static final String COMMA_DELIMITER = ",";
+    private static final String NEW_LINE_SEPARATOR = "\n";
+    private static final String fileVilla = "src/data/Villa.csv";
+    private static final String fileHouse = "src/data/House.csv";
+    private static final String fileRoom = "src/data/Room.csv";
     //header file CSV Villa
-    private static final String FILE_HEADER_VILLA="id,typeService,area,cost,numberOfAccompanying,typeRoom,criteria,descriptionOfAmenities,areaPool,numFloor";
+    private static final String FILE_HEADER_VILLA = "id,typeService,area,cost,numberOfAccompanying,typeRoom,criteria,descriptionOfAmenities,areaPool,numFloor";
     //header file CSV House
-    private static final String FILE_HEADER_HOUSE="id,typeService,area,cost,numberOfAccompanying,typeRoom,criteria,descriptionOfAmenities,numFloor";
+    private static final String FILE_HEADER_HOUSE = "id,typeService,area,cost,numberOfAccompanying,typeRoom,criteria,descriptionOfAmenities,numFloor";
     //header file CSV Room
-    private static final String FILE_HEADER_ROOM="id,typeService,area,cost,numberOfAccompanying,typeRoom,accompaniedService,unit,costAccompanied";
+    private static final String FILE_HEADER_ROOM = "id,typeService,area,cost,numberOfAccompanying,typeRoom,accompaniedService,unit,costAccompanied";
 
     //ghi file Villa.csv
-    public static void writeVillaFileCSV(ArrayList<Villa> listVilla){
-        FileWriter fileWriter=null;
-        try{
-            fileWriter=new FileWriter(fileVilla);
+    public static void writeVillaFileCSV(ArrayList<Services> listVilla) {
+        FileWriter fileWriter = null;
+        try {
+            fileWriter = new FileWriter(fileVilla);
             fileWriter.append(FILE_HEADER_VILLA);
             fileWriter.append(NEW_LINE_SEPARATOR);
-            for(Villa villa:listVilla){
+            for (Services villa : listVilla) {
                 fileWriter.append(villa.getId());
                 fileWriter.append(COMMA_DELIMITER);
                 fileWriter.append(villa.getTypeService());
@@ -43,40 +45,35 @@ public class FuncFileCSV {
                 fileWriter.append(COMMA_DELIMITER);
                 fileWriter.append(villa.getTypeRoom());
                 fileWriter.append(COMMA_DELIMITER);
-                fileWriter.append(villa.getCriteria());
+                fileWriter.append(((Villa) villa).getCriteria());
                 fileWriter.append(COMMA_DELIMITER);
-                fileWriter.append(villa.getDescriptionOfAmenities());
+                fileWriter.append(((Villa) villa).getDescriptionOfAmenities());
                 fileWriter.append(COMMA_DELIMITER);
-                fileWriter.append(String.valueOf(villa.getAreaPool()));
+                fileWriter.append(String.valueOf(((Villa) villa).getAreaPool()));
                 fileWriter.append(COMMA_DELIMITER);
-                fileWriter.append(String.valueOf(villa.getNumFloor()));
+                fileWriter.append(String.valueOf(((Villa) villa).getNumFloor()));
+
             }
 
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println("Error in CsvFileWriter !");
-        }finally {
-            try{
+        } finally {
+            try {
                 fileWriter.flush();
                 fileWriter.close();
-            }catch (Exception e){
+            } catch (Exception e) {
                 System.out.println("Error when flush or close");
             }
         }
     }
-    //doc file Villa.csv
-//    public static ArrayList<Villa> readVillaFileCSV(){
-//        BufferedReader br=null;
-//
-//    }
-
     //ghi file House.csv
-    public static void writeHouseFileCSV(ArrayList<House> listHouse){
-        FileWriter fileWriter=null;
-        try{
-            fileWriter=new FileWriter(fileHouse);
+    public static void writeHouseFileCSV(ArrayList<Services> listHouse) {
+        FileWriter fileWriter = null;
+        try {
+            fileWriter = new FileWriter(fileHouse);
             fileWriter.append(FILE_HEADER_HOUSE);
             fileWriter.append(NEW_LINE_SEPARATOR);
-            for(House house:listHouse){
+            for (Services house : listHouse) {
                 fileWriter.append(house.getId());
                 fileWriter.append(COMMA_DELIMITER);
                 fileWriter.append(house.getTypeService());
@@ -89,32 +86,32 @@ public class FuncFileCSV {
                 fileWriter.append(COMMA_DELIMITER);
                 fileWriter.append(house.getTypeRoom());
                 fileWriter.append(COMMA_DELIMITER);
-                fileWriter.append(house.getCriteria());
+                fileWriter.append(((House)house).getCriteria());
                 fileWriter.append(COMMA_DELIMITER);
-                fileWriter.append(house.getDescriptionOfAmenities());
+                fileWriter.append(((House)house).getDescriptionOfAmenities());
                 fileWriter.append(COMMA_DELIMITER);
-                fileWriter.append(String.valueOf(house.getNumFloor()));
+                fileWriter.append(String.valueOf(((House)house).getNumFloor()));
             }
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println("Error in CsvFileWriter !");
-        }finally {
-            try{
+        } finally {
+            try {
                 fileWriter.flush();
                 fileWriter.close();
-            }catch (Exception e){
+            } catch (Exception e) {
                 System.out.println("Error when flush or close");
             }
         }
     }
 
     //ghi file Room.csv
-    public static void writeRoomFileCSV(ArrayList<Room> listRoom){
-        FileWriter fileWriter=null;
-        try{
-            fileWriter=new FileWriter(fileRoom);
+    public static void writeRoomFileCSV(ArrayList<Services> listRoom) {
+        FileWriter fileWriter = null;
+        try {
+            fileWriter = new FileWriter(fileRoom);
             fileWriter.append(FILE_HEADER_ROOM);
             fileWriter.append(NEW_LINE_SEPARATOR);
-            for(Room room:listRoom){
+            for (Services room : listRoom) {
                 fileWriter.append(room.getId());
                 fileWriter.append(COMMA_DELIMITER);
                 fileWriter.append(room.getTypeService());
@@ -127,21 +124,67 @@ public class FuncFileCSV {
                 fileWriter.append(COMMA_DELIMITER);
                 fileWriter.append(room.getTypeRoom());
                 fileWriter.append(COMMA_DELIMITER);
-                fileWriter.append(room.getAccompaniedService());
+                fileWriter.append(((Room)room).getAccompaniedService());
                 fileWriter.append(COMMA_DELIMITER);
-                fileWriter.append(String.valueOf(room.getUnit()));
+                fileWriter.append(String.valueOf(((Room)room).getUnit()));
                 fileWriter.append(COMMA_DELIMITER);
-                fileWriter.append(String.valueOf(room.getCostAccompanied()));
+                fileWriter.append(String.valueOf(((Room)room).getCostAccompanied()));
             }
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println("Error in CsvFileWriter !");
-        }finally {
-            try{
+        } finally {
+            try {
                 fileWriter.flush();
                 fileWriter.close();
-            }catch (Exception e){
+            } catch (Exception e) {
                 System.out.println("Error when flush or close");
             }
         }
+    }
+
+    //doc file Villa.csv
+    public static ArrayList<Services> getfileVillaToListService(){
+        BufferedReader br=null;
+        ArrayList<Services>listServices=new ArrayList<Services>();
+        //tạo file nếu chưa tồn tại
+        Path path =Paths.get(fileVilla);
+        if(!Files.exists(path)){
+            try{
+                Writer writer=new FileWriter(fileVilla);
+            }catch (Exception e){
+                System.out.println(e.getMessage());
+            }
+        }
+        try{
+            String line;
+            br=new BufferedReader(new FileReader(fileVilla));
+            while((line=br.readLine())!=null){
+                String[] splitdata=line.split(",");
+                if(splitdata[0].equals("id")){
+                    continue;
+                }
+                Services villa=new Villa();
+                villa.setId(splitdata[0]);
+                villa.setTypeService("Villa");
+                villa.setArea(Double.parseDouble(splitdata[2]));
+                villa.setCost(Double.parseDouble(splitdata[3]));
+                villa.setNumberOfAccompanying(Integer.parseInt(splitdata[4]));
+                villa.setTypeRoom(splitdata[5]);
+                ((Villa) villa).setCriteria(splitdata[6]);
+                ((Villa) villa).setDescriptionOfAmenities(splitdata[7]);
+                ((Villa) villa).setAreaPool(Integer.parseInt(splitdata[8]));
+                ((Villa) villa).setNumFloor(Integer.parseInt(splitdata[9]));
+                listServices.add(villa);
+            }
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }finally {
+            try{
+                br.close();
+            }catch (Exception e){
+                System.out.println(e.getMessage());
+            }
+        }
+        return listServices;
     }
 }
