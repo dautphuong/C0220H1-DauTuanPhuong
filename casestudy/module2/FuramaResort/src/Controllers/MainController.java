@@ -72,31 +72,102 @@ public class MainController {
                 System.out.println("------------------------------------------------");
                 System.out.println("New Service Villa: ");
                 Services villa = new Villa();
-                //enter and check ok Id
+                //input and check ok Id
                 System.out.print("Enter Id: ");
                 villa.setId(scanner.next());
-                while (!Pattern.matches("SVVL-[0-9]{4}",villa.getId())){
-                    System.out.println("Please again:");
+                while (!Pattern.matches("SVVL-[0-9]{4}", villa.getId())) {
+                    System.out.print("Please enter Id again: ");
                     villa.setId(scanner.next());
                 }
+                //input typeService
                 villa.setTypeService("Villa");
-
+                //input and check ok Area
                 System.out.print("Enter Area: ");
-                villa.setArea(scanner.nextDouble());
+                while (true) {
+                    try {
+                        villa.setArea(Double.parseDouble(scanner.next())); //fix trôi code khi nextDouble
+                        if (villa.getArea() >= 30) {
+                            break;
+                        } else {
+                            System.out.print("Please enter Area again: ");
+                        }
+                    } catch (Exception e) {
+                        System.out.print("Please enter Area again: ");
+                    }
+                }
+                //input and check ok Cost
                 System.out.print("Enter Cost: ");
-                villa.setCost(scanner.nextDouble());
+                while (true) {
+                    try {
+                        villa.setCost(Double.parseDouble(scanner.next()));
+                        ; //fix trôi code khi nextDouble
+                        if (villa.getCost() >= 0) {
+                            break;
+                        } else {
+                            System.out.print("Please enter Cost again: ");
+                        }
+                    } catch (Exception e) {
+                        System.out.print("Please enter Cost again: ");
+                    }
+                }
+                //input and check ok Number Of Accompanying
                 System.out.print("Enter Number Of Accompanying: ");
-                villa.setNumberOfAccompanying(scanner.nextInt());
+                while (true) {
+                    try {
+                        villa.setNumberOfAccompanying(Integer.parseInt(scanner.next()));
+                        ;
+                        ; //fix trôi code khi nextInt
+                        if (villa.getNumberOfAccompanying() >= 0 && villa.getNumberOfAccompanying() <= 20) {
+                            break;
+                        } else {
+                            System.out.print("Please enter Number Of Accompanying again: ");
+                        }
+                    } catch (Exception e) {
+                        System.out.print("Please enter Number Of Accompanying again: ");
+                    }
+                }
+                //input and check ok Type Room
                 System.out.print("Enter Type Room: ");
                 villa.setTypeRoom(scanner.next());
+                while (!Pattern.matches("^[A-Z][a-zA-Z0-9]+", villa.getTypeRoom())) {
+                    System.out.print("Please enter Type Room again: ");
+                    villa.setTypeRoom(scanner.next());
+                }
+                //input Criteria
                 System.out.print("Enter Criteria: ");
                 ((Villa) villa).setCriteria(scanner.next());
+                //input Description Of Amenities
                 System.out.print("Enter Description Of Amenities: ");
                 ((Villa) villa).setDescriptionOfAmenities(scanner.next());
+                //input and check ok Area Pool
                 System.out.print("Enter Area Pool: ");
-                ((Villa) villa).setAreaPool(scanner.nextDouble());
+                while (true) {
+                    try {
+                        ((Villa) villa).setAreaPool(Double.parseDouble(scanner.next())); //fix trôi code khi nextDouble
+                        if (((Villa) villa).getAreaPool() >= 0) {
+                            break;
+                        } else {
+                            System.out.print("Please enter Area Pool again: ");
+                        }
+                    } catch (Exception e) {
+                        System.out.print("Please enter Area Pool again: ");
+                    }
+                }
+                //input and check ok Num Floor
                 System.out.print("Enter Num Floor: ");
-                ((Villa) villa).setNumFloor(scanner.nextInt());
+                while (true) {
+                    try {
+                        ((Villa) villa).setNumFloor(Integer.parseInt(scanner.next())); //fix trôi code khi nextInt
+                        if (((Villa) villa).getNumFloor() >= 0 && ((Villa) villa).getNumFloor() <= 10) {
+                            break;
+                        } else {
+                            System.out.print("Please enter Area Pool again: ");
+                        }
+                    } catch (Exception e) {
+                        System.out.print("Please enter Area Pool again: ");
+                    }
+                }
+                //add arrayList
                 listServices.add(villa);
                 FuncFileCSV.writeVillaFileCSV(listServices);
                 addNewServices();
@@ -106,23 +177,88 @@ public class MainController {
                 System.out.println("------------------------------------------------");
                 System.out.println("New Service House: ");
                 Services house = new House();
+                //input and check ok Id
                 System.out.print("Enter Id: ");
                 house.setId(scanner.next());
-                house.setTypeService("House");
+                while (!Pattern.matches("SVHO-[0-9]{4}", house.getId())) {
+                    System.out.print("Please enter Id again: ");
+                    house.setId(scanner.next());
+                }
+                //input typeService
+                house.setTypeService("Villa");
+                //input and check ok Area
                 System.out.print("Enter Area: ");
-                house.setArea(scanner.nextDouble());
+                while (true) {
+                    try {
+                        house.setArea(Double.parseDouble(scanner.next())); //fix trôi code khi nextDouble
+                        if (house.getArea() >= 30) {
+                            break;
+                        } else {
+                            System.out.print("Please enter Area again: ");
+                        }
+                    } catch (Exception e) {
+                        System.out.print("Please enter Area again: ");
+                    }
+                }
+                //input and check ok Cost
                 System.out.print("Enter Cost: ");
-                house.setCost(scanner.nextDouble());
+                while (true) {
+                    try {
+                        house.setCost(Double.parseDouble(scanner.next()));
+                        ; //fix trôi code khi nextDouble
+                        if (house.getCost() >= 0) {
+                            break;
+                        } else {
+                            System.out.print("Please enter Cost again: ");
+                        }
+                    } catch (Exception e) {
+                        System.out.print("Please enter Cost again: ");
+                    }
+                }
+                //input and check ok Number Of Accompanying
                 System.out.print("Enter Number Of Accompanying: ");
-                house.setNumberOfAccompanying(scanner.nextInt());
+                while (true) {
+                    try {
+                        house.setNumberOfAccompanying(Integer.parseInt(scanner.next()));
+                        ;
+                        ; //fix trôi code khi nextInt
+                        if (house.getNumberOfAccompanying() >= 0 && house.getNumberOfAccompanying() <= 20) {
+                            break;
+                        } else {
+                            System.out.print("Please enter Number Of Accompanying again: ");
+                        }
+                    } catch (Exception e) {
+                        System.out.print("Please enter Number Of Accompanying again: ");
+                    }
+                }
+                //input and check ok Type Room
                 System.out.print("Enter Type Room: ");
                 house.setTypeRoom(scanner.next());
+                while (!Pattern.matches("^[A-Z][a-zA-Z0-9]+", house.getTypeRoom())) {
+                    System.out.print("Please enter Type Room again: ");
+                    house.setTypeRoom(scanner.next());
+                }
+                //input Criteria
                 System.out.print("Enter Criteria: ");
                 ((House) house).setCriteria(scanner.next());
+                //input Description Of Amenities
                 System.out.print("Enter Description Of Amenities: ");
                 ((House) house).setDescriptionOfAmenities(scanner.next());
+                //input and check ok Num Floor
                 System.out.print("Enter Num Floor: ");
-                ((House) house).setNumFloor(scanner.nextInt());
+                while (true) {
+                    try {
+                        ((House) house).setNumFloor(Integer.parseInt(scanner.next())); //fix trôi code khi nextInt
+                        if (((House) house).getNumFloor() >= 0 && ((House) house).getNumFloor() <= 10) {
+                            break;
+                        } else {
+                            System.out.print("Please enter Area Pool again: ");
+                        }
+                    } catch (Exception e) {
+                        System.out.print("Please enter Area Pool again: ");
+                    }
+                }
+                //add arrayList
                 listServices.add(house);
                 FuncFileCSV.writeHouseFileCSV(listServices);
                 addNewServices();
@@ -132,23 +268,103 @@ public class MainController {
                 System.out.println("------------------------------------------------");
                 System.out.println("New Service Room: ");
                 Services room = new Room();
+                //input and check ok Id
                 System.out.print("Enter Id: ");
                 room.setId(scanner.next());
-                room.setTypeService("Room");
+                while (!Pattern.matches("SVRO-[0-9]{4}", room.getId())) {
+                    System.out.print("Please enter Id again: ");
+                    room.setId(scanner.next());
+                }
+                //input typeService
+                room.setTypeService("Villa");
+                //input and check ok Area
                 System.out.print("Enter Area: ");
-                room.setArea(scanner.nextDouble());
+                while (true) {
+                    try {
+                        room.setArea(Double.parseDouble(scanner.next())); //fix trôi code khi nextDouble
+                        if (room.getArea() >= 30) {
+                            break;
+                        } else {
+                            System.out.print("Please enter Area again: ");
+                        }
+                    } catch (Exception e) {
+                        System.out.print("Please enter Area again: ");
+                    }
+                }
+                //input and check ok Cost
                 System.out.print("Enter Cost: ");
-                room.setCost(scanner.nextDouble());
+                while (true) {
+                    try {
+                        room.setCost(Double.parseDouble(scanner.next()));
+                        ; //fix trôi code khi nextDouble
+                        if (room.getCost() >= 0) {
+                            break;
+                        } else {
+                            System.out.print("Please enter Cost again: ");
+                        }
+                    } catch (Exception e) {
+                        System.out.print("Please enter Cost again: ");
+                    }
+                }
+                //input and check ok Number Of Accompanying
                 System.out.print("Enter Number Of Accompanying: ");
-                room.setNumberOfAccompanying(scanner.nextInt());
+                while (true) {
+                    try {
+                        room.setNumberOfAccompanying(Integer.parseInt(scanner.next()));
+                        ;
+                        ; //fix trôi code khi nextInt
+                        if (room.getNumberOfAccompanying() >= 0 && room.getNumberOfAccompanying() <= 20) {
+                            break;
+                        } else {
+                            System.out.print("Please enter Number Of Accompanying again: ");
+                        }
+                    } catch (Exception e) {
+                        System.out.print("Please enter Number Of Accompanying again: ");
+                    }
+                }
+                //input and check ok Type Room
                 System.out.print("Enter Type Room: ");
                 room.setTypeRoom(scanner.next());
+                while (!Pattern.matches("^[A-Z][a-zA-Z0-9]+", room.getTypeRoom())) {
+                    System.out.print("Please enter Type Room again: ");
+                    room.setTypeRoom(scanner.next());
+                }
+                //input and check ok Accompanied Service
                 System.out.print("Enter Accompanied Service: ");
                 ((Room) room).setAccompaniedService(scanner.next());
+                while (!Pattern.matches("massage|karaoke|food|drink|car", ((Room) room).getAccompaniedService())) {
+                    System.out.print("Please enter Accompanied Service again: ");
+                    ((Room) room).setAccompaniedService(scanner.next());
+                }
+                //input and check ok Unit
                 System.out.print("Enter Unit: ");
-                ((Room) room).setUnit(scanner.nextInt());
+                while (true) {
+                    try {
+                        ((Room) room).setUnit(Integer.parseInt(scanner.next())); //fix trôi code khi nextInt
+                        if (((Room) room).getUnit() >= 0) {
+                            break;
+                        } else {
+                            System.out.print("Please enter Unit again: ");
+                        }
+                    } catch (Exception e) {
+                        System.out.print("Please enter Unit again: ");
+                    }
+                }
+                //input and check ok Cost Accompanied
                 System.out.print("Enter Cost Accompanied: ");
-                ((Room) room).setCostAccompanied(scanner.nextDouble());
+                while (true) {
+                    try {
+                        ((Room) room).setCostAccompanied(Double.parseDouble(scanner.next())); //fix trôi code khi nextInt
+                        if (((Room) room).getCostAccompanied() >= 0) {
+                            break;
+                        } else {
+                            System.out.print("Please enter Cost Accompanied again: ");
+                        }
+                    } catch (Exception e) {
+                        System.out.print("Please enter Cost Accompanied again: ");
+                    }
+                }
+                //add arrayList
                 listServices.add(room);
                 FuncFileCSV.writeRoomFileCSV(listServices);
                 addNewServices();

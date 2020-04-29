@@ -2,16 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5f4d1d25-e7a2-4d69-96c3-2635c89ae70c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../casestudy/module2/FuramaResort/out/production/FuramaResort/Commons/FuncFileCSV.class" beforeDir="false" afterPath="$PROJECT_DIR$/../casestudy/module2/FuramaResort/out/production/FuramaResort/Commons/FuncFileCSV.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../casestudy/module2/FuramaResort/out/production/FuramaResort/Controllers/MainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../casestudy/module2/FuramaResort/out/production/FuramaResort/Controllers/MainController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../casestudy/module2/FuramaResort/out/production/FuramaResort/data/House.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../casestudy/module2/FuramaResort/out/production/FuramaResort/data/House.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../casestudy/module2/FuramaResort/out/production/FuramaResort/data/Room.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../casestudy/module2/FuramaResort/out/production/FuramaResort/data/Room.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../casestudy/module2/FuramaResort/out/production/FuramaResort/data/Villa.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../casestudy/module2/FuramaResort/out/production/FuramaResort/data/Villa.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../casestudy/module2/FuramaResort/src/Commons/FuncFileCSV.java" beforeDir="false" afterPath="$PROJECT_DIR$/../casestudy/module2/FuramaResort/src/Commons/FuncFileCSV.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../casestudy/module2/FuramaResort/src/Controllers/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../casestudy/module2/FuramaResort/src/Controllers/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../casestudy/module2/FuramaResort/src/data/House.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../casestudy/module2/FuramaResort/src/data/House.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../casestudy/module2/FuramaResort/src/data/Room.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../casestudy/module2/FuramaResort/src/data/Room.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../casestudy/module2/FuramaResort/src/data/Villa.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../casestudy/module2/FuramaResort/src/data/Villa.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -195,6 +187,8 @@
       <workItem from="1587960136101" duration="126000" />
       <workItem from="1587960374646" duration="1467000" />
       <workItem from="1588047433887" duration="611000" />
+      <workItem from="1588123379355" duration="642000" />
+      <workItem from="1588127536312" duration="51000" />
     </task>
     <servers />
   </component>

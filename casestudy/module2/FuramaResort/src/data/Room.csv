@@ -1,3 +1,2 @@
 id,typeService,area,cost,numberOfAccompanying,typeRoom,accompaniedService,unit,costAccompanied
-6,Room,6.0,6.0,6,6,6,6,6.0
-4,Room,4.0,4.0,4,4,4,4,4.0
+SVRO-3333,Villa,30.0,3.0,3,AAA,food,3,3.0

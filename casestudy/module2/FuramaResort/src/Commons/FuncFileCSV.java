@@ -32,30 +32,29 @@ public class FuncFileCSV {
             fileWriter = new FileWriter(fileVilla);
             fileWriter.append(FILE_HEADER_VILLA);
             for (Services villa : listVilla) {
-                if(villa instanceof Villa){
-                fileWriter.append(NEW_LINE_SEPARATOR);
-                fileWriter.append(villa.getId());
-                fileWriter.append(COMMA_DELIMITER);
-                fileWriter.append(villa.getTypeService());
-                fileWriter.append(COMMA_DELIMITER);
-                fileWriter.append(String.valueOf(villa.getArea()));
-                fileWriter.append(COMMA_DELIMITER);
-                fileWriter.append(String.valueOf(villa.getCost()));
-                fileWriter.append(COMMA_DELIMITER);
-                fileWriter.append(String.valueOf(villa.getNumberOfAccompanying()));
-                fileWriter.append(COMMA_DELIMITER);
-                fileWriter.append(villa.getTypeRoom());
-                fileWriter.append(COMMA_DELIMITER);
-                fileWriter.append(((Villa) villa).getCriteria());
-                fileWriter.append(COMMA_DELIMITER);
-                fileWriter.append(((Villa) villa).getDescriptionOfAmenities());
-                fileWriter.append(COMMA_DELIMITER);
-                fileWriter.append(String.valueOf(((Villa) villa).getAreaPool()));
-                fileWriter.append(COMMA_DELIMITER);
-                fileWriter.append(String.valueOf(((Villa) villa).getNumFloor()));
+                if (villa instanceof Villa) {
+                    fileWriter.append(NEW_LINE_SEPARATOR);
+                    fileWriter.append(villa.getId());
+                    fileWriter.append(COMMA_DELIMITER);
+                    fileWriter.append(villa.getTypeService());
+                    fileWriter.append(COMMA_DELIMITER);
+                    fileWriter.append(String.valueOf(villa.getArea()));
+                    fileWriter.append(COMMA_DELIMITER);
+                    fileWriter.append(String.valueOf(villa.getCost()));
+                    fileWriter.append(COMMA_DELIMITER);
+                    fileWriter.append(String.valueOf(villa.getNumberOfAccompanying()));
+                    fileWriter.append(COMMA_DELIMITER);
+                    fileWriter.append(villa.getTypeRoom());
+                    fileWriter.append(COMMA_DELIMITER);
+                    fileWriter.append(((Villa) villa).getCriteria());
+                    fileWriter.append(COMMA_DELIMITER);
+                    fileWriter.append(((Villa) villa).getDescriptionOfAmenities());
+                    fileWriter.append(COMMA_DELIMITER);
+                    fileWriter.append(String.valueOf(((Villa) villa).getAreaPool()));
+                    fileWriter.append(COMMA_DELIMITER);
+                    fileWriter.append(String.valueOf(((Villa) villa).getNumFloor()));
+                }
             }
-            }
-
         } catch (Exception e) {
             System.out.println("Error in CsvFileWriter Villa!");
         } finally {
@@ -67,6 +66,7 @@ public class FuncFileCSV {
             }
         }
     }
+
     //ghi file House.csv
     public static void writeHouseFileCSV(ArrayList<Services> listHouse) {
         FileWriter fileWriter = null;
@@ -74,26 +74,27 @@ public class FuncFileCSV {
             fileWriter = new FileWriter(fileHouse);
             fileWriter.append(FILE_HEADER_HOUSE);
             for (Services house : listHouse) {
-                if(house instanceof House){
-                fileWriter.append(NEW_LINE_SEPARATOR);
-                fileWriter.append(house.getId());
-                fileWriter.append(COMMA_DELIMITER);
-                fileWriter.append(house.getTypeService());
-                fileWriter.append(COMMA_DELIMITER);
-                fileWriter.append(String.valueOf(house.getArea()));
-                fileWriter.append(COMMA_DELIMITER);
-                fileWriter.append(String.valueOf(house.getCost()));
-                fileWriter.append(COMMA_DELIMITER);
-                fileWriter.append(String.valueOf(house.getNumberOfAccompanying()));
-                fileWriter.append(COMMA_DELIMITER);
-                fileWriter.append(house.getTypeRoom());
-                fileWriter.append(COMMA_DELIMITER);
-                fileWriter.append(((House)house).getCriteria());
-                fileWriter.append(COMMA_DELIMITER);
-                fileWriter.append(((House)house).getDescriptionOfAmenities());
-                fileWriter.append(COMMA_DELIMITER);
-                fileWriter.append(String.valueOf(((House)house).getNumFloor()));
-            }}
+                if (house instanceof House) {
+                    fileWriter.append(NEW_LINE_SEPARATOR);
+                    fileWriter.append(house.getId());
+                    fileWriter.append(COMMA_DELIMITER);
+                    fileWriter.append(house.getTypeService());
+                    fileWriter.append(COMMA_DELIMITER);
+                    fileWriter.append(String.valueOf(house.getArea()));
+                    fileWriter.append(COMMA_DELIMITER);
+                    fileWriter.append(String.valueOf(house.getCost()));
+                    fileWriter.append(COMMA_DELIMITER);
+                    fileWriter.append(String.valueOf(house.getNumberOfAccompanying()));
+                    fileWriter.append(COMMA_DELIMITER);
+                    fileWriter.append(house.getTypeRoom());
+                    fileWriter.append(COMMA_DELIMITER);
+                    fileWriter.append(((House) house).getCriteria());
+                    fileWriter.append(COMMA_DELIMITER);
+                    fileWriter.append(((House) house).getDescriptionOfAmenities());
+                    fileWriter.append(COMMA_DELIMITER);
+                    fileWriter.append(String.valueOf(((House) house).getNumFloor()));
+                }
+            }
         } catch (Exception e) {
             System.out.println("Error in CsvFileWriter House !");
         } finally {
@@ -113,26 +114,27 @@ public class FuncFileCSV {
             fileWriter = new FileWriter(fileRoom);
             fileWriter.append(FILE_HEADER_ROOM);
             for (Services room : listRoom) {
-                if(room instanceof Room){
-                fileWriter.append(NEW_LINE_SEPARATOR);
-                fileWriter.append(room.getId());
-                fileWriter.append(COMMA_DELIMITER);
-                fileWriter.append(room.getTypeService());
-                fileWriter.append(COMMA_DELIMITER);
-                fileWriter.append(String.valueOf(room.getArea()));
-                fileWriter.append(COMMA_DELIMITER);
-                fileWriter.append(String.valueOf(room.getCost()));
-                fileWriter.append(COMMA_DELIMITER);
-                fileWriter.append(String.valueOf(room.getNumberOfAccompanying()));
-                fileWriter.append(COMMA_DELIMITER);
-                fileWriter.append(room.getTypeRoom());
-                fileWriter.append(COMMA_DELIMITER);
-                fileWriter.append(((Room)room).getAccompaniedService());
-                fileWriter.append(COMMA_DELIMITER);
-                fileWriter.append(String.valueOf(((Room)room).getUnit()));
-                fileWriter.append(COMMA_DELIMITER);
-                fileWriter.append(String.valueOf(((Room)room).getCostAccompanied()));
-            }}
+                if (room instanceof Room) {
+                    fileWriter.append(NEW_LINE_SEPARATOR);
+                    fileWriter.append(room.getId());
+                    fileWriter.append(COMMA_DELIMITER);
+                    fileWriter.append(room.getTypeService());
+                    fileWriter.append(COMMA_DELIMITER);
+                    fileWriter.append(String.valueOf(room.getArea()));
+                    fileWriter.append(COMMA_DELIMITER);
+                    fileWriter.append(String.valueOf(room.getCost()));
+                    fileWriter.append(COMMA_DELIMITER);
+                    fileWriter.append(String.valueOf(room.getNumberOfAccompanying()));
+                    fileWriter.append(COMMA_DELIMITER);
+                    fileWriter.append(room.getTypeRoom());
+                    fileWriter.append(COMMA_DELIMITER);
+                    fileWriter.append(((Room) room).getAccompaniedService());
+                    fileWriter.append(COMMA_DELIMITER);
+                    fileWriter.append(String.valueOf(((Room) room).getUnit()));
+                    fileWriter.append(COMMA_DELIMITER);
+                    fileWriter.append(String.valueOf(((Room) room).getCostAccompanied()));
+                }
+            }
         } catch (Exception e) {
             System.out.println("Error in CsvFileWriter Room !");
         } finally {
@@ -146,28 +148,28 @@ public class FuncFileCSV {
     }
 
     //doc tat ca file vao mang
-    public static ArrayList<Services> getfileCSVToListService(){
-        BufferedReader br=null;
-        ArrayList<Services>listServices=new ArrayList<>();
+    public static ArrayList<Services> getfileCSVToListService() {
+        BufferedReader br = null;
+        ArrayList<Services> listServices = new ArrayList<>();
         //doc file Villa.csv
         //tạo file nếu chưa tồn tại
-        Path pathVilla =Paths.get(fileVilla);
-        if(!Files.exists(pathVilla)){
-            try{
-                Writer writer=new FileWriter(fileVilla);
-            }catch (Exception e){
+        Path pathVilla = Paths.get(fileVilla);
+        if (!Files.exists(pathVilla)) {
+            try {
+                Writer writer = new FileWriter(fileVilla);
+            } catch (Exception e) {
                 System.out.println(e.getMessage());
             }
         }
-        try{
+        try {
             String line;
-            br=new BufferedReader(new FileReader(fileVilla));
-            while((line=br.readLine())!=null){
-                String[] splitdata=line.split(",");
-                if(splitdata[0].equals("id")){
+            br = new BufferedReader(new FileReader(fileVilla));
+            while ((line = br.readLine()) != null) {
+                String[] splitdata = line.split(",");
+                if (splitdata[0].equals("id")) {
                     continue;
                 }
-                Services villa=new Villa();
+                Services villa = new Villa();
                 villa.setId(splitdata[0]);
                 villa.setTypeService(splitdata[1]);
                 villa.setArea(Double.parseDouble(splitdata[2]));
@@ -182,33 +184,33 @@ public class FuncFileCSV {
             }
         } catch (Exception e) {
             System.out.println(e.getMessage());
-        }finally {
-            try{
+        } finally {
+            try {
                 br.close();
-            }catch (Exception e){
+            } catch (Exception e) {
                 System.out.println(e.getMessage());
             }
         }
 
         //doc file House.csv
         //tạo file nếu chưa tồn tại
-        Path pathHouse =Paths.get(fileHouse);
-        if(!Files.exists(pathHouse)){
-            try{
-                Writer writer=new FileWriter(fileHouse);
-            }catch (Exception e){
+        Path pathHouse = Paths.get(fileHouse);
+        if (!Files.exists(pathHouse)) {
+            try {
+                Writer writer = new FileWriter(fileHouse);
+            } catch (Exception e) {
                 System.out.println(e.getMessage());
             }
         }
-        try{
+        try {
             String line;
-            br=new BufferedReader(new FileReader(fileHouse));
-            while((line=br.readLine())!=null){
-                String[] splitdata=line.split(",");
-                if(splitdata[0].equals("id")){
+            br = new BufferedReader(new FileReader(fileHouse));
+            while ((line = br.readLine()) != null) {
+                String[] splitdata = line.split(",");
+                if (splitdata[0].equals("id")) {
                     continue;
                 }
-                Services house=new House();
+                Services house = new House();
                 house.setId(splitdata[0]);
                 house.setTypeService(splitdata[1]);
                 house.setArea(Double.parseDouble(splitdata[2]));
@@ -222,50 +224,50 @@ public class FuncFileCSV {
             }
         } catch (Exception e) {
             System.out.println(e.getMessage());
-        }finally {
-            try{
+        } finally {
+            try {
                 br.close();
-            }catch (Exception e){
+            } catch (Exception e) {
                 System.out.println(e.getMessage());
             }
         }
 
         //doc file Room.csv
         //tạo file nếu chưa tồn tại
-        Path pathRoom =Paths.get(fileRoom);
-        if(!Files.exists(pathRoom)){
-            try{
-                Writer writer=new FileWriter(fileRoom);
-            }catch (Exception e){
+        Path pathRoom = Paths.get(fileRoom);
+        if (!Files.exists(pathRoom)) {
+            try {
+                Writer writer = new FileWriter(fileRoom);
+            } catch (Exception e) {
                 System.out.println(e.getMessage());
             }
         }
-        try{
+        try {
             String line;
-            br=new BufferedReader(new FileReader(fileRoom));
-            while((line=br.readLine())!=null){
-                String[] splitdata=line.split(",");
-                if(splitdata[0].equals("id")){
+            br = new BufferedReader(new FileReader(fileRoom));
+            while ((line = br.readLine()) != null) {
+                String[] splitdata = line.split(",");
+                if (splitdata[0].equals("id")) {
                     continue;
                 }
-                Services room=new Room();
+                Services room = new Room();
                 room.setId(splitdata[0]);
                 room.setTypeService(splitdata[1]);
                 room.setArea(Double.parseDouble(splitdata[2]));
                 room.setCost(Double.parseDouble(splitdata[3]));
                 room.setNumberOfAccompanying(Integer.parseInt(splitdata[4]));
                 room.setTypeRoom(splitdata[5]);
-                ((Room)room).setAccompaniedService(splitdata[6]);
-                ((Room)room).setUnit(Integer.parseInt(splitdata[7]));
-                ((Room)room).setCostAccompanied(Double.parseDouble(splitdata[8]));
+                ((Room) room).setAccompaniedService(splitdata[6]);
+                ((Room) room).setUnit(Integer.parseInt(splitdata[7]));
+                ((Room) room).setCostAccompanied(Double.parseDouble(splitdata[8]));
                 listServices.add(room);
             }
         } catch (Exception e) {
             System.out.println(e.getMessage());
-        }finally {
-            try{
+        } finally {
+            try {
                 br.close();
-            }catch (Exception e){
+            } catch (Exception e) {
                 System.out.println(e.getMessage());
             }
         }
