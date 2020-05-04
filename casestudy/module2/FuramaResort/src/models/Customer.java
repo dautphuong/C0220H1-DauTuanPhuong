@@ -1,14 +1,23 @@
 package models;
 
-public class Customer {
+public class Customer{
     private String fullName;//họ tên customer
     private String birthday;//ngày sinh
     private String gender;//giới tính
     private String CMND;
     private String numberPhone;//số điện thoại
+    private String email;
     private String typeCustomer;//loại khách
     private String address;//địa chỉ
     private Services useService;//thuộc tính sử dụng dịch vụ
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
     public String getFullName() {
         return fullName;
@@ -74,14 +83,13 @@ public class Customer {
         this.useService = useService;
     }
 
-    public String showInfor(){
-        return "Full Name: "+getFullName()+
-                "\nBirthday: "+getBirthday()+
-                "\nGender: "+getGender()+
-                "\nCMND: "+getCMND()+
-                "\nNumber Phone: "+getNumberPhone()+
-                "\nType Customer: "+getTypeCustomer()+
-                "\nAddress: "+getAddress()+
-                "\nService: "+getUseService().getId();
+    public String showInfor() {
+        return "Full Name: " + getFullName() +
+                "\nBirthday: " + getBirthday() +
+                "\nGender: " + getGender() +
+                "\nCMND: " + getCMND() +
+                "\nNumber Phone: " + getNumberPhone() +
+                "\nType Customer: " + getTypeCustomer() +
+                "\nAddress: " + getAddress();
     }
 }

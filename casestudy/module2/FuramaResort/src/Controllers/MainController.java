@@ -1,5 +1,7 @@
 package Controllers;
 
+import Commons.FuncFileCSV;
+import Commons.FuncFileCustomer;
 import models.*;
 
 import java.util.ArrayList;
@@ -21,6 +23,9 @@ public class MainController {
     }
 
     public static void displayMainMenu() {
+        //doc file
+        listServices = FuncFileCSV.getfileCSVToListService();
+        listCustomer = FuncFileCustomer.getFileCSVToListCustomer();
         System.out.println("------------------------------------------------");
         System.out.println("Main Menu");
         System.out.println("1. Add New Services\n" +
