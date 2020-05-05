@@ -15,7 +15,7 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.TreeSet;
 
-public class FuncFileCSV {
+public class FuncFileService {
     private static final String COMMA_DELIMITER = ",";
     private static final String NEW_LINE_SEPARATOR = "\n";
     private static final String fileVilla = "src/data/Villa.csv";

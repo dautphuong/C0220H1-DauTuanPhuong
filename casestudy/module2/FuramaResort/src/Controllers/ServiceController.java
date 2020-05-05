@@ -1,6 +1,6 @@
 package Controllers;
 
-import Commons.FuncFileCSV;
+import Commons.FuncFileService;
 import models.House;
 import models.Room;
 import models.Services;
@@ -166,7 +166,7 @@ class ServiceController {
         }
         //add arrayList
         listServices.add(room);
-        FuncFileCSV.writeRoomFileCSV(listServices);
+        FuncFileService.writeRoomFileCSV(listServices);
         addNewServices();
     }
 
@@ -272,7 +272,7 @@ class ServiceController {
             }
             //add arrayList
             listServices.add(house);
-            FuncFileCSV.writeHouseFileCSV(listServices);
+            FuncFileService.writeHouseFileCSV(listServices);
             addNewServices();
         }
     }
@@ -392,7 +392,7 @@ class ServiceController {
         }
         //add arrayList
         listServices.add(villa);
-        FuncFileCSV.writeVillaFileCSV(listServices);
+        FuncFileService.writeVillaFileCSV(listServices);
         addNewServices();
     }
 

@@ -1,7 +1,7 @@
 package Commons;
 
 import models.Customer;
-import models.Services;
+
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -11,7 +11,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
-import static Controllers.MainController.listServices;
+
 
 
 public class FuncFileCustomer {
@@ -59,7 +59,7 @@ public class FuncFileCustomer {
     public static ArrayList<Customer> getFileCSVToListCustomer() {
         BufferedReader br = null;
         ArrayList<Customer> listCustomer = new ArrayList<>();
-        //doc file Villa.csv
+        //doc file Customer.csv
         //tạo file nếu chưa tồn tại
         Path pathCustomer = Paths.get(fileCustomer);
         if (!Files.exists(pathCustomer)) {
