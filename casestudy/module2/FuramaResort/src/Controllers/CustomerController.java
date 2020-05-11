@@ -86,6 +86,7 @@ public class CustomerController {
     public static void showInformationCustomer() {
         //sap xep A-Z
         Collections.sort(listCustomer, new Comparator<Customer>() {
+            @Override
             public int compare (Customer Customer1, Customer Customer2){
                 return Customer1.getFullName().compareTo(Customer2.getFullName());
             }

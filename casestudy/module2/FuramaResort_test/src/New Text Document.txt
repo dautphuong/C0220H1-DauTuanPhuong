@@ -1,2 +1,0 @@
-//fix id trùng nhau
-//cmnd trùng nhau
