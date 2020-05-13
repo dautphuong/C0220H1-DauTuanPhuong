@@ -23,6 +23,7 @@ public class EmployeeController {
         }
         displayMainMenu();
     }
+
     public static void findEmployeeFromResume(){
         Scanner scanner=new Scanner(System.in);
         Stack<Employee> stack = Resume.getAllEmployee();
