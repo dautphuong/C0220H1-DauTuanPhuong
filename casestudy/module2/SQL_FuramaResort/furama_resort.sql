@@ -40,7 +40,7 @@ Create table KhachHang(
     SDT VARCHAR(45),
     Email varchar(45),
     DiaChi varchar(45),
-    foreign key (IdLoaiKhach) references LoaiKhach(IdLoaiKhach)
+    foreign key (IdLoaiKhach) references LoaiKhach(IdLoaiKhach),check (Email like '%_@__%.__%')
 );
 
 CREATE table DichVuDiKem(
@@ -136,6 +136,8 @@ INSERT INTO `furama_resort`.`khachhang` (`IdLoaiKhach`, `HoTen`, `NgaySinh`, `So
 INSERT INTO `furama_resort`.`khachhang` (`IdLoaiKhach`, `HoTen`, `NgaySinh`, `SoCMND`, `SDT`, `Email`, `DiaChi`) VALUES ('5', 'Nguyễn Anh C', '1998/3/5', '12121231', '012346678', 'C@gmail.com', 'Quảng Ngãi');
 INSERT INTO `furama_resort`.`khachhang` (`IdLoaiKhach`, `HoTen`, `NgaySinh`, `SoCMND`, `SDT`, `Email`, `DiaChi`) VALUES ('2', 'Lê Thái D', '2006/4/4', '12365431', '012375978', 'D@gmail.com', 'Vinh');
 INSERT INTO `furama_resort`.`khachhang` (`IdLoaiKhach`, `HoTen`, `NgaySinh`, `SoCMND`, `SDT`, `Email`, `DiaChi`) VALUES ('3', 'Anh Hoàng E', '2004/6/6', '12399231', '012348878', 'E@gmail.com', 'Quảng Trị');
+INSERT INTO `furama_resort`.`khachhang` (`IdLoaiKhach`, `HoTen`, `NgaySinh`, `SoCMND`, `SDT`, `Email`, `DiaChi`) VALUES ('4', 'Trân Hoàng B', '2004-05-04', '12325431', '444346678', 'BB@gmail.com', 'Hà Nội');
+INSERT INTO `furama_resort`.`khachhang` (`IdLoaiKhach`, `HoTen`, `NgaySinh`, `SoCMND`, `SDT`, `Email`, `DiaChi`) VALUES ('5', 'Thái Lê F', '1997-05-14', '14425431', '424476678', 'F@gmail.com', 'Vinh');
 
 INSERT INTO `furama_resort`.`loaidichvu` (`TenLoaiDichVu`) VALUES ('massage');
 INSERT INTO `furama_resort`.`loaidichvu` (`TenLoaiDichVu`) VALUES ('karaoke');
@@ -151,6 +153,30 @@ INSERT INTO `furama_resort`.`dichvu` (`TenDichVu`, `DienTich`, `SoTang`, `SoNguo
 INSERT INTO `furama_resort`.`dichvu` (`TenDichVu`, `DienTich`, `SoTang`, `SoNguoiToiDa`, `ChiPhiThue`, `IdKieuThue`) VALUES ('D', '100', '3', '12', '12000000', '1');
 INSERT INTO `furama_resort`.`dichvu` (`TenDichVu`, `DienTich`, `SoTang`, `SoNguoiToiDa`, `ChiPhiThue`, `IdKieuThue`, `IdLoaiDichVu`) VALUES ('E', '50', '1', '4', '4000000', '3', '2');
 
+INSERT INTO `furama_resort`.`hopdong` (`IdNhanVien`, `IdKhachHang`, `IdDichVu`, `NgayLamHopDong`, `NgayKetThuc`) VALUES ('2', '1', '1', '2019/6/10', '2020/5/10');
+INSERT INTO `furama_resort`.`hopdong` (`IdNhanVien`, `IdKhachHang`, `IdDichVu`, `NgayLamHopDong`, `NgayKetThuc`) VALUES ('4', '3', '3', '2019/4/12', '2020/5/15');
+INSERT INTO `furama_resort`.`hopdong` (`IdNhanVien`, `IdKhachHang`, `IdDichVu`, `NgayLamHopDong`, `NgayKetThuc`) VALUES ('3', '2', '2', '2018/2/15', '2019/4/18');
+INSERT INTO `furama_resort`.`hopdong` (`IdNhanVien`, `IdKhachHang`, `IdDichVu`, `NgayLamHopDong`, `NgayKetThuc`) VALUES ('5', '4', '4', '2019/3/22', '2020/5/5');
+INSERT INTO `furama_resort`.`hopdong` (`IdNhanVien`, `IdKhachHang`, `IdDichVu`, `NgayLamHopDong`, `NgayKetThuc`) VALUES ('1', '5', '4', '2019/2/10', '2020/4/10');
+INSERT INTO `furama_resort`.`hopdong` (`IdNhanVien`, `IdKhachHang`, `IdDichVu`, `NgayLamHopDong`, `NgayKetThuc`) VALUES ('3', '2', '3', '2019/03/13', '2020/05/05');
+INSERT INTO `furama_resort`.`hopdong` (`IdNhanVien`, `IdKhachHang`, `IdDichVu`, `NgayLamHopDong`, `NgayKetThuc`) VALUES ('1', '6', '2', '2019-03-13', '2020-05-05');
+INSERT INTO `furama_resort`.`hopdong` (`IdNhanVien`, `IdKhachHang`, `IdDichVu`, `NgayLamHopDong`, `NgayKetThuc`) VALUES ('2', '7', '2', '2020-02-10', '2020-04-10');
+
+INSERT INTO `furama_resort`.`dichvudikem` (`TenDichVuDIKem`, `Gia`, `DonVi`, `TrangThaiKhaDung`) VALUES ('massage', '500000', '1', 'ok');
+INSERT INTO `furama_resort`.`dichvudikem` (`TenDichVuDIKem`, `Gia`, `DonVi`, `TrangThaiKhaDung`) VALUES ('karaoke', '300000', '1', 'ok');
+INSERT INTO `furama_resort`.`dichvudikem` (`TenDichVuDIKem`, `Gia`, `DonVi`, `TrangThaiKhaDung`) VALUES ('sightseeing car', '800000', '1', 'ok');
+INSERT INTO `furama_resort`.`dichvudikem` (`TenDichVuDIKem`, `Gia`, `DonVi`, `TrangThaiKhaDung`) VALUES ('food', '100000', '1', 'ok');
+
+INSERT INTO `furama_resort`.`hopdongchitiet` (`IdHopDong`, `IdDichVuDiKem`, `SoLuong`) VALUES ('1', '4', '1');
+INSERT INTO `furama_resort`.`hopdongchitiet` (`IdHopDong`, `IdDichVuDiKem`, `SoLuong`) VALUES ('2', '4', '3');
+INSERT INTO `furama_resort`.`hopdongchitiet` (`IdHopDong`, `IdDichVuDiKem`, `SoLuong`) VALUES ('3', '1', '1');
+INSERT INTO `furama_resort`.`hopdongchitiet` (`IdHopDong`, `IdDichVuDiKem`, `SoLuong`) VALUES ('4', '2', '1');
+INSERT INTO `furama_resort`.`hopdongchitiet` (`IdHopDong`, `IdDichVuDiKem`, `SoLuong`) VALUES ('5','1','2');
+INSERT INTO `furama_resort`.`hopdongchitiet` (`IdHopDong`, `IdDichVuDiKem`, `SoLuong`) VALUES ('1', '3', '1');
+INSERT INTO `furama_resort`.`hopdongchitiet` (`IdHopDong`, `IdDichVuDiKem`, `SoLuong`) VALUES ('3', '1', '1');
+INSERT INTO `furama_resort`.`hopdongchitiet` (`IdHopDong`, `IdDichVuDiKem`, `SoLuong`) VALUES ('7', '2', '2');
+INSERT INTO `furama_resort`.`hopdongchitiet` (`IdHopDong`, `IdDichVuDiKem`, `SoLuong`) VALUES ('8', '2', '2');
+INSERT INTO `furama_resort`.`hopdongchitiet` (`IdHopDong`, `IdDichVuDiKem`, `SoLuong`) VALUES ('2', '3', '1');
 
 
 
