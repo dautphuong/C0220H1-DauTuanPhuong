@@ -6,15 +6,15 @@ use furama_resort;
 
 select *
 from nhanvien
-where  HoTen like 'K%' or HoTen like'T%' or HoTen like'H%';
+where  HoTen like 'K%' or HoTen like'T%' or HoTen like'H%' and length(HoTen)<15;
 
 -- 3.	Hiển thị thông tin của tất cả khách hàng có độ tuổi từ 18 đến 50 tuổi và có địa chỉ ở “Đà Nẵng” hoặc “Quảng Trị”.
 
 SELECT *
 from khachhang
-WHERE (year(current_date())-year(NgaySinh)>=18 or year(current_date())-year(NgaySinh)<=50) and(DiaChi='Đà Nẵng'or DiaChi='Quảng Trị');
+WHERE (year(current_date())-year(NgaySinh)>=18 and year(current_date())-year(NgaySinh)<=50) and(DiaChi='Đà Nẵng'or DiaChi='Quảng Trị');
 
--- 4.	Đếm xem tương ứng với mỗi khách hàng đã từng đặt phòng bao nhiêu lần.
+-- 4.Đếm xem tương ứng với mỗi khách hàng đã từng đặt phòng bao nhiêu lần.
 -- Kết quả hiển thị được sắp xếp tăng dần theo số lần đặt phòng của khách hàng. 
 -- Chỉ đếm những khách hàng nào có Tên loại khách hàng là “Diamond”.
 
@@ -79,7 +79,7 @@ FROM KHACHHANG;
 -- 9.Thực hiện thống kê doanh thu theo tháng, 
 -- nghĩa là tương ứng với mỗi tháng trong năm 2019 thì sẽ có bao nhiêu khách hàng thực hiện đặt phòng.
 
-select month(NgayLamHopDong),count(idKhachHang)
+select month(NgayLamHopDong)as Thang,count(idKhachHang)as SoKhachDatPhong
 from hopdong
 WHERE year(NgayLamHopDong)=2019
 group by month(NgayLamHopDong);
@@ -130,38 +130,70 @@ limit 1;
 -- 14.Hiển thị thông tin tất cả các Dịch vụ đi kèm chỉ mới được sử dụng một lần duy nhất. 
 -- Thông tin hiển thị bao gồm IDHopDong, TenLoaiDichVu, TenDichVuDiKem, SoLanSuDung.
 
-select idHopDong,TenLoaiDichVu, TenDichVuDiKem
-
+select hopdong.idHopDong,TenLoaiDichVu,TendichVudiKem,count(hopdongchitiet.iddichvudikem)as SoLanSuDung
+from hopdong
+join dichvu on dichvu.IdDichVu=hopdong.IdDichVu
+join loaidichvu on dichvu.IdLoaiDichVu=loaidichvu.IdLoaiDichVu
+join hopdongchitiet on hopdongchitiet.IdHopDong=hopdong.IdHopDong
+join dichvudikem on hopdongchitiet.IdDichVuDiKem=dichvudikem.IdDichVuDiKem
+group by hopdongchitiet.iddichvudikem
+having SoLanSuDung=1;
 
 -- 15.Hiển thi thông tin của tất cả nhân viên bao gồm IDNhanVien, HoTen, TrinhDo, 
 -- TenBoPhan, SoDienThoai, DiaChi mới chỉ lập được tối đa 3 hợp đồng từ năm 2018 đến 2019.
 
+SELECT nhanvien.IDNhanVien, HoTen, TrinhDo, TenBoPhan, SDT, DiaChi 
+from nhanvien
+join trinhdo on trinhdo.IdTrinhDo=nhanvien.Idtrinhdo
+join bophan on bophan.IdBoPhan=nhanvien.IdBoPhan
+join hopdong on hopdong.IdNhanVien=nhanvien.IdNhanVien
+group by hopdong.IdNhanVien
+having count(hopdong.IdNhanVien)<3;
 
+-- 16.Xóa những Nhân viên chưa từng lập được hợp đồng nào từ năm 2017 đến năm hiện tại.
 
+alter table hopdongchitiet drop FOREIGN KEY `hopdongchitiet_ibfk_1`;
+alter table hopdong drop foreign key `hopdong_ibfk_1`;
 
--- 16.Xóa những Nhân viên chưa từng lập được hợp đồng nào từ năm 2017 đến năm 2019.
-
-
+delete nhanvien,hopdong,hopdongchitiet from nhanvien
+join hopdong on nhanvien.idnhanvien = hopdong.idnhanvien
+join hopdongchitiet on hopdong.IdHopDong = hopdongchitiet.IdHopDong 
+WHERE not EXISTS																	
+(select hopdong.IdHopDong where year(hopdong.ngayLamHopDong) > '2017' and nhanvien.idnhanvien = hopdong.idnhanvien group by hopdong.idnhanvien having count(hopdong.idnhanvien)>1);		
 
 
 -- 17.Cập nhật thông tin những khách hàng có TenLoaiKhachHang từ  Platinium lên Diamond, 
 -- chỉ cập nhật những khách hàng đã từng đặt phòng với tổng Tiền thanh toán trong năm 2019 là lớn hơn 10.000.000 VNĐ.
 
-
-
-
+update khachhang 
+join hopdong on hopdong.idkhachhang=khachhang.idkhachhang
+join loaikhach on loaikhach.IdLoaiKhach=khachhang.idloaikhach
+set khachhang.IdLoaiKhach=5
+where khachhang.IdLoaiKhach=4 and year(NgayLamHopDong)=2019 and tongtien>10000000;
 
 -- 18.Xóa những khách hàng có hợp đồng trước năm 2016 (chú ý ràngbuộc giữa các bảng).
 
+alter table hopdongchitiet drop FOREIGN KEY `hopdongchitiet_ibfk_1`;
+ALTER table hopdong drop FOREIGN KEY `hopdong_ibfk_2`;
 
+delete khachhang,hopdong,hopdongchitiet from khachhang 
+join hopdong on khachhang.IdKhachHang = hopdong.IdKhachHang
+join hopdongchitiet on hopdong.IdHopDong = hopdongchitiet.IdHopDong 
+where not exists
+(select hopdong.IdHopDong where year(hopdong.ngayLamHopDong) > '2016' and khachhang.IdKhachHang = hopdong.IdKhachHang);
 
-
-
+ALTER TABLE hopdong ADD CONSTRAINT `hopdong_ibfk_2` FOREIGN KEY (`IdKhachHang`) REFERENCES `khachhang` (`IdKhachHang`) ;
+ALTER TABLE hopdongchitiet ADD CONSTRAINT `hopdongchitiet_ibfk_1` FOREIGN KEY (`IdHopDong`) REFERENCES `hopdong` (`IdHopDong`) ;
 
 -- 19.Cập nhật giá cho các Dịch vụ đi kèm được sử dụng trên 10 lần trong năm 2019 lên gấp đôi.
 
 
 
-
 -- 20.Hiển thị thông tin của tất cả các Nhân viên và Khách hàng có trong hệ thống, 
 -- thông tin hiển thị bao gồm ID (IDNhanVien, IDKhachHang), HoTen, Email, SoDienThoai, NgaySinh, DiaChi.
+
+select idnhanvien as id,HoTen,Email, SDT, NgaySinh, DiaChi
+from nhanvien
+UNION
+select idkhachhang as id,HoTen,Email, SDT, NgaySinh, DiaChi
+from khachhang
