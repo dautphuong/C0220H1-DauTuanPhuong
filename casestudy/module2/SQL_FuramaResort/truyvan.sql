@@ -150,10 +150,10 @@ join hopdong on hopdong.IdNhanVien=nhanvien.IdNhanVien
 group by hopdong.IdNhanVien
 having count(hopdong.IdNhanVien)<3;
 
--- 16.Xóa những Nhân viên chưa từng lập được hợp đồng nào từ năm 2017 đến năm hiện tại.
+-- 16.Xóa những Nhân viên chưa từng lập được hợp đồng nào từ năm 2017 đến năm 2019.
 
 delete nhanvien from nhanvien
-where not EXISTS(select idnhanvien from hopdong where year(ngaylamhopdong) BETWEEN 2017 and 2019 and nhanvien.idnhanvien = hopdong.idnhanvien);
+where not EXISTS(select idnhanvien from hopdong where year(ngaylamhopdong) BETWEEN 2017 and 2020 and nhanvien.idnhanvien = hopdong.idnhanvien);
 
 -- 17.Cập nhật thông tin những khách hàng có TenLoaiKhachHang từ  Platinium lên Diamond, 
 -- chỉ cập nhật những khách hàng đã từng đặt phòng với tổng Tiền thanh toán trong năm 2019 là lớn hơn 10.000.000 VNĐ.
@@ -193,6 +193,6 @@ SET Gia = (Gia * 2);
 
 select idnhanvien as id,HoTen,Email, SDT, NgaySinh, DiaChi
 from nhanvien
-UNION all
+UNION 
 select idkhachhang as id,HoTen,Email, SDT, NgaySinh, DiaChi
 from khachhang
