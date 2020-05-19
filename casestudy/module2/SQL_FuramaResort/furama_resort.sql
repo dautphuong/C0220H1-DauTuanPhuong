@@ -92,7 +92,7 @@ CREATE table HopDong(
     NgayKetThuc date,
     TienDatCoc int,
     TongTien int,
-    FOREIGN KEY (IdNhanVien) REFERENCES NhanVien(IdNhanVien),
+    FOREIGN KEY (IdNhanVien) REFERENCES NhanVien(IdNhanVien) ON DELETE CASCADE,
     FOREIGN KEY (IdKhachHang) REFERENCES KhachHang(IdKhachHang),
     FOREIGN KEY (IdDichVu) REFERENCES DichVu(IdDichVu)
 );
@@ -102,7 +102,7 @@ Create TABLE HopDongChiTiet(
     IdHopDong int,
     IdDichVuDiKem int,
     SoLuong int,
-	FOREIGN KEY (IdHopDong) REFERENCES HopDong(IdHopDong),
+	FOREIGN KEY (IdHopDong) REFERENCES HopDong(IdHopDong) ON DELETE CASCADE,
     FOREIGN KEY (IdDichVuDiKem) REFERENCES DichVuDiKem(IdDichVuDiKem)
 );
 
@@ -158,7 +158,7 @@ INSERT INTO `furama_resort`.`dichvu` (`TenDichVu`, `DienTich`, `SoTang`, `SoNguo
 INSERT INTO `furama_resort`.`dichvu` (`TenDichVu`, `DienTich`, `SoTang`, `SoNguoiToiDa`, `ChiPhiThue`, `IdKieuThue`, `IdLoaiDichVu`) VALUES ('E', '50', '1', '4', '4000000', '3', '2');
 
 INSERT INTO `furama_resort`.`hopdong` (`IdNhanVien`, `IdKhachHang`, `IdDichVu`, `NgayLamHopDong`, `NgayKetThuc`) VALUES ('2', '1', '1', '2019/6/10', '2020/5/10');
-INSERT INTO `furama_resort`.`hopdong` (`IdNhanVien`, `IdKhachHang`, `IdDichVu`, `NgayLamHopDong`, `NgayKetThuc`) VALUES ('4', '3', '3', '2019/4/12', '2019/5/15');
+INSERT INTO `furama_resort`.`hopdong` (`IdNhanVien`, `IdKhachHang`, `IdDichVu`, `NgayLamHopDong`, `NgayKetThuc`) VALUES ('5', '3', '3', '2019/4/12', '2019/5/15');
 INSERT INTO `furama_resort`.`hopdong` (`IdNhanVien`, `IdKhachHang`, `IdDichVu`, `NgayLamHopDong`, `NgayKetThuc`) VALUES ('3', '2', '2', '2018/2/15', '2019/4/18');
 INSERT INTO `furama_resort`.`hopdong` (`IdNhanVien`, `IdKhachHang`, `IdDichVu`, `NgayLamHopDong`, `NgayKetThuc`) VALUES ('5', '4', '4', '2019/3/22', '2020/5/5');
 INSERT INTO `furama_resort`.`hopdong` (`IdNhanVien`, `IdKhachHang`, `IdDichVu`, `NgayLamHopDong`, `NgayKetThuc`) VALUES ('1', '5', '4', '2019/2/10', '2020/4/10');

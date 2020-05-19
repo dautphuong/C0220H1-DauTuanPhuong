@@ -152,17 +152,8 @@ having count(hopdong.IdNhanVien)<3;
 
 -- 16.Xóa những Nhân viên chưa từng lập được hợp đồng nào từ năm 2017 đến năm hiện tại.
 
-alter table hopdongchitiet drop FOREIGN KEY `hopdongchitiet_ibfk_1`;
-alter table hopdong drop foreign key `hopdong_ibfk_1`;
-
-delete nhanvien,hopdong,hopdongchitiet from nhanvien
-join hopdong on nhanvien.idnhanvien = hopdong.idnhanvien
-join hopdongchitiet on hopdong.IdHopDong = hopdongchitiet.IdHopDong 
-WHERE not EXISTS																	
-(select hopdong.IdHopDong where year(hopdong.ngayLamHopDong) > '2017' and nhanvien.idnhanvien = hopdong.idnhanvien group by hopdong.idnhanvien having count(hopdong.idnhanvien)>1);		
-
-ALTER TABLE hopdongchitiet ADD CONSTRAINT `hopdongchitiet_ibfk_1` FOREIGN KEY (`IdHopDong`) REFERENCES `hopdong` (`IdHopDong`) ;
-ALTER TABLE hopdong ADD   CONSTRAINT `hopdong_ibfk_1` FOREIGN KEY (`IdNhanVien`) REFERENCES `nhanvien` (`IdNhanVien`);
+delete nhanvien from nhanvien
+where not EXISTS(select idnhanvien from hopdong where year(ngaylamhopdong) BETWEEN 2017 and 2019 and nhanvien.idnhanvien = hopdong.idnhanvien);
 
 -- 17.Cập nhật thông tin những khách hàng có TenLoaiKhachHang từ  Platinium lên Diamond, 
 -- chỉ cập nhật những khách hàng đã từng đặt phòng với tổng Tiền thanh toán trong năm 2019 là lớn hơn 10.000.000 VNĐ.
@@ -189,11 +180,13 @@ ALTER TABLE hopdongchitiet ADD CONSTRAINT `hopdongchitiet_ibfk_1` FOREIGN KEY (`
 
 -- 19.Cập nhật giá cho các Dịch vụ đi kèm được sử dụng trên 10 lần trong năm 2019 lên gấp đôi.
 
-update dichvudikem
-join hopdongchitiet on dichvudikem.iddichvudikem=hopdongchitiet.iddichvudikem
-set Gia=Gia*10
-where EXISTS 
-(select hopdongchitiet.iddichvudikem where dichvudikem.iddichvudikem=hopdongchitiet.iddichvudikem GROUP BY hopdongchitiet.iddichvudikem having count(hopdongchitiet.iddichvudikem)>10);
+UPDATE dichvudikem
+JOIN (SELECT iddichvudikem, COUNT(iddichvudikem), ngaylamhopdong
+    FROM hopdongchitiet
+    JOIN hopdong ON hopdong.idhopdong = hopdongchitiet.idhopdong
+    GROUP BY (iddichvudikem)
+    HAVING COUNT(hopdongchitiet.iddichvudikem) > 2 AND year(ngaylamhopdong) >=2019 ) dvdk ON dvdk.iddichvudikem = dichvudikem.iddichvudikem
+SET Gia = (Gia * 2);
 
 -- 20.Hiển thị thông tin của tất cả các Nhân viên và Khách hàng có trong hệ thống, 
 -- thông tin hiển thị bao gồm ID (IDNhanVien, IDKhachHang), HoTen, Email, SoDienThoai, NgaySinh, DiaChi.
