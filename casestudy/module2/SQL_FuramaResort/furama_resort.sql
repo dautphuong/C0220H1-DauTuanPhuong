@@ -127,6 +127,7 @@ INSERT INTO `furama_resort`.`nhanvien` (`HoTen`, `IdViTri`, `IdTrinhDo`, `IdBoPh
 INSERT INTO `furama_resort`.`nhanvien` (`HoTen`, `IdViTri`, `IdTrinhDo`, `IdBoPhan`, `NgaySinh`, `SoCMND`, `Luong`, `SDT`, `Email`, `DiaChi`) VALUES ('Doanh', '2', '1', '2', '1996/11/4', '123456789', '1000000', '543234234', 'doanh@gmail.com', 'Quảng Trị');
 INSERT INTO `furama_resort`.`nhanvien` (`HoTen`, `IdViTri`, `IdTrinhDo`, `IdBoPhan`, `NgaySinh`, `SoCMND`, `Luong`, `SDT`, `Email`, `DiaChi`) VALUES ('Trang', '1', '2', '1', '1998-11-04', '456755654', '1000000', '6962286788', 'trang@gmail.com', 'Huế');
 INSERT INTO `furama_resort`.`nhanvien` (`HoTen`, `IdViTri`, `IdTrinhDo`, `IdBoPhan`, `NgaySinh`, `SoCMND`, `Luong`, `SDT`, `Email`, `DiaChi`) VALUES ('Oanh', '1', '1', '3', '2000-11-04', '456754454', '1000000', '696228677', 'oanh@gmail.com', 'Quảng Trị');
+INSERT INTO `furama_resort`.`nhanvien` (`HoTen`, `IdViTri`, `IdTrinhDo`, `IdBoPhan`, `NgaySinh`, `SoCMND`, `Luong`, `SDT`, `Email`, `DiaChi`) VALUES ('Thắng', '2', '2', '1', '2000-10-14', '43734454', '1000000', '696228877', 'thang@gmail.com', 'Đà Nẵng');
 
 INSERT INTO `furama_resort`.`loaikhach` (`TenLoaiKhach`) VALUES ('Normal');
 INSERT INTO `furama_resort`.`loaikhach` (`TenLoaiKhach`) VALUES ('Silver');
@@ -171,6 +172,7 @@ INSERT INTO `furama_resort`.`hopdong` (`IdNhanVien`, `IdKhachHang`, `IdDichVu`, 
 INSERT INTO `furama_resort`.`hopdong` (`IdNhanVien`, `IdKhachHang`, `IdDichVu`, `NgayLamHopDong`, `NgayKetThuc`) VALUES ('5', '1', '3', '2019-10-12', '2019-11-15');
 INSERT INTO `furama_resort`.`hopdong` (`IdNhanVien`, `IdKhachHang`, `IdDichVu`, `NgayLamHopDong`, `NgayKetThuc`) VALUES ('6', '3', '1', '2019-12-25', '2020-1-15');
 INSERT INTO `furama_resort`.`hopdong` (`IdNhanVien`, `IdKhachHang`, `IdDichVu`, `NgayLamHopDong`, `NgayKetThuc`) VALUES ('6', '9', '4', '2019-10-25', '2020-11-15');
+INSERT INTO `furama_resort`.`hopdong` (`IdNhanVien`, `IdKhachHang`, `IdDichVu`, `NgayLamHopDong`, `NgayKetThuc`) VALUES ('8', '5', '4', '2014-10-25', '2015-11-15');
 
 INSERT INTO `furama_resort`.`dichvudikem` (`TenDichVuDIKem`, `Gia`, `DonVi`, `TrangThaiKhaDung`) VALUES ('massage', '500000', '1', 'ok');
 INSERT INTO `furama_resort`.`dichvudikem` (`TenDichVuDIKem`, `Gia`, `DonVi`, `TrangThaiKhaDung`) VALUES ('karaoke', '300000', '1', 'ok');
