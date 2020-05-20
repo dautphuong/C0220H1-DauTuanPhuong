@@ -115,7 +115,8 @@ join nhanvien on nhanvien.idnhanvien=hopdong.idnhanvien
 join khachhang on khachhang.idkhachhang=hopdong.idkhachhang
 join dichvu on dichvu.iddichvu=hopdong.iddichvu
 left join hopdongchitiet on hopdongchitiet.idhopDong=hopdong.idhopdong
-GROUP BY hopdongchitiet.idhopDong;
+where khachhang.hoten not in(select hoten from khachhang join hopdong on khachhang.IdKhachHang = hopdong.IdKhachHang where month(ngaylamhopdong)<7) and year(ngaylamhopdong)=2019 and month(ngaylamhopdong)>9
+GROUP BY hopdong.idhopDong;
 
 -- 13.Hiển thị thông tin các Dịch vụ đi kèm được sử dụng nhiều nhất bởi các Khách hàng đã đặt phòng. 
 -- (Lưu ý là có thể có nhiều dịch vụ có số lần sử dụng nhiều như nhau).
@@ -124,8 +125,7 @@ SELECT dichvudikem.IdDichvudikem,TenDichVudiKem,Gia,Donvi,count(hopdongchitiet.i
 from hopdongchitiet
 right join dichvudikem on hopdongchitiet.iddichvudikem=dichvudikem.iddichvudikem
 group by hopdongchitiet.iddichvudikem
-order by SoLanSuDung desc
-limit 1;
+having count(hopdongchitiet.iddichvudikem)in(select max(hopdongchitiet.iddichvudikem) from hopdongchitiet);
 
 -- 14.Hiển thị thông tin tất cả các Dịch vụ đi kèm chỉ mới được sử dụng một lần duy nhất. 
 -- Thông tin hiển thị bao gồm IDHopDong, TenLoaiDichVu, TenDichVuDiKem, SoLanSuDung.
@@ -147,8 +147,9 @@ from nhanvien
 join trinhdo on trinhdo.IdTrinhDo=nhanvien.Idtrinhdo
 join bophan on bophan.IdBoPhan=nhanvien.IdBoPhan
 join hopdong on hopdong.IdNhanVien=nhanvien.IdNhanVien
+where year(ngaylamhopdong) between 2018 and 2020
 group by hopdong.IdNhanVien
-having count(hopdong.IdNhanVien)<3;
+having count(hopdong.IdNhanVien)<4;
 
 -- 16.Xóa những Nhân viên chưa từng lập được hợp đồng nào từ năm 2017 đến năm 2019.
 
