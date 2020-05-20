@@ -149,7 +149,7 @@ join bophan on bophan.IdBoPhan=nhanvien.IdBoPhan
 join hopdong on hopdong.IdNhanVien=nhanvien.IdNhanVien
 where year(ngaylamhopdong) between 2018 and 2020
 group by hopdong.IdNhanVien
-having count(hopdong.IdNhanVien)<4;
+having count(hopdong.IdNhanVien)<4 and count(hopdong.IdNhanVien)>0;
 
 -- 16.Xóa những Nhân viên chưa từng lập được hợp đồng nào từ năm 2017 đến năm 2019.
 
