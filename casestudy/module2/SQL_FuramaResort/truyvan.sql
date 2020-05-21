@@ -125,7 +125,7 @@ SELECT dichvudikem.IdDichvudikem,TenDichVudiKem,Gia,Donvi,count(hopdongchitiet.i
 from hopdongchitiet
 right join dichvudikem on hopdongchitiet.iddichvudikem=dichvudikem.iddichvudikem
 group by hopdongchitiet.iddichvudikem
-having count(hopdongchitiet.iddichvudikem)in(select max(hopdongchitiet.iddichvudikem) from hopdongchitiet);
+having count(hopdongchitiet.iddichvudikem)=(select count(iddichvudikem) from hopdongchitiet group by iddichvudikem order by count(iddichvudikem)desc limit 1);
 
 -- 14.Hiển thị thông tin tất cả các Dịch vụ đi kèm chỉ mới được sử dụng một lần duy nhất. 
 -- Thông tin hiển thị bao gồm IDHopDong, TenLoaiDichVu, TenDichVuDiKem, SoLanSuDung.
