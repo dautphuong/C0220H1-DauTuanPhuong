@@ -29,8 +29,6 @@
   <input type = "button" value = "Converter" onclick="changeConvert('/convert','post')"/>
     <input type = "button" value = "Converter2" onclick="changeConvert('/convert2','get')"/>
 </form>
-
-
 </body>
 </html>
 

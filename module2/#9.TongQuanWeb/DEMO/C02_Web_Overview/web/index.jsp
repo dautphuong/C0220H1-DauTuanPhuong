@@ -12,7 +12,7 @@
   </head>
   <body>
 
-  <form action="/login" method="post">
+  <form action="/login" method="get">
     <input type="text" name="username" />
     <input type="submit" value="Login" />
   </form>
