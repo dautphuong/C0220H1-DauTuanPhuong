@@ -1,0 +1,16 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="C02H_Web_JSP_JSTL:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/C02H_Web_JSP_JSTL_war_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="C02H_Web_JSP_JSTL/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="C02H_Web_JSP_JSTL" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="file-copy" path="D:/Codegym/Teach/JSP_JSTL/jstl-1.2.jar" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
