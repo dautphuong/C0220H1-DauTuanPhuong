@@ -8,7 +8,8 @@
           <element id="module-output" name="C02H_Web_JSP_JSTL" />
         </element>
         <element id="directory" name="lib">
-          <element id="file-copy" path="D:/Codegym/Teach/JSP_JSTL/jstl-1.2.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../../../Teach/JSP_JSTL/jstl-1.2.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../../../jstl-1.2.jar" />
         </element>
       </element>
     </root>
