@@ -22,6 +22,7 @@ public class Bai1 {
                 System.out.println("OutPut: "+queue.peek());
                 break;
             }
+            queue.add(queue.peek());
             queue.add(queue.poll());
             i++;
         }
