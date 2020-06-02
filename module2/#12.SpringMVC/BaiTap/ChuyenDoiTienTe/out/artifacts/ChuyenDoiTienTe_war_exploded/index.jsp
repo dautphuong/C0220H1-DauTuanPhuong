@@ -1,4 +1,3 @@
-<jsp:useBean id="number2" scope="request" type=""/>
 <%--
   Created by IntelliJ IDEA.
   User: ADMIN
@@ -12,9 +11,9 @@
     <title>$Title$</title>
   </head>
   <body>
-  <form action="/VND" method="post">
+  <form action="/vnd" method="post">
+    <local>USD</local>
     <input type="text" name="number1" />
-    <input type="text" value="${number2}" disabled/>
     <input type="submit" name="submit" />
   </form>
   </body>

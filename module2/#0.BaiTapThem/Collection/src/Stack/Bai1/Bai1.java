@@ -9,23 +9,23 @@ public class Bai1 {
         Scanner scanner=new Scanner(System.in);
         System.out.print("Input: ");
         String input=scanner.nextLine();
-        for (int i = 0; i < input.length(); i++) {
-            char c=input.charAt(i);
-            if(c=='+'||c=='-'||c=='*'||c=='/'){
+        String[] arr=input.split(" ");
+        for (int i = 0; i < arr.length; i++) {
+            if(arr[i].equals("+") ||arr[i].equals("-")||arr[i].equals("*")||arr[i].equals("/")){
                 double num = 0f;
                 double num1 = Float.parseFloat(stack.pop());
                 double num2 = Float.parseFloat(stack.pop());
-                switch (c) {
-                    case '+':
+                switch (arr[i]) {
+                    case "+":
                         num = num2 + num1;
                         break;
-                    case '-':
+                    case "-":
                         num = num2 - num1;
                         break;
-                    case '*':
+                    case "*":
                         num = num2 * num1;
                         break;
-                    case '/':
+                    case "/":
                         num = num2 / num1;
                         break;
                     default:
@@ -33,7 +33,7 @@ public class Bai1 {
                 }
                 stack.push(Double.toString(num));
             }else {
-                stack.push(Character.toString(c));
+                stack.push(arr[i]);
             }
         }
         System.out.println(stack.pop());

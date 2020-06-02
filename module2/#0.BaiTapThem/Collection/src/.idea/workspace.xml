@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="2d1a197e-228e-4f43-ac25-924720ae9fa4" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../../../#12.SpringMVC/BaiTap/ChuyenDoiTienTe/web/WEB-INF/views/result.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../#12.SpringMVC/ThucHanh/spring-greeting/web/WEB-INF/views/result.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/Collection/Stack/Bai1/Bai1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../out/production/Collection/Stack/Bai1/Bai1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Queue/Bai2/Bai2.java" beforeDir="false" afterPath="$PROJECT_DIR$/Queue/Bai2/Bai2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Stack/Bai1/Bai1.java" beforeDir="false" afterPath="$PROJECT_DIR$/Stack/Bai1/Bai1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Demo/C02H_Collection_2/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Demo/C02H_Collection_2/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../#11.MVC_MODEL/ThucHanh/java-web-mvc/out/production/java-web-mvc/META-INF/java-web-mvc.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../#12.SpringMVC/BaiTap/ChuyenDoiTienTe/out/artifacts/ChuyenDoiTienTe_war_exploded/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../../#12.SpringMVC/BaiTap/ChuyenDoiTienTe/out/artifacts/ChuyenDoiTienTe_war_exploded/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../#12.SpringMVC/BaiTap/ChuyenDoiTienTe/out/production/ChuyenDoiTienTe/controllers/VND.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../#12.SpringMVC/BaiTap/ChuyenDoiTienTe/src/controllers/VNDSelvlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../#12.SpringMVC/BaiTap/ChuyenDoiTienTe/src/controllers/VNDSelvlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../#12.SpringMVC/BaiTap/ChuyenDoiTienTe/web/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../../#12.SpringMVC/BaiTap/ChuyenDoiTienTe/web/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../#12.SpringMVC/ThucHanh/spring-greeting/out/artifacts/spring_greeting_war_exploded/WEB-INF/classes/controllers/GreetingController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../#12.SpringMVC/ThucHanh/spring-greeting/out/artifacts/spring_greeting_war_exploded/WEB-INF/classes/controllers/GreetingController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../#12.SpringMVC/ThucHanh/spring-greeting/out/artifacts/spring_greeting_war_exploded/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../../#12.SpringMVC/ThucHanh/spring-greeting/out/artifacts/spring_greeting_war_exploded/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../#12.SpringMVC/ThucHanh/spring-greeting/out/production/spring-greeting/controllers/GreetingController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../#12.SpringMVC/ThucHanh/spring-greeting/out/production/spring-greeting/controllers/GreetingController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../#12.SpringMVC/ThucHanh/spring-greeting/src/controllers/GreetingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../#12.SpringMVC/ThucHanh/spring-greeting/src/controllers/GreetingController.java" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../.." />
+  </component>
+  <component name="ProjectId" id="1ciih312KXYoAlx3HbJqVOSHpTR" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="2d1a197e-228e-4f43-ac25-924720ae9fa4" name="Default Changelist" comment="" />
+      <created>1591017930022</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1591017930022</updated>
+      <workItem from="1591017931396" duration="36000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
