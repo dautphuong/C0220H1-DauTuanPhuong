@@ -14,6 +14,7 @@
 <form action="/vnd" method="post">
     <local>USD</local>
     <input type="text" name="number1"/>
+    <input type="text" name="number2" disabled>
     <input type="submit" name="submit"/>
 </form>
 </body>

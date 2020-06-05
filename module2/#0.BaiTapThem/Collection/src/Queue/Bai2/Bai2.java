@@ -1,6 +1,6 @@
 package Queue.Bai2;
 
-import java.lang.reflect.Array;
+
 import java.util.*;
 
 public class Bai2 {
@@ -18,14 +18,14 @@ public class Bai2 {
                     int k = scanner.nextInt();
                     int p = scanner.nextInt();
                     int[] array = {k, p};
-                    if (deque.size()!=0) {
+                    if (deque.size() != 0) {
                         int[] a = deque.getFirst();
                         if (p > a[1]) {
                             deque.add(array);
                         } else {
                             deque.addLast(array);
                         }
-                    }else{
+                    } else {
                         deque.add(array);
                     }
                     break;

@@ -11,6 +11,6 @@
     <title>$Title$</title>
 </head>
 <body>
-<h2>${number2}</h2>
+<h2>VND: ${number2}</h2>
 </body>
 </html>

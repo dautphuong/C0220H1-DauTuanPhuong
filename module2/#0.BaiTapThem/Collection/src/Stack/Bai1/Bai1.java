@@ -6,12 +6,12 @@ import java.util.Stack;
 public class Bai1 {
     public static void main(String[] args) {
         Stack<String> stack = new Stack<>();
-        Scanner scanner=new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
         System.out.print("Input: ");
-        String input=scanner.nextLine();
-        String[] arr=input.split(" ");
+        String input = scanner.nextLine();
+        String[] arr = input.split(" ");
         for (int i = 0; i < arr.length; i++) {
-            if(arr[i].equals("+") ||arr[i].equals("-")||arr[i].equals("*")||arr[i].equals("/")){
+            if (arr[i].equals("+") || arr[i].equals("-") || arr[i].equals("*") || arr[i].equals("/")) {
                 double num = 0f;
                 double num1 = Float.parseFloat(stack.pop());
                 double num2 = Float.parseFloat(stack.pop());
@@ -32,7 +32,7 @@ public class Bai1 {
                         break;
                 }
                 stack.push(Double.toString(num));
-            }else {
+            } else {
                 stack.push(arr[i]);
             }
         }

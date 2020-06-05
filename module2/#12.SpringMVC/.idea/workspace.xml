@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="00269a0b-10fb-4f73-900f-a689e29d24eb" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../#11.MVC_MODEL/BaiTap/QuanLySanPham/web/product/delete.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../#11.MVC_MODEL/BaiTap/QuanLySanPham/web/product/edit.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../#11.MVC_MODEL/BaiTap/QuanLySanPham/web/product/view.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BaiTap/TuDien/TuDien.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BaiTap/TuDien/src/controllers/dictionarySevlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BaiTap/TuDien/web/WEB-INF/applicationContext.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BaiTap/TuDien/web/WEB-INF/dispatcher-servlet.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BaiTap/TuDien/web/WEB-INF/views/result.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../#0.BaiTapThem/Collection/out/production/Collection/Queue/Bai2/Bai2.class" beforeDir="false" afterPath="$PROJECT_DIR$/../#0.BaiTapThem/Collection/out/production/Collection/Queue/Bai2/Bai2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../#0.BaiTapThem/Collection/src/Queue/Bai1/Bai1.java" beforeDir="false" afterPath="$PROJECT_DIR$/../#0.BaiTapThem/Collection/src/Queue/Bai1/Bai1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../#0.BaiTapThem/Collection/src/Queue/Bai2/Bai2.java" beforeDir="false" afterPath="$PROJECT_DIR$/../#0.BaiTapThem/Collection/src/Queue/Bai2/Bai2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../#0.BaiTapThem/Collection/src/Stack/Bai1/Bai1.java" beforeDir="false" afterPath="$PROJECT_DIR$/../#0.BaiTapThem/Collection/src/Stack/Bai1/Bai1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../#0.BaiTapThem/Collection/src/Stack/Bai2/Bai2.java" beforeDir="false" afterPath="$PROJECT_DIR$/../#0.BaiTapThem/Collection/src/Stack/Bai2/Bai2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../#11.MVC_MODEL/BaiTap/QuanLySanPham/out/artifacts/QuanLySanPham_war_exploded/WEB-INF/classes/controller/ProductServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/../#11.MVC_MODEL/BaiTap/QuanLySanPham/out/artifacts/QuanLySanPham_war_exploded/WEB-INF/classes/controller/ProductServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../#11.MVC_MODEL/BaiTap/QuanLySanPham/out/production/QuanLySanPham/controller/ProductServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/../#11.MVC_MODEL/BaiTap/QuanLySanPham/out/production/QuanLySanPham/controller/ProductServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../#11.MVC_MODEL/BaiTap/QuanLySanPham/src/controller/ProductServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../#11.MVC_MODEL/BaiTap/QuanLySanPham/src/controller/ProductServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BaiTap/ChuyenDoiTienTe/out/artifacts/ChuyenDoiTienTe_war_exploded/WEB-INF/views/result.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/BaiTap/ChuyenDoiTienTe/out/artifacts/ChuyenDoiTienTe_war_exploded/WEB-INF/views/result.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BaiTap/ChuyenDoiTienTe/out/artifacts/ChuyenDoiTienTe_war_exploded/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/BaiTap/ChuyenDoiTienTe/out/artifacts/ChuyenDoiTienTe_war_exploded/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BaiTap/ChuyenDoiTienTe/web/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/BaiTap/ChuyenDoiTienTe/web/index.jsp" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectId" id="1ckQyT4oupMTOWnaARkyM6LqfQT" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="00269a0b-10fb-4f73-900f-a689e29d24eb" name="Default Changelist" comment="" />
+      <created>1591070365674</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1591070365674</updated>
+      <workItem from="1591070366854" duration="18000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

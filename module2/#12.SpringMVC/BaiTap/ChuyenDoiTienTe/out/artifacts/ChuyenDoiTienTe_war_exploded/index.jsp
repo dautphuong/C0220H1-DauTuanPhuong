@@ -7,14 +7,14 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
-  <head>
+<head>
     <title>$Title$</title>
-  </head>
-  <body>
-  <form action="/vnd" method="post">
+</head>
+<body>
+<form action="/vnd" method="post">
     <local>USD</local>
-    <input type="text" name="number1" />
-    <input type="submit" name="submit" />
-  </form>
-  </body>
+    <input type="text" name="number1"/>
+    <input type="submit" name="submit"/>
+</form>
+</body>
 </html>
