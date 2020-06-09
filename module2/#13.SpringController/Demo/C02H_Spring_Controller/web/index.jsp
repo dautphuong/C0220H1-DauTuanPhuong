@@ -4,7 +4,8 @@
     <title>$Title$</title>
   </head>
   <body>
-
-  <script>Location.href="list";</script>
+  <script>
+    location.href = "/list";
+  </script>
   </body>
 </html>

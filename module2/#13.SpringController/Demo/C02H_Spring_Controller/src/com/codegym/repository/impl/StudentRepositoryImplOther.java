@@ -17,4 +17,9 @@ public class StudentRepositoryImplOther implements StudentRepository {
     public Student findById(Integer id) {
         return null;
     }
+
+    @Override
+    public void save(Student student) {
+
+    }
 }

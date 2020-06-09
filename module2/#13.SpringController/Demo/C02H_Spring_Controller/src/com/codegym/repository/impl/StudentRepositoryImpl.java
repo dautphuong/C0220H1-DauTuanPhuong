@@ -29,4 +29,10 @@ public class StudentRepositoryImpl implements StudentRepository {
     public Student findById(Integer id) {
         return studentMap.get(id);
     }
+
+    @Override
+    public void save(Student student) {
+        studentMap.put(student.getId(), student);
+    }
+
 }

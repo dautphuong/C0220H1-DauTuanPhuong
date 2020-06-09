@@ -7,7 +7,7 @@ import services.CaculationService;
 public class CaculationServiceImp implements CaculationService {
 
     @Override
-    public double Caculation(double num1, double num2, String temp) {
+    public double calculate(double num1, double num2, String temp) {
         double num;
         switch (temp) {
             case "addition":

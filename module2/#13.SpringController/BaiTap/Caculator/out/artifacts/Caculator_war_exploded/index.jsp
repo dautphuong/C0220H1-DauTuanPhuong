@@ -11,21 +11,15 @@
     <title>$Title$</title>
 </head>
 <body>
-<form action="/caculation" method="post" id="formCaculation">
+<form action="/calculate" method="post">
     <input type="text" name="num1">
     <input type="text" name="num2"><br/>
-    <input type="submit" value="addition" name="submit">
-    <input type="submit" value="subtraction" name="submit">
-    <input type="submit" value="multiplication" name="submit">
-    <input type="submit" value="division" name="submit"><br/>
+    <input type="submit" value="addition" name="choose">
+    <input type="submit" value="subtraction" name="choose">
+    <input type="submit" value="multiplication" name="choose">
+    <input type="submit" value="division" name="choose"><br/>
     <label>Result</label>
     <input type="text" value="${result}" disabled>
 </form>
-<script>
-  function changeAction(actionName) {
-    document.getElementById("formCaculation").action=actionName;
-    document.getElementById("formCaculation").submit();
-  }
-</script>
 </body>
 </html>

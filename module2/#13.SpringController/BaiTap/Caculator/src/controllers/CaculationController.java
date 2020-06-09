@@ -12,9 +12,10 @@ public class CaculationController {
 
     @Autowired
     CaculationService cal;
-    @PostMapping("/caculation")
-    public String caculation(@RequestParam double num1,@RequestParam double num2,@RequestParam String submit,Model model){
-        model.addAttribute("result",cal.Caculation(num1,num2,submit));
+
+    @PostMapping("/calculate")
+    public String calculate(@RequestParam double num1, @RequestParam double num2, @RequestParam String choose, Model model) {
+        model.addAttribute("result", cal.calculate(num1, num2, choose));
         return "index";
     }
 }
