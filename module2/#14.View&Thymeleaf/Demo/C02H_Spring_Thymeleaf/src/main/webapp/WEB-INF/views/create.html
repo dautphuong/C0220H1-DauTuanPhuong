@@ -1,0 +1,16 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Title</title>
+</head>
+<body>
+    <header th:replace="common::headerStudent"></header>
+    <h2>Register student</h2>
+
+    <form th:action="@{/create}" method="post" th:object="${student}">
+        <input th:field="*{name}" />
+        <input th:field="*{birthday}" />
+        <input type="submit" value="Register" />
+    </form>
+    <footer th:replace="common::footerStudent"></footer>
+</body>
+</html>
