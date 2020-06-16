@@ -19,7 +19,9 @@
 </div>
 <form method="post" th:action="@{/product/update}" th:object="${product}">
     <table>
-        <input type="hidden" th:field="*{id}"/>
+        <tr>
+            <td><input type="hidden" th:field="*{id}"/></td>
+        </tr>
         <tr>
             <td>Name:</td>
             <td><input type="text" th:field="*{name}"/></td>
@@ -33,5 +35,6 @@
             <td><input type="submit" value=" Modify"></td>
         </tr>
     </table>
-</form></body>
+</form>
+</body>
 </html>

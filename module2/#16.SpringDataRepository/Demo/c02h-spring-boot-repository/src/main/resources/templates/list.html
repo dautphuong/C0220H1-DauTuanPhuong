@@ -1,0 +1,32 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Title</title>
+</head>
+<body>
+    <header th:replace="common::headerStudent"></header>
+    <h2>List student</h2>
+    <table>
+        <th:block th:each="student : ${students}">
+            <tr>
+                <td th:text="${student.id}"></td>
+                <td th:text="${student.name}"></td>
+                <td th:text="${student.birthday}"></td>
+                <td th:text="${student.classStudent.name}"></td>
+                <td><a th:href="@{/detail(id=${student.id})}">Detail request param</a></td>
+                <td><a th:href="@{/detail/{id}(id=${student.id})}">Detail path variable</a></td>
+                <td><a th:href="@{/detail/__${student.id}__ }">Detail path variable 2</a></td>
+            </tr>
+        </th:block>
+    </table>
+
+    <p style="color: green" th:text="${message}"></p>
+    <p style="color: red" th:text="${c02h}"></p>
+    <p th:if="${c02h} == 'C02H'">
+        abcxyz....
+    </p>
+
+    <a href="/detail?id=1">Detail Tien</a>
+    <a href="/detail/2">Detail Khanh</a>
+    <footer th:replace="common::footerStudent"></footer>
+</body>
+</html>

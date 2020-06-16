@@ -16,10 +16,9 @@
 </div>
 <form method="post" th:action="@{/product/save}" th:object="${products}">
     <table>
-        <input type="hidden" th:field="*{id}"/>
         <tr>
             <td>Name:</td>
-            <td><input type="text" th:field="*{name}"/></td>
+            <td><input type="text" th:field="${products.name}"/></td>
         </tr>
         <tr>
             <td>Type:</td>

@@ -2,7 +2,6 @@ package com.codegym.controller;
 
 import com.codegym.model.Product;
 import com.codegym.service.ProductService;
-import com.codegym.service.ProductSeviceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -49,9 +48,9 @@ public class ProductController {
         model.addAttribute("product", productService.findById(id));
         return "delete";
     }
-    @PostMapping("/product/delete")
-    public String delete(Product product, RedirectAttributes redirect) {
-        productService.remove(product.getId());
+    @GetMapping("/product/delete/{id}")
+    public String delete(@PathVariable int id, RedirectAttributes redirect) {
+        productService.remove(id);
         return "redirect:/";
     }
 }

@@ -11,22 +11,23 @@
         Back to product list
     </a>
 </p>
-<form method="post" th:action="@{/product/delete}" th:object="${product}">
-    <table>
-        <input type="hidden" th:field="*{id}"/>
-        <tr>
-            <td>Name:</td>
-            <td><input type="text" th:field="*{name}"/></td>
-        </tr>
-        <tr>
-            <td>Type:</td>
-            <td><input type="text" th:field="*{type}"></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td><input type="submit" value=" Remove"></td>
-        </tr>
-    </table>
-</form>
+<table>
+    <tr>
+        <td>Name:</td>
+        <td><span th:text="${product.name}"></span></td>
+    </tr>
+    <tr>
+        <td>Type:</td>
+        <td><span th:text="${product.type}"></span></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>Are you sure ?</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td><a th:href="@{/product/delete/{id}(id=${product.getId()})}">Yes</a></td>
+    </tr>
+</table>
 </body>
 </html>
