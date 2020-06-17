@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout :: head">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>My Blog</h3>
+<p>
+    <a th:href="@{/blog/create}">
+        Create new blog
+    </a>
+</p>
+<table border="1">
+    <tr>
+        <th>First name</th>
+        <th>Last name</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr>
+    <th:block th:each="blog : ${blogs}">
+        <tr>
+            <td th:text="${blog.getTheme()}"></td>
+            <td th:text="${blog.getContent()}"></td>
+            <td th:text="${blog.getAuthor()()}"></td>
+            <td th:text="${blog.getDate()}"></td>
+        </tr>
+    </th:block>
+</table>
+<footer th:replace="layout :: footer"></footer>
+</body>
+</html>
