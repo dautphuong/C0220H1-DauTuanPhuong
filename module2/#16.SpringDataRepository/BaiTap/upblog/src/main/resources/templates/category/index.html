@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout :: head">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>Category</h3>
+<p>
+    <a th:href="@{/category/create}">
+        Add new category
+    </a>
+<!--</p>-->
+<!--<div class="notify">-->
+<!--    <div th:if="${success}">-->
+<!--        <span th:text="${success}"></span>-->
+<!--    </div>-->
+<!--</div>-->
+
+
+<table id="blogs">
+    <thead>
+    <tr>
+        <th>NameCategory</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="category : ${categorys}">
+        <td>
+            <a th:href="">
+                <span th:text="${category.name}"></span>
+            </a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
