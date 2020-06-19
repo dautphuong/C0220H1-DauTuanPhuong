@@ -1,7 +1,6 @@
 package com.codegym.upblog.controller;
 
 import com.codegym.upblog.model.Blog;
-import com.codegym.upblog.model.Category;
 import com.codegym.upblog.service.BlogService;
 import com.codegym.upblog.service.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,7 +23,7 @@ public class BlogController {
     @Autowired
     CategoryService categoryService;
 
-    //view all chưa xử lý
+    //view all
     @GetMapping("/list")
     public String list(Model model, @PageableDefault(size = 3) Pageable pageable, @RequestParam Optional<String> keyword) {
         Page<Blog> blogs = null;
@@ -38,6 +37,7 @@ public class BlogController {
         return "blog/list";
     }
 
+    //view theo id category
     @GetMapping("/list/{id}")
     public String listBlog(Model model, @PageableDefault(size = 3) Pageable pageable, @PathVariable Integer id, @RequestParam Optional<String> keyword) {
         Page<Blog> blogs = null;
