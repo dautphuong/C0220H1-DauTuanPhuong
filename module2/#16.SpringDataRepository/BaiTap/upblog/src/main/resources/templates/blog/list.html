@@ -5,17 +5,30 @@
     <title>Title</title>
 </head>
 <body>
-<h3>My Blog</h3>
+<h3>
+    <a th:href="@{/}">
+        Back to category list
+    </a>
+    <span>My Blog</span>
+</h3>
+<!--form search-->
+<form th:action="@{/list/{id}(id=${idblog})}" method="get">
+    <input type="text" name="keyword"/>
+    <input type="submit" value="Search theme"/>
+</form>
+
 <p>
     <a th:href="@{/blog/create}">
         Add new blog
     </a>
 </p>
+
 <div class="notify">
     <div th:if="${success}">
         <span th:text="${success}"></span>
     </div>
 </div>
+
 <table id="blogs">
     <thead>
     <tr>
@@ -42,6 +55,11 @@
     </tr>
     </tbody>
 </table>
-
+<!--form chuyen trang-->
+<div>
+    <a th:if="${blogs.hasPrevious()}" th:href="@{/list/{id}(page=${blogs.number - 1},keyword=${keyword},id=${idblog})}">Previous</a>
+    <span th:text="${blogs.number + 1}"></span>/<span th:text="${blogs.totalPages }"></span>
+    <a th:if="${blogs.hasNext()}" th:href="@{/list/{id}(page=${blogs.number + 1},keyword=${keyword},id=${idblog})}">Next</a>
+</div>
 </body>
 </html>

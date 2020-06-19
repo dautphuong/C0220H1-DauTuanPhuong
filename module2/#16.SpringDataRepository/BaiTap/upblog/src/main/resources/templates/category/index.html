@@ -6,33 +6,53 @@
 </head>
 <body>
 <h3>Category</h3>
-<p>
-    <a th:href="@{/category/create}">
-        Add new category
-    </a>
-<!--</p>-->
-<!--<div class="notify">-->
-<!--    <div th:if="${success}">-->
-<!--        <span th:text="${success}"></span>-->
-<!--    </div>-->
-<!--</div>-->
-
-
+<!--form search-->
+<form th:action="@{/}" method="get">
+    <input type="text" name="keyword"/>
+    <input type="submit" value="Search name"/>
+</form>
+<!--form thong bao-->
+<div class="notify">
+    <div th:if="${success}">
+        <span th:text="${success}"></span>
+    </div>
+</div>
+<!--form view list category-->
 <table id="blogs">
     <thead>
     <tr>
+        <th>No.</th>
         <th>NameCategory</th>
+        <th>Edit</th>
+        <th>Delete</th>
     </tr>
     </thead>
     <tbody>
-    <tr th:each="category : ${categorys}">
+    <tr th:each="category,row : ${categorys.content}">
+        <td th:text="${row.index+1}"></td>
         <td>
-            <a th:href="">
+            <a th:href="@{/list/{id}(id=${category.getId()})}">
                 <span th:text="${category.name}"></span>
             </a>
         </td>
+        <td><a th:href="@{/category/edit/{id}(id=${category.getId()})}">edit</a></td>
+        <td><a th:href="@{/category/delete/{id}(id=${category.getId()})}">delete</a></td>
     </tr>
     </tbody>
 </table>
+<!--form chuyen trang-->
+<div>
+    <a th:if="${categorys.hasPrevious()}" th:href="@{/(page=${categorys.number - 1},keyword=${keyword})}">Previous</a>
+    <span th:text="${categorys.number + 1}"></span>/<span th:text="${categorys.totalPages }"></span>
+    <a th:if="${categorys.hasNext()}" th:href="@{/(page=${categorys.number + 1},keyword=${keyword})}">Next</a>
+</div>
+<!--form create category-->
+<div id="form">
+    <form th:action="@{/category/save}" th:object="${category}"
+          method="POST" novalidate="novalidate">
+        <input type="text" th:field="*{name}"/>
+        <input type="submit" value="Create new Category">
+    </form>
+</div>
 </body>
 </html>

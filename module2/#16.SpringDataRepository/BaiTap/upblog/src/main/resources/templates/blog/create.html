@@ -30,7 +30,7 @@
         <div>
             <label>Category</label>
             <select th:field="*{category.id}">
-                <option th:each="list:${listBlog}"
+                <option th:each="list:${listCategory}"
                         th:value="${list.id}" th:text="${list.name}"></option>
             </select>
         </div>

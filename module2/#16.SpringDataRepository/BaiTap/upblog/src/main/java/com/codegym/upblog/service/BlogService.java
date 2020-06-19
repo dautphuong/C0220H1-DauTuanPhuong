@@ -1,16 +1,20 @@
 package com.codegym.upblog.service;
 
 import com.codegym.upblog.model.Blog;
-
-import java.util.List;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 
 public interface BlogService {
-    List<Blog> findAll();
+    Page<Blog> findAll(Pageable pageable);
 
     Blog findById(Integer id);
 
     void save(Blog blog);
 
     void remove(Integer id);
+
+    Page<Blog> findByThemeContaining(String keyword, Pageable pageable);
+
+    Page<Blog> findByCategory_Id(Integer category_id, Pageable pageable);
 }
 
