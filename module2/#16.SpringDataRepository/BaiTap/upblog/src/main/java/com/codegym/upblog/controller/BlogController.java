@@ -41,14 +41,13 @@ public class BlogController {
     @GetMapping("/list/{id}")
     public String listBlog(Model model, @PageableDefault(size = 3) Pageable pageable, @PathVariable Integer id, @RequestParam Optional<String> keyword) {
         Page<Blog> blogs = null;
-        blogs = blogService.findByCategory_Id(id, pageable);
-        model.addAttribute("blogs", blogs);
         if (!keyword.isPresent()) {
-            blogs = blogService.findAll(pageable);
+            blogs = blogService.findByCategory_Id(id, pageable);
         } else {
             blogs = blogService.findByThemeContaining(keyword.get(), pageable);
             model.addAttribute("keyword", keyword.get());
         }
+        model.addAttribute("blogs", blogs);
         model.addAttribute("idblog", id);
         return "blog/list";
     }
