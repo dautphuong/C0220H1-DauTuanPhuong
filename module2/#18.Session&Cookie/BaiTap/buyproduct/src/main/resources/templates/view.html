@@ -5,12 +5,10 @@
     <title>Title</title>
 </head>
 <body>
-<h3>List Product</h3>
-
-<a th:href="@{/list}">
-    Go Cart
+<h3>View</h3>
+<a th:href="@{/}">
+    Back to index
 </a>
-
 <table id="products">
     <thead>
     <tr>
@@ -18,19 +16,15 @@
         <th>NameProduct</th>
         <th>Cost</th>
         <th>Image</th>
+        <th></th>
     </tr>
     </thead>
     <tbody>
-    <tr th:each="product : ${products}">
+    <tr>
         <td th:text="${product.getStatus()}"></td>
-        <td>
-            <a th:href="@{/view/{id}(id=${product.getId()})}">
-                <span th:text="${product.getNameProduct()}"></span>
-            </a>
-        </td>
+        <td th:text="${product.getNameProduct()}"></td>
         <td th:text="${product.getCost()}"></td>
-        <td><img th:src="${product.getImage()}" style="height: 100px; width: 100px"/></td>
-        <td><a th:href="@{buy/{id}(id=${product.getId()})}">Buy</a></td>
+        <td><img th:src="@{${product.getImage()}}" style="height: 100px; width: 100px"/></td>
     </tr>
     </tbody>
 </table>

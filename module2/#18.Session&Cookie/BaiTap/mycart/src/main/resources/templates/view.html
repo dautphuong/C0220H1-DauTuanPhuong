@@ -21,7 +21,7 @@
         <td th:text="${product.getStatus()}"></td>
         <td  th:text="${product.getNameProduct()}"></td>
         <td th:text="${product.getCost()}"></td>
-        <td><img th:src="${product.getImage()}" style="height: 100px; width: 100px"/></td>
+        <td><img th:src="@{${product.getImage()}}" style="height: 100px; width: 100px"/></td>
     </tr>
     </tbody>
 </table>

@@ -1,7 +1,6 @@
 package com.codegym.controller;
 
 import com.codegym.model.Cart;
-import com.codegym.model.Product;
 import com.codegym.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -10,8 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.SessionAttributes;
-
-import java.util.ArrayList;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
 @SessionAttributes("buy")
@@ -20,7 +18,7 @@ public class ProductController {
     ProductService productService;
 
     @GetMapping("/")
-    public String list(Model model,@ModelAttribute("buy") Cart cart) {
+    public String list(Model model) {
         model.addAttribute("products", productService.findAll());
         return "index";
     }
@@ -32,13 +30,13 @@ public class ProductController {
     }
 
     @GetMapping("buy/{id}")
-    public String buyProduct(@PathVariable int id,@ModelAttribute("buy") Cart cart,Model model){
+    public String buyProduct(@PathVariable int id, @ModelAttribute("buy") Cart cart, RedirectAttributes redirect) {
         cart.add(productService.findById(id));
-        return "index";
+        return "redirect:/";
     }
 
     @GetMapping("/list")
-    public String list(@ModelAttribute("buy") Cart cart,Model model) {
+    public String list(@ModelAttribute("buy") Cart cart, Model model) {
         model.addAttribute("cart", cart);
         return "list";
     }
