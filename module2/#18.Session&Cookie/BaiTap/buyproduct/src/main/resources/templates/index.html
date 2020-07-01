@@ -10,7 +10,12 @@
 <a th:href="@{/list}">
     Go Cart
 </a>
-
+<!--form thong bao-->
+<div class="notify">
+    <div th:if="${success}">
+        <span th:text="${success}"></span>
+    </div>
+</div>
 <table id="products">
     <thead>
     <tr>

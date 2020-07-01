@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout :: head"></head>
+<body>
+<h3>Modify Category</h3>
+<p>
+    <a th:href="@{/}">
+        Back to category list
+    </a>
+</p>
+<div id="form">
+    <form action="#" th:action="@{/category/update}" th:object="${category}"
+          method="POST" novalidate="novalidate">
+        <input type="hidden" th:field="*{id}"/>
+        <div>
+            <label>Theme</label>
+            <input type="text" th:field="*{name}" readonly/>
+        </div>
+        <input type="submit" value="Modify">
+    </form>
+</div>
+</body>
+</html>

@@ -55,7 +55,7 @@ public class CustomerException {
         //data,month,year
         String[] splitDate = mydate.split("-");
         String[] splitData = birthdayCustomer.split("/");
-        if (Integer.parseInt(splitData[2]) <= (Integer.parseInt(splitDate[0])-18) && Integer.parseInt(splitData[2]) >= 1900) {
+        if (Integer.parseInt(splitData[2]) <= (Integer.parseInt(splitDate[0]) - 18) && Integer.parseInt(splitData[2]) >= 1900) {
             switch (Integer.parseInt(splitData[1])) {
                 case 1:
                 case 3:

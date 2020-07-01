@@ -18,7 +18,7 @@ public class FuncFileBooking {
             fileWriter = new FileWriter(fileBooking);
             fileWriter.append(FILE_HEADER_BOOKING);
             for (Customer customer : listCustomer) {
-                if(customer.getUseService()!=null) {
+                if (customer.getUseService() != null) {
                     fileWriter.append(NEW_LINE_SEPARATOR);
                     fileWriter.append(customer.getFullName());
                     fileWriter.append(COMMA_DELIMITER);

@@ -1,0 +1,112 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}"/>
+    <link rel="stylesheet" th:href="@{/css/dashboard.css}"/>
+</head>
+<body>
+---
+layout: examples
+title: Dashboard Template
+extra_css: "dashboard.css"
+extra_js:
+- "https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.9.0/feather.min.js"
+- "https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"
+- "dashboard.js"
+---
+
+<nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
+    <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Company name</a>
+    <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
+    <ul class="navbar-nav px-3">
+        <li class="nav-item text-nowrap">
+            <a class="nav-link" href="#">Sign out</a>
+        </li>
+    </ul>
+</nav>
+
+<div class="container-fluid">
+    <div class="row">
+        <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+            <div class="sidebar-sticky">
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/list/khachhang}">
+                            <span data-feather="file"></span>
+                            Khách hàng
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/list/dichvu}">
+                            <span data-feather="shopping-cart"></span>
+                            Dịch vụ
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" th:href="@{/list/hopdong}">
+                            <span data-feather="home"></span>
+                            Hợp đồng <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                <h1 class="h2">Hợp đồng</h1>
+                <div class="btn-toolbar mb-2 mb-md-0">
+                    <div class="btn-group mr-2">
+                        <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
+                        <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
+                    </div>
+                    <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
+                        <span data-feather="calendar"></span>
+                        This week
+                    </button>
+                </div>
+            </div>
+
+            <!--      <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas>-->
+            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 ">
+                <h2>Danh sách hơp đồng</h2>
+                <form th:action="@{/hopdong/create}">
+                    <div class="btn-group mr-2">
+                        <input type="submit" value="Tạo mới hợp đồng">
+                    </div>
+                </form>
+            </div>
+
+            <div class="table-responsive">
+                <table class="table table-striped table-sm">
+                    <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Ngày làm hợp đồng</th>
+                        <th>Ngày kết thúc</th>
+                        <th>Tiền đặt cọc</th>
+                        <th>Tổng tiền</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="hopdong: ${list}">
+                        <td th:text="${hopdong.idHopDong}"></td>
+                        <td th:text="${hopdong.ngayLamHopDong}"></td>
+                        <td th:text="${hopdong.ngayKetThuc}"></td>
+                        <td th:text="${hopdong.tienDatCoc}"></td>
+                        <td th:text="${hopdong.tongTien}"></td>
+                        <td><a th:href="@{/hopdong/edit/{id}(id=${hopdong.getIdHopDong()})}">edit</a></td>
+                        <td><a th:href="@{/hopdong/delete/{id}(id=${hopdong.getIdHopDong()})}">delete</a></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+</div>
+<script src="../static/js/jquery-3.5.0.min.js"></script>
+<script src="../static/js/bootstrap.min.js"></script>
+<script src="../static/js/dashboard.js"></script>
+</body>
+</html>

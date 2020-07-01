@@ -13,7 +13,6 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 
 
-
 public class FuncFileCustomer {
     private static final String COMMA_DELIMITER = ",";
     private static final String NEW_LINE_SEPARATOR = "\n";

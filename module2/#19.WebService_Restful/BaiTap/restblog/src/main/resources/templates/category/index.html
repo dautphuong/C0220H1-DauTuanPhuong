@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout :: head">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3 th:text="#{Category}"></h3>
+<!--form search-->
+<form th:action="@{/}" method="get">
+    <input type="text" name="keyword"/>
+    <input type="submit" th:value="#{Search}"/>
+</form>
+<!--form thong bao-->
+<div class="notify">
+    <div th:if="${success}">
+        <span th:text="${success}"></span>
+    </div>
+</div>
+<!--form view list category-->
+<table id="blogs">
+    <thead>
+    <tr>
+        <th>No.</th>
+        <th ><p th:text="#{NameCategory}"></p></th>
+        <th th:text="#{Edit}"></th>
+        <th th:text="#{Delete}"></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="category,row : ${categorys.content}">
+        <td th:text="${row.index+1}"></td>
+        <td>
+            <a th:href="@{/list/{id}(id=${category.id})}">
+                <span th:text="${category.name}"></span>
+            </a>
+        </td>
+        <td><a th:href="@{/category/edit/{id}(id=${category.getId()})}" th:text="#{Edit}"></a></td>
+        <td><a th:href="@{/category/delete/{id}(id=${category.getId()})}" th:text="#{Delete}"></a></td>
+    </tr>
+    </tbody>
+</table>
+<!--form chuyen trang-->
+<div>
+    <a th:if="${categorys.hasPrevious()}" th:href="@{/(page=${categorys.number - 1},keyword=${keyword})}">Previous</a>
+    <span th:text="${categorys.number + 1}"></span>/<span th:text="${categorys.totalPages }"></span>
+    <a th:if="${categorys.hasNext()}" th:href="@{/(page=${categorys.number + 1},keyword=${keyword})}">Next</a>
+</div>
+<!--form create category-->
+<div id="form">
+    <form th:action="@{/category/save}" th:object="${category}"
+          method="POST" novalidate="novalidate">
+        <input type="text" th:field="*{name}"/>
+        <input type="submit" th:value="#{Create}">
+    </form>
+</div>
+</body>
+</html>

@@ -2,7 +2,7 @@ CREATE database furama_resort;
 use furama_resort;
 
 create table LoaiDichVu(
-	IdLoaiDichVu int PRIMARY key AUTO_INCREMENT,
+	idLoaiDichVu int PRIMARY key AUTO_INCREMENT,
     TenLoaiDichVu varchar(45)
 );
 

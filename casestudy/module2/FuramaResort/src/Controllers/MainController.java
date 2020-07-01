@@ -20,7 +20,8 @@ import static Controllers.ServiceController.showServices;
 public class MainController {
     public static ArrayList<Services> listServices = new ArrayList<>();
     public static ArrayList<Customer> listCustomer = new ArrayList<>();
-    public static ArrayList<Employee> listEmployee =new ArrayList<>();
+    public static ArrayList<Employee> listEmployee = new ArrayList<>();
+
     public static void main(String[] args) {
         displayMainMenu();
     }
@@ -38,8 +39,8 @@ public class MainController {
                 "4.Show Information of Customer\n" +
                 "5.Add New Booking\n" +
                 "6.Show Information of Employee\n" +
-                "7.Booking Movie Ticket 4D\n"+
-                "8.Find Employee\n"+
+                "7.Booking Movie Ticket 4D\n" +
+                "8.Find Employee\n" +
                 "9.Exit");
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter choose: ");
@@ -64,9 +65,11 @@ public class MainController {
                 showInformationEmployees();
                 break;
             case "7":
-                bookingMovieTicket4D();break;
-            case"8":
-                findEmployeeFromResume();break;
+                bookingMovieTicket4D();
+                break;
+            case "8":
+                findEmployeeFromResume();
+                break;
             case "9":
                 System.exit(0);
                 break;

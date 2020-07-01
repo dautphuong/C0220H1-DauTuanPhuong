@@ -1,6 +1,6 @@
 package models;
 
-public class Customer{
+public class Customer {
     private String fullName;//họ tên customer
     private String birthday;//ngày sinh
     private String gender;//giới tính

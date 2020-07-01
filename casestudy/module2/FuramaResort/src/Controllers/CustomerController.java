@@ -87,11 +87,11 @@ public class CustomerController {
         //sap xep A-Z
         Collections.sort(listCustomer, new Comparator<Customer>() {
             @Override
-            public int compare (Customer Customer1, Customer Customer2){
+            public int compare(Customer Customer1, Customer Customer2) {
                 return Customer1.getFullName().compareTo(Customer2.getFullName());
             }
         });
-        for(Customer customer: listCustomer){
+        for (Customer customer : listCustomer) {
             System.out.println("------------------------------------------------");
             System.out.println(customer.showInfor());
         }
