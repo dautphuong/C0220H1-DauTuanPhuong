@@ -67,14 +67,14 @@ extra_js:
             </div>
 
             <!--      <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas>-->
-          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 ">
-            <h2>Danh sách khách hàng</h2>
-            <form th:action="@{/khachhang/create}">
-              <div class="btn-group mr-2">
-                <input type="submit" value="Tạo mới khách hàng">
-              </div>
-            </form>
-          </div>
+            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 ">
+                <h2>Danh sách khách hàng</h2>
+                <form th:action="@{/khachhang/create}">
+                    <div class="btn-group mr-2">
+                        <input type="submit" value="Tạo mới khách hàng">
+                    </div>
+                </form>
+            </div>
 
             <div class="table-responsive">
                 <table class="table table-striped table-sm">
@@ -88,22 +88,22 @@ extra_js:
                         <th>Email</th>
                         <th>Địa chỉ</th>
                         <th>Loại khách</th>
-                        <th></th>
-                        <th></th>
                     </tr>
                     </thead>
                     <tbody>
                     <tr th:each="khachhang: ${list}">
                         <td th:text="${khachhang.idKhachHang}"></td>
-                      <td th:text="${khachhang.hoTen}"></td>
-                      <td th:text="${khachhang.ngaySinh}"></td>
-                      <td th:text="${khachhang.soCMND}"></td>
-                      <td th:text="${khachhang.sdt}"></td>
-                      <td th:text="${khachhang.email}"></td>
-                      <td th:text="${khachhang.diaChi}"></td>
-                       <td></td>
-                      <td><a th:href="@{/khachhang/edit/{id}(id=${khachhang.getIdKhachHang()})}">edit</a></td>
-                      <td><a th:href="@{/khachhang/delete/{id}(id=${khachhang.getIdKhachHang()})}">delete</a></td>
+                        <td>
+                            <a th:href="@{/khachhang/view/{id}(id=${khachhang.getIdKhachHang()})}">
+                                <span th:text="${khachhang.hoTen}"></span>
+                            </a>
+                        </td>
+                        <td th:text="${khachhang.ngaySinh}"></td>
+                        <td th:text="${khachhang.soCMND}"></td>
+                        <td th:text="${khachhang.sdt}"></td>
+                        <td th:text="${khachhang.email}"></td>
+                        <td th:text="${khachhang.diaChi}"></td>
+                        <td th:text="${khachhang.loaiKhach.tenLoaiKhach}"></td>
                     </tr>
                     </tbody>
                 </table>

@@ -55,58 +55,52 @@ extra_js:
             <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
                 <h1 class="h2">Khách Hàng</h1>
                 <div class="btn-toolbar mb-2 mb-md-0">
-                    <button type="button" >
-                        <a th:href="@{/list/khachhang}">Trở lại</a>
+                    <button type="button">
+                        <a th:href="@{/hopdong/create/{id}(id=${khachhang.idKhachHang})}">Tạo mới hợp đồng</a>
                     </button>
                 </div>
             </div>
 
-            <h2>Tạo mới khách hàng</h2>
             <div class="table-responsive">
-                <form th:action="@{/khachhang/save}" th:object="${khachhang}"
-                      method="post">
-                  <table class="table table-striped table-sm">
+                <table class="table table-striped table-sm">
                     <tr>
-                      <td>Họ và tên</td>
-                      <td><input type="text" th:field="*{hoTen}"/><br></td>
-                      <td></td>
-                      <td>Ngày sinh</td>
-                      <td><input type="date" placeholder="yyyy-mm-dd"
-                                 min="1950-01-01"  th:field="*{ngaySinh}"/><br></td>
+                        <td>Họ và tên</td>
+                        <td th:text="${khachhang.hoTen}"></td>
+                        <td></td>
+                        <td>Ngày sinh</td>
+                        <td><input type="date" placeholder="yyyy-mm-dd"
+                                   min="1950-01-01" th:field="${khachhang.ngaySinh}" readonly></td>
                     </tr>
                     <tr>
-                      <td>Số CMND</td>
-                      <td><input type="text" th:field="*{soCMND}"/><br></td>
-                      <td></td>
-                      <td>Số điện thoại</td>
-                      <td><input type="text" th:field="*{sdt}"/><br></td>
+                        <td>Số CMND</td>
+                        <td th:text="${khachhang.soCMND}"></td>
+                        <td></td>
+                        <td>Số điện thoại</td>
+                        <td th:text="${khachhang.sdt}"></td>
                     </tr>
                     <tr>
-                      <td>Email</td>
-                      <td><input type="text" th:field="*{email}"/><br></td>
-                      <td></td>
-                      <td>Địa chỉ</td>
-                      <td><input type="text" th:field="*{diaChi}"/></td>
+                        <td>Email</td>
+                        <td th:text="${khachhang.email}"></td>
+                        <td></td>
+                        <td>Địa chỉ</td>
+                        <td th:text="${khachhang.diaChi}"></td>
                     </tr>
                     <tr>
                         <td>Loại khách</td>
-                        <td><select th:field="*{loaiKhach.idLoaiKhach}">
-                            <option th:each="list:${listloaikhach}"
-                                    th:value="${list.idLoaiKhach}" th:text="${list.tenLoaiKhach}"></option>
-                        </select></td>
+                        <td th:text="${khachhang.loaiKhach.tenLoaiKhach}"></td>
                         <td></td>
                         <td></td>
                         <td></td>
                     </tr>
-                    <tr>
-                      <td></td>
-                      <td></td>
-                      <td><input type="submit" value="Thêm khách hàng"></td>
-                      <td></td>
-                      <td></td>
-                    </tr>
-                    </table>
-                </form>
+                </table>
+                <div class="btn-toolbar mb-2 mb-md-0 border-bottom" >
+                    <button type="button">
+                        <a th:href="@{/khachhang/edit/{id}(id=${khachhang.getIdKhachHang()})}">Chỉnh sửa thông tin</a>
+                    </button>
+                    <button type="button">
+                        <a th:href="@{/khachhang/delete/{id}(id=${khachhang.getIdKhachHang()})}">Xóa khách hàng</a>
+                    </button>
+                </div>
             </div>
         </main>
     </div>

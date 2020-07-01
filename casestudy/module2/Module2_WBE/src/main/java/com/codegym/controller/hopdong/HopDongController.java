@@ -2,6 +2,8 @@ package com.codegym.controller.hopdong;
 
 import com.codegym.model.hopdong.HopDong;
 import com.codegym.service.hopdong.HopDongService;
+import com.codegym.service.khachhang.KhachHangService;
+import com.codegym.service.nhanvien.NhanVienService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,16 +17,21 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 public class HopDongController {
     @Autowired
     HopDongService hopDongService;
-
+    @Autowired
+    NhanVienService nhanVienService;
+    @Autowired
+    KhachHangService khachHangService;
     @GetMapping("/list/hopdong")
     public String list(Model model){
         Model list = model.addAttribute("list", hopDongService.findAll());
         return "hopdong/list";
     }
 
-    @GetMapping("/hopdong/create")
-    public String create(Model model){
+    @GetMapping("/hopdong/create/{id}")
+    public String create(@PathVariable Integer id,Model model){
         model.addAttribute("hopdong",new HopDong());
+        model.addAttribute("listNhanVien",nhanVienService.findAll());
+        model.addAttribute("kh",khachHangService.findById(id));
         return "hopdong/create";
     }
 

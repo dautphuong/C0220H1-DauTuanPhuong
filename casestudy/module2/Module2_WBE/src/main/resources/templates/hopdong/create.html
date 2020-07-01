@@ -1,0 +1,123 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}"/>
+    <link rel="stylesheet" th:href="@{/css/dashboard.css}"/>
+</head>
+<body>
+---
+layout: examples
+title: Dashboard Template
+extra_css: "dashboard.css"
+extra_js:
+- "https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.9.0/feather.min.js"
+- "https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"
+- "dashboard.js"
+---
+
+<nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
+    <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Company name</a>
+    <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
+    <ul class="navbar-nav px-3">
+        <li class="nav-item text-nowrap">
+            <a class="nav-link" href="#">Sign out</a>
+        </li>
+    </ul>
+</nav>
+
+<div class="container-fluid">
+    <div class="row">
+        <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+            <div class="sidebar-sticky">
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/list/khachhang}">
+                            <span data-feather="file"></span>
+                            Khách hàng
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/list/dichvu}">
+                            <span data-feather="shopping-cart"></span>
+                            Dịch vụ
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" th:href="@{/list/hopdong}">
+                            <span data-feather="home"></span>
+                            Hợp đồng <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                <h1 class="h2" th:text="${kh.idKhachHang}"></h1>
+                <div class="btn-toolbar mb-2 mb-md-0">
+                    <div class="btn-group mr-2">
+                        <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
+                        <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
+                    </div>
+                    <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
+                        <span data-feather="calendar"></span>
+                        This week
+                    </button>
+                </div>
+            </div>
+
+            <h2>Tạo mới hợp đồng</h2>
+            <div class="table-responsive">
+                <form id="formHopDong" th:action="@{/hopdong/save}" th:object="${hopdong}"
+                      method="post">
+                    <input id="khHopDong" type="hidden" th:field="*{khachHang.idKhachHang}" />
+                    <input id="idHopDongTmp" type="hidden" th:value="${kh.idKhachHang}" />
+                    <table class="table table-striped table-sm">
+                        <tr>
+                            <td>Ngày làm hợp đồng</td>
+                            <td><input type="date" placeholder="yyyy-mm-dd"
+                                       min="2000-01-01" th:field="*{ngayLamHopDong}"/><br></td>
+                            <td></td>
+                            <td>Ngày kết thúc</td>
+                            <td><input type="date" placeholder="yyyy-mm-dd"
+                                       min="2000-01-01" th:field="*{ngayKetThuc}"/><br></td>
+                        </tr>
+                        <tr>
+                            <td>Tiền đặt cọc</td>
+                            <td><input type="text" th:field="*{tienDatCoc}"/><br></td>
+                            <td></td>
+                        <tr>
+                            <td>Nhân viên</td>
+                            <td><select th:field="*{nhanVien.idNhanVien}">
+                                <option th:each="list:${listNhanVien}"
+                                        th:value="${list.idNhanVien}" th:text="${list.hoTen}"></option>
+                            </select></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td><input type="button" value="Tạo hợp đồng" onclick="submitForm()"></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+        </main>
+    </div>
+</div>
+<script>
+    function submitForm() {
+        let id = document.getElementById("idHopDongTmp").value;
+        document.getElementById("khHopDong").value=id;
+        document.getElementById("formHopDong").submit(id);
+    }
+</script>
+<script src="../static/js/jquery-3.5.0.min.js"></script>
+<script src="../static/js/bootstrap.min.js"></script>
+<script src="../static/js/dashboard.js"></script>
+</body>
+</html>

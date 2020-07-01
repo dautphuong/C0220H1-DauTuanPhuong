@@ -23,7 +23,6 @@ public class KhachHangController {
     @GetMapping("/list/khachhang")
     public String list(Model model){
         model.addAttribute("list",khachHangService.findAll());
-        model.addAttribute("listloaikhach",loaiKhachService.findAll());
         return "khachhang/list";
     }
 
@@ -64,5 +63,11 @@ public class KhachHangController {
         khachHangService.remove(khachHang.getIdKhachHang());
         redirectAttributes.addFlashAttribute("success", "Removed khachhang successfully!");
         return "redirect:/list/khachhang";
+    }
+
+    @GetMapping("/khachhang/view/{id}")
+    public String view(@PathVariable int id, Model model) {
+        model.addAttribute("khachhang", khachHangService.findById(id));
+        return "khachhang/view";
     }
 }
