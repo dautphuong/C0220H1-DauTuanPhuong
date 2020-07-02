@@ -15,8 +15,9 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 @Configuration
 @EnableWebSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
+
+    @Qualifier("userDetailsServiceImpl")
     @Autowired
-    @Qualifier("selfUserDetail")
     private UserDetailsService userDetailsService;
 
     @Bean
@@ -33,17 +34,23 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.csrf().disable()
                 .authorizeRequests()
-                .antMatchers("/login").permitAll()
-//                .antMatchers("/").hasRole("MEMBER")
-                .antMatchers("/list").hasAnyRole("ADMIN", "MEMBER")
-                .antMatchers("/create").hasRole("ADMIN")
+                .antMatchers("/").permitAll()
+                .antMatchers("/register").permitAll()
+                .antMatchers("/member").hasAnyRole("ADMIN", "MEMBER")
+                .antMatchers("/admin").hasRole("ADMIN")
+                .anyRequest().authenticated()
                 .and()
                 .formLogin()
                 .loginPage("/login")
+                .permitAll()
                 .usernameParameter("username")
                 .passwordParameter("password")
-                .defaultSuccessUrl("/checkLogin")
-                .failureUrl("/checkError")
+                .defaultSuccessUrl("/home")
+                .failureUrl("/?error")
+                .and()
+                .logout()
+                .logoutSuccessUrl("/")
+                .permitAll()
                 .and()
                 .exceptionHandling()
                 .accessDeniedPage("/403");

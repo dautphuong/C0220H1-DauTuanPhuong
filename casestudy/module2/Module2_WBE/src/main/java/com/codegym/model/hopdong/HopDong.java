@@ -30,7 +30,7 @@ public class HopDong {
     @JoinColumn(name = "id_dich_vu")
     private DichVu dichVu;
 
-    @OneToMany(mappedBy = "hopDong")
+    @OneToMany(mappedBy = "hopDong",cascade = CascadeType.ALL)
     private List<HopDongChiTiet> hopDongChiTietList;
 
     public HopDong() {

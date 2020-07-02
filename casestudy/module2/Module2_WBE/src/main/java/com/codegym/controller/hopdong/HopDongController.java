@@ -28,18 +28,17 @@ public class HopDongController {
     HopDongChiTietService hopDongChiTietService;
 
     @GetMapping("/list/hopdong/{id}")
-    public String list(@PathVariable Integer id, Model model, @PageableDefault(size = 2) Pageable pageable) {
-//        model.addAttribute("list",hopDongService.findByKhachHang_IdKhachHang(id,pageable));
-        model.addAttribute("list", hopDongService.findByKhachHang_IdKhachHang(id));
-        model.addAttribute("kh", khachHangService.findById(id));
+    public String list(@PathVariable String id, Model model, @PageableDefault(size = 2) Pageable pageable) {
+        model.addAttribute("list",hopDongService.findByKhachHang_IdKhachHang(id,pageable));
+        model.addAttribute("kh", khachHangService.findByIdKhachHang(id));
         return "hopdong/list";
     }
 
     @GetMapping("/hopdong/create/{id}")
-    public String create(@PathVariable Integer id, Model model) {
+    public String create(@PathVariable String id, Model model) {
         model.addAttribute("hopdong", new HopDong());
         model.addAttribute("listNhanVien", nhanVienService.findAll());
-        model.addAttribute("kh", khachHangService.findById(id));
+        model.addAttribute("kh", khachHangService.findByIdKhachHang(id));
         return "hopdong/create";
     }
 
@@ -77,10 +76,10 @@ public class HopDongController {
     }
 
     @GetMapping("/hopdong/view/{idkh}/{id}")
-    public String view(@PathVariable Integer id, @PathVariable Integer idkh, Model model) {
+    public String view(@PathVariable Integer id, @PathVariable String idkh, Model model) {
         model.addAttribute("hopdong", hopDongService.findById(id));
         model.addAttribute("listHopDongChiTiet", hopDongChiTietService.findByHopDong_IdHopDong(id));
-        model.addAttribute("kh", khachHangService.findById(idkh));
+        model.addAttribute("kh", khachHangService.findByIdKhachHang(idkh));
         return "hopdong/view_listHopDongChiTiet";
     }
 }

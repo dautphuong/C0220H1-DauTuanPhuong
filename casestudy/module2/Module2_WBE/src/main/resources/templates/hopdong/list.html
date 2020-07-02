@@ -49,7 +49,8 @@ extra_js:
             <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
                 <h1 class="h2" th:text="${kh.hoTen}"></h1>
                 <div class="btn-toolbar mb-2 mb-md-0">
-                    <button type="button" class="btn btn-sm btn-outline-secondary"><a th:href="@{/khachhang/view/{id}(id=${kh.getIdKhachHang()})}">
+                    <button type="button" class="btn btn-sm btn-outline-secondary"><a
+                            th:href="@{/khachhang/view/{id}(id=${kh.getIdKhachHang()})}">
                         Trở lại
                     </a>
                     </button>
@@ -59,6 +60,9 @@ extra_js:
             <!--      <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas>-->
             <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 ">
                 <h2>Danh sách hợp đồng</h2>
+                <button type="button" class="btn btn-sm btn-outline-secondary"><a
+                        th:href="@{/hopdong/create/{id}(id=${kh.idKhachHang})}">Tạo mới hợp đồng</a>
+                </button>
             </div>
 
             <div class="table-responsive">
@@ -81,15 +85,19 @@ extra_js:
                         <td th:text="${hopdong.ngayKetThuc}"></td>
                         <td th:text="${hopdong.tienDatCoc}"></td>
                         <td th:text="${hopdong.tongTien}"></td>
-                        <td><a th:href="@{/hopdong/view/{idkh}/{id}(id=${hopdong.getIdHopDong()},idkh=${kh.getIdKhachHang()})}">Danh sách hợp đồng chi tiết</a></td>
+                        <td>
+                            <a th:href="@{/hopdong/view/{idkh}/{id}(id=${hopdong.getIdHopDong()},idkh=${kh.getIdKhachHang()})}">Danh
+                                sách hợp đồng chi tiết</a></td>
                     </tr>
                     </tbody>
                 </table>
-<!--                <div>-->
-<!--                    <a th:if="${list.hasPrevious()}" th:href="@{/list/hopdong/{id}(page=${list.number - 1},id=${kh.idKhachHang})}">Previous</a>-->
-<!--                    <span th:text="${list.number + 1}"></span>/<span th:text="${list.totalPages}"></span>-->
-<!--                    <a th:if="${list.hasNext()}" th:href="@{/list/hopdong/{id}(page=${list.number + 1},id=${kh.idKhachHang})}">Next</a>-->
-<!--                </div>-->
+                <div>
+                    <a th:if="${list.hasPrevious()}"
+                       th:href="@{/list/hopdong/{id}(page=${list.number - 1},id=${kh.idKhachHang})}">Previous</a>
+                    <span th:text="${list.number + 1}"></span>/<span th:text="${list.totalPages}"></span>
+                    <a th:if="${list.hasNext()}"
+                       th:href="@{/list/hopdong/{id}(page=${list.number + 1},id=${kh.idKhachHang})}">Next</a>
+                </div>
             </div>
         </main>
     </div>

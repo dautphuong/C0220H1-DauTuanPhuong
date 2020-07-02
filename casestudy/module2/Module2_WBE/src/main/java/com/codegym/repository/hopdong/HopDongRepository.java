@@ -8,6 +8,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.List;
 
 public interface HopDongRepository extends JpaRepository<HopDong,Integer> {
-    List<HopDong> findByKhachHang_IdKhachHang(Integer idKhachHang);
-    Page<HopDong>findByKhachHang_IdKhachHang(Integer idkhachhang, Pageable pageable);
+    List<HopDong> findByKhachHang_IdKhachHang(String idKhachHang);
+    Page<HopDong>findByKhachHang_IdKhachHang(String idkhachhang, Pageable pageable);
 }

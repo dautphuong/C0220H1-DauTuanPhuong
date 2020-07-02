@@ -12,7 +12,7 @@ import java.util.List;
 public class KhachHang {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer idKhachHang;
+    private String idKhachHang;
     private String hoTen;
     private String ngaySinh;
     private String soCMND;
@@ -23,13 +23,13 @@ public class KhachHang {
     @JoinColumn(name = "id_loai_khach")
     private LoaiKhach loaiKhach;
 
-    @OneToMany(mappedBy = "khachHang")
+    @OneToMany(mappedBy = "khachHang",cascade = CascadeType.ALL)
     private List<HopDong> hopDongList;
 
     public KhachHang() {
     }
 
-    public KhachHang(Integer idKhachHang, String hoTen, String ngaySinh, String soCMND, String sdt, String email, String diaChi) {
+    public KhachHang(String idKhachHang, String hoTen, String ngaySinh, String soCMND, String sdt, String email, String diaChi) {
         this.idKhachHang = idKhachHang;
         this.hoTen = hoTen;
         this.ngaySinh = ngaySinh;
@@ -47,11 +47,11 @@ public class KhachHang {
         this.hopDongList = hopDongList;
     }
 
-    public Integer getIdKhachHang() {
+    public String getIdKhachHang() {
         return idKhachHang;
     }
 
-    public void setIdKhachHang(Integer idKhachHang) {
+    public void setIdKhachHang(String idKhachHang) {
         this.idKhachHang = idKhachHang;
     }
 

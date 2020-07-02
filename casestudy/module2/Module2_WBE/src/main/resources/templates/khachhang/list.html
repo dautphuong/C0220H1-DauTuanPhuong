@@ -16,7 +16,12 @@ extra_js:
 
 <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
     <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Company name</a>
-    <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
+    <!--form search-->
+    <form th:action="@{/list/khachhang}" method="get" class="form-control form-control-dark">
+        <input class=" w-75" type="text" placeholder="Tìm kiếm theo id hoặc theo tên khách hàng" name="keyword">
+        <input type="submit" value="Tìm kiếm"/>
+    </form>
+
     <ul class="navbar-nav px-3">
         <li class="nav-item text-nowrap">
             <a class="nav-link" href="#">Sign out</a>
@@ -103,9 +108,9 @@ extra_js:
                 </table>
             </div>
             <div>
-                <a th:if="${list.hasPrevious()}" th:href="@{/list/khachhang/(page=${list.number - 1})}">Previous</a>
+                <a th:if="${list.hasPrevious()}" th:href="@{/list/khachhang/(page=${list.number - 1},keyword = ${keyword})}">Previous</a>
                 <span th:text="${list.number + 1}"></span>/<span th:text="${list.totalPages}"></span>
-                <a th:if="${list.hasNext()}" th:href="@{/list/khachhang/(page=${list.number + 1})}">Next</a>
+                <a th:if="${list.hasNext()}" th:href="@{/list/khachhang/(page=${list.number + 1},keyword = ${keyword})}">Next</a>
             </div>
         </main>
     </div>

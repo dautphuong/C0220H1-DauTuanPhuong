@@ -20,9 +20,10 @@ public class KhachHangServiceImpl implements KhachHangService {
         return khachHangRepository.findAll();
     }
 
+
     @Override
-    public KhachHang findById(Integer id) {
-        return khachHangRepository.findById(id).orElse(null);
+    public KhachHang findByIdKhachHang(String id) {
+        return khachHangRepository.findByIdKhachHang(id);
     }
 
     @Override
@@ -31,12 +32,17 @@ public class KhachHangServiceImpl implements KhachHangService {
     }
 
     @Override
-    public void remove(Integer id) {
-        khachHangRepository.deleteById(id);
+    public void deleteByIdKhachHang(String id) {
+        khachHangRepository.deleteByIdKhachHang(id);
     }
 
     @Override
     public Page<KhachHang> findAll(Pageable pageable) {
         return khachHangRepository.findAll(pageable);
+    }
+
+    @Override
+    public Page<KhachHang> findByHoTenContainingOrIdKhachHangContaining(String keyword, String keyword2, Pageable pageable) {
+        return khachHangRepository.findByHoTenContainingOrIdKhachHangContaining(keyword,keyword2,pageable);
     }
 }

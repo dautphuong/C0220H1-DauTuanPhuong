@@ -50,9 +50,6 @@ extra_js:
                 <div class="btn-toolbar mb-2 mb-md-0">
                     <div class="btn-group mr-2">
                         <button type="button" class="btn btn-sm btn-outline-secondary"><a
-                                th:href="@{/hopdong/create/{id}(id=${khachhang.idKhachHang})}">Tạo mới hợp đồng</a>
-                        </button>
-                        <button type="button" class="btn btn-sm btn-outline-secondary"><a
                                 th:href="@{/list/hopdong/{id}(id=${khachhang.idKhachHang})}">Danh sách hợp đồng</a>
                         </button>
                     </div>
@@ -93,17 +90,38 @@ extra_js:
                     </tr>
                 </table>
                 <div class="btn-toolbar mb-2 mb-md-0 border-bottom">
+                    <!--nút chỉnh sửa khách hàng-->
                     <button type="button">
                         <a th:href="@{/khachhang/edit/{id}(id=${khachhang.getIdKhachHang()})}">Chỉnh sửa thông tin</a>
                     </button>
+                    <!--nút xóa khách hàng-->
                     <button type="button">
-                        <a th:href="@{/khachhang/delete/{id}(id=${khachhang.getIdKhachHang()})}">Xóa khách hàng</a>
+                        <!--<input th:id="${khachhang.getIdKhachHang}" type="submit" value="Delete"-->
+                        <!--th:onclick="'deleteKH('+this.id+')'"/>-->
+                        <a onclick="return confirm_delete()"
+                           th:href="@{/khachhang/delete/{id}(id= ${khachhang.getIdKhachHang()})}">Delete</a>
                     </button>
                 </div>
             </div>
         </main>
     </div>
 </div>
+<script type="text/javascript">
+    function confirm_delete() {
+        return confirm("Bạn có chắc không ?");
+    }
+</script>
+<script type="text/javascript">
+
+    function deleteKH(id) {
+        if (confirm("Bạn có chắc không ?") === true) {
+            console.log(id);
+            location.href = "/khachhang/delete/" + id;
+        } else {
+            document.getElementById.innerHTML
+        }
+    }
+</script>
 <script src="../static/js/jquery-3.5.0.min.js"></script>
 <script src="../static/js/bootstrap.min.js"></script>
 <script src="../static/js/dashboard.js"></script>

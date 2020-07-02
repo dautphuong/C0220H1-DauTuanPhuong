@@ -16,9 +16,9 @@ public interface HopDongService {
 
     void remove(Integer id);
 
-    List<HopDong>findByKhachHang_IdKhachHang(Integer idKhachHang);
+    List<HopDong>findByKhachHang_IdKhachHang(String idKhachHang);
 
     Page<HopDong> findAll(Pageable pageable);
 
-    Page<HopDong>findByKhachHang_IdKhachHang(Integer idkhachhang,Pageable pageable);
+    Page<HopDong>findByKhachHang_IdKhachHang(String idkhachhang,Pageable pageable);
 }

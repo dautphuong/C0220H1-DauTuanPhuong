@@ -35,8 +35,9 @@ public class HopDongServiceImpl implements HopDongService {
         hopDongRepository.deleteById(id);
     }
 
+
     @Override
-    public List<HopDong> findByKhachHang_IdKhachHang(Integer idKhachHang) {
+    public List<HopDong> findByKhachHang_IdKhachHang(String idKhachHang) {
         return hopDongRepository.findByKhachHang_IdKhachHang(idKhachHang);
     }
 
@@ -46,7 +47,7 @@ public class HopDongServiceImpl implements HopDongService {
     }
 
     @Override
-    public Page<HopDong> findByKhachHang_IdKhachHang(Integer idkhachhang, Pageable pageable) {
+    public Page<HopDong> findByKhachHang_IdKhachHang(String idkhachhang, Pageable pageable) {
         return hopDongRepository.findByKhachHang_IdKhachHang(idkhachhang,pageable);
     }
 
