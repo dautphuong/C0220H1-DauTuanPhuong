@@ -1,10 +1,13 @@
 package com.codegym.controller.hopdong;
 
 import com.codegym.model.hopdong.HopDong;
+import com.codegym.service.hopdong.HopDongChiTietService;
 import com.codegym.service.hopdong.HopDongService;
 import com.codegym.service.khachhang.KhachHangService;
 import com.codegym.service.nhanvien.NhanVienService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,25 +24,30 @@ public class HopDongController {
     NhanVienService nhanVienService;
     @Autowired
     KhachHangService khachHangService;
-    @GetMapping("/list/hopdong")
-    public String list(Model model){
-        Model list = model.addAttribute("list", hopDongService.findAll());
+    @Autowired
+    HopDongChiTietService hopDongChiTietService;
+
+    @GetMapping("/list/hopdong/{id}")
+    public String list(@PathVariable Integer id, Model model, @PageableDefault(size = 2) Pageable pageable) {
+//        model.addAttribute("list",hopDongService.findByKhachHang_IdKhachHang(id,pageable));
+        model.addAttribute("list", hopDongService.findByKhachHang_IdKhachHang(id));
+        model.addAttribute("kh", khachHangService.findById(id));
         return "hopdong/list";
     }
 
     @GetMapping("/hopdong/create/{id}")
-    public String create(@PathVariable Integer id,Model model){
-        model.addAttribute("hopdong",new HopDong());
-        model.addAttribute("listNhanVien",nhanVienService.findAll());
-        model.addAttribute("kh",khachHangService.findById(id));
+    public String create(@PathVariable Integer id, Model model) {
+        model.addAttribute("hopdong", new HopDong());
+        model.addAttribute("listNhanVien", nhanVienService.findAll());
+        model.addAttribute("kh", khachHangService.findById(id));
         return "hopdong/create";
     }
 
-    @PostMapping("/hopdong/save")
-    public String save(@ModelAttribute("hopdong") HopDong hopDong, RedirectAttributes redirect) {
+    @PostMapping("/hopdong/save/{id}")
+    public String save(@PathVariable Integer id, @ModelAttribute("hopdong") HopDong hopDong, RedirectAttributes redirect) {
         hopDongService.save(hopDong);
         redirect.addFlashAttribute("success", "Saved hop dong successfully!");
-        return "redirect:/list/hopdong";
+        return "redirect:/list/hopdong/"+ id;
     }
 
     @GetMapping("/hopdong/edit/{id}")
@@ -56,14 +64,23 @@ public class HopDongController {
     }
 
     @GetMapping("/hopdong/delete/{id}")
-    public String delete(@PathVariable int id,Model model){
-        model.addAttribute("hopdong",hopDongService.findById(id));
+    public String delete(@PathVariable int id, Model model) {
+        model.addAttribute("hopdong", hopDongService.findById(id));
         return "hopdong/delete";
     }
+
     @PostMapping("/hopdong/delete")
-    public String delete(@ModelAttribute("hopdong") HopDong hopDong,RedirectAttributes redirectAttributes){
+    public String delete(@ModelAttribute("hopdong") HopDong hopDong, RedirectAttributes redirectAttributes) {
         hopDongService.remove(hopDong.getIdHopDong());
         redirectAttributes.addFlashAttribute("success", "Removed hop dong successfully!");
         return "redirect:/list/hopdong";
+    }
+
+    @GetMapping("/hopdong/view/{idkh}/{id}")
+    public String view(@PathVariable Integer id, @PathVariable Integer idkh, Model model) {
+        model.addAttribute("hopdong", hopDongService.findById(id));
+        model.addAttribute("listHopDongChiTiet", hopDongChiTietService.findByHopDong_IdHopDong(id));
+        model.addAttribute("kh", khachHangService.findById(idkh));
+        return "hopdong/view_listHopDongChiTiet";
     }
 }

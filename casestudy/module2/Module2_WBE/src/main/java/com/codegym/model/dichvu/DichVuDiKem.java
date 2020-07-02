@@ -2,16 +2,14 @@ package com.codegym.model.dichvu;
 
 import com.codegym.model.hopdong.HopDongChiTiet;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.List;
 
 @Entity
 @Table(name = "dichvudikem")
 public class DichVuDiKem {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idDichVuDiKem;
     private String tenDichVuDiKem;
     private Double gia;

@@ -47,7 +47,7 @@ CREATE table DichVuDiKem(
 	id_dich_vu_di_kem int primary key AUTO_INCREMENT,
     ten_dich_vu_di_kem varchar(45),
     gia FLOAT,
-    donVi int,
+    don_vi int,
     trang_thai_kha_dung varchar(45)
 );
 
@@ -90,8 +90,8 @@ CREATE table HopDong(
     id_dich_vu int,
     ngay_lam_hop_dong date,
     ngay_ket_thuc date,
-    tien_dat_coc int,
-    tong_tien int,
+    tien_dat_coc FLOAT,
+    tong_tien Float,
     FOREIGN KEY (id_nhan_vien) REFERENCES NhanVien(id_nhan_vien) ON DELETE CASCADE,
     FOREIGN KEY (id_khach_hang) REFERENCES KhachHang(id_khach_hang),
     FOREIGN KEY (id_dich_vu) REFERENCES DichVu(id_dich_vu)
@@ -101,7 +101,7 @@ Create TABLE HopDongChiTiet(
 	id_hop_dong_chi_tiet int PRIMARY key AUTO_INCREMENT,
     id_hop_dong int,
     id_dich_vu_di_kem int,
-    soluong int,
+    so_luong int,
 	FOREIGN KEY (id_hop_dong) REFERENCES HopDong(id_hop_dong) ON DELETE CASCADE,
     FOREIGN KEY (id_dich_vu_di_kem) REFERENCES DichVuDiKem(id_dich_vu_di_kem)
 );
@@ -174,30 +174,30 @@ INSERT INTO `furama_resort`.`hopdong` (`id_nhan_vien`, `id_khach_hang`, `id_dich
 INSERT INTO `furama_resort`.`hopdong` (`id_nhan_vien`, `id_khach_hang`, `id_dich_vu`, `ngay_lam_hop_dong`, `ngay_ket_thuc`) VALUES ('6', '9', '4', '2019-10-25', '2020-11-15');
 INSERT INTO `furama_resort`.`hopdong` (`id_nhan_vien`, `id_khach_hang`, `id_dich_vu`, `ngay_lam_hop_dong`, `ngay_ket_thuc`) VALUES ('8', '5', '4', '2014-10-25', '2015-11-15');
 
-INSERT INTO `furama_resort`.`dichvudikem` (`ten_dich_vu_di_kem`, `gia`, `donVi`, `trang_thai_kha_dung`) VALUES ('massage', '500000', '1', 'ok');
-INSERT INTO `furama_resort`.`dichvudikem` (`ten_dich_vu_di_kem`, `gia`, `donVi`, `trang_thai_kha_dung`) VALUES ('karaoke', '300000', '1', 'ok');
-INSERT INTO `furama_resort`.`dichvudikem` (`ten_dich_vu_di_kem`, `gia`, `donVi`, `trang_thai_kha_dung`) VALUES ('sightseeing car', '800000', '1', 'ok');
-INSERT INTO `furama_resort`.`dichvudikem` (`ten_dich_vu_di_kem`, `gia`, `donVi`, `trang_thai_kha_dung`) VALUES ('food', '100000', '1', 'ok');
+INSERT INTO `furama_resort`.`dichvudikem` (`ten_dich_vu_di_kem`, `gia`, `don_vi`, `trang_thai_kha_dung`) VALUES ('massage', '500000', '1', 'ok');
+INSERT INTO `furama_resort`.`dichvudikem` (`ten_dich_vu_di_kem`, `gia`, `don_vi`, `trang_thai_kha_dung`) VALUES ('karaoke', '300000', '1', 'ok');
+INSERT INTO `furama_resort`.`dichvudikem` (`ten_dich_vu_di_kem`, `gia`, `don_vi`, `trang_thai_kha_dung`) VALUES ('sightseeing car', '800000', '1', 'ok');
+INSERT INTO `furama_resort`.`dichvudikem` (`ten_dich_vu_di_kem`, `gia`, `don_vi`, `trang_thai_kha_dung`) VALUES ('food', '100000', '1', 'ok');
 
-INSERT INTO `furama_resort`.`hopdongchitiet` (`id_hop_dong`, `id_dich_vu_di_kem`, `soluong`) VALUES ('1', '4', '1');
-INSERT INTO `furama_resort`.`hopdongchitiet` (`id_hop_dong`, `id_dich_vu_di_kem`, `soluong`) VALUES ('2', '4', '3');
-INSERT INTO `furama_resort`.`hopdongchitiet` (`id_hop_dong`, `id_dich_vu_di_kem`, `soluong`) VALUES ('3', '1', '1');
-INSERT INTO `furama_resort`.`hopdongchitiet` (`id_hop_dong`, `id_dich_vu_di_kem`, `soluong`) VALUES ('4', '2', '1');
-INSERT INTO `furama_resort`.`hopdongchitiet` (`id_hop_dong`, `id_dich_vu_di_kem`, `soluong`) VALUES ('5','1','2');
-INSERT INTO `furama_resort`.`hopdongchitiet` (`id_hop_dong`, `id_dich_vu_di_kem`, `soluong`) VALUES ('1', '3', '1');
-INSERT INTO `furama_resort`.`hopdongchitiet` (`id_hop_dong`, `id_dich_vu_di_kem`, `soluong`) VALUES ('3', '1', '1');
-INSERT INTO `furama_resort`.`hopdongchitiet` (`id_hop_dong`, `id_dich_vu_di_kem`, `soluong`) VALUES ('7', '2', '2');
-INSERT INTO `furama_resort`.`hopdongchitiet` (`id_hop_dong`, `id_dich_vu_di_kem`, `soluong`) VALUES ('8', '2', '2');
-INSERT INTO `furama_resort`.`hopdongchitiet` (`id_hop_dong`, `id_dich_vu_di_kem`, `soluong`) VALUES ('2', '3', '1');
-INSERT INTO `furama_resort`.`hopdongchitiet` (`id_hop_dong`, `id_dich_vu_di_kem`, `soluong`) VALUES ('10', '3', '2');
-INSERT INTO `furama_resort`.`hopdongchitiet` (`id_hop_dong`, `id_dich_vu_di_kem`, `soluong`) VALUES ('11', '4', '2');
-INSERT INTO `furama_resort`.`hopdongchitiet` (`id_hop_dong`, `id_dich_vu_di_kem`, `soluong`) VALUES ('3', '4', '1');
-INSERT INTO `furama_resort`.`hopdongchitiet` (`id_hop_dong`, `id_dich_vu_di_kem`, `soluong`) VALUES ('5', '2', '1');
+INSERT INTO `furama_resort`.`hopdongchitiet` (`id_hop_dong`, `id_dich_vu_di_kem`, `so_luong`) VALUES ('1', '4', '1');
+INSERT INTO `furama_resort`.`hopdongchitiet` (`id_hop_dong`, `id_dich_vu_di_kem`, `so_luong`) VALUES ('2', '4', '3');
+INSERT INTO `furama_resort`.`hopdongchitiet` (`id_hop_dong`, `id_dich_vu_di_kem`, `so_luong`) VALUES ('3', '1', '1');
+INSERT INTO `furama_resort`.`hopdongchitiet` (`id_hop_dong`, `id_dich_vu_di_kem`, `so_luong`) VALUES ('4', '2', '1');
+INSERT INTO `furama_resort`.`hopdongchitiet` (`id_hop_dong`, `id_dich_vu_di_kem`, `so_luong`) VALUES ('5','1','2');
+INSERT INTO `furama_resort`.`hopdongchitiet` (`id_hop_dong`, `id_dich_vu_di_kem`, `so_luong`) VALUES ('1', '3', '1');
+INSERT INTO `furama_resort`.`hopdongchitiet` (`id_hop_dong`, `id_dich_vu_di_kem`, `so_luong`) VALUES ('3', '1', '1');
+INSERT INTO `furama_resort`.`hopdongchitiet` (`id_hop_dong`, `id_dich_vu_di_kem`, `so_luong`) VALUES ('7', '2', '2');
+INSERT INTO `furama_resort`.`hopdongchitiet` (`id_hop_dong`, `id_dich_vu_di_kem`, `so_luong`) VALUES ('8', '2', '2');
+INSERT INTO `furama_resort`.`hopdongchitiet` (`id_hop_dong`, `id_dich_vu_di_kem`, `so_luong`) VALUES ('2', '3', '1');
+INSERT INTO `furama_resort`.`hopdongchitiet` (`id_hop_dong`, `id_dich_vu_di_kem`, `so_luong`) VALUES ('10', '3', '2');
+INSERT INTO `furama_resort`.`hopdongchitiet` (`id_hop_dong`, `id_dich_vu_di_kem`, `so_luong`) VALUES ('11', '4', '2');
+INSERT INTO `furama_resort`.`hopdongchitiet` (`id_hop_dong`, `id_dich_vu_di_kem`, `so_luong`) VALUES ('3', '4', '1');
+INSERT INTO `furama_resort`.`hopdongchitiet` (`id_hop_dong`, `id_dich_vu_di_kem`, `so_luong`) VALUES ('5', '2', '1');
 
 -- update tong tien
 update HopDong
 join DichVu on DichVu.id_dich_vu=HopDong.id_dich_vu
 join HopDongChiTiet on HopDongChiTiet.id_hop_dong=HopDong.id_hop_dong
 join DichVuDiKem on DichVuDiKem.id_dich_vu_di_kem=HopDongChiTiet.id_dich_vu_di_kem
-set tong_tien=chi_phi_thue+donVi*gia;
+set tong_tien=chi_phi_thue+don_vi*gia;
 

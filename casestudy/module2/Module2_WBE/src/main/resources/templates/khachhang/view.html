@@ -16,7 +16,6 @@ extra_js:
 
 <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
     <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Company name</a>
-    <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
     <ul class="navbar-nav px-3">
         <li class="nav-item text-nowrap">
             <a class="nav-link" href="#">Sign out</a>
@@ -41,12 +40,6 @@ extra_js:
                             Dịch vụ
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" th:href="@{/list/hopdong}">
-                            <span data-feather="shopping-cart"></span>
-                            Hợp đồng
-                        </a>
-                    </li>
                 </ul>
             </div>
         </nav>
@@ -55,10 +48,17 @@ extra_js:
             <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
                 <h1 class="h2">Khách Hàng</h1>
                 <div class="btn-toolbar mb-2 mb-md-0">
-                    <button type="button">
-                        <a th:href="@{/hopdong/create/{id}(id=${khachhang.idKhachHang})}">Tạo mới hợp đồng</a>
-                    </button>
+                    <div class="btn-group mr-2">
+                        <button type="button" class="btn btn-sm btn-outline-secondary"><a
+                                th:href="@{/hopdong/create/{id}(id=${khachhang.idKhachHang})}">Tạo mới hợp đồng</a>
+                        </button>
+                        <button type="button" class="btn btn-sm btn-outline-secondary"><a
+                                th:href="@{/list/hopdong/{id}(id=${khachhang.idKhachHang})}">Danh sách hợp đồng</a>
+                        </button>
+                    </div>
+
                 </div>
+
             </div>
 
             <div class="table-responsive">
@@ -68,8 +68,7 @@ extra_js:
                         <td th:text="${khachhang.hoTen}"></td>
                         <td></td>
                         <td>Ngày sinh</td>
-                        <td><input type="date" placeholder="yyyy-mm-dd"
-                                   min="1950-01-01" th:field="${khachhang.ngaySinh}" readonly></td>
+                        <td th:text="${khachhang.ngaySinh}"></td>
                     </tr>
                     <tr>
                         <td>Số CMND</td>
@@ -93,7 +92,7 @@ extra_js:
                         <td></td>
                     </tr>
                 </table>
-                <div class="btn-toolbar mb-2 mb-md-0 border-bottom" >
+                <div class="btn-toolbar mb-2 mb-md-0 border-bottom">
                     <button type="button">
                         <a th:href="@{/khachhang/edit/{id}(id=${khachhang.getIdKhachHang()})}">Chỉnh sửa thông tin</a>
                     </button>

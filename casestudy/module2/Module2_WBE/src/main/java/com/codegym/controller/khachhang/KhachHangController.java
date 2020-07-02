@@ -4,6 +4,8 @@ import com.codegym.model.khachhang.KhachHang;
 import com.codegym.service.khachhang.KhachHangService;
 import com.codegym.service.khachhang.LoaiKhachService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,8 +23,8 @@ public class KhachHangController {
     LoaiKhachService loaiKhachService;
 
     @GetMapping("/list/khachhang")
-    public String list(Model model){
-        model.addAttribute("list",khachHangService.findAll());
+    public String list(Model model,@PageableDefault(size = 10) Pageable pageable){
+        model.addAttribute("list",khachHangService.findAll(pageable));
         return "khachhang/list";
     }
 

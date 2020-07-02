@@ -4,6 +4,8 @@ import com.codegym.model.khachhang.KhachHang;
 import com.codegym.repository.khachhang.KhachHangRepository;
 import com.codegym.service.khachhang.KhachHangService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -31,5 +33,10 @@ public class KhachHangServiceImpl implements KhachHangService {
     @Override
     public void remove(Integer id) {
         khachHangRepository.deleteById(id);
+    }
+
+    @Override
+    public Page<KhachHang> findAll(Pageable pageable) {
+        return khachHangRepository.findAll(pageable);
     }
 }

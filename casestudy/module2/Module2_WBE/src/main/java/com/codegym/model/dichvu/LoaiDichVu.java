@@ -1,15 +1,13 @@
 package com.codegym.model.dichvu;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.List;
 
 @Entity
 @Table(name = "loaidichvu")
 public class LoaiDichVu {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idLoaiDichVu;
     private String tenLoaiDichVu;
 

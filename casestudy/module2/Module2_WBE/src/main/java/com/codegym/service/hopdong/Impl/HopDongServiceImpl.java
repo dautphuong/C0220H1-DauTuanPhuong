@@ -4,6 +4,8 @@ import com.codegym.model.hopdong.HopDong;
 import com.codegym.repository.hopdong.HopDongRepository;
 import com.codegym.service.hopdong.HopDongService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -32,4 +34,21 @@ public class HopDongServiceImpl implements HopDongService {
     public void remove(Integer id) {
         hopDongRepository.deleteById(id);
     }
+
+    @Override
+    public List<HopDong> findByKhachHang_IdKhachHang(Integer idKhachHang) {
+        return hopDongRepository.findByKhachHang_IdKhachHang(idKhachHang);
+    }
+
+    @Override
+    public Page<HopDong> findAll(Pageable pageable) {
+        return hopDongRepository.findAll(pageable);
+    }
+
+    @Override
+    public Page<HopDong> findByKhachHang_IdKhachHang(Integer idkhachhang, Pageable pageable) {
+        return hopDongRepository.findByKhachHang_IdKhachHang(idkhachhang,pageable);
+    }
+
+
 }

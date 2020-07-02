@@ -1,15 +1,13 @@
 package com.codegym.model.nhanvien;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.List;
 
 @Entity
 @Table(name = "bophan")
 public class BoPhan {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idBoPhan;
     private String tenBoPhan;
 

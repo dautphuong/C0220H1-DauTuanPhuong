@@ -30,9 +30,9 @@ extra_js:
             <div class="sidebar-sticky">
                 <ul class="nav flex-column">
                     <li class="nav-item">
-                        <a class="nav-link" th:href="@{/list/khachhang}">
-                            <span data-feather="file"></span>
-                            Khách hàng
+                        <a class="nav-link active" th:href="@{/list/khachhang}">
+                            <span data-feather="home"></span>
+                            Khách hàng <span class="sr-only">(current)</span>
                         </a>
                     </li>
                     <li class="nav-item">
@@ -41,39 +41,24 @@ extra_js:
                             Dịch vụ
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" th:href="@{/list/hopdong}">
-                            <span data-feather="home"></span>
-                            Hợp đồng <span class="sr-only">(current)</span>
-                        </a>
-                    </li>
                 </ul>
             </div>
         </nav>
 
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
             <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                <h1 class="h2">Hợp đồng</h1>
+                <h1 class="h2" th:text="${kh.hoTen}"></h1>
                 <div class="btn-toolbar mb-2 mb-md-0">
-                    <div class="btn-group mr-2">
-                        <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
-                        <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
-                    </div>
-                    <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
-                        <span data-feather="calendar"></span>
-                        This week
+                    <button type="button" class="btn btn-sm btn-outline-secondary"><a th:href="@{/khachhang/view/{id}(id=${kh.getIdKhachHang()})}">
+                        Trở lại
+                    </a>
                     </button>
                 </div>
             </div>
 
             <!--      <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas>-->
             <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 ">
-                <h2>Danh sách hơp đồng</h2>
-                <form th:action="@{/hopdong/create}">
-                    <div class="btn-group mr-2">
-                        <input type="submit" value="Tạo mới hợp đồng">
-                    </div>
-                </form>
+                <h2>Danh sách hợp đồng</h2>
             </div>
 
             <div class="table-responsive">
@@ -96,11 +81,15 @@ extra_js:
                         <td th:text="${hopdong.ngayKetThuc}"></td>
                         <td th:text="${hopdong.tienDatCoc}"></td>
                         <td th:text="${hopdong.tongTien}"></td>
-                        <td><a th:href="@{/hopdong/edit/{id}(id=${hopdong.getIdHopDong()})}">edit</a></td>
-                        <td><a th:href="@{/hopdong/delete/{id}(id=${hopdong.getIdHopDong()})}">delete</a></td>
+                        <td><a th:href="@{/hopdong/view/{idkh}/{id}(id=${hopdong.getIdHopDong()},idkh=${kh.getIdKhachHang()})}">Danh sách hợp đồng chi tiết</a></td>
                     </tr>
                     </tbody>
                 </table>
+<!--                <div>-->
+<!--                    <a th:if="${list.hasPrevious()}" th:href="@{/list/hopdong/{id}(page=${list.number - 1},id=${kh.idKhachHang})}">Previous</a>-->
+<!--                    <span th:text="${list.number + 1}"></span>/<span th:text="${list.totalPages}"></span>-->
+<!--                    <a th:if="${list.hasNext()}" th:href="@{/list/hopdong/{id}(page=${list.number + 1},id=${kh.idKhachHang})}">Next</a>-->
+<!--                </div>-->
             </div>
         </main>
     </div>
