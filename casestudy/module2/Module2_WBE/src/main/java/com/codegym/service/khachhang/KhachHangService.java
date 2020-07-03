@@ -9,11 +9,11 @@ import java.util.List;
 public interface KhachHangService {
     List<KhachHang> findAll();
 
-    KhachHang findByIdKhachHang(String id);
+    KhachHang findById(String id);
 
     void save(KhachHang khachHang);
 
-    void deleteByIdKhachHang(String id);
+    void remove(String id);
 
     Page<KhachHang> findAll(Pageable pageable);
 

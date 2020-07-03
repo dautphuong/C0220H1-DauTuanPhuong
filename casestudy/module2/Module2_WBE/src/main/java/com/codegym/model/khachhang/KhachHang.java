@@ -4,6 +4,9 @@ import com.codegym.model.hopdong.HopDong;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Pattern;
 import java.sql.Date;
 import java.util.List;
 
@@ -11,12 +14,17 @@ import java.util.List;
 @Table(name = "khachhang")
 public class KhachHang {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Pattern(regexp = "(KH-[0-9]{4})")
     private String idKhachHang;
+    @NotEmpty
     private String hoTen;
+    @NotEmpty
     private String ngaySinh;
+    @Pattern(regexp = "([0-9]{9}|[0-9]{12})")
     private String soCMND;
+    @Pattern(regexp = "(090[0-9]{7}|091[0-9]{7}|(84)90[0-9]{7}|(84)91[0-9]{7})")
     private String sdt;
+    @Email
     private String email;
     private String diaChi;
     @ManyToOne

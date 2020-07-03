@@ -28,9 +28,9 @@ public class HopDongController {
     HopDongChiTietService hopDongChiTietService;
 
     @GetMapping("/list/hopdong/{id}")
-    public String list(@PathVariable String id, Model model, @PageableDefault(size = 2) Pageable pageable) {
+    public String list(@PathVariable String id, Model model, @PageableDefault(size = 10) Pageable pageable) {
         model.addAttribute("list",hopDongService.findByKhachHang_IdKhachHang(id,pageable));
-        model.addAttribute("kh", khachHangService.findByIdKhachHang(id));
+        model.addAttribute("kh", khachHangService.findById(id));
         return "hopdong/list";
     }
 
@@ -38,12 +38,12 @@ public class HopDongController {
     public String create(@PathVariable String id, Model model) {
         model.addAttribute("hopdong", new HopDong());
         model.addAttribute("listNhanVien", nhanVienService.findAll());
-        model.addAttribute("kh", khachHangService.findByIdKhachHang(id));
+        model.addAttribute("kh", khachHangService.findById(id));
         return "hopdong/create";
     }
 
     @PostMapping("/hopdong/save/{id}")
-    public String save(@PathVariable Integer id, @ModelAttribute("hopdong") HopDong hopDong, RedirectAttributes redirect) {
+    public String save(@PathVariable String id, @ModelAttribute("hopdong") HopDong hopDong, RedirectAttributes redirect) {
         hopDongService.save(hopDong);
         redirect.addFlashAttribute("success", "Saved hop dong successfully!");
         return "redirect:/list/hopdong/"+ id;
@@ -79,7 +79,7 @@ public class HopDongController {
     public String view(@PathVariable Integer id, @PathVariable String idkh, Model model) {
         model.addAttribute("hopdong", hopDongService.findById(id));
         model.addAttribute("listHopDongChiTiet", hopDongChiTietService.findByHopDong_IdHopDong(id));
-        model.addAttribute("kh", khachHangService.findByIdKhachHang(idkh));
+        model.addAttribute("kh", khachHangService.findById(idkh));
         return "hopdong/view_listHopDongChiTiet";
     }
 }

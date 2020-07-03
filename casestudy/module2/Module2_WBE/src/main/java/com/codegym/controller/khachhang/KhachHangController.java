@@ -9,9 +9,11 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import javax.validation.Valid;
 import java.util.Optional;
 
 @Controller
@@ -45,7 +47,12 @@ public class KhachHangController {
     }
 
     @PostMapping("/khachhang/save")
-    public String save(@ModelAttribute("khachhang") KhachHang khachHang, RedirectAttributes redirect) {
+    public String save(@Valid @ModelAttribute("khachhang") KhachHang khachHang, BindingResult bindingResult, RedirectAttributes redirect,Model model) {
+        //validate annotation
+        if(bindingResult.hasFieldErrors()){
+            model.addAttribute("listloaikhach", loaiKhachService.findAll());
+            return "khachhang/create";
+        }
         khachHangService.save(khachHang);
         redirect.addFlashAttribute("success", "Saved khach hang successfully!");
         return "redirect:/list/khachhang";
@@ -53,12 +60,17 @@ public class KhachHangController {
 
     @GetMapping("/khachhang/edit/{id}")
     public String edit(@PathVariable String id, Model model) {
-        model.addAttribute("khachhang", khachHangService.findByIdKhachHang(id));
+        model.addAttribute("khachhang", khachHangService.findById(id));
         return "khachhang/edit";
     }
 
     @PostMapping("/khachhang/update/{id}")
-    public String update(@PathVariable String id, KhachHang khachHang, RedirectAttributes redirect) {
+    public String update(@Valid @ModelAttribute("khachhang") KhachHang khachHang,BindingResult bindingResult,@PathVariable String id, RedirectAttributes redirect,Model model) {
+        //validate annotation
+        if(bindingResult.hasFieldErrors()){
+            model.addAttribute("khachhang", khachHangService.findById(id));
+            return "khachhang/edit";
+        }
         khachHangService.save(khachHang);
         redirect.addFlashAttribute("success", "Modified khach hang successfully!");
         return "redirect:/khachhang/view/" + id;
@@ -66,14 +78,14 @@ public class KhachHangController {
 
     @GetMapping("/khachhang/delete/{id}")
     public String delete(@PathVariable String id, Model model, RedirectAttributes redirectAttributes) {
-        khachHangService.deleteByIdKhachHang(id);
+        khachHangService.remove(id);
         redirectAttributes.addFlashAttribute("success", "Removed khachhang successfully!");
         return "redirect:/list/khachhang";
     }
 
     @GetMapping("/khachhang/view/{id}")
     public String view(@PathVariable String id, Model model) {
-        model.addAttribute("khachhang", khachHangService.findByIdKhachHang(id));
+        model.addAttribute("khachhang", khachHangService.findById(id));
         return "khachhang/view";
     }
 }

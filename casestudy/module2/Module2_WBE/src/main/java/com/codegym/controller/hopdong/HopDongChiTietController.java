@@ -23,7 +23,7 @@ public class HopDongChiTietController {
     DichVuDiKemService dichVuDiKemService;
 
     @GetMapping("/hopdongchitiet/create/{idkh}/{id}")
-    public String create(@PathVariable Integer id,@PathVariable Integer idkh,Model model){
+    public String create(@PathVariable Integer id,@PathVariable String idkh,Model model){
         model.addAttribute("hopdongchitiet",new HopDongChiTiet());
         model.addAttribute("hd",hopDongService.findById(id));
         model.addAttribute("idkh",idkh);
@@ -32,7 +32,7 @@ public class HopDongChiTietController {
     }
 
     @PostMapping("/hopdongchitiet/save/{idkh}/{id}")
-    public String save(@PathVariable Integer idkh,@PathVariable Integer id,@ModelAttribute("hopdongchitiet") HopDongChiTiet hopDongChiTiet, RedirectAttributes redirect) {
+    public String save(@PathVariable String idkh,@PathVariable Integer id,@ModelAttribute("hopdongchitiet") HopDongChiTiet hopDongChiTiet, RedirectAttributes redirect) {
         hopDongChiTietService.save(hopDongChiTiet);
         redirect.addFlashAttribute("success", "Saved hop dong chi tiet successfully!");
         return ("redirect:/hopdong/view/"+idkh+"/"+id);

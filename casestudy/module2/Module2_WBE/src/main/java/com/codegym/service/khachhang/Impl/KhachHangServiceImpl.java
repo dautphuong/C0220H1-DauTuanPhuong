@@ -22,8 +22,8 @@ public class KhachHangServiceImpl implements KhachHangService {
 
 
     @Override
-    public KhachHang findByIdKhachHang(String id) {
-        return khachHangRepository.findByIdKhachHang(id);
+    public KhachHang findById(String id) {
+        return khachHangRepository.findById(id).orElse(null);
     }
 
     @Override
@@ -32,8 +32,8 @@ public class KhachHangServiceImpl implements KhachHangService {
     }
 
     @Override
-    public void deleteByIdKhachHang(String id) {
-        khachHangRepository.deleteByIdKhachHang(id);
+    public void remove(String id) {
+        khachHangRepository.deleteById(id);
     }
 
     @Override

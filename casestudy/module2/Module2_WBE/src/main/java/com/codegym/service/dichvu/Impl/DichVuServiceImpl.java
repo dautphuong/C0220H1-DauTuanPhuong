@@ -4,6 +4,8 @@ import com.codegym.model.dichvu.DichVu;
 import com.codegym.repository.dichvu.DichVuRepository;
 import com.codegym.service.dichvu.DichVuService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -19,7 +21,7 @@ public class DichVuServiceImpl implements DichVuService {
     }
 
     @Override
-    public DichVu findById(Integer id) {
+    public DichVu findById(String id) {
         return dichVuRepository.findById(id).orElse(null);
     }
 
@@ -29,7 +31,17 @@ public class DichVuServiceImpl implements DichVuService {
     }
 
     @Override
-    public void remove(Integer id) {
+    public void remove(String id) {
         dichVuRepository.deleteById(id);
+    }
+
+    @Override
+    public Page<DichVu> findAll(Pageable pageable) {
+        return dichVuRepository.findAll(pageable);
+    }
+
+    @Override
+    public Page<DichVu> findByIdDichVuOrTenDichVu(String keyword, String keyword2, Pageable pageable) {
+        return dichVuRepository.findByIdDichVuOrTenDichVu(keyword,keyword2,pageable);
     }
 }
