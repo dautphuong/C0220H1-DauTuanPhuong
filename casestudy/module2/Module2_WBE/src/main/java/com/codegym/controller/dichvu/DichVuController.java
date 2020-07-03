@@ -33,7 +33,7 @@ public class DichVuController {
             listDV = dichVuService.findAll(pageable);
         } else {
             //truyền keyword
-            listDV = dichVuService.findByIdDichVuOrTenDichVu(keyword.get(),keyword.get(), pageable);
+            listDV = dichVuService.findByIdDichVuContainingOrTenDichVuContaining(keyword.get(),keyword.get(), pageable);
             model.addAttribute("keyword", keyword.get());
         }
         model.addAttribute("list",listDV);

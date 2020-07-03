@@ -76,6 +76,11 @@ extra_js:
                             <td>Tiền đặt cọc</td>
                             <td><input type="text" th:field="*{tienDatCoc}"/><br></td>
                             <td></td>
+                        <td>Dịch vụ</td>
+                            <td><select th:field="*{dichVu.idDichVu}">
+                                <option th:each="list:${listdichvu}"
+                                        th:value="${list.idDichVu}" th:text="${list.tenDichVu}"></option>
+                            </select></td>
                         <tr>
                             <td>Nhân viên</td>
                             <td><select th:field="*{nhanVien.idNhanVien}">

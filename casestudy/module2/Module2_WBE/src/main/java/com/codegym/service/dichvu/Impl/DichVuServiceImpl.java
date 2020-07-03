@@ -41,7 +41,7 @@ public class DichVuServiceImpl implements DichVuService {
     }
 
     @Override
-    public Page<DichVu> findByIdDichVuOrTenDichVu(String keyword, String keyword2, Pageable pageable) {
-        return dichVuRepository.findByIdDichVuOrTenDichVu(keyword,keyword2,pageable);
+    public Page<DichVu> findByIdDichVuContainingOrTenDichVuContaining(String keyword, String keyword2, Pageable pageable) {
+        return dichVuRepository.findByIdDichVuContainingOrTenDichVuContaining(keyword,keyword2,pageable);
     }
 }

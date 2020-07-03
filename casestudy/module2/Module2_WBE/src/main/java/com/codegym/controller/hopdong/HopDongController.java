@@ -1,6 +1,7 @@
 package com.codegym.controller.hopdong;
 
 import com.codegym.model.hopdong.HopDong;
+import com.codegym.service.dichvu.DichVuService;
 import com.codegym.service.hopdong.HopDongChiTietService;
 import com.codegym.service.hopdong.HopDongService;
 import com.codegym.service.khachhang.KhachHangService;
@@ -26,11 +27,13 @@ public class HopDongController {
     KhachHangService khachHangService;
     @Autowired
     HopDongChiTietService hopDongChiTietService;
-
+    @Autowired
+    DichVuService dichVuService;
     @GetMapping("/list/hopdong/{id}")
     public String list(@PathVariable String id, Model model, @PageableDefault(size = 10) Pageable pageable) {
         model.addAttribute("list",hopDongService.findByKhachHang_IdKhachHang(id,pageable));
         model.addAttribute("kh", khachHangService.findById(id));
+        model.addAttribute("dichvu",dichVuService.findById(id));
         return "hopdong/list";
     }
 
@@ -39,6 +42,7 @@ public class HopDongController {
         model.addAttribute("hopdong", new HopDong());
         model.addAttribute("listNhanVien", nhanVienService.findAll());
         model.addAttribute("kh", khachHangService.findById(id));
+        model.addAttribute("listdichvu",dichVuService.findAll());
         return "hopdong/create";
     }
 

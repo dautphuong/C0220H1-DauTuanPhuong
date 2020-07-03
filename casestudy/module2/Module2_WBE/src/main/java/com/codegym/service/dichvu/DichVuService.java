@@ -17,5 +17,5 @@ public interface DichVuService {
 
     Page<DichVu> findAll(Pageable pageable);
 
-    Page<DichVu> findByIdDichVuOrTenDichVu(String keyword, String keyword2, Pageable pageable);
+    Page<DichVu> findByIdDichVuContainingOrTenDichVuContaining(String keyword, String keyword2, Pageable pageable);
 }

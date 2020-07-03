@@ -1,5 +1,6 @@
 package com.codegym.controller.khachhang;
 
+import com.codegym.model.History;
 import com.codegym.model.khachhang.KhachHang;
 import com.codegym.service.khachhang.KhachHangService;
 import com.codegym.service.khachhang.LoaiKhachService;
@@ -17,6 +18,7 @@ import javax.validation.Valid;
 import java.util.Optional;
 
 @Controller
+@SessionAttributes("message")
 public class KhachHangController {
     @Autowired
     KhachHangService khachHangService;
@@ -47,13 +49,15 @@ public class KhachHangController {
     }
 
     @PostMapping("/khachhang/save")
-    public String save(@Valid @ModelAttribute("khachhang") KhachHang khachHang, BindingResult bindingResult, RedirectAttributes redirect,Model model) {
+    public String save(@Valid @ModelAttribute("khachhang") KhachHang khachHang, BindingResult bindingResult, RedirectAttributes redirect,
+                       Model model,@SessionAttribute History message) {
         //validate annotation
         if(bindingResult.hasFieldErrors()){
             model.addAttribute("listloaikhach", loaiKhachService.findAll());
             return "khachhang/create";
         }
         khachHangService.save(khachHang);
+        message.add("");
         redirect.addFlashAttribute("success", "Saved khach hang successfully!");
         return "redirect:/list/khachhang";
     }
@@ -65,10 +69,9 @@ public class KhachHangController {
     }
 
     @PostMapping("/khachhang/update/{id}")
-    public String update(@Valid @ModelAttribute("khachhang") KhachHang khachHang,BindingResult bindingResult,@PathVariable String id, RedirectAttributes redirect,Model model) {
+    public String update(@PathVariable String id,@Valid @ModelAttribute("khachhang") KhachHang khachHang,BindingResult bindingResult, RedirectAttributes redirect,Model model) {
         //validate annotation
         if(bindingResult.hasFieldErrors()){
-            model.addAttribute("khachhang", khachHangService.findById(id));
             return "khachhang/edit";
         }
         khachHangService.save(khachHang);
@@ -87,5 +90,10 @@ public class KhachHangController {
     public String view(@PathVariable String id, Model model) {
         model.addAttribute("khachhang", khachHangService.findById(id));
         return "khachhang/view";
+    }
+
+    @ModelAttribute("message")
+    public History message() {
+        return new History();
     }
 }

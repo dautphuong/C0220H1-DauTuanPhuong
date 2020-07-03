@@ -70,6 +70,7 @@ extra_js:
                     <thead>
                     <tr>
                         <th>#</th>
+                        <th>Dịch vụ</th>
                         <th>Ngày làm hợp đồng</th>
                         <th>Ngày kết thúc</th>
                         <th>Tiền đặt cọc</th>
@@ -81,6 +82,7 @@ extra_js:
                     <tbody>
                     <tr th:each="hopdong: ${list}">
                         <td th:text="${hopdong.idHopDong}"></td>
+                        <td th:text="${hopdong.dichVu.tenDichVu}"></td>
                         <td th:text="${hopdong.ngayLamHopDong}"></td>
                         <td th:text="${hopdong.ngayKetThuc}"></td>
                         <td th:text="${hopdong.tienDatCoc}"></td>

@@ -6,5 +6,5 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface DichVuRepository extends JpaRepository<DichVu,String> {
-    Page<DichVu> findByIdDichVuOrTenDichVu(String keyword, String keyword2, Pageable pageable);
+    Page<DichVu> findByIdDichVuContainingOrTenDichVuContaining(String keyword, String keyword2, Pageable pageable);
 }
