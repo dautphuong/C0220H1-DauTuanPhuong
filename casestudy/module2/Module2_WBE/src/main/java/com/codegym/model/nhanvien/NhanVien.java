@@ -3,6 +3,7 @@ package com.codegym.model.nhanvien;
 import com.codegym.model.hopdong.HopDong;
 
 import javax.persistence.*;
+import javax.validation.constraints.Min;
 import java.util.List;
 
 @Entity
@@ -14,6 +15,7 @@ public class NhanVien {
     private String hoTen;
     private String ngaySinh;
     private String soCMND;
+    @Min(0)
     private String luong;
     private String sdt;
     private String email;

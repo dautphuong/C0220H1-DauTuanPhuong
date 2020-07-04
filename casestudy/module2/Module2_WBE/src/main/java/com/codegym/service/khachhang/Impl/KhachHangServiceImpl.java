@@ -45,4 +45,6 @@ public class KhachHangServiceImpl implements KhachHangService {
     public Page<KhachHang> findByHoTenContainingOrIdKhachHangContaining(String keyword, String keyword2, Pageable pageable) {
         return khachHangRepository.findByHoTenContainingOrIdKhachHangContaining(keyword,keyword2,pageable);
     }
+
+
 }

@@ -5,6 +5,7 @@ import com.codegym.model.khachhang.KhachHang;
 import com.codegym.model.nhanvien.NhanVien;
 
 import javax.persistence.*;
+import javax.validation.constraints.Min;
 import java.util.List;
 
 @Entity
@@ -15,7 +16,9 @@ public class HopDong {
     private Integer idHopDong;
     private String ngayLamHopDong;
     private String ngayKetThuc;
+    @Min(0)
     private Double tienDatCoc;
+    @Min(0)
     private Double tongTien;
 
     @ManyToOne
