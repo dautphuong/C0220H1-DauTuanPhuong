@@ -50,36 +50,34 @@ public class KhachHangController {
 
     @PostMapping("/khachhang/save")
     public String save(@Valid @ModelAttribute("khachhang") KhachHang khachHang, BindingResult bindingResult, RedirectAttributes redirect,
-                       Model model,@SessionAttribute History message) {
-
-
+                       Model model) {
+//        //custom validate
+//        new KhachHang().validate(khachHang,bindingResult);
         //validate annotation
         if(bindingResult.hasFieldErrors()){
             model.addAttribute("listloaikhach", loaiKhachService.findAll());
             return "khachhang/create";
         }
 
-        //custom validate
-        new KhachHang().validate(khachHang,bindingResult);
-
         khachHangService.save(khachHang);
-        message.add("");
         redirect.addFlashAttribute("success", "Saved khach hang successfully!");
         return "redirect:/list/khachhang";
     }
 
     @GetMapping("/khachhang/edit/{id}")
-    public String edit(@PathVariable String id, Model model) {
+    public String edit(@PathVariable String id, Model model ) {
         model.addAttribute("khachhang", khachHangService.findById(id));
         return "khachhang/edit";
     }
 
     @PostMapping("/khachhang/update/{id}")
-    public String update(@PathVariable String id,@Valid @ModelAttribute("khachhang") KhachHang khachHang,BindingResult bindingResult, RedirectAttributes redirect,Model model) {
+    public String update(@PathVariable String id,@Valid @ModelAttribute("khachhang") KhachHang khachHang,BindingResult bindingResult, RedirectAttributes redirect,
+                         Model model,@SessionAttribute("history")History history) {
         //validate annotation
         if(bindingResult.hasFieldErrors()){
             return "khachhang/edit";
         }
+        history.add(khachHangService.findById(id));
         khachHangService.save(khachHang);
         redirect.addFlashAttribute("success", "Modified khach hang successfully!");
         return "redirect:/khachhang/view/" + id;
@@ -98,8 +96,8 @@ public class KhachHangController {
         return "khachhang/view";
     }
 
-    @ModelAttribute("message")
-    public History message() {
+    @ModelAttribute("history")
+    public History history() {
         return new History();
     }
 }
