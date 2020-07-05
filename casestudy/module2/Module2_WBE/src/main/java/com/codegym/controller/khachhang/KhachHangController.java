@@ -57,7 +57,7 @@ public class KhachHangController {
             return "khachhang/create";
         }
         khachHangService.save(khachHang);
-        message.add("");
+//        message.add("");
         redirect.addFlashAttribute("success", "Saved khach hang successfully!");
         return "redirect:/list/khachhang";
     }
@@ -69,11 +69,13 @@ public class KhachHangController {
     }
 
     @PostMapping("/khachhang/update/{id}")
-    public String update(@PathVariable String id,@Valid @ModelAttribute("khachhang") KhachHang khachHang,BindingResult bindingResult, RedirectAttributes redirect,Model model) {
+    public String update(@PathVariable String id,@Valid @ModelAttribute("khachhang") KhachHang khachHang,BindingResult bindingResult, RedirectAttributes redirect
+            ,Model model,@SessionAttribute("message")History history) {
         //validate annotation
         if(bindingResult.hasFieldErrors()){
             return "khachhang/edit";
         }
+        history.add(khachHangService.findById(id));
         khachHangService.save(khachHang);
         redirect.addFlashAttribute("success", "Modified khach hang successfully!");
         return "redirect:/khachhang/view/" + id;
@@ -90,6 +92,12 @@ public class KhachHangController {
     public String view(@PathVariable String id, Model model) {
         model.addAttribute("khachhang", khachHangService.findById(id));
         return "khachhang/view";
+    }
+
+    @GetMapping("/history/update")
+    public String history(@SessionAttribute("message")History history,Model model){
+        model.addAttribute("list",history);
+        return "khachhang/history_update";
     }
 
     @ModelAttribute("message")

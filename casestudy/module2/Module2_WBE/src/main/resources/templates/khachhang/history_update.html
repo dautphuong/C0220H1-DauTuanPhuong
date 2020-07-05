@@ -56,7 +56,7 @@ extra_js:
                 <div class="btn-toolbar mb-2 mb-md-0">
                     <div class="btn-group mr-2">
                         <button type="button">
-                            <a th:href="@{/history/update}">Lịch sử</a>
+                            <a th:href="@{/list/khachhang}">Trở lại</a>
                         </button>
                     </div>
 
@@ -65,7 +65,7 @@ extra_js:
 
             <!--      <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas>-->
             <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 ">
-                <h2>Danh sách khách hàng</h2>
+                <h2>Danh sách thay đổi khách hàng</h2>
                 <form th:action="@{/khachhang/create}">
                     <div class="btn-group mr-2">
                         <input type="submit" value="Tạo mới khách hàng">
@@ -105,11 +105,7 @@ extra_js:
                     </tbody>
                 </table>
             </div>
-            <div>
-                <a th:if="${list.hasPrevious()}" th:href="@{/list/khachhang/(page=${list.number - 1},keyword = ${keyword})}">Previous</a>
-                <span th:text="${list.number + 1}"></span>/<span th:text="${list.totalPages}"></span>
-                <a th:if="${list.hasNext()}" th:href="@{/list/khachhang/(page=${list.number + 1},keyword = ${keyword})}">Next</a>
-            </div>
+
         </main>
     </div>
 </div>
