@@ -20,7 +20,7 @@ public class NhanVienServiceImpl implements NhanVienService {
     }
 
     @Override
-    public NhanVien findById(Integer id) {
+    public NhanVien findById(String id) {
         return nhanVienRepository.findById(id).orElse(null);
     }
 
@@ -30,13 +30,18 @@ public class NhanVienServiceImpl implements NhanVienService {
     }
 
     @Override
-    public void remove(Integer id) {
+    public void remove(String id) {
         nhanVienRepository.deleteById(id);
     }
 
     @Override
     public List<NhanVien> findBySoCMNDContainingOrNgaySinhContaining(String cmnd, String ngaySinh) {
         return nhanVienRepository.findBySoCMNDContainingOrNgaySinhContaining(cmnd,ngaySinh);
+    }
+
+    @Override
+    public List<NhanVien> findByMaNhanVienContainingOrSoCMNDContainingOrNgaySinhContaining(String id, String cmnd, String ngaySinh) {
+        return nhanVienRepository.findByMaNhanVienContainingOrSoCMNDContainingOrNgaySinhContaining(id,cmnd,ngaySinh);
     }
 
 

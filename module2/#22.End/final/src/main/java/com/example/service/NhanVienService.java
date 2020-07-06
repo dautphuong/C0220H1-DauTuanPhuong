@@ -8,14 +8,15 @@ public interface NhanVienService {
 
     List<NhanVien> findAll();
 
-    NhanVien findById(Integer id);
+    NhanVien findById(String id);
 
     void save(NhanVien nhanVien);
 
-    void remove(Integer id);
+    void remove(String id);
 
     List<NhanVien>findBySoCMNDContainingOrNgaySinhContaining(String cmnd,String ngaySinh);
 
+    List<NhanVien>findByMaNhanVienContainingOrSoCMNDContainingOrNgaySinhContaining(String id,String cmnd,String ngaySinh);
 
 
 

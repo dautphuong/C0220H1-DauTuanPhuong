@@ -11,6 +11,8 @@
 <div id="form">
     <form action="#" th:action="@{/save}" th:object="${nhanvien}" method="POST">
         <div>
+            <label>Mã nhân viên</label>
+            <input type="text" th:field="*{maNhanVien}">
             <label>Nhóm nhân viên</label>
             <input type="text" th:field="*{nhomNhanVien}"/>
             <p th:if="${#fields.hasErrors('nhomNhanVien')}" th:errors="*{nhomNhanVien}"></p>

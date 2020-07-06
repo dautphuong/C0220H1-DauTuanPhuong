@@ -16,8 +16,8 @@ import java.time.Period;
 public class NhanVien implements Validator {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer maNhanVien;
+    @NotEmpty(message = "Không được để trống")
+    private String maNhanVien;
     @NotEmpty(message = "Không được để trống")
     private String nhomNhanVien;
     @NotEmpty(message = "Không được để trống")
@@ -37,7 +37,8 @@ public class NhanVien implements Validator {
     public NhanVien() {
     }
 
-    public NhanVien(String nhomNhanVien, String hoten, String gioiTinh, String ngaySinh, String soCMND, String soDienThoai, String email, String diaChi) {
+    public NhanVien(String maNhanVien,String nhomNhanVien, String hoten, String gioiTinh, String ngaySinh, String soCMND, String soDienThoai, String email, String diaChi) {
+        this.maNhanVien=maNhanVien;
         this.nhomNhanVien = nhomNhanVien;
         this.hoten = hoten;
         this.gioiTinh = gioiTinh;
@@ -80,11 +81,11 @@ public class NhanVien implements Validator {
         this.diaChi = diaChi;
     }
 
-    public Integer getMaNhanVien() {
+    public String getMaNhanVien() {
         return maNhanVien;
     }
 
-    public void setMaNhanVien(Integer maNhanVien) {
+    public void setMaNhanVien(String maNhanVien) {
         this.maNhanVien = maNhanVien;
     }
 

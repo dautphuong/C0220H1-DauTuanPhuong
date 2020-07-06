@@ -24,7 +24,7 @@ public class NhanVienController {
         if (!keyword.isPresent()) {
             list = nhanVienService.findAll();
         } else {
-            list = nhanVienService.findBySoCMNDContainingOrNgaySinhContaining(keyword.get(),keyword.get());
+            list = nhanVienService.findByMaNhanVienContainingOrSoCMNDContainingOrNgaySinhContaining(keyword.get(),keyword.get(),keyword.get());
         }
 
         model.addAttribute("list", list);
@@ -56,7 +56,7 @@ public class NhanVienController {
 
     //thuc hien xoa nhan vien
     @GetMapping("/delete/{id}")
-    public String delete(@PathVariable Integer id) {
+    public String delete(@PathVariable String id) {
         nhanVienService.remove(id);
         return "redirect:/";
     }

@@ -5,9 +5,9 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
 
-public interface NhanVienRepository extends JpaRepository<NhanVien,Integer> {
+public interface NhanVienRepository extends JpaRepository<NhanVien,String> {
     List<NhanVien>findBySoCMNDContainingOrNgaySinhContaining(String cmnd,String ngaySinh);
 
-    List<NhanVien>findByMaNhanVienContainingOrSoCMNDContainingOrNgaySinhContaining(Integer id,String cmnd,String ngaySinh);
+    List<NhanVien>findByMaNhanVienContainingOrSoCMNDContainingOrNgaySinhContaining(String id,String cmnd,String ngaySinh);
 
 }
