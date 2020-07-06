@@ -8,4 +8,6 @@ import java.util.List;
 public interface NhanVienRepository extends JpaRepository<NhanVien,Integer> {
     List<NhanVien>findBySoCMNDContainingOrNgaySinhContaining(String cmnd,String ngaySinh);
 
+    List<NhanVien>findByMaNhanVienContainingOrSoCMNDContainingOrNgaySinhContaining(Integer id,String cmnd,String ngaySinh);
+
 }
