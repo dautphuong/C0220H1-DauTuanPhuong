@@ -65,7 +65,7 @@ extra_js:
                         <td th:text="${khachhang.hoTen}"></td>
                         <td></td>
                         <td>Ngày sinh</td>
-                        <td th:text="${khachhang.ngaySinh}"></td>
+                        <td><input type="date" th:value="${khachhang.ngaySinh}" readonly/><br>
                     </tr>
                     <tr>
                         <td>Số CMND</td>

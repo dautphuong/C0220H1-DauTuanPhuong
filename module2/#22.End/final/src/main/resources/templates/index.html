@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout :: head"></head>
+<body>
+
+<h3>Danh sách nhân viên</h3>
+<!--form search-->
+<div>
+    <form th:action="@{/}" method="get">
+        <input type="text" name="keyword"/>
+        <input type="submit" th:value="Search"/>
+    </form>
+</div>
+<div>
+    <a href="/create">Tạo mới nhân viên</a>
+</div>
+
+<table id="ends">
+    <thead>
+    <tr>
+        <th>Mã nhân viên</th>
+        <th>Nhóm nhân viên</th>
+        <th>Họ tên</th>
+        <th>Giới tính</th>
+        <th>Số điện thoại</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each=" value: ${list}">
+        <td th:text="${value.maNhanVien}"></td>
+        <td th:text="${value.nhomNhanVien}"></td>
+        <td th:text="${value.hoten}"></td>
+        <td th:text="${value.gioiTinh}"></td>
+        <td th:text="${value.soDienThoai}"></td>
+        <td><a th:href="@{/edit/{id}(id=${value.maNhanVien})}">Sửa</a></td>
+        <td>
+            <button type="button">
+                <a onclick="return confirm_delete()"
+                   th:href="@{/delete/{id}(id= ${value.getMaNhanVien()})}">Xóa</a>
+            </button>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</body>
+
+
+<script type="text/javascript">
+    function confirm_delete() {
+        return confirm("Bạn có chắc không ?");
+    }
+</script>
+</html>

@@ -95,7 +95,7 @@ extra_js:
                                 <span th:text="${khachhang.hoTen}"></span>
                             </a>
                         </td>
-                        <td th:text="${khachhang.ngaySinh}"></td>
+                        <td><input type="date" th:value="${khachhang.ngaySinh}" readonly/><br>
                         <td th:text="${khachhang.soCMND}"></td>
                         <td th:text="${khachhang.sdt}"></td>
                         <td th:text="${khachhang.email}"></td>

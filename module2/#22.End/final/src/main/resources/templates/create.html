@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout :: head"></head>
+<body>
+<h3>Tạo đối tượng</h3>
+<p>
+    <a th:href="@{/}">
+        Trở lại danh sách
+    </a>
+</p>
+<div id="form">
+    <form action="#" th:action="@{/save}" th:object="${nhanvien}" method="POST">
+        <div>
+            <label>Nhóm nhân viên</label>
+            <input type="text" th:field="*{nhomNhanVien}"/>
+            <p th:if="${#fields.hasErrors('nhomNhanVien')}" th:errors="*{nhomNhanVien}"></p>
+            <label>Họ tên</label>
+            <input type="text" th:field="*{hoten}">
+            <p th:if="${#fields.hasErrors('hoten')}" th:errors="*{hoten}"></p>
+            <label>Ngày sinh</label>
+            <input type="date" placeholder="yyyy-mm-dd" th:field="*{ngaySinh}">
+            <p th:if="${#fields.hasErrors('ngaySinh')}" th:errors="*{ngaySinh}"></p>
+            <label>Giới tính</label>
+            <input type="text" th:field="*{gioiTinh}">
+            <p th:if="${#fields.hasErrors('gioiTinh')}" th:errors="*{gioiTinh}"></p>
+            <label>Số điện thoại</label>
+            <input type="text" th:field="*{soDienThoai}">
+            <p th:if="${#fields.hasErrors('soDienThoai')}" th:errors="*{soDienThoai}"></p>
+            <label>Số CMND</label>
+            <input type="text" th:field="*{soCMND}">
+            <p th:if="${#fields.hasErrors('soCMND')}" th:errors="*{soCMND}"></p>
+            <label>Email</label>
+            <input type="text" th:field="*{email}">
+            <p th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></p>
+            <label>Địa chỉ</label>
+            <input type="text" th:field="*{diaChi}">
+            <p th:if="${#fields.hasErrors('diaChi')}" th:errors="*{diaChi}"></p>
+        </div>
+
+        <input type="submit" value="Thêm mới">
+    </form>
+</div>
+</body>
+</html>
