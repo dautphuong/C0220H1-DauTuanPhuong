@@ -30,7 +30,7 @@ public class NhanVien implements Validator {
     public String soCMND;
     @Pattern(regexp = "090[0-9]{7}|091[0-9]{7}",message = "số điện thoại số đầu 090 hoặc 091 và 7 chữ số")
     private String soDienThoai;
-    @Pattern(regexp = "^([a-zA-Z0-9_.-])+@(([a-zA-Z0-9-])+.)+[.]([a-zA-Z0-9]{2,4})+$",message = "sai định dạng email")
+    @Pattern(regexp = "^([a-zA-Z0-9_.-])+@(([a-zA-Z0-9-])+.)+[.]([a-zA-Z0-9]{2,4})+$",message = "sai email")
     public String email;
     public String diaChi;
 
