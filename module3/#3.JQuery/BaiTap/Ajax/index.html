@@ -20,7 +20,7 @@
             <th>Địa Chỉ</th>
         </tr>
         </thead>
-        <tbody id="containerItem">
+        <tbody id="item">
         </tbody>
     </table>
 </div>
@@ -34,20 +34,18 @@
             // dataType: "text",
             success: function (result) {
                 console.log(result);
-                var html_append = '';
-                jQuery(result).each(function (i, item) {
-                    console.log(item.id);
-                    html_append += '<tr><td>' + item.id+ '</td>' +
-                        '<td>' + item.fullName+ '</td>' +
-                        '<td>' + item.gender+ '</td>' +
-                        '<td>' + item.birthDate+ '</td>' +
-                        '<td>' + item.phoneNumber+ '</td>' +
-                        '<td>' + item.address+ '</td></tr>';
-                    $("#containerItem").html(html_append);
-                })
+                var html_string = '';
+                $.each(result, function (i,item) {
+                    html_string += '<tr><td>' + item.id + '</td>' +
+                        '<td>' + item.fullName + '</td>' +
+                        '<td>' + item.gender + '</td>' +
+                        '<td>' + item.birthDate + '</td>' +
+                        '<td>' + item.phoneNumber + '</td>' +
+                        '<td>' + item.address + '</td></tr>';
+                });
+                $("#item").html(html_string);
             },
             fail: function (result) {
-
             }
         });
     });
