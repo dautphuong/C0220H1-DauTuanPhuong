@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test query</title>
+    <script src="js/jquery-3.5.1.min.js"></script>
+</head>
+<body>
+    <h3 id="h3First">Hello JQuery 1!</h3>
+    <h3>Hello JQuery 2!</h3>
+    <button id="btnChange">Change color</button>
+    <button id="btnToggle">Hide text</button>
+    <button id="btnSlide">Slide</button>
+    <button id="btnFade">Fade</button>
+    <button id="btnChangeText">Change text</button>
+<!--    <button id="btnChangeJS" onclick="changeColor()">Change color</button>-->
+<script>
+    $(document).ready(function() {
+        $("#btnChange").click(function() {
+            $("h3").css("color", "red");
+        });
+
+        $("#btnToggle").click(function() {
+            $("h3").hide();
+        });
+
+        $("#btnSlide").click(function() {
+            $("h3").slideToggle();
+        });
+
+        $("#btnChangeText").click(function() {
+            $("#h3First").text("Hello Ajax!");
+        });
+
+        $()
+    });
+
+    // function changeColor() {
+    //     let h3Tag = document.getElementsByTagName("h3");
+    //
+    //     for (let i = 0; i < h3Tag.length; i++) {
+    //         h3Tag[i].style.color = "red";
+    //     }
+    // }
+</script>
+</body>
+</html>

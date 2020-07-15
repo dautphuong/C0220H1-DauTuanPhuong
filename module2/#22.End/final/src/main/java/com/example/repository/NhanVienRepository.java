@@ -10,4 +10,5 @@ public interface NhanVienRepository extends JpaRepository<NhanVien,String> {
 
     List<NhanVien>findByMaNhanVienContainingOrSoCMNDContainingOrNgaySinhContaining(String id,String cmnd,String ngaySinh);
 
+
 }

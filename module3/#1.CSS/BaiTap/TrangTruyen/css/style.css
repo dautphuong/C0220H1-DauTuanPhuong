@@ -1,0 +1,148 @@
+body {
+    font-size: 13px;
+    width: 1000px;
+    margin:  auto;
+}
+
+#header {
+    background: #f2f2f2;
+    height: 120px;
+    width: 1000px;
+    position: fixed;/*header cố định khi lăn chuột*/
+}
+
+#logo {
+    height: 80px;
+    width: 400px;
+    border: 20px;
+    margin: 20px 20px 20px 20px;
+    float: left;
+}
+
+
+#menu-top {
+    background: grey;
+    height: 40px;
+    float: left;
+}
+
+#main{
+    float: left;
+    margin-top: 180px;
+}
+
+#main #left {
+    width: 20%;
+    background: #ccc;
+    float: left;
+    min-height: 400px;
+}
+
+#main #right {
+    width: 80%;
+    float: left;
+    min-height: 400px;
+}
+
+#footer {
+    background: blue;
+    height: 60px;
+    clear: both;
+}
+
+ul {
+    margin: 0px;
+    padding: 0px;
+}
+li {
+    list-style: none; /*xoa style .*/
+}
+
+#header .tk{
+    padding: 20px 40px 20px 40px;
+    display: flex;
+    line-height: 3px;
+    justify-content: center;
+    background-image: -webkit-linear-gradient(left, #23ff86, #f16a85);
+    border-radius: 15px;
+    color: white;
+    transition: 4s;
+}
+
+#header .tk:hover{
+    background-image: -webkit-linear-gradient(left, #80487a,  #23ff86);
+    transition: 2s;
+}
+
+#menu-top ul li {
+    float: left; /*chỉnh ngang hàng*/
+}
+
+a{
+    text-decoration: none; /*xóa ngạng chân thẻ a*/
+    transition: 0.4s;
+}
+#left>ul>li>a:hover{
+    margin-left: 10px;
+}
+#menu-top>ul>li:hover>a{
+    margin-top: -10px;
+}
+#menu-top ul li a {
+    display: block;/*thẻ a mặc định kiểu inlink chuyển sang kiểu block(comment thẻ này lại và coi thử vị trí #menu-top ul li a.active)*/
+    height: 40px; /*= #menu-top*/
+    line-height: 40px; /*căn chữ*/
+    padding: 0px 30.3px;
+    color: white;
+    border-right: 1px solid #f1f1f1;/*tạo vạch kẻ ngang*/
+}
+
+
+#menu-top ul li a.active {
+    background: orange;
+}
+
+#main #right ul li{
+    float: left; /*chỉnh ngang hàng*/
+    margin-left: 55px;
+    text-align: center;
+}
+
+#main #left ul li a{
+    display: block;/*thẻ a mặc định kiểu inlink chuyển sang kiểu block(comment thẻ này lại và coi thử vị trí #menu-top ul li a.active)*/
+    line-height: 25px;
+    text-align: center;
+    border-bottom: 1px solid #f1f1f1;/*tạo vạch kẻ ngang*/
+    color: black;
+}
+
+img{
+    height: 150px;
+    width: 100px;
+}
+
+#search{
+    width: 230px;
+    height: 35px;
+    float: right;
+    margin: 46px 160px;
+    border-radius: 10px;
+}
+
+input[type=submit]{
+    background: chocolate;
+    width: 70px;
+    height: 25px;
+    margin-left: 855px;
+    margin-top: -91px;
+    float: left;
+}
+#tieude{
+    text-align: center;
+    background: red;
+    width: 194px;
+    height: 60px;
+    margin: 0px;
+    line-height: 60px; /*căn chữ*/
+}
+

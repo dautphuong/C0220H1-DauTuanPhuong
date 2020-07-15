@@ -1,0 +1,74 @@
+body {
+    font-size: 13px;
+    width: 1500px;
+    height: 500px;
+    margin: auto;
+}
+
+#main{
+    background: #7abaff;
+    height: 800px;
+    width: 800px;
+}
+
+#main #left {
+    width: 35%;
+    background: blue;
+    float: left;
+    min-height: 800px;
+}
+
+#image {
+    background: black;
+    height: 220px;
+    width: 207px;
+    border: 20px;
+    margin: 35px 35px 35px 35px;
+    float: left;
+    border-radius: 200px;
+}
+li {
+    list-style: none; /*xoa style .*/
+}
+
+ul {
+    margin: 0px;
+    padding: 0px;
+}
+#main #left ul{
+    float: left;
+    margin-left:18px;
+    margin-right: 14px;
+}
+
+.title{
+
+    width: 192px;
+    height: 40px;
+    margin-left:35px ;
+    line-height: 60px; /*căn chữ*/
+    float: left;
+}
+
+#right{
+    margin: 15px;
+    border: 3px solid #f1f1f1;
+    float: left;
+    width: 480px;
+    min-height: 755px;
+}
+
+
+
+#main #right ul li{
+    clear: both;
+    margin-left:18px;
+    margin-right: 14px;
+}
+#main #right ul li ul{
+    float: left;
+    margin-left:18px;
+    margin-right: 14px;
+    margin-top: 25px;
+
+}
