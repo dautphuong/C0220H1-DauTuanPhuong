@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="039f02d4-2872-48ef-bf31-daddcc82f2a5" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+        <option value="CSS File" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
+  </component>
+  <component name="ProjectId" id="1eWOBXsa9LnXbMjuJ4utyE2QScG" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../Bonus_AJAX" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="JavaScript.Libraries" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\CodeGym\C0220H1_PHAM_ANH_THIEN\C0220H_PhamAnhThien_Module3\C0220H_PhamAnhThien_Module3\Bai3_jQuery\BaiTap\Bai2_XayDungTrangWebNgheNhac" />
+      <recent name="F:\CodeGym\C0220H1_PHAM_ANH_THIEN\C0220H_PhamAnhThien_Module3\C0220H_PhamAnhThien_Module3\Bai3_jQuery\BaiTap\Bai2_XayDungTrangWebNgheNhac\musics" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\CodeGym\C0220H1_PHAM_ANH_THIEN\C0220H_PhamAnhThien_Module3\C0220H_PhamAnhThien_Module3\Bai3_jQuery\BaiTap\Bai2_XayDungTrangWebNgheNhac\temp" />
+    </key>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="039f02d4-2872-48ef-bf31-daddcc82f2a5" name="Default Changelist" comment="" />
+      <created>1594433746359</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1594433746359</updated>
+      <workItem from="1594433748228" duration="21387000" />
+      <workItem from="1594692218609" duration="1583000" />
+      <workItem from="1594733129390" duration="3000" />
+      <workItem from="1594742818225" duration="91000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="302" y="255" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1594700960780">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="302" y="255" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1600.860@0.0.1600.860" timestamp="1594700960780" />
+    <state x="740" y="276" key="FileChooserDialogImpl" timestamp="1594742900057">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="740" y="276" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1594742900057" />
+    <state x="371" y="103" key="SettingsEditor" timestamp="1594692384621">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="371" y="103" key="SettingsEditor/0.0.1600.860@0.0.1600.860" timestamp="1594692384621" />
+    <state x="456" y="195" key="run.anything.popup" timestamp="1594448443361">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="456" y="195" key="run.anything.popup/0.0.1600.860@0.0.1600.860" timestamp="1594448443361" />
+    <state x="456" y="83" width="670" height="676" key="search.everywhere.popup" timestamp="1594450113939">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="456" y="83" width="670" height="676" key="search.everywhere.popup/0.0.1600.860@0.0.1600.860" timestamp="1594450113939" />
+  </component>
+</project>

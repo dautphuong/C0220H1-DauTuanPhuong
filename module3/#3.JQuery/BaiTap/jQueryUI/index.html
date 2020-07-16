@@ -1,18 +1,14 @@
-<!doctype html>
-<!--[if IE 7 ]>
-<html class="no-js ie ie7 lte7 lte8 lte9"> lang="en-US"> <![endif]-->
-<!--[if IE 8 ]>
-<html class="no-js ie ie8 lte8 lte9"> lang="en-US"> <![endif]-->
-<!--[if IE 9 ]>
-<html class="no-js ie ie9 lte9"> lang="en-US"> <![endif]-->
-<!--[if (gt IE 9)|!(IE)]><!-->
-<html class="no-js" lang="en-US"> <!--<![endif]-->
+<html class="js multiplebgs boxshadow cssgradients wf-klavikaweb-n7-active wf-klavikaweb-i7-active wf-sourcecodepro-n7-active wf-sourcecodepro-n4-active wf-active"
+      lang="en-US"><!--<![endif]-->
 <head data-live-domain="jqueryui.com">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     <title>jQuery UI</title>
-
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
     <meta name="author" content="JS Foundation - js.foundation">
     <meta name="description"
           content="jQuery UI is a curated set of user interface interactions, effects, widgets, and themes built on top of the jQuery JavaScript Library. Whether you're building highly interactive web applications or you just need to add a date picker to a form control, jQuery UI is the perfect choice.">
@@ -24,6 +20,7 @@
     <link rel="stylesheet" href="//jqueryui.com/jquery-wp-content/themes/jquery/css/base.css?v=2">
     <link rel="stylesheet" href="//jqueryui.com/jquery-wp-content/themes/jqueryui.com/style.css">
 
+    <script type="text/javascript" async="" src="https://ssl.google-analytics.com/ga.js"></script>
     <script src="//jqueryui.com/jquery-wp-content/themes/jquery/js/modernizr.custom.2.8.3.min.js"></script>
 
     <script src="https://code.jquery.com/jquery-1.11.3.js"></script>
@@ -32,20 +29,55 @@
     <script src="//jqueryui.com/jquery-wp-content/themes/jquery/js/main.js"></script>
 
     <script src="https://use.typekit.net/wde1aof.js"></script>
+    <style type="text/css">.tk-klavika-web {
+        font-family: "klavika-web", sans-serif;
+    }
+
+    .tk-source-code-pro {
+        font-family: "source-code-pro", sans-serif;
+    }</style>
+    <style type="text/css">@font-face {
+        font-family: klavika-web;
+        src: url(https://use.typekit.net/af/f3ac97/00000000000000003b9acdf9/27/l?subset_id=2&fvd=n7&v=3) format("woff2"), url(https://use.typekit.net/af/f3ac97/00000000000000003b9acdf9/27/d?subset_id=2&fvd=n7&v=3) format("woff"), url(https://use.typekit.net/af/f3ac97/00000000000000003b9acdf9/27/a?subset_id=2&fvd=n7&v=3) format("opentype");
+        font-weight: 700;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: klavika-web;
+        src: url(https://use.typekit.net/af/af9173/00000000000000003b9acdfa/27/l?subset_id=2&fvd=i7&v=3) format("woff2"), url(https://use.typekit.net/af/af9173/00000000000000003b9acdfa/27/d?subset_id=2&fvd=i7&v=3) format("woff"), url(https://use.typekit.net/af/af9173/00000000000000003b9acdfa/27/a?subset_id=2&fvd=i7&v=3) format("opentype");
+        font-weight: 700;
+        font-style: italic;
+    }
+
+    @font-face {
+        font-family: source-code-pro;
+        src: url(https://use.typekit.net/af/756772/0000000000000000000179d5/27/l?subset_id=2&fvd=n7&v=3) format("woff2"), url(https://use.typekit.net/af/756772/0000000000000000000179d5/27/d?subset_id=2&fvd=n7&v=3) format("woff"), url(https://use.typekit.net/af/756772/0000000000000000000179d5/27/a?subset_id=2&fvd=n7&v=3) format("opentype");
+        font-weight: 700;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: source-code-pro;
+        src: url(https://use.typekit.net/af/3c21b3/0000000000000000000179cf/27/l?subset_id=2&fvd=n4&v=3) format("woff2"), url(https://use.typekit.net/af/3c21b3/0000000000000000000179cf/27/d?subset_id=2&fvd=n4&v=3) format("woff"), url(https://use.typekit.net/af/3c21b3/0000000000000000000179cf/27/a?subset_id=2&fvd=n4&v=3) format("opentype");
+        font-weight: 400;
+        font-style: normal;
+    }</style>
     <script>try {
         Typekit.load();
     } catch (e) {
     }</script>
     <!-- at the end of the HEAD -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css">
     <link rel="stylesheet" href="//jqueryui.com/jquery-wp-content/themes/jquery/css/docsearch.css">
 
-    <link rel='https://api.w.org/' href='//jqueryui.com/wp-json/'/>
-    <meta name="generator" content="WordPress 4.5.2"/>
+    <link rel="https://api.w.org/" href="//jqueryui.com/wp-json/">
+    <meta name="generator" content="WordPress 4.5.2">
     <link rel="alternate" type="application/json+oembed"
-          href="//jqueryui.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fjqueryui.com%2F"/>
+          href="//jqueryui.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fjqueryui.com%2F">
     <link rel="alternate" type="text/xml+oembed"
-          href="//jqueryui.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fjqueryui.com%2F&#038;format=xml"/>
+          href="//jqueryui.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fjqueryui.com%2F&amp;format=xml">
+    <link rel="stylesheet" href="style.css">
 
 </head>
 <body class="jquery-ui home page page-id-33 page-template-default page-slug-index single-author singular">
@@ -57,12 +89,12 @@
                 <ul class="projects">
                     <li class="project jquery"><a href="#" title="jQuery">jQuery</a></li>
                     <li class="project jquery-ui"><a href="#" title="jQuery UI">jQuery UI</a></li>
-                    <li class="project jquery-mobile"><a href="#/" title="jQuery Mobile">jQuery
+                    <li class="project jquery-mobile"><a href="#" title="jQuery Mobile">jQuery
                         Mobile</a></li>
                     <li class="project sizzlejs"><a href="#" title="Sizzle">Sizzle</a></li>
                     <li class="project qunitjs"><a href="#" title="QUnit">QUnit</a></li>
                 </ul>
-                <ul class="links">
+                <ul class="links l_tinynav1">
                     <li><a href="#">Plugins</a></li>
                     <li class="dropdown"><a href="#">Contribute</a>
                         <ul>
@@ -106,7 +138,7 @@
     <h2>#BlackLivesMatter</h2>
     <p>To Donate, see this <a href="#">list of organizations to support</a> from <a
             href="#">Reclaim the Block</a>
-</div>
+    </p></div>
 
 <div id="container">
     <div id="logo-events" class="constrain clearfix">
@@ -117,7 +149,7 @@
 
     <nav id="main" class="constrain clearfix">
         <div class="menu-top-container">
-            <ul id="menu-top" class="menu">
+            <ul id="menu-top" class="menu l_tinynav2">
                 <li class="menu-item"><a href="#">Demos</a></li>
                 <li class="menu-item"><a href="#">Download</a></li>
                 <li class="menu-item"><a href="#">API Documentation</a></li>
@@ -127,14 +159,42 @@
                 <li class="menu-item"><a href="#">Blog</a></li>
                 <li class="menu-item"><a href="#">About</a></li>
             </ul>
+            <select id="tinynav2" class="tinynav tinynav2">
+                <option>Navigate...</option>
+                <option value="https://jqueryui.com/demos/">Demos</option>
+                <option value="https://jqueryui.com/download/">Download</option>
+                <option value="https://api.jqueryui.com/">API Documentation</option>
+                <option value="https://jqueryui.com/themeroller/">Themes</option>
+                <option value="https://jqueryui.com/development/">Development</option>
+                <option value="https://jqueryui.com/support/">Support</option>
+                <option value="https://blog.jqueryui.com/">Blog</option>
+                <option value="https://jqueryui.com/about/">About</option>
+            </select>
         </div>
 
         <form method="get" class="searchform" action="//jqueryui.com/">
             <button type="submit" class="icon-search"><span class="visuallyhidden">search</span></button>
             <label>
                 <span class="visuallyhidden">Search jQuery UI</span>
-                <input type="text" name="s" value=""
-                       placeholder="Search">
+                <span class="algolia-autocomplete"
+                      style="position: relative; display: inline-block; direction: ltr;"><input type="text" name="s"
+                                                                                                value=""
+                                                                                                placeholder="Search"
+                                                                                                class="ds-input"
+                                                                                                autocomplete="off"
+                                                                                                spellcheck="false"
+                                                                                                role="combobox"
+                                                                                                aria-autocomplete="list"
+                                                                                                aria-expanded="false"
+                                                                                                aria-label="search input"
+                                                                                                aria-owns="algolia-autocomplete-listbox-0"
+                                                                                                dir="auto"
+                                                                                                style="position: relative; vertical-align: top;"><pre
+                        aria-hidden="true"
+                        style="position: absolute; visibility: hidden; white-space: pre; font-family: &quot;Lucida Grande&quot;, Lucida, Verdana, sans-serif; font-size: 12px; font-style: normal; font-variant: normal; font-weight: 400; word-spacing: 0px; letter-spacing: normal; text-indent: 0px; text-rendering: auto; text-transform: none;"></pre><span
+                        class="ds-dropdown-menu" role="listbox" id="algolia-autocomplete-listbox-0"
+                        style="position: absolute; top: 100%; z-index: 100; display: none; left: 0px; right: auto;"><div
+                        class="ds-dataset-1"></div></span></span>
             </label>
         </form>
     </nav>
@@ -143,66 +203,580 @@
 
 
         <div class="content-right twelve columns">
+
             <div id="content">
+                <div style="display: none" class="droppableShow">
+                    <h1 class="entry-title">Droppable</h1>
+                    <hr>
 
 
-                <div id="banner-secondary" class="clearfix">
+                    <p class="desc">Create targets for draggable elements.</p>
 
-                </div>
+                    <div class="demo-list"><h2>Examples</h2>
+                        <ul>
+                            <li class="active"><a href="/resources/demos/droppable/default.html">Default
+                                functionality</a>
+                            </li>
+                            <li><a href="/resources/demos/droppable/accepted-elements.html">Accept</a></li>
+                            <li><a href="/resources/demos/droppable/propagation.html">Prevent propagation</a></li>
+                            <li><a href="/resources/demos/droppable/revert.html">Revert draggable position</a></li>
+                            <li><a href="/resources/demos/droppable/photo-manager.html">Simple photo manager</a></li>
+                            <li><a href="/resources/demos/droppable/visual-feedback.html">Visual feedback</a></li>
+                        </ul>
+                    </div>
+                    <div id="draggable1" class="ui-widget-content">
+                        <p>Drag me to my target</p>
+                    </div>
 
+                    <div id="droppable" class="ui-widget-header">
+                        <p>Drop here</p>
+                    </div>
+                    <div class="demo-description">
+                        <p>Enable any DOM element to be droppable, a target for draggable elements.</p>
+                    </div>
+                    <div class="view-source"><a tabindex="0"><i class="icon-eye-open"></i> view source</a>
+                        <div>
+                            <div class="syntaxhighlighter xml">
+                                <table>
+                                    <tbody>
+                                    <tr>
 
-                <div class="dev-links">
+                                        <td class="gutter">
 
-                </div>
+                                            <div class="line n1">1</div>
+
+                                            <div class="line n2">2</div>
+
+                                            <div class="line n3">3</div>
+
+                                            <div class="line n4">4</div>
+
+                                            <div class="line n5">5</div>
+
+                                            <div class="line n6">6</div>
+
+                                            <div class="line n7">7</div>
+
+                                            <div class="line n8">8</div>
+
+                                            <div class="line n9">9</div>
+
+                                            <div class="line n10">10</div>
+
+                                            <div class="line n11">11</div>
+
+                                            <div class="line n12">12</div>
+
+                                            <div class="line n13">13</div>
+
+                                            <div class="line n14">14</div>
+
+                                            <div class="line n15">15</div>
+
+                                            <div class="line n16">16</div>
+
+                                            <div class="line n17">17</div>
+
+                                            <div class="line n18">18</div>
+
+                                            <div class="line n19">19</div>
+
+                                            <div class="line n20">20</div>
+
+                                            <div class="line n21">21</div>
+
+                                            <div class="line n22">22</div>
+
+                                            <div class="line n23">23</div>
+
+                                            <div class="line n24">24</div>
+
+                                            <div class="line n25">25</div>
+
+                                            <div class="line n26">26</div>
+
+                                            <div class="line n27">27</div>
+
+                                            <div class="line n28">28</div>
+
+                                            <div class="line n29">29</div>
+
+                                            <div class="line n30">30</div>
+
+                                            <div class="line n31">31</div>
+
+                                            <div class="line n32">32</div>
+
+                                            <div class="line n33">33</div>
+
+                                            <div class="line n34">34</div>
+
+                                            <div class="line n35">35</div>
+
+                                            <div class="line n36">36</div>
+
+                                            <div class="line n37">37</div>
+
+                                            <div class="line n38">38</div>
+
+                                            <div class="line n39">39</div>
+
+                                            <div class="line n40">40</div>
+
+                                            <div class="line n41">41</div>
+
+                                        </td>
+
+                                        <td class="code">
+                                        <pre><div class="container"><div class="line"><code><span class="doctype">&lt;!doctype html&gt;</span></code></div></div><div
+                                                class="container"><div class="line"><code><span class="tag">&lt;<span
+                                                class="title">html</span> <span class="attribute">lang</span>=<span
+                                                class="value">"en"</span>&gt;</span></code></div></div><div
+                                                class="container"><div class="line"><code><span class="tag">&lt;<span
+                                                class="title">head</span>&gt;</span></code></div></div><div
+                                                class="container"><div class="line"><code>  <span class="tag">&lt;<span
+                                                class="title">meta</span> <span class="attribute">charset</span>=<span
+                                                class="value">"utf-8"</span>&gt;</span></code></div></div><div
+                                                class="container"><div class="line"><code>  <span class="tag">&lt;<span
+                                                class="title">meta</span> <span class="attribute">name</span>=<span
+                                                class="value">"viewport"</span> <span
+                                                class="attribute">content</span>=<span class="value">"width=device-width, initial-scale=1"</span>&gt;</span></code></div></div><div
+                                                class="container"><div class="line"><code>  <span class="tag">&lt;<span
+                                                class="title">title</span>&gt;</span>jQuery UI Droppable - Default functionality<span
+                                                class="tag">&lt;/<span
+                                                class="title">title</span>&gt;</span></code></div></div><div
+                                                class="container"><div class="line"><code>  <span class="tag">&lt;<span
+                                                class="title">link</span> <span class="attribute">rel</span>=<span
+                                                class="value">"stylesheet"</span> <span
+                                                class="attribute">href</span>=<span class="value">"//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"</span>&gt;</span></code></div></div><div
+                                                class="container"><div class="line"><code>  <span class="tag">&lt;<span
+                                                class="title">link</span> <span class="attribute">rel</span>=<span
+                                                class="value">"stylesheet"</span> <span
+                                                class="attribute">href</span>=<span class="value">"/resources/demos/style.css"</span>&gt;</span></code></div></div><div
+                                                class="container"><div class="line"><code>  <span class="tag">&lt;<span
+                                                class="title">style</span>&gt;</span><span
+                                                class="css"></span></code></div></div><div class="container"><div
+                                                class="line"><code>  <span class="id">#draggable</span> <span
+                                                class="rules">{ <span class="rule"><span class="attribute">width</span>:<span
+                                                class="value"> <span class="number">100</span>px;</span></span> <span
+                                                class="rule"><span class="attribute">height</span>:<span class="value"> <span
+                                                class="number">100</span>px;</span></span> <span class="rule"><span
+                                                class="attribute">padding</span>:<span class="value"> <span
+                                                class="number">0.5</span>em;</span></span> <span class="rule"><span
+                                                class="attribute">float</span>:<span class="value"> left;</span></span> <span
+                                                class="rule"><span class="attribute">margin</span>:<span class="value"> <span
+                                                class="number">10</span>px <span class="number">10</span>px <span
+                                                class="number">10</span>px <span class="number">0</span>;</span></span> <span
+                                                class="rule">}</span></span></code></div></div><div class="container"><div
+                                                class="line"><code>  <span class="id">#droppable</span> <span
+                                                class="rules">{ <span class="rule"><span class="attribute">width</span>:<span
+                                                class="value"> <span class="number">150</span>px;</span></span> <span
+                                                class="rule"><span class="attribute">height</span>:<span class="value"> <span
+                                                class="number">150</span>px;</span></span> <span class="rule"><span
+                                                class="attribute">padding</span>:<span class="value"> <span
+                                                class="number">0.5</span>em;</span></span> <span class="rule"><span
+                                                class="attribute">float</span>:<span class="value"> left;</span></span> <span
+                                                class="rule"><span class="attribute">margin</span>:<span class="value"> <span
+                                                class="number">10</span>px;</span></span> <span
+                                                class="rule">}</span></span></code></div></div><div class="container"><div
+                                                class="line"><code>  <span class="tag">&lt;/<span
+                                                class="title">style</span>&gt;</span></code></div></div><div
+                                                class="container"><div class="line"><code>  <span class="tag">&lt;<span
+                                                class="title">script</span> <span class="attribute">src</span>=<span
+                                                class="value">"https://code.jquery.com/jquery-1.12.4.js"</span>&gt;</span><span
+                                                class="javascript"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></code></div></div><div
+                                                class="container"><div class="line"><code>  <span class="tag">&lt;<span
+                                                class="title">script</span> <span class="attribute">src</span>=<span
+                                                class="value">"https://code.jquery.com/ui/1.12.1/jquery-ui.js"</span>&gt;</span><span
+                                                class="javascript"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></code></div></div><div
+                                                class="container"><div class="line"><code>  <span class="tag">&lt;<span
+                                                class="title">script</span>&gt;</span><span
+                                                class="javascript"></span></code></div></div><div class="container"><div
+                                                class="line"><code>  $( <span class="keyword">function</span>() {</code></div></div><div
+                                                class="container"><div class="line"><code>    $( <span class="string">"#draggable"</span> ).draggable();</code></div></div><div
+                                                class="container"><div class="line"><code>    $( <span class="string">"#droppable"</span> ).droppable({</code></div></div><div
+                                                class="container"><div class="line"><code>      drop: <span
+                                                class="keyword">function</span>( event, ui ) {</code></div></div><div
+                                                class="container"><div class="line"><code>        $( <span
+                                                class="keyword">this</span> )</code></div></div><div class="container"><div
+                                                class="line"><code>          .addClass( <span class="string">"ui-state-highlight"</span> )</code></div></div><div
+                                                class="container"><div class="line"><code>          .find( <span
+                                                class="string">"p"</span> )</code></div></div><div class="container"><div
+                                                class="line"><code>            .html( <span
+                                                class="string">"Dropped!"</span> );</code></div></div><div
+                                                class="container"><div class="line"><code>      }</code></div></div><div
+                                                class="container"><div class="line"><code>    });</code></div></div><div
+                                                class="container"><div class="line"><code>  } );</code></div></div><div
+                                                class="container"><div class="line"><code>  <span class="tag">&lt;/<span
+                                                class="title">script</span>&gt;</span></code></div></div><div
+                                                class="container"><div class="line"><code><span class="tag">&lt;/<span
+                                                class="title">head</span>&gt;</span></code></div></div><div
+                                                class="container"><div class="line"><code><span class="tag">&lt;<span
+                                                class="title">body</span>&gt;</span></code></div></div><div
+                                                class="container"><div class="line"><code> </code></div></div><div
+                                                class="container"><div class="line"><code><span class="tag">&lt;<span
+                                                class="title">div</span> <span class="attribute">id</span>=<span
+                                                class="value">"draggable"</span> <span
+                                                class="attribute">class</span>=<span
+                                                class="value">"ui-widget-content"</span>&gt;</span></code></div></div><div
+                                                class="container"><div class="line"><code>  <span class="tag">&lt;<span
+                                                class="title">p</span>&gt;</span>Drag me to my target<span class="tag">&lt;/<span
+                                                class="title">p</span>&gt;</span></code></div></div><div
+                                                class="container"><div class="line"><code><span class="tag">&lt;/<span
+                                                class="title">div</span>&gt;</span></code></div></div><div
+                                                class="container"><div class="line"><code> </code></div></div><div
+                                                class="container"><div class="line"><code><span class="tag">&lt;<span
+                                                class="title">div</span> <span class="attribute">id</span>=<span
+                                                class="value">"droppable"</span> <span
+                                                class="attribute">class</span>=<span
+                                                class="value">"ui-widget-header"</span>&gt;</span></code></div></div><div
+                                                class="container"><div class="line"><code>  <span class="tag">&lt;<span
+                                                class="title">p</span>&gt;</span>Drop here<span class="tag">&lt;/<span
+                                                class="title">p</span>&gt;</span></code></div></div><div
+                                                class="container"><div class="line"><code><span class="tag">&lt;/<span
+                                                class="title">div</span>&gt;</span></code></div></div><div
+                                                class="container"><div class="line"><code> </code></div></div><div
+                                                class="container"><div class="line"><code> </code></div></div><div
+                                                class="container"><div class="line"><code><span class="tag">&lt;/<span
+                                                class="title">body</span>&gt;</span></code></div></div><div
+                                                class="container"><div class="line"><code><span class="tag">&lt;/<span
+                                                class="title">html</span>&gt;</span></code></div></div></pre>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <p>Want to learn more about the droppable interaction? Check out the
+                        <a href="http://api.jqueryui.com/droppable/">API documentation</a>.</p></div>
 
             </div>
-            <div id="sidebar" class="widget-area" role="complementary">
-                <aside class="widget">
-                    <h3 class="widget-title">Interactions</h3>
+
+            <div style="display: none" class="draggableShow">
+                <h1 class="entry-title">Draggable</h1>
+                <hr>
+
+
+                <p class="desc">Allow elements to be moved using the mouse.</p>
+
+                <div class="demo-list"><h2>Examples</h2>
                     <ul>
-                        <li><a href="https://jqueryui.com/draggable/">Draggable</a></li>
-                        <li><a href="https://jqueryui.com/droppable/">Droppable</a></li>
-                        <li><a href="https://jqueryui.com/resizable/">Resizable</a></li>
-                        <li><a href="https://jqueryui.com/selectable/">Selectable</a></li>
-                        <li><a href="https://jqueryui.com/sortable/">Sortable</a></li>
+                        <li class="active"><a href="#">Default functionality</a>
+                        </li>
+                        <li><a href="#">Auto-scroll</a></li>
+                        <li><a href="#">Constrain movement</a></li>
+                        <li><a href="#">Cursor style</a></li>
+                        <li><a href="#">Events</a></li>
+                        <li><a href="#">Handles</a></li>
+                        <li><a href="#">jQuery UI Draggable + Sortable</a></li>
+                        <li><a href="#">Revert position</a></li>
+                        <li><a href="#">Snap to element or grid</a></li>
+                        <li><a href="#">Visual feedback</a></li>
                     </ul>
-                </aside>
-                <aside class="widget">
-                    <h3 class="widget-title">Widgets</h3>
-                    <ul>
-                        <li><a href="https://jqueryui.com/accordion/">Accordion</a></li>
-                        <li><a href="https://jqueryui.com/autocomplete/">Autocomplete</a></li>
-                        <li><a href="https://jqueryui.com/checkboxradio/">Checkboxradio</a></li>
-                        <li><a href="https://jqueryui.com/datepicker/">Datepicker</a></li>
-                        <li><a href="https://jqueryui.com/dialog/">Dialog</a></li>
-                        <li><a href="https://jqueryui.com/progressbar/">Progressbar</a></li>
-                        <li><a href="https://jqueryui.com/slider/">Slider</a></li>
-                        <li><a href="https://jqueryui.com/spinner/">Spinner</a></li>
-                        <li><a href="https://jqueryui.com/tabs/">Tabs</a></li>
-                    </ul>
-                </aside>
-                <aside class="widget">
-                    <h3 class="widget-title">Effects</h3>
-                    <ul>
-                        <li><a href="https://jqueryui.com/addClass/">Add Class</a></li>
-                        <li><a href="https://jqueryui.com/removeClass/">Remove Class</a></li>
-                    </ul>
-                </aside>
+                </div>
+                <div id="draggable" class="draggable ui-widget-content ">
+                    <p>Drag me around</p>
+                </div>
+
+                <div class="demo-description">
+                    <p>Enable draggable functionality on any DOM element. Move the draggable object by clicking on
+                        it
+                        with the mouse and dragging it anywhere within the viewport.</p>
+                </div>
+                <div class="view-source">
+                    <div>
+                        <div class="syntaxhighlighter xml">
+                            <table>
+                                <tbody>
+                                <tr>
+
+                                    <td class="gutter">
+
+                                        <div class="line n1">1</div>
+
+                                        <div class="line n2">2</div>
+
+                                        <div class="line n3">3</div>
+
+                                        <div class="line n4">4</div>
+
+                                        <div class="line n5">5</div>
+
+                                        <div class="line n6">6</div>
+
+                                        <div class="line n7">7</div>
+
+                                        <div class="line n8">8</div>
+
+                                        <div class="line n9">9</div>
+
+                                        <div class="line n10">10</div>
+
+                                        <div class="line n11">11</div>
+
+                                        <div class="line n12">12</div>
+
+                                        <div class="line n13">13</div>
+
+                                        <div class="line n14">14</div>
+
+                                        <div class="line n15">15</div>
+
+                                        <div class="line n16">16</div>
+
+                                        <div class="line n17">17</div>
+
+                                        <div class="line n18">18</div>
+
+                                        <div class="line n19">19</div>
+
+                                        <div class="line n20">20</div>
+
+                                        <div class="line n21">21</div>
+
+                                        <div class="line n22">22</div>
+
+                                        <div class="line n23">23</div>
+
+                                        <div class="line n24">24</div>
+
+                                        <div class="line n25">25</div>
+
+                                        <div class="line n26">26</div>
+
+                                        <div class="line n27">27</div>
+
+                                        <div class="line n28">28</div>
+
+                                    </td>
+
+                                    <td class="code">
+                                        <pre><div class="container"><div class="line"><code><span class="doctype">&lt;!doctype html&gt;</span></code></div></div><div
+                                                class="container"><div class="line"><code><span class="tag">&lt;<span
+                                                class="title">html</span> <span class="attribute">lang</span>=<span
+                                                class="value">"en"</span>&gt;</span></code></div></div><div
+                                                class="container"><div class="line"><code><span class="tag">&lt;<span
+                                                class="title">head</span>&gt;</span></code></div></div><div
+                                                class="container"><div class="line"><code>  <span class="tag">&lt;<span
+                                                class="title">meta</span> <span class="attribute">charset</span>=<span
+                                                class="value">"utf-8"</span>&gt;</span></code></div></div><div
+                                                class="container"><div class="line"><code>  <span class="tag">&lt;<span
+                                                class="title">meta</span> <span class="attribute">name</span>=<span
+                                                class="value">"viewport"</span> <span
+                                                class="attribute">content</span>=<span class="value">"width=device-width, initial-scale=1"</span>&gt;</span></code></div></div><div
+                                                class="container"><div class="line"><code>  <span class="tag">&lt;<span
+                                                class="title">title</span>&gt;</span>jQuery UI Draggable - Default functionality<span
+                                                class="tag">&lt;/<span
+                                                class="title">title</span>&gt;</span></code></div></div><div
+                                                class="container"><div class="line"><code>  <span class="tag">&lt;<span
+                                                class="title">link</span> <span class="attribute">rel</span>=<span
+                                                class="value">"stylesheet"</span> <span
+                                                class="attribute">href</span>=<span class="value">"//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"</span>&gt;</span></code></div></div><div
+                                                class="container"><div class="line"><code>  <span class="tag">&lt;<span
+                                                class="title">link</span> <span class="attribute">rel</span>=<span
+                                                class="value">"stylesheet"</span> <span
+                                                class="attribute">href</span>=<span class="value">"/resources/demos/style.css"</span>&gt;</span></code></div></div><div
+                                                class="container"><div class="line"><code>  <span class="tag">&lt;<span
+                                                class="title">style</span>&gt;</span><span
+                                                class="css"></span></code></div></div><div class="container"><div
+                                                class="line"><code>  <span class="id">#draggable</span> <span
+                                                class="rules">{ <span class="rule"><span class="attribute">width</span>:<span
+                                                class="value"> <span class="number">150</span>px;</span></span> <span
+                                                class="rule"><span class="attribute">height</span>:<span class="value"> <span
+                                                class="number">150</span>px;</span></span> <span class="rule"><span
+                                                class="attribute">padding</span>:<span class="value"> <span
+                                                class="number">0.5</span>em;</span></span> <span
+                                                class="rule">}</span></span></code></div></div><div class="container"><div
+                                                class="line"><code>  <span class="tag">&lt;/<span
+                                                class="title">style</span>&gt;</span></code></div></div><div
+                                                class="container"><div class="line"><code>  <span class="tag">&lt;<span
+                                                class="title">script</span> <span class="attribute">src</span>=<span
+                                                class="value">"https://code.jquery.com/jquery-1.12.4.js"</span>&gt;</span><span
+                                                class="javascript"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></code></div></div><div
+                                                class="container"><div class="line"><code>  <span class="tag">&lt;<span
+                                                class="title">script</span> <span class="attribute">src</span>=<span
+                                                class="value">"https://code.jquery.com/ui/1.12.1/jquery-ui.js"</span>&gt;</span><span
+                                                class="javascript"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></code></div></div><div
+                                                class="container"><div class="line"><code>  <span class="tag">&lt;<span
+                                                class="title">script</span>&gt;</span><span
+                                                class="javascript"></span></code></div></div><div class="container"><div
+                                                class="line"><code>  $( <span class="keyword">function</span>() {</code></div></div><div
+                                                class="container"><div class="line"><code>    $( <span class="string">"#draggable"</span> ).draggable();</code></div></div><div
+                                                class="container"><div class="line"><code>  } );</code></div></div><div
+                                                class="container"><div class="line"><code>  <span class="tag">&lt;/<span
+                                                class="title">script</span>&gt;</span></code></div></div><div
+                                                class="container"><div class="line"><code><span class="tag">&lt;/<span
+                                                class="title">head</span>&gt;</span></code></div></div><div
+                                                class="container"><div class="line"><code><span class="tag">&lt;<span
+                                                class="title">body</span>&gt;</span></code></div></div><div
+                                                class="container"><div class="line"><code> </code></div></div><div
+                                                class="container"><div class="line"><code><span class="tag">&lt;<span
+                                                class="title">div</span> <span class="attribute">id</span>=<span
+                                                class="value">"draggable"</span> <span
+                                                class="attribute">class</span>=<span
+                                                class="value">"ui-widget-content"</span>&gt;</span></code></div></div><div
+                                                class="container"><div class="line"><code>  <span class="tag">&lt;<span
+                                                class="title">p</span>&gt;</span>Drag me around<span
+                                                class="tag">&lt;/<span
+                                                class="title">p</span>&gt;</span></code></div></div><div
+                                                class="container"><div class="line"><code><span class="tag">&lt;/<span
+                                                class="title">div</span>&gt;</span></code></div></div><div
+                                                class="container"><div class="line"><code> </code></div></div><div
+                                                class="container"><div class="line"><code> </code></div></div><div
+                                                class="container"><div class="line"><code><span class="tag">&lt;/<span
+                                                class="title">body</span>&gt;</span></code></div></div><div
+                                                class="container"><div class="line"><code><span class="tag">&lt;/<span
+                                                class="title">html</span>&gt;</span></code></div></div></pre>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <p>Want to learn more about the draggable interaction? Check out the
+                    <a href="#">API documentation</a>.</p>
             </div>
+
+
+            ???
         </div>
 
+
+        <div id="sidebar" class="widget-area" role="complementary">
+            <aside class="widget">
+                <h3 class="widget-title">Interactions</h3>
+                <ul>
+                    <li><a id="btnDraggable">Draggable</a></li>
+                    <li><a id="btnDroppable">Droppable</a></li>
+                    <li><a href="https://jqueryui.com/resizable/">Resizable</a></li>
+                    <li><a href="https://jqueryui.com/selectable/">Selectable</a></li>
+                    <li><a href="https://jqueryui.com/sortable/">Sortable</a></li>
+                </ul>
+            </aside>
+            <aside class="widget">
+                <h3 class="widget-title">Widgets</h3>
+                <ul>
+                    <li><a href="https://jqueryui.com/accordion/">Accordion</a></li>
+                    <li><a href="https://jqueryui.com/autocomplete/">Autocomplete</a></li>
+                    <li><a href="https://jqueryui.com/datepicker/">Datepicker</a></li>
+                    <li><a href="https://jqueryui.com/dialog/">Dialog</a></li>
+                    <li><a href="https://jqueryui.com/progressbar/">Progressbar</a></li>
+                    <li><a href="https://jqueryui.com/slider/">Slider</a></li>
+                    <li><a href="https://jqueryui.com/spinner/">Spinner</a></li>
+                    <li><a href="https://jqueryui.com/tabs/">Tabs</a></li>
+                </ul>
+            </aside>
+            <aside class="widget">
+                <h3 class="widget-title">Effects</h3>
+                <ul>
+                    <li><a href="https://jqueryui.com/addClass/">Add Class</a></li>
+                    <li><a href="https://jqueryui.com/removeClass/">Remove Class</a></li>
+                </ul>
+            </aside>
+
+        </div>
     </div>
+
+</div>
 </div>
 <footer class="clearfix simple">
-
-    <div>
-        <div style="color: white" class="text-center">
-            <p>jQuery UI &copy; 2020</p>
+    <div class="constrain">
+        <div style="color: white" class="panel-heading text-center">
+            <p>JQuery UI &copy; 2020</p>
         </div>
     </div>
-
 </footer>
 
+<script>
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-1076265-1']);
+    _gaq.push(['_setDomainName', 'jqueryui.com']);
+    _gaq.push(['_setAllowLinker', true]);
+    _gaq.push(['_trackPageview']);
 
+    (function () {
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript';
+        ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+<script type="text/javascript" src="//jqueryui.com/wp-includes/js/comment-reply.min.js?ver=4.5.2"></script>
+<script type="text/javascript" src="//jqueryui.com/wp-includes/js/wp-embed.min.js?ver=4.5.2"></script>
+<!-- at the end of the BODY -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js" onload="document.querySelector('input[name=\'s\']') &amp;&amp; docsearch({apiKey: '2fce35e56784bbb48c78d105739190c2',
+		indexName: 'jqueryui',
+		inputSelector: 'input[name=\'s\']',
+		debug: true // Set debug to true if you want to inspect the dropdown
+	})" async=""></script>
+
+
+<div id="cboxOverlay" style="display: none;"></div>
+<div id="colorbox" class="" style="display: none;">
+    <div id="cboxWrapper">
+        <div>
+            <div id="cboxTopLeft" style="float: left;"></div>
+            <div id="cboxTopCenter" style="float: left;"></div>
+            <div id="cboxTopRight" style="float: left;"></div>
+        </div>
+        <div style="clear: left;">
+            <div id="cboxMiddleLeft" style="float: left;"></div>
+            <div id="cboxContent" style="float: left;">
+                <div id="cboxLoadedContent" style="width: 0px; height: 0px; overflow: hidden; float: left;"></div>
+                <div id="cboxTitle" style="float: left;"></div>
+                <div id="cboxCurrent" style="float: left;"></div>
+                <div id="cboxNext" style="float: left;"></div>
+                <div id="cboxPrevious" style="float: left;"></div>
+                <div id="cboxSlideshow" style="float: left;"></div>
+                <div id="cboxClose" style="float: left;"></div>
+            </div>
+            <div id="cboxMiddleRight" style="float: left;"></div>
+        </div>
+        <div style="clear: left;">
+            <div id="cboxBottomLeft" style="float: left;"></div>
+            <div id="cboxBottomCenter" style="float: left;"></div>
+            <div id="cboxBottomRight" style="float: left;"></div>
+        </div>
+    </div>
+    <div style="position: absolute; width: 9999px; visibility: hidden; display: none;"></div>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script>
+    $(function () {
+        $("#draggable").draggable();
+    });
+
+    $("#btnDraggable").click(function () {
+        $(".draggableShow").slideToggle();
+        $(".droppableShow").hide();
+    });
+
+    $("#btnDroppable").click(function () {
+        $(".droppableShow").slideToggle();
+        $(".draggableShow").hide();
+    });
+
+    $(function () {
+        $("#draggable1").draggable();
+        $("#droppable").droppable({
+            drop: function (event, ui) {
+                $(this)
+                    .addClass("ui-state-highlight")
+                    .find("p")
+                    .html("Dropped!");
+            }
+        });
+    });
+
+</script>
 </body>
 </html>
