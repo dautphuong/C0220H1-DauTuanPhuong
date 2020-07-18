@@ -1,0 +1,3 @@
+Installation
+
+Using npm: npm install aplayer --save
