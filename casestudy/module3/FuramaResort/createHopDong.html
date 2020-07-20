@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>4.Thêm mới hợp đồng</title>
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../bootstrap/style/dashboard.css">
+
+</head>
+<body>
+---
+layout: examples
+title: Dashboard Template
+extra_css: "dashboard.css"
+extra_js:
+- "https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.9.0/feather.min.js"
+- "https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"
+- "dashboard.js"
+---
+
+<nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
+    <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Admin</a>
+    <ul class="navbar-nav px-3">
+        <li class="nav-item text-nowrap">
+            <a class="nav-link" href="#">Đăng xuất</a>
+        </li>
+    </ul>
+</nav>
+
+<div class="container-fluid">
+    <div class="row">
+        <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+            <div class="sidebar-sticky pt-3">
+                <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mb-1 text-muted">
+                    <span>Dach sách</span>
+                    <a class="d-flex align-items-center text-muted" href="#" aria-label="Add a new report">
+                        <span data-feather="plus-circle"></span>
+                    </a>
+                </h6>
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link " href="listKhachHang.html">
+                            <span data-feather="home"></span>
+                            Khách hàng <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="listNhanVien.html">
+                            <span data-feather="file"></span>
+                            Nhân viên
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="listDichVu.html">
+                            <span data-feather="shopping-cart"></span>
+                            Dịch vụ
+                        </a>
+                    </li>
+                </ul>
+
+                <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+                    <span>Thêm mới</span>
+                    <a class="d-flex align-items-center text-muted" href="#" aria-label="Add a new report">
+                        <span data-feather="plus-circle"></span>
+                    </a>
+                </h6>
+                <ul class="nav flex-column mb-2">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="createHopDong.html">
+                            <span data-feather="file-text"></span>
+                            Hợp đồng
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="createHopDongChiTiet.html">
+                            <span data-feather="file-text"></span>
+                            Hợp đồng chi tiết
+                        </a>
+                    </li>
+                </ul>
+
+                <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+                    <span>Đăng kí</span>
+                    <a class="d-flex align-items-center text-muted" href="#" aria-label="Add a new report">
+                        <span data-feather="plus-circle"></span>
+                    </a>
+                </h6>
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link" href="registerDichVu.html">
+                            <span data-feather="shopping-cart"></span>
+                            Dịch vụ
+                        </a>
+                    </li>
+                </ul>
+                <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+                    <span>Báo cáo</span>
+
+                </h6>
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link " href="reportKhachHang.html">
+                            <span data-feather="home"></span>
+                            Khách hàng <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                <h1 class="h2">Thêm mới hợp đồng</h1>
+
+            </div>
+
+            <div class="table-responsive">
+                <form action="#" method="post">
+                    <table class="table table-striped table-sm">
+                        <tr>
+                            <td>Id hợp đồng</td>
+                            <td><input type="text"/></td>
+                            <td>Tiền đặt cọc</td>
+                            <td><input type="text"/><br></td>
+
+                        </tr>
+                        <tr>
+                            <td>ID khách hàng</td>
+                            <td>
+                                <select id="khachhang">
+                                    <option value="KH01">KH01</option>
+                                    <option value="KH02">KH02</option>
+                                    <option value="Kh03">KH03</option>
+                                </select>
+                            </td>
+                            <td>ID nhân viên</td>
+                            <td>
+                                <select id="nhanvien">
+                                    <option value="NV01">NV01</option>
+                                    <option value="NV02">NV02</option>
+                                    <option value="NV03">NV03</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Ngày tạo</td>
+                            <td><input type="date" placeholder="yyyy-mm-dd"
+                                       min="1950-01-01" max="2500-01-01"/></td>
+                            <td>Ngày kết thúc</td>
+                            <td><input type="date" placeholder="yyyy-mm-dd"
+                                       min="1950-01-01" max="2500-01-01"/></td>
+                        </tr>
+                        <tr>
+                            <td>Tổng tiền</td>
+                            <td><input type="text"/></td>
+
+                        </tr>
+                    </table>
+                    <input type="submit" value="Thêm hợp đồng">
+                </form>
+            </div>
+        </main>
+    </div>
+</div>
+<script src="../bootstrap/js/jquery-3.5.1.min.js"></script>
+<script src="../bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>

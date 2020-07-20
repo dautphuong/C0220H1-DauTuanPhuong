@@ -156,7 +156,7 @@ INSERT INTO `furama_resort`.`kieuthue` (`ten_kieu_thue`, `gia`) VALUES ('Villa',
 INSERT INTO `furama_resort`.`kieuthue` (`ten_kieu_thue`, `gia`) VALUES ('House', '300');
 INSERT INTO `furama_resort`.`kieuthue` (`ten_kieu_thue`, `gia`) VALUES ('Room', '100');
 
-INSERT INTO `furama_resort`.`dichvu` (`id_dich_vu`,`ten_dich_vu`, `dien_tich`, `so_tang`, `so_nguoi_toi_da`, `chi_phi_thue`, `id_kieu_thue`) VALUES ('DV-0001','A', '100', '3', '12', '12000000', '1');
+INSERT INTO `furama_resort`.`dichvu` (`id_dich_vu`,`ten_dich_vu`, `dien_tich`, `so_tang`, `so_nguoi_toi_da`, `productproductchi_phi_thue`, `id_kieu_thue`) VALUES ('DV-0001','A', '100', '3', '12', '12000000', '1');
 INSERT INTO `furama_resort`.`dichvu` (`id_dich_vu`,`ten_dich_vu`, `dien_tich`, `so_tang`, `so_nguoi_toi_da`, `chi_phi_thue`, `id_kieu_thue`) VALUES ('DV-0002','B', '80', '2', '7', '8000000', '2');
 INSERT INTO `furama_resort`.`dichvu` (`id_dich_vu`,`ten_dich_vu`, `dien_tich`, `so_tang`, `so_nguoi_toi_da`, `chi_phi_thue`, `id_kieu_thue`, `id_loai_dich_vu`) VALUES ('DV-0003','C', '50', '2', '7', '7000000', '3', '1');
 INSERT INTO `furama_resort`.`dichvu` (`id_dich_vu`,`ten_dich_vu`, `dien_tich`, `so_tang`, `so_nguoi_toi_da`, `chi_phi_thue`, `id_kieu_thue`) VALUES ('DV-0004','D', '100', '3', '12', '12000000', '1');
