@@ -28,9 +28,14 @@ body {
   }
 }
 
+ul {
+  margin: 0px;
+  padding: 0px;
+}
+
 .sidebar-sticky {
   position: relative;
-  top: 0;
+  top: 75px;
   height: calc(100vh - 48px);
   padding-top: .5rem;
   overflow-x: hidden;

@@ -8,23 +8,59 @@
 
 </head>
 <body>
----
-layout: examples
-title: Dashboard Template
-extra_css: "dashboard.css"
-extra_js:
-- "https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.9.0/feather.min.js"
-- "https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"
-- "dashboard.js"
----
 
-<nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
-    <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Admin</a>
-    <ul class="navbar-nav px-3">
-        <li class="nav-item text-nowrap">
-            <a class="nav-link" href="#">Đăng xuất</a>
-        </li>
-    </ul>
+
+<nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
+    <div class=" col-lg-2 px-3"
+         style="background-image: url('image/meo.jpg');background-repeat: no-repeat;border-radius:100px;background-size: 100%">
+        <div class="row-md-6">
+            <div>
+                <div class="pt-5"></div>
+                <div class="pt-5"></div>
+                <div style="text-align: center">
+                    <strong><a style="" href="#">Admin</a></strong>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-5 px-0">
+        <ul class="navbar-nav px-6" style="font-size: 66px">
+            <li class="nav-item text-nowrap">
+                <a class="nav-link" href="#">FURAMA RESORT</a>
+            </li>
+        </ul>
+    </div>
+    <div class="col-lg-3 px-0">
+
+    </div>
+    <div class="col-lg-1 px-0 navbar-nav">
+        <ul>
+            <li style=" list-style: none;">
+                <a class="mr-3" href="#">
+                    <svg color="white" width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-person-circle"
+                         fill="currentColor"
+                         xmlns="http://www.w3.org/2000/svg">
+                        <path d="M13.468 12.37C12.758 11.226 11.195 10 8 10s-4.757 1.225-5.468 2.37A6.987 6.987 0 0 0 8 15a6.987 6.987 0 0 0 5.468-2.63z"/>
+                        <path fill-rule="evenodd" d="M8 9a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                        <path fill-rule="evenodd" d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1zM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8z"/>
+                    </svg>
+                </a>
+
+                <a href="#">
+                    <svg color="white" width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-envelope" fill="currentColor"
+                         xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd"
+                              d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2zm13 2.383l-4.758 2.855L15 11.114v-5.73zm-.034 6.878L9.271 8.82 8 9.583 6.728 8.82l-5.694 3.44A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.739zM1 11.114l4.758-2.876L1 5.383v5.73z"/>
+                    </svg>
+                </a>
+            </li>
+        </ul>
+
+
+    </div>
+    <div class="col-lg-1 px-0 navbar-nav">
+        <a class="nav-link" href="#">Đăng xuất</a>
+    </div>
 </nav>
 
 <div class="container-fluid">

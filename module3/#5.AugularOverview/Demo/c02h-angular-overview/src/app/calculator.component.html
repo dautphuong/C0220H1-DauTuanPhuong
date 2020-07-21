@@ -1,0 +1,6 @@
+Hello component!
+<br>
+<input type="text" [(ngModel)]="number1" /><br>
+<input type="text" [value]="number2" (change)="changeValue2($event.target.value)"/><br>
+<button (click)="sum()">Sum 2 number</button><br>
+<h2>{{result}}</h2>
