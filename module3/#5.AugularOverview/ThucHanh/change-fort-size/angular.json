@@ -1,9 +1,9 @@
-  {
+{
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "c02h-angular-overview": {
+    "change-fort-size": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/c02h-angular-overview",
+            "outputPath": "dist/change-fort-size",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -62,18 +62,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "c02h-angular-overview:build"
+            "browserTarget": "change-fort-size:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "c02h-angular-overview:build:production"
+              "browserTarget": "change-fort-size:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "c02h-angular-overview:build"
+            "browserTarget": "change-fort-size:build"
           }
         },
         "test": {
@@ -110,19 +110,19 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "c02h-angular-overview:serve"
+            "devServerTarget": "change-fort-size:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "c02h-angular-overview:serve:production"
+              "devServerTarget": "change-fort-size:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "c02h-angular-overview",
+  "defaultProject": "change-fort-size",
   "cli": {
-    "analytics": "f5223e97-371e-47e2-89ca-eb572ae64098"
+    "analytics": "1600aa67-d285-4eb6-b532-393d2ad5d4bc"
   }
 }

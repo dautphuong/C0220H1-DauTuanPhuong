@@ -1,6 +1,14 @@
 Hello component!
 <br>
-<input type="text" [(ngModel)]="number1" /><br>
+<!-- [(ngModel)] (two  way binding) -->
+<input type="text" [(ngModel)]="number1"/><br>
+
+
+<!--  [value]="number2 (property binding) -->
 <input type="text" [value]="number2" (change)="changeValue2($event.target.value)"/><br>
+
+<!-- (click)="sum()" (event binding) -->
 <button (click)="sum()">Sum 2 number</button><br>
+
+<!-- (Interpolation binding)-->
 <h2>{{result}}</h2>

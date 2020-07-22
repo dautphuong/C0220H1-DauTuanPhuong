@@ -1,9 +1,9 @@
-  {
+{
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "c02h-angular-overview": {
+    "show-pet-profile": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/c02h-angular-overview",
+            "outputPath": "dist/show-pet-profile",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -62,18 +62,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "c02h-angular-overview:build"
+            "browserTarget": "show-pet-profile:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "c02h-angular-overview:build:production"
+              "browserTarget": "show-pet-profile:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "c02h-angular-overview:build"
+            "browserTarget": "show-pet-profile:build"
           }
         },
         "test": {
@@ -110,19 +110,19 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "c02h-angular-overview:serve"
+            "devServerTarget": "show-pet-profile:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "c02h-angular-overview:serve:production"
+              "devServerTarget": "show-pet-profile:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "c02h-angular-overview",
+  "defaultProject": "show-pet-profile",
   "cli": {
-    "analytics": "f5223e97-371e-47e2-89ca-eb572ae64098"
+    "analytics": "9cce520f-9623-4590-916f-704b521f4a2c"
   }
 }
