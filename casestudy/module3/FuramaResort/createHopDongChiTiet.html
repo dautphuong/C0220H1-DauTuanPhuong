@@ -11,15 +11,11 @@
 
 
 <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
-    <div class=" col-lg-2 px-3"
-         style="background-image: url('image/meo.jpg');background-repeat: no-repeat;border-radius:100px;background-size: 100%">
-        <div class="row-md-6">
-            <div>
+    <div class=" col-lg-2 px-3">
+        <div class="row-md-3">
+            <div class="col-md-6" style="background-color: white ; background-image: url('image/cat.png');background-repeat: no-repeat;border-radius:100px;background-size: 100%">
                 <div class="pt-5"></div>
                 <div class="pt-5"></div>
-                <div style="text-align: center">
-                    <strong><a style="" href="#">Admin</a></strong>
-                </div>
             </div>
         </div>
     </div>
@@ -152,11 +148,11 @@
 
             <div class="table-responsive">
                 <form action="#" method="post">
-                    <table class="table table-striped table-sm">
+                    <table class="table  table-sm ">
                         <tr>
-                            <td>Id hợp đồng chi tiết</td>
+                            <td>Id hợp đồng chi tiết<span>*</span></td>
                             <td><input type="text"/></td>
-                            <td>Id hợp đồng</td>
+                            <td>Id hợp đồng<span>*</span></td>
                             <td>
                                 <select id="hopdong">
                                     <option value="1">1</option>
@@ -166,7 +162,7 @@
                             </td>
                         </tr>
                         <tr>
-                            <td>Dịch vụ đi kèm</td>
+                            <td>Dịch vụ đi kèm<span>*</span></td>
                             <td>
                                 <select id="dichvudikem">
                                     <option value="massage">massage</option>
@@ -174,8 +170,6 @@
                                     <option value="bữa ăn">bữa ăn</option>
                                 </select>
                             </td>
-                            <td>Số lương</td>
-                            <td><input type="text"/></td>
                         </tr>
                     </table>
                     <input type="submit" value="Thêm hợp đồng chi tiết">
