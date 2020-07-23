@@ -1,0 +1,21 @@
+<p>directive-ex works!</p>
+<div *ngIf="arrStudent.length == 0; then thenBlock else elseBlock"></div>
+<ng-template #thenBlock>
+  <p>Not found student!</p>
+</ng-template>
+<ng-template #elseBlock>
+  <table>
+    <tr>
+      <th>Id</th>
+      <th>Nam</th>
+    </tr>
+    <tr *ngFor="let student of arrStudent">
+      <td>
+        {{student.id}}
+      </td>
+      <td>
+        {{student.name}}
+      </td>
+    </tr>
+  </table>
+</ng-template>

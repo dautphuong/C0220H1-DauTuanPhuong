@@ -1,0 +1,6 @@
+<p>parent works!</p>
+
+<app-child [valueFromParent]="valueToChild"
+           (eventChild)="receivedFromChild($event)"></app-child>
+<button (click)="changeValueChild()">Change value child</button>
+<h3>Output: {{valueFromChild}}</h3>
