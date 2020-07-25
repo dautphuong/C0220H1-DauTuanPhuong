@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "furama-resort": {
+    "countdown": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/furama-resort",
+            "outputPath": "dist/countdown",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -26,8 +26,7 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": [
-            ]
+            "scripts": []
           },
           "configurations": {
             "production": {
@@ -63,18 +62,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "furama-resort:build"
+            "browserTarget": "countdown:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "furama-resort:build:production"
+              "browserTarget": "countdown:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "furama-resort:build"
+            "browserTarget": "countdown:build"
           }
         },
         "test": {
@@ -89,14 +88,9 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css",
-              "node_modules/bootstrap/dist/css/bootstrap.min.css"
+              "src/styles.css"
             ],
-            "scripts": [
-              "node_modules/jquery/dist/jquery.min.js",
-              "node_modules/popper.js/dist/umd/popper.min.js",
-              "node_modules/bootstrap/dist/js/bootstrap.min.js"
-            ]
+            "scripts": []
           }
         },
         "lint": {
@@ -116,19 +110,15 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "furama-resort:serve"
+            "devServerTarget": "countdown:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "furama-resort:serve:production"
+              "devServerTarget": "countdown:serve:production"
             }
           }
         }
       }
-    }
-  },
-  "defaultProject": "furama-resort",
-  "cli": {
-    "analytics": "c6a50929-8882-4a57-9780-1a575933e311"
-  }
+    }},
+  "defaultProject": "countdown"
 }
