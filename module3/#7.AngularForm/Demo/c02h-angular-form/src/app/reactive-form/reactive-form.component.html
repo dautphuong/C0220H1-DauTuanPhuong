@@ -1,0 +1,18 @@
+<p>reactive-form works!</p>
+<form (submit)="onSubmit()" [formGroup]="studentForm">
+  <input formControlName="name" type="text"/><br>
+  <p class="text-red" *ngIf="studentForm.get('name').hasError('required')
+    && studentForm.get('name').touched">
+    Required name!
+  </p>
+  <p class="text-red" *ngIf="studentForm.get('name').hasError('pattern')
+    && studentForm.get('name').touched">
+    Wrong format name!
+  </p>
+  <input formControlName="dateOfBirth" type="text"/><br>
+  <p class="text-red" *ngIf="studentForm.get('dateOfBirth').hasError('abc')
+    && studentForm.get('dateOfBirth').touched">
+    Invalid date!
+  </p>
+  <input type="submit" value="Register" [disabled]="studentForm.invalid" />
+</form>

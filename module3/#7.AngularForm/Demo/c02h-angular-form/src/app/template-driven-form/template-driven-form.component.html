@@ -1,0 +1,6 @@
+<p>template-driven-form works!</p>
+<form (submit)="onSubmit(registerForm)" #registerForm="ngForm">
+  <input ngModel name="name" type="text" required/>
+  <input [(ngModel)]="student.dateOfBirth" name="dateOfBirth" type="text"/>
+  <input type="submit" value="register" />
+</form>

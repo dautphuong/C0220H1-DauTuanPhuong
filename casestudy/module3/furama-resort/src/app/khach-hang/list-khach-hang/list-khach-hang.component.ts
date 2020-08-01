@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {listKhachHang} from '../../khachhang.model';
 
 @Component({
   selector: 'app-list-khach-hang',
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./list-khach-hang.component.css']
 })
 export class ListKhachHangComponent implements OnInit {
+  @Input() listKhachHang = listKhachHang;
 
   constructor() { }
 

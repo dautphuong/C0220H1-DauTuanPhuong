@@ -161,90 +161,104 @@
           </tr>
           </thead>
           <tbody>
-          <tr>
-            <td>NV01</td>
-            <td>Hải</td>
-            <td>20/8/1990</td>
-            <td>1000000001</td>
-            <td>090000001</td>
-            <td>Hai@gmail.com</td>
-            <td>Đà Nẵng</td>
-            <td>Đại Học</td>
-            <td>Bảo Vệ</td>
-            <td>Bộ phận 1</td>
+          <tr *ngFor="let nhanVien of listNhanVien">
+            <td>{{nhanVien.idNhanVien}}</td>
+            <td>{{nhanVien.hoTen}}</td>
+            <td>{{nhanVien.ngaySinh}}</td>
+            <td>{{nhanVien.socmnd}}</td>
+            <td>{{nhanVien.sdt}}</td>
+            <td>{{nhanVien.email}}</td>
+            <td>{{nhanVien.diaChi}}</td>
+            <td>{{nhanVien.idTrinhDo}}</td>
+            <td>{{nhanVien.idViTri}}</td>
+            <td>{{nhanVien.idBoPhan}}</td>
             <td><a href="#">Sửa</a></td>
             <td><a href="#">Xóa</a></td>
           </tr>
-          <tr>
-            <td>NV02</td>
-            <td>Tiến</td>
-            <td>15/4/1990</td>
-            <td>1000000002</td>
-            <td>090000002</td>
-            <td>Tien@gmail.com</td>
-            <td>Đà Nẵng</td>
-            <td>Đại Học</td>
-            <td>Tiếp Tân</td>
-            <td>Bộ phận 2</td>
-            <td><a href="#">Sửa</a></td>
-            <td><a href="#">Xóa</a></td>
-          </tr>
-          <tr>
-            <td>NV03</td>
-            <td>Long</td>
-            <td>22/1/1990</td>
-            <td>1000000003</td>
-            <td>090000003</td>
-            <td>Long@gmail.com</td>
-            <td>Đà Nẵng</td>
-            <td>Đại Học</td>
-            <td>Dọn Phòng</td>
-            <td>Bộ phận 3</td>
-            <td><a href="#">Sửa</a></td>
-            <td><a href="#">Xóa</a></td>
-          </tr>
-          <tr>
-            <td>NV04</td>
-            <td>Quân</td>
-            <td>12/4/1990</td>
-            <td>1000000004</td>
-            <td>090000004</td>
-            <td>Quan@gmail.com</td>
-            <td>Đà Nẵng</td>
-            <td>Đại Học</td>
-            <td>Bảo Vệ</td>
-            <td>Bộ phận 1</td>
-            <td><a href="#">Sửa</a></td>
-            <td><a href="#">Xóa</a></td>
-          </tr>
-          <tr>
-            <td>NV05</td>
-            <td>Châu</td>
-            <td>13/9/1990</td>
-            <td>1000000005</td>
-            <td>090000005</td>
-            <td>Chau@gmail.com</td>
-            <td>Đà Nẵng</td>
-            <td>Đại Học</td>
-            <td>Bảo Vệ</td>
-            <td>Bộ phận 1</td>
-            <td><a href="#">Sửa</a></td>
-            <td><a href="#">Xóa</a></td>
-          </tr>
-          <tr>
-            <td>NV06</td>
-            <td>Phương</td>
-            <td>11/10/1990</td>
-            <td>1000000006</td>
-            <td>090000006</td>
-            <td>Tinh@gmail.com</td>
-            <td>Đà Nẵng</td>
-            <td>Đại Học</td>
-            <td>Giám độc</td>
-            <td>Bộ phận 1</td>
-            <td><a href="#">Sửa</a></td>
-            <td><a href="#">Xóa</a></td>
-          </tr>
+<!--          <tr>-->
+<!--            <td>NV01</td>-->
+<!--            <td>Hải</td>-->
+<!--            <td>20/8/1990</td>-->
+<!--            <td>1000000001</td>-->
+<!--            <td>090000001</td>-->
+<!--            <td>Hai@gmail.com</td>-->
+<!--            <td>Đà Nẵng</td>-->
+<!--            <td>Đại Học</td>-->
+<!--            <td>Bảo Vệ</td>-->
+<!--            <td>Bộ phận 1</td>-->
+<!--            <td><a href="#">Sửa</a></td>-->
+<!--            <td><a href="#">Xóa</a></td>-->
+<!--          </tr>-->
+<!--          <tr>-->
+<!--            <td>NV02</td>-->
+<!--            <td>Tiến</td>-->
+<!--            <td>15/4/1990</td>-->
+<!--            <td>1000000002</td>-->
+<!--            <td>090000002</td>-->
+<!--            <td>Tien@gmail.com</td>-->
+<!--            <td>Đà Nẵng</td>-->
+<!--            <td>Đại Học</td>-->
+<!--            <td>Tiếp Tân</td>-->
+<!--            <td>Bộ phận 2</td>-->
+<!--            <td><a href="#">Sửa</a></td>-->
+<!--            <td><a href="#">Xóa</a></td>-->
+<!--          </tr>-->
+<!--          <tr>-->
+<!--            <td>NV03</td>-->
+<!--            <td>Long</td>-->
+<!--            <td>22/1/1990</td>-->
+<!--            <td>1000000003</td>-->
+<!--            <td>090000003</td>-->
+<!--            <td>Long@gmail.com</td>-->
+<!--            <td>Đà Nẵng</td>-->
+<!--            <td>Đại Học</td>-->
+<!--            <td>Dọn Phòng</td>-->
+<!--            <td>Bộ phận 3</td>-->
+<!--            <td><a href="#">Sửa</a></td>-->
+<!--            <td><a href="#">Xóa</a></td>-->
+<!--          </tr>-->
+<!--          <tr>-->
+<!--            <td>NV04</td>-->
+<!--            <td>Quân</td>-->
+<!--            <td>12/4/1990</td>-->
+<!--            <td>1000000004</td>-->
+<!--            <td>090000004</td>-->
+<!--            <td>Quan@gmail.com</td>-->
+<!--            <td>Đà Nẵng</td>-->
+<!--            <td>Đại Học</td>-->
+<!--            <td>Bảo Vệ</td>-->
+<!--            <td>Bộ phận 1</td>-->
+<!--            <td><a href="#">Sửa</a></td>-->
+<!--            <td><a href="#">Xóa</a></td>-->
+<!--          </tr>-->
+<!--          <tr>-->
+<!--            <td>NV05</td>-->
+<!--            <td>Châu</td>-->
+<!--            <td>13/9/1990</td>-->
+<!--            <td>1000000005</td>-->
+<!--            <td>090000005</td>-->
+<!--            <td>Chau@gmail.com</td>-->
+<!--            <td>Đà Nẵng</td>-->
+<!--            <td>Đại Học</td>-->
+<!--            <td>Bảo Vệ</td>-->
+<!--            <td>Bộ phận 1</td>-->
+<!--            <td><a href="#">Sửa</a></td>-->
+<!--            <td><a href="#">Xóa</a></td>-->
+<!--          </tr>-->
+<!--          <tr>-->
+<!--            <td>NV06</td>-->
+<!--            <td>Phương</td>-->
+<!--            <td>11/10/1990</td>-->
+<!--            <td>1000000006</td>-->
+<!--            <td>090000006</td>-->
+<!--            <td>Tinh@gmail.com</td>-->
+<!--            <td>Đà Nẵng</td>-->
+<!--            <td>Đại Học</td>-->
+<!--            <td>Giám độc</td>-->
+<!--            <td>Bộ phận 1</td>-->
+<!--            <td><a href="#">Sửa</a></td>-->
+<!--            <td><a href="#">Xóa</a></td>-->
+<!--          </tr>-->
 
           </tbody>
         </table>
