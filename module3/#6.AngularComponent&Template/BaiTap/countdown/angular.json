@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "countdown"
+    }
+  },
+  "defaultProject": "countdown",
+  "cli": {
+    "analytics": false
+  }
 }

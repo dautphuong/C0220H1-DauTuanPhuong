@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from "@angular/core";
+import {listDichVu} from '../../dichvu.model';
 
 @Component({
   selector: 'app-list-dich-vu',
@@ -6,8 +7,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./list-dich-vu.component.css']
 })
 export class ListDichVuComponent implements OnInit {
+  @Input() listDichVu = listDichVu;
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit(): void {
   }

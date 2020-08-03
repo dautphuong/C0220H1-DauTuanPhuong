@@ -13,6 +13,7 @@ import { CreateHopDongChiTietComponent } from './hop-dong/create-hop-dong-chi-ti
 import { CreateNhanVienComponent } from './nhan-vien/create-nhan-vien/create-nhan-vien.component';
 import { RegisterDichVuComponent } from './dich-vu/register-dich-vu/register-dich-vu.component';
 import { ReportKhachHangComponent } from './khach-hang/report-khach-hang/report-khach-hang.component';
+import { ListHopDongComponent } from './hop-dong/list-hop-dong/list-hop-dong.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { ReportKhachHangComponent } from './khach-hang/report-khach-hang/report-
     CreateHopDongChiTietComponent,
     CreateNhanVienComponent,
     RegisterDichVuComponent,
-    ReportKhachHangComponent
+    ReportKhachHangComponent,
+    ListHopDongComponent
   ],
   imports: [
     BrowserModule,
