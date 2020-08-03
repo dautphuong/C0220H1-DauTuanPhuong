@@ -2,7 +2,7 @@
 <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
   <div class=" col-lg-2 px-3">
     <div class="row-md-3">
-      <div class="col-md-6" style="background-color: white ; background-image: url('../../../assets/image/cat.png');background-repeat: no-repeat;border-radius:100px;background-size: 100%">
+      <div class="col-md-6" style="background-color: white ; background-image: url('../../../../assets/image/cat.png');background-repeat: no-repeat;border-radius:100px;background-size: 100%">
         <div class="pt-5"></div>
         <div class="pt-5"></div>
       </div>
@@ -73,13 +73,13 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="listDichVu.html">
+            <a class="nav-link" href="listDichVu.html">
               <span data-feather="shopping-cart"></span>
               Dịch vụ
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link " href="listDichVu.html">
+            <a class="nav-link active" href="listDichVu.html">
               <span data-feather="shopping-cart"></span>
               Hợp đồng
             </a>
@@ -153,90 +153,90 @@
           <thead>
           <tr>
             <th>No.</th>
-            <th>Tên dịch vụ</th>
-            <th>Diện tích</th>
-            <th>Số tầng</th>
-            <th>Số người tối đa</th>
-            <th>Chi phí thuê</th>
-            <th>Trạng thái</th>
-            <th>Kiểu thuê</th>
+            <th>Nhân viên</th>
+            <th>Khách hàng</th>
+            <th>Dịch vụ</th>
+            <th>Ngày làm hợp đồng</th>
+            <th>Ngày kết thúc</th>
+            <th>Tiền đặt cọc</th>
+            <th>Tổng tiền</th>
             <th></th>
             <th></th>
           </tr>
           </thead>
           <tbody>
-          <tr *ngFor="let dichvu of listDichVu">
-            <td>{{dichvu.idDichVu}}</td>
-            <td>{{dichvu.tenDichVu}}</td>
-            <td>{{dichvu.dienTich}}</td>
-            <td>{{dichvu.soTang}}</td>
-            <td>{{dichvu.soNguoiToiDa}}</td>
-            <td>{{dichvu.chiPhiThue}}</td>
-            <td>{{dichvu.trangThai}}</td>
-            <td>{{dichvu.idKieuThue}}</td>
+          <tr *ngFor="let hopdong of listHopDong">
+            <td>{{hopdong.idHopDong}}</td>
+            <td>{{hopdong.idNhanVien}}</td>
+            <td>{{hopdong.idKhachHang}}</td>
+            <td>{{hopdong.idDichVu}}</td>
+            <td>{{hopdong.ngayLamHopDong}}</td>
+            <td>{{hopdong.ngayKetThuc}}</td>
+            <td>{{hopdong.tienDatCoc}}</td>
+            <td>{{hopdong.tongTien}}</td>
             <td><a href="#">Sửa</a></td>
             <td><a href="#">Xóa</a></td>
           </tr>
-<!--          <tr>-->
-<!--            <td>DV01</td>-->
-<!--            <td>A</td>-->
-<!--            <td>100.0</td>-->
-<!--            <td>2</td>-->
-<!--            <td>4</td>-->
-<!--            <td>7000000.0</td>-->
-<!--            <td>Đã thuê</td>-->
-<!--            <td>House</td>-->
-<!--            <td><a href="#">Sửa</a></td>-->
-<!--            <td><a href="#">Xóa</a></td>-->
-<!--          </tr>-->
-<!--          <tr>-->
-<!--            <td>DV02</td>-->
-<!--            <td>B</td>-->
-<!--            <td>150.0</td>-->
-<!--            <td>4</td>-->
-<!--            <td>8</td>-->
-<!--            <td>10000000.0</td>-->
-<!--            <td>Trống</td>-->
-<!--            <td>Villa</td>-->
-<!--            <td><a href="#">Sửa</a></td>-->
-<!--            <td><a href="#">Xóa</a></td>-->
-<!--          </tr>-->
-<!--          <tr>-->
-<!--            <td>DV03</td>-->
-<!--            <td>C</td>-->
-<!--            <td>50.0</td>-->
-<!--            <td>1</td>-->
-<!--            <td>2</td>-->
-<!--            <td>4000000.0</td>-->
-<!--            <td>Đã thuê</td>-->
-<!--            <td>Room</td>-->
-<!--            <td><a href="#">Sửa</a></td>-->
-<!--            <td><a href="#">Xóa</a></td>-->
-<!--          </tr>-->
-<!--          <tr>-->
-<!--            <td>DV04</td>-->
-<!--            <td>D</td>-->
-<!--            <td>100.0</td>-->
-<!--            <td>1</td>-->
-<!--            <td>4</td>-->
-<!--            <td>7000000.0</td>-->
-<!--            <td>Đã thuê</td>-->
-<!--            <td>Room</td>-->
-<!--            <td><a href="#">Sửa</a></td>-->
-<!--            <td><a href="#">Xóa</a></td>-->
-<!--          </tr>-->
-<!--          <tr>-->
-<!--            <td>DV05</td>-->
-<!--            <td>E</td>-->
-<!--            <td>100.0</td>-->
-<!--            <td>1</td>-->
-<!--            <td>4</td>-->
-<!--            <td>7000000.0</td>-->
-<!--            <td>Đã thuê</td>-->
-<!--            <td>Room</td>-->
-<!--            <td><a href="#">Sửa</a></td>-->
-<!--            <td><a href="#">Xóa</a></td>-->
-<!--          </tr>-->
+          <!--          <tr>-->
+          <!--            <td>DV01</td>-->
+          <!--            <td>A</td>-->
+          <!--            <td>100.0</td>-->
+          <!--            <td>2</td>-->
+          <!--            <td>4</td>-->
+          <!--            <td>7000000.0</td>-->
+          <!--            <td>Đã thuê</td>-->
+          <!--            <td>House</td>-->
+          <!--            <td><a href="#">Sửa</a></td>-->
+          <!--            <td><a href="#">Xóa</a></td>-->
+          <!--          </tr>-->
+          <!--          <tr>-->
+          <!--            <td>DV02</td>-->
+          <!--            <td>B</td>-->
+          <!--            <td>150.0</td>-->
+          <!--            <td>4</td>-->
+          <!--            <td>8</td>-->
+          <!--            <td>10000000.0</td>-->
+          <!--            <td>Trống</td>-->
+          <!--            <td>Villa</td>-->
+          <!--            <td><a href="#">Sửa</a></td>-->
+          <!--            <td><a href="#">Xóa</a></td>-->
+          <!--          </tr>-->
+          <!--          <tr>-->
+          <!--            <td>DV03</td>-->
+          <!--            <td>C</td>-->
+          <!--            <td>50.0</td>-->
+          <!--            <td>1</td>-->
+          <!--            <td>2</td>-->
+          <!--            <td>4000000.0</td>-->
+          <!--            <td>Đã thuê</td>-->
+          <!--            <td>Room</td>-->
+          <!--            <td><a href="#">Sửa</a></td>-->
+          <!--            <td><a href="#">Xóa</a></td>-->
+          <!--          </tr>-->
+          <!--          <tr>-->
+          <!--            <td>DV04</td>-->
+          <!--            <td>D</td>-->
+          <!--            <td>100.0</td>-->
+          <!--            <td>1</td>-->
+          <!--            <td>4</td>-->
+          <!--            <td>7000000.0</td>-->
+          <!--            <td>Đã thuê</td>-->
+          <!--            <td>Room</td>-->
+          <!--            <td><a href="#">Sửa</a></td>-->
+          <!--            <td><a href="#">Xóa</a></td>-->
+          <!--          </tr>-->
+          <!--          <tr>-->
+          <!--            <td>DV05</td>-->
+          <!--            <td>E</td>-->
+          <!--            <td>100.0</td>-->
+          <!--            <td>1</td>-->
+          <!--            <td>4</td>-->
+          <!--            <td>7000000.0</td>-->
+          <!--            <td>Đã thuê</td>-->
+          <!--            <td>Room</td>-->
+          <!--            <td><a href="#">Sửa</a></td>-->
+          <!--            <td><a href="#">Xóa</a></td>-->
+          <!--          </tr>-->
 
           </tbody>
         </table>

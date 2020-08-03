@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {listNhanVien} from '../../nhanvien.model';
+import {listNhanVien} from '../../../model/nhanvien.model';
 
 @Component({
   selector: 'app-list-nhan-vien',

@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from "@angular/core";
-import {listDichVu} from '../../dichvu.model';
+import {listDichVu} from '../../../model/dichvu.model';
 
 @Component({
   selector: 'app-list-dich-vu',

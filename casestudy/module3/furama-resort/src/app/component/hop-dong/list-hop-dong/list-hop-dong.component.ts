@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {listHopDong} from '../../hopdong.model';
+import {listHopDong} from '../../../model/hopdong.model';
 
 @Component({
   selector: 'app-list-hop-dong',

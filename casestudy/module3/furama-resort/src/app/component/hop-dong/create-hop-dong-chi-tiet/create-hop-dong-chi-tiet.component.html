@@ -4,7 +4,7 @@
 <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
   <div class=" col-lg-2 px-3">
     <div class="row-md-3">
-      <div class="col-md-6" style="background-color: white ; background-image: url('../../../assets/image/cat.png');background-repeat: no-repeat;border-radius:100px;background-size: 100%">
+      <div class="col-md-6" style="background-color: white ; background-image: url('../../../../assets/image/cat.png');background-repeat: no-repeat;border-radius:100px;background-size: 100%">
         <div class="pt-5"></div>
         <div class="pt-5"></div>
       </div>
@@ -74,7 +74,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="listDichVu.html">
+            <a class="nav-link " href="listDichVu.html">
               <span data-feather="shopping-cart"></span>
               Dịch vụ
             </a>
@@ -95,13 +95,13 @@
         </h6>
         <ul class="nav flex-column mb-2">
           <li class="nav-item">
-            <a class="nav-link" href="createHopDong.html">
+            <a class="nav-link " href="createHopDong.html">
               <span data-feather="file-text"></span>
               Hợp đồng
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="createHopDongChiTiet.html">
+            <a class="nav-link active" href="createHopDongChiTiet.html">
               <span data-feather="file-text"></span>
               Hợp đồng chi tiết
             </a>
@@ -139,62 +139,41 @@
 
     <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
       <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h2">Thêm mới dịch vụ</h1>
+        <h1 class="h2">Thêm mới hợp đồng chi tiết</h1>
 
       </div>
 
       <div class="table-responsive">
         <form action="#" method="post">
-          <table  class="table table-sm">
+          <table class="table  table-sm ">
             <tr>
-              <td>Id dịch vụ<span>*</span></td>
+              <td>Id hợp đồng chi tiết<span>*</span></td>
               <td><input type="text"/></td>
-              <td>Tên dịch vụ<span>*</span></td>
-              <td><input type="text"/></td>
-
-            </tr>
-            <tr>
-              <td>Diện tích<span>*</span></td>
-              <td><input type="number" min="0"/></td>
-              <td>Số tầng<span>*</span></td>
-              <td><input type="number" min="0"/></td>
-            </tr>
-            <tr>
-              <td>Số người tối đa</td>
-              <td><input type="number" min="0"/></td>
-              <td>Chi Phí thuê</td>
-              <td><input type="text"/><br></td>
-            </tr>
-            <tr>
-              <td>Trạng thái</td>
-              <td><input type="text"/></td>
-              <td>Kiểu thuê</td>
+              <td>Id hợp đồng<span>*</span></td>
               <td>
-                <select id="kieuthue">
-                  <option value="villa">Villa</option>
-                  <option value="house">House</option>
-                  <option value="room">Room</option>
+                <select id="hopdong">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
                 </select>
               </td>
             </tr>
             <tr>
-              <td>Loại dịch vụ</td>
+              <td>Dịch vụ đi kèm<span>*</span></td>
               <td>
-                <select id="loaidichvu">
-                  <option value="diamond">Kim cương</option>
-                  <option value="gold">Vàng</option>
-                  <option value="silver">Bạc</option>
-                  <option value="normal">Bình thường</option>
+                <select id="dichvudikem">
+                  <option value="massage">massage</option>
+                  <option value="karaoke">karaoke</option>
+                  <option value="bữa ăn">bữa ăn</option>
                 </select>
               </td>
-              <td></td>
-              <td></td>
             </tr>
           </table>
-          <input type="submit" value="Thêm dịch vụ">
+          <input type="submit" value="Thêm hợp đồng chi tiết">
         </form>
       </div>
     </main>
   </div>
 </div>
+
 

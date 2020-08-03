@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {listKhachHang} from '../../khachhang.model';
+import {listKhachHang} from '../../../model/khachhang.model';
 
 @Component({
   selector: 'app-list-khach-hang',

@@ -1,10 +1,9 @@
 
 
-
 <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
   <div class=" col-lg-2 px-3">
     <div class="row-md-3">
-      <div class="col-md-6" style="background-color: white ; background-image: url('../../../assets/image/cat.png');background-repeat: no-repeat;border-radius:100px;background-size: 100%">
+      <div class="col-md-6" style="background-color: white ; background-image: url('../../../../assets/image/cat.png');background-repeat: no-repeat;border-radius:100px;background-size: 100%">
         <div class="pt-5"></div>
         <div class="pt-5"></div>
       </div>
@@ -95,13 +94,13 @@
         </h6>
         <ul class="nav flex-column mb-2">
           <li class="nav-item">
-            <a class="nav-link " href="createHopDong.html">
+            <a class="nav-link active" href="createHopDong.html">
               <span data-feather="file-text"></span>
               Hợp đồng
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="createHopDongChiTiet.html">
+            <a class="nav-link" href="createHopDongChiTiet.html">
               <span data-feather="file-text"></span>
               Hợp đồng chi tiết
             </a>
@@ -139,7 +138,7 @@
 
     <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
       <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h2">Thêm mới hợp đồng chi tiết</h1>
+        <h1 class="h2">Thêm mới hợp đồng</h1>
 
       </div>
 
@@ -147,33 +146,48 @@
         <form action="#" method="post">
           <table class="table  table-sm ">
             <tr>
-              <td>Id hợp đồng chi tiết<span>*</span></td>
-              <td><input type="text"/></td>
               <td>Id hợp đồng<span>*</span></td>
+              <td><input type="text"/></td>
+              <td>Tiền đặt cọc</td>
+              <td><input type="text"/><br></td>
+
+            </tr>
+            <tr>
+              <td>ID khách hàng</td>
               <td>
-                <select id="hopdong">
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
+                <select id="khachhang">
+                  <option value="KH01">KH01</option>
+                  <option value="KH02">KH02</option>
+                  <option value="Kh03">KH03</option>
+                </select>
+              </td>
+              <td>ID nhân viên</td>
+              <td>
+                <select id="nhanvien">
+                  <option value="NV01">NV01</option>
+                  <option value="NV02">NV02</option>
+                  <option value="NV03">NV03</option>
                 </select>
               </td>
             </tr>
             <tr>
-              <td>Dịch vụ đi kèm<span>*</span></td>
-              <td>
-                <select id="dichvudikem">
-                  <option value="massage">massage</option>
-                  <option value="karaoke">karaoke</option>
-                  <option value="bữa ăn">bữa ăn</option>
-                </select>
-              </td>
+              <td>Ngày tạo<span>*</span></td>
+              <td><input type="date" placeholder="yyyy-mm-dd"
+                         min="1950-01-01" max="2500-01-01"/></td>
+              <td>Ngày kết thúc<span>*</span></td>
+              <td><input type="date" placeholder="yyyy-mm-dd"
+                         min="1950-01-01" max="2500-01-01"/></td>
+            </tr>
+            <tr>
+              <td>Tổng tiền</td>
+              <td><input type="text"/></td>
+
             </tr>
           </table>
-          <input type="submit" value="Thêm hợp đồng chi tiết">
+          <input type="submit" value="Thêm hợp đồng">
         </form>
       </div>
     </main>
   </div>
 </div>
-
 

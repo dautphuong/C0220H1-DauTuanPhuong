@@ -1,9 +1,10 @@
 
 
+
 <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
   <div class=" col-lg-2 px-3">
     <div class="row-md-3">
-      <div class="col-md-6" style="background-color: white ; background-image: url('../../../assets/image/cat.png');background-repeat: no-repeat;border-radius:100px;background-size: 100%">
+      <div class="col-md-6" style="background-color: white ; background-image: url('../../../../assets/image/cat.png');background-repeat: no-repeat;border-radius:100px;background-size: 100%">
         <div class="pt-5"></div>
         <div class="pt-5"></div>
       </div>
@@ -67,13 +68,13 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="listNhanVien.html">
+            <a class="nav-link active" href="listNhanVien.html">
               <span data-feather="file"></span>
               Nhân viên
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link " href="listDichVu.html">
+            <a class="nav-link" href="listDichVu.html">
               <span data-feather="shopping-cart"></span>
               Dịch vụ
             </a>
@@ -94,7 +95,7 @@
         </h6>
         <ul class="nav flex-column mb-2">
           <li class="nav-item">
-            <a class="nav-link active" href="createHopDong.html">
+            <a class="nav-link" href="createHopDong.html">
               <span data-feather="file-text"></span>
               Hợp đồng
             </a>
@@ -138,53 +139,63 @@
 
     <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
       <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h2">Thêm mới hợp đồng</h1>
+        <h1 class="h2">Thêm mới nhân viên</h1>
 
       </div>
 
       <div class="table-responsive">
         <form action="#" method="post">
-          <table class="table  table-sm ">
+          <table  class="table  table-sm ">
             <tr>
-              <td>Id hợp đồng<span>*</span></td>
+              <td>Id Nhân viên<span>*</span></td>
               <td><input type="text"/></td>
-              <td>Tiền đặt cọc</td>
+              <td>Họ và tên<span>*</span></td>
+              <td><input type="text"/></td>
+
+            </tr>
+            <tr>
+              <td>Ngày sinh<span>*</span></td>
+              <td><input type="date" placeholder="yyyy-mm-dd"
+                         min="1950-01-01" max="2500-01-01"/></td>
+              <td>Số CMND<span>*</span></td>
               <td><input type="text"/><br></td>
-
             </tr>
             <tr>
-              <td>ID khách hàng</td>
-              <td>
-                <select id="khachhang">
-                  <option value="KH01">KH01</option>
-                  <option value="KH02">KH02</option>
-                  <option value="Kh03">KH03</option>
-                </select>
-              </td>
-              <td>ID nhân viên</td>
-              <td>
-                <select id="nhanvien">
-                  <option value="NV01">NV01</option>
-                  <option value="NV02">NV02</option>
-                  <option value="NV03">NV03</option>
-                </select>
-              </td>
-            </tr>
-            <tr>
-              <td>Ngày tạo<span>*</span></td>
-              <td><input type="date" placeholder="yyyy-mm-dd"
-                         min="1950-01-01" max="2500-01-01"/></td>
-              <td>Ngày kết thúc<span>*</span></td>
-              <td><input type="date" placeholder="yyyy-mm-dd"
-                         min="1950-01-01" max="2500-01-01"/></td>
-            </tr>
-            <tr>
-              <td>Tổng tiền</td>
+              <td>Số điện thoại<span>*</span></td>
               <td><input type="text"/></td>
-
+              <td>Email<span>*</span></td>
+              <td><input type="text"/><br></td>
+            </tr>
+            <tr>
+              <td>Địa chỉ</td>
+              <td><input type="text"/></td>
+              <td>Trình Độ</td>
+              <td><select id="trinhdo">
+                <option value="diamond">Đại học</option>
+                <option value="gold">Phổ thông</option>
+                <option value="silver">Cao đẳng</option>
+              </select>
+              </td>
+            </tr>
+            <tr>
+              <td>Vị trí</td>
+              <td>
+                <select id="vitri">
+                  <option value="baoVe">Bảo vệ</option>
+                  <option value="tiepTan">Tiếp tân</option>
+                  <option value="phucVu">Phục vụ</option>
+                </select>
+              </td>
+              <td>Bộ phận</td>
+              <td><select id="bophan">
+                <option value="A">Bộ phận A</option>
+                <option value="B">Bộ phận B</option>
+                <option value="C">Bộ phận C</option>
+              </select>
+              </td>
             </tr>
           </table>
-          <input type="submit" value="Thêm hợp đồng">
+          <input type="submit" value="Thêm nhân viên">
         </form>
       </div>
     </main>
