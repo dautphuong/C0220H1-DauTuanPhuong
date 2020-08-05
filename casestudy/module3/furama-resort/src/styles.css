@@ -42,7 +42,9 @@ ul {
   overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
 }
 
-
+.notice{
+  color:red;
+}
 
 .sidebar .nav-link {
   font-weight: 500;

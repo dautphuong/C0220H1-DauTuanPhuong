@@ -1,10 +1,8 @@
-
-
-
 <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
   <div class=" col-lg-2 px-3">
     <div class="row-md-3">
-      <div class="col-md-6" style="background-color: white ; background-image: url('../../../../assets/image/cat.png');background-repeat: no-repeat;border-radius:100px;background-size: 100%">
+      <div class="col-md-6"
+           style="background-color: white ; background-image: url('../../../../assets/image/cat.png');background-repeat: no-repeat;border-radius:100px;background-size: 100%">
         <div class="pt-5"></div>
         <div class="pt-5"></div>
       </div>
@@ -27,7 +25,8 @@
           <svg color="white" width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-person-circle"
                fill="currentColor"
                xmlns="http://www.w3.org/2000/svg">
-            <path d="M13.468 12.37C12.758 11.226 11.195 10 8 10s-4.757 1.225-5.468 2.37A6.987 6.987 0 0 0 8 15a6.987 6.987 0 0 0 5.468-2.63z"/>
+            <path
+              d="M13.468 12.37C12.758 11.226 11.195 10 8 10s-4.757 1.225-5.468 2.37A6.987 6.987 0 0 0 8 15a6.987 6.987 0 0 0 5.468-2.63z"/>
             <path fill-rule="evenodd" d="M8 9a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
             <path fill-rule="evenodd" d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1zM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8z"/>
           </svg>
@@ -138,54 +137,84 @@
     </nav>
 
     <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
-      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+      <div
+        class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
         <h1 class="h2">Thêm mới dịch vụ</h1>
 
       </div>
 
       <div class="table-responsive">
-        <form action="#" method="post">
-          <table  class="table table-sm">
+        <form [formGroup]="dichVuForm" (ngSubmit)="onSubmit()">
+          <table class="table table-sm">
             <tr>
-              <td>Id dịch vụ<span>*</span></td>
-              <td><input type="text"/></td>
+              <td>Id dịch vụ<span>*</span>
+              </td>
+              <td><input type="text" formControlName="idDichVu"/>
+                <div class="notice" role="alert"
+                     *ngIf="dichVuForm.get('idDichVu').invalid && dichVuForm.get('idDichVu').touched">
+                  Định dạng DV-XXXX
+                </div>
+              </td>
               <td>Tên dịch vụ<span>*</span></td>
-              <td><input type="text"/></td>
-
+              <td><input type="text" formControlName="tenDichVu"/>
+                <div class="notice" role="alert"
+                     *ngIf="dichVuForm.get('tenDichVu').invalid && dichVuForm.get('tenDichVu').touched">
+                  Không được để trống
+                </div>
+              </td>
             </tr>
             <tr>
               <td>Diện tích<span>*</span></td>
-              <td><input type="number" min="0"/></td>
+              <td><input type="number" min="0" formControlName="dienTich"/>
+                <div class="notice" role="alert"
+                     *ngIf="dichVuForm.get('dienTich').invalid && dichVuForm.get('dienTich').touched">
+                  Không được để trống
+                </div>
+              </td>
               <td>Số tầng<span>*</span></td>
-              <td><input type="number" min="0"/></td>
+              <td><input type="number" min="0" formControlName="soTang"/>
+                <div class="notice" role="alert"
+                     *ngIf="dichVuForm.get('soTang').invalid && dichVuForm.get('soTang').touched">
+                  Không được để trống
+                </div>
+              </td>
             </tr>
             <tr>
               <td>Số người tối đa</td>
-              <td><input type="number" min="0"/></td>
+              <td><input type="number" min="0" formControlName="soNguoiToiDa"/>
+              </td>
               <td>Chi Phí thuê</td>
-              <td><input type="text"/><br></td>
+              <td><input type="text" formControlName="chiPhiThue"/><br></td>
             </tr>
             <tr>
               <td>Trạng thái</td>
-              <td><input type="text"/></td>
+              <td><input type="text" formControlName="trangThai"/></td>
               <td>Kiểu thuê</td>
               <td>
-                <select id="kieuthue">
-                  <option value="villa">Villa</option>
-                  <option value="house">House</option>
-                  <option value="room">Room</option>
+                <select id="kieuthue" formControlName="idKieuThue">
+                  <option value="1">Villa</option>
+                  <option value="2">House</option>
+                  <option value="3">Room</option>
                 </select>
+                <div class="notice" role="alert"
+                     *ngIf="dichVuForm.get('idKieuThue').invalid && dichVuForm.get('idKieuThue').touched">
+                  Không được để trống
+                </div>
               </td>
             </tr>
             <tr>
               <td>Loại dịch vụ</td>
               <td>
-                <select id="loaidichvu">
-                  <option value="diamond">Kim cương</option>
-                  <option value="gold">Vàng</option>
-                  <option value="silver">Bạc</option>
-                  <option value="normal">Bình thường</option>
+                <select id="loaidichvu" formControlName="idLoaiDichVu">
+                  <option value="1">Kim cương</option>
+                  <option value="2">Vàng</option>
+                  <option value="3">Bạc</option>
+                  <option value="4">Bình thường</option>
                 </select>
+                <div class="notice" role="alert"
+                     *ngIf="dichVuForm.get('idLoaiDichVu').invalid && dichVuForm.get('idLoaiDichVu').touched">
+                  Không được để trống
+                </div>
               </td>
               <td></td>
               <td></td>
@@ -193,6 +222,7 @@
           </table>
           <input type="submit" value="Thêm dịch vụ">
         </form>
+        {{ dichVuForm.value | json}}
       </div>
     </main>
   </div>

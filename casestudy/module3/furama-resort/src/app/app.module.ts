@@ -14,6 +14,7 @@ import { CreateNhanVienComponent } from './component/nhan-vien/create-nhan-vien/
 import { RegisterDichVuComponent } from './component/dich-vu/register-dich-vu/register-dich-vu.component';
 import { ReportKhachHangComponent } from './component/khach-hang/report-khach-hang/report-khach-hang.component';
 import { ListHopDongComponent } from './component/hop-dong/list-hop-dong/list-hop-dong.component';
+import {ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -30,10 +31,11 @@ import { ListHopDongComponent } from './component/hop-dong/list-hop-dong/list-ho
     ReportKhachHangComponent,
     ListHopDongComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        ReactiveFormsModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

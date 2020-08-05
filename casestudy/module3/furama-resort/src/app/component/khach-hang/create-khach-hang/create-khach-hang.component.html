@@ -1,9 +1,8 @@
-
-
 <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
   <div class=" col-lg-2 px-3">
     <div class="row-md-3">
-      <div class="col-md-6" style="background-color: white ; background-image: url('../../../../assets/image/cat.png');background-repeat: no-repeat;border-radius:100px;background-size: 100%">
+      <div class="col-md-6"
+           style="background-color: white ; background-image: url('../../../../assets/image/cat.png');background-repeat: no-repeat;border-radius:100px;background-size: 100%">
         <div class="pt-5"></div>
         <div class="pt-5"></div>
       </div>
@@ -26,7 +25,8 @@
           <svg color="white" width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-person-circle"
                fill="currentColor"
                xmlns="http://www.w3.org/2000/svg">
-            <path d="M13.468 12.37C12.758 11.226 11.195 10 8 10s-4.757 1.225-5.468 2.37A6.987 6.987 0 0 0 8 15a6.987 6.987 0 0 0 5.468-2.63z"/>
+            <path
+              d="M13.468 12.37C12.758 11.226 11.195 10 8 10s-4.757 1.225-5.468 2.37A6.987 6.987 0 0 0 8 15a6.987 6.987 0 0 0 5.468-2.63z"/>
             <path fill-rule="evenodd" d="M8 9a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
             <path fill-rule="evenodd" d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1zM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8z"/>
           </svg>
@@ -137,51 +137,85 @@
     </nav>
 
     <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
-      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+      <div
+        class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
         <h1 class="h2">Thêm mới khách hàng</h1>
 
       </div>
 
-      <div  class="table-responsive">
-        <form action="#" method="post">
+      <div class="table-responsive">
+        <form [formGroup]="khachHangForm" (ngSubmit)="onSubmit()">
           <table class="  table table-sm ">
             <tr>
               <td>Id khách hàng<span>*</span></td>
-              <td><input type="text"/></td>
-              <td>Họ và tên<span>*</span></td>
-              <td><input type="text"/></td>
+              <td><input type="text" formControlName="idKhachHang"/>
+                <div class="notice" role="alert"
+                     *ngIf="khachHangForm.get('idKhachHang').invalid && khachHangForm.get('idKhachHang').touched">
+                  Sai định dạng id
+                </div>
+              </td>
 
+              <td>Họ và tên<span>*</span></td>
+              <td><input type="text" formControlName="hoTen"/>
+                <div class="notice" role="alert"
+                     *ngIf="khachHangForm.get('hoTen').invalid && khachHangForm.get('hoTen').touched">
+                  Không được để trống
+                </div>
+              </td>
             </tr>
             <tr>
               <td>Ngày sinh<span>*</span></td>
-              <td><input type="date" placeholder="yyyy-mm-dd"
-                         min="1950-01-01" max="2500-01-01"/></td>
+              <td><input type="date" placeholder="yyyy-mm-dd" formControlName="ngaySinh"/>
+                <div class="notice" role="alert"
+                     *ngIf="khachHangForm.get('ngaySinh').invalid && khachHangForm.get('ngaySinh').touched">
+                  Không được để trống
+                </div>
+              </td>
               <td>Số CMND<span>*</span></td>
-              <td><input type="text"/><br></td>
+              <td><input type="text" formControlName="socmnd"/><br>
+                <div class="notice" role="alert"
+                     *ngIf="khachHangForm.get('socmnd').invalid && khachHangForm.get('socmnd').touched">
+                  Sai định dạng (9 | 12 số)
+                </div>
+              </td>
             </tr>
             <tr>
               <td>Số điện thoại<span>*</span></td>
-              <td><input type="text"/></td>
+              <td><input type="text" formControlName="sdt"/>
+                <div class="notice" role="alert"
+                     *ngIf="khachHangForm.get('sdt').invalid && khachHangForm.get('sdt').touched">
+                  090xxxxxxx hoặc 091xxxxxxx hoặc (84)+90xxxxxxx hoặc (84)+91xxxxxxx
+                </div>
+              </td>
               <td>Email<span>*</span></td>
-              <td><input type="text"/><br></td>
+              <td><input type="text" formControlName="email"/><br>
+                <div class="notice" role="alert"
+                     *ngIf="khachHangForm.get('email').invalid && khachHangForm.get('email').touched">
+                  Sai định dạng email
+                </div>
+              </td>
             </tr>
             <tr>
               <td>Địa chỉ</td>
-              <td><input type="text"/></td>
-              <td>Loại khách</td>
+              <td><input type="text" formControlName="diaChi"/></td>
+              <td>Loại khách<span>*</span></td>
               <td>
-                <select id="loaikhach">
-                  <option value="diamond">Kim cương</option>
-                  <option value="gold">Vàng</option>
-                  <option value="silver">Bạc</option>
-                  <option value="normal">Bình thường</option>
+                <select id="loaikhach" formControlName="idLoaiKhach">
+                  <option value="4">Kim cương</option>
+                  <option value="3">Vàng</option>
+                  <option value="2">Bạc</option>
+                  <option value="1">Bình thường</option>
                 </select>
+                <div class="notice" role="alert"
+                     *ngIf="khachHangForm.get('idLoaiKhach').invalid && khachHangForm.get('idLoaiKhach').touched">
+                  Không được để trống
+                </div>
               </td>
             </tr>
-
           </table>
           <input type="submit" value="Thêm khách hàng">
         </form>
+        {{ khachHangForm.value | json}}
       </div>
     </main>
   </div>
