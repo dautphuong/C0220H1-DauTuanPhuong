@@ -61,25 +61,25 @@
         </h6>
         <ul class="nav flex-column">
           <li class="nav-item">
-            <a class="nav-link " href="listKhachHang.html">
+            <a class="nav-link " [routerLink]="['/list-khach-hang']">
               <span data-feather="home"></span>
               Khách hàng <span class="sr-only">(current)</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="listNhanVien.html">
+            <a class="nav-link" [routerLink]="['/list-nhan-vien']">
               <span data-feather="file"></span>
               Nhân viên
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="listDichVu.html">
+            <a class="nav-link active" [routerLink]="['/list-dich-vu']">
               <span data-feather="shopping-cart"></span>
               Dịch vụ
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link " href="listDichVu.html">
+            <a class="nav-link " [routerLink]="['/list-hop-dong']">
               <span data-feather="shopping-cart"></span>
               Hợp đồng
             </a>
@@ -94,13 +94,7 @@
         </h6>
         <ul class="nav flex-column mb-2">
           <li class="nav-item">
-            <a class="nav-link" href="createHopDong.html">
-              <span data-feather="file-text"></span>
-              Hợp đồng
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="createHopDongChiTiet.html">
+            <a class="nav-link" [routerLink]="['/create-hop-dong-chi-tiet']">
               <span data-feather="file-text"></span>
               Hợp đồng chi tiết
             </a>
@@ -115,7 +109,7 @@
         </h6>
         <ul class="nav flex-column">
           <li class="nav-item">
-            <a class="nav-link" href="registerDichVu.html">
+            <a class="nav-link" [routerLink]="['/register-dich-vu']">
               <span data-feather="shopping-cart"></span>
               Dịch vụ
             </a>
@@ -127,7 +121,7 @@
         </h6>
         <ul class="nav flex-column">
           <li class="nav-item">
-            <a class="nav-link " href="reportKhachHang.html">
+            <a class="nav-link " [routerLink]="['/report-khach-hang']">
               <span data-feather="home"></span>
               Khách hàng <span class="sr-only">(current)</span>
             </a>
@@ -139,9 +133,9 @@
     <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
       <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
         <h1 class="h2">Danh sách dịch vụ</h1>
-        <form action="createDichVu.html">
+        <form >
           <div class="btn-group mr-2">
-            <input type="submit" value="Tạo mới">
+            <input type="submit" value="Tạo mới" [routerLink]="['create-dich-vu']">
           </div>
         </form>
       </div>

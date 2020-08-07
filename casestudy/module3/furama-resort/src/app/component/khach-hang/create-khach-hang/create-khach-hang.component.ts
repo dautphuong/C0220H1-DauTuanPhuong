@@ -1,5 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {KhachhangModel} from '../../../model/khachhang.model';
+import {KhachhangService} from '../../../Service/khachhang.service';
 
 @Component({
   selector: 'app-create-khach-hang',
@@ -8,15 +10,16 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 })
 export class CreateKhachHangComponent implements OnInit {
   khachHangForm: FormGroup;
+  khachhang: KhachhangModel;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private khachhangService: KhachhangService) {
   }
 
   ngOnInit(): void {
     this.khachHangForm = this.fb.group({
       idKhachHang: ['', [Validators.required, Validators.pattern(/^KH-\d{4}$/)]],
       hoTen: ['', [Validators.required]],
-      ngaySinh: ['', [Validators.required ]],
+      ngaySinh: ['', [Validators.required]],
       socmnd: ['', [Validators.required, Validators.pattern(/\d{9}|\d{12}/)]],
       sdt: ['', [Validators.required, Validators.pattern(/8490\d{7}|8491\d{7}|090\d{7}|091\d{7}/)]],
       email: ['', [Validators.required, Validators.pattern(/^([a-zA-Z0-9_.-])+@(([a-zA-Z0-9-])+.)+[.]([a-zA-Z0-9]{3,4})+$/)]],
@@ -27,5 +30,6 @@ export class CreateKhachHangComponent implements OnInit {
 
   onSubmit() {
     console.log(this.khachHangForm);
+    this.khachhangService.save(this.khachHangForm.value);
   }
 }

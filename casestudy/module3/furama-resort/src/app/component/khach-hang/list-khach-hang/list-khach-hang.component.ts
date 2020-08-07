@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {listKhachHang} from '../../../model/khachhang.model';
+import {KhachhangModel, listKhachHang} from '../../../model/khachhang.model';
+import {KhachhangService} from '../../../Service/khachhang.service';
 
 @Component({
   selector: 'app-list-khach-hang',
@@ -7,9 +8,12 @@ import {listKhachHang} from '../../../model/khachhang.model';
   styleUrls: ['./list-khach-hang.component.css']
 })
 export class ListKhachHangComponent implements OnInit {
-  @Input() listKhachHang = listKhachHang;
+  // listKhachHang = listKhachHang;
+  listKhachHang: KhachhangModel[];
 
-  constructor() { }
+  constructor(private khachhangService: KhachhangService) {
+    this.listKhachHang = khachhangService.findAll();
+  }
 
   ngOnInit(): void {
   }

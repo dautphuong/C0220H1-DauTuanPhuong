@@ -52,7 +52,7 @@
 <div class="container-fluid">
   <div class="row">
     <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
-      <div class="sidebar-sticky pt-3">
+      <div class="sidebar-sticky pt-4">
         <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mb-1 text-muted">
           <span>Dach sách</span>
           <a class="d-flex align-items-center text-muted" href="#" aria-label="Add a new report">
@@ -61,25 +61,25 @@
         </h6>
         <ul class="nav flex-column">
           <li class="nav-item">
-            <a class="nav-link " href="listKhachHang.html">
+            <a class="nav-link " [routerLink]="['/list-khach-hang']">
               <span data-feather="home"></span>
               Khách hàng <span class="sr-only">(current)</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="listNhanVien.html">
+            <a class="nav-link" [routerLink]="['/list-nhan-vien']">
               <span data-feather="file"></span>
               Nhân viên
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link " href="listDichVu.html">
+            <a class="nav-link" [routerLink]="['/list-dich-vu']">
               <span data-feather="shopping-cart"></span>
               Dịch vụ
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link " href="listDichVu.html">
+            <a class="nav-link " [routerLink]="['/list-hop-dong']">
               <span data-feather="shopping-cart"></span>
               Hợp đồng
             </a>
@@ -94,13 +94,7 @@
         </h6>
         <ul class="nav flex-column mb-2">
           <li class="nav-item">
-            <a class="nav-link " href="createHopDong.html">
-              <span data-feather="file-text"></span>
-              Hợp đồng
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link " href="createHopDongChiTiet.html">
+            <a class="nav-link" [routerLink]="['/create-hop-dong-chi-tiet']">
               <span data-feather="file-text"></span>
               Hợp đồng chi tiết
             </a>
@@ -115,7 +109,7 @@
         </h6>
         <ul class="nav flex-column">
           <li class="nav-item">
-            <a class="nav-link active" href="registerDichVu.html">
+            <a class="nav-link active" [routerLink]="['/register-dich-vu']">
               <span data-feather="shopping-cart"></span>
               Dịch vụ
             </a>
@@ -127,7 +121,7 @@
         </h6>
         <ul class="nav flex-column">
           <li class="nav-item">
-            <a class="nav-link " href="reportKhachHang.html">
+            <a class="nav-link " [routerLink]="['/report-khach-hang']">
               <span data-feather="home"></span>
               Khách hàng <span class="sr-only">(current)</span>
             </a>
