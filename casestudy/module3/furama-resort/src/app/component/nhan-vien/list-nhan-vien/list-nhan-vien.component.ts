@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {listNhanVien} from '../../../model/nhanvien.model';
+import {listNhanVien, NhanvienModel} from '../../../model/nhanvien.model';
+import {NhanvienService} from '../../../Service/nhanvien.service';
 
 @Component({
   selector: 'app-list-nhan-vien',
@@ -7,8 +8,11 @@ import {listNhanVien} from '../../../model/nhanvien.model';
   styleUrls: ['./list-nhan-vien.component.css']
 })
 export class ListNhanVienComponent implements OnInit {
-  @Input() listNhanVien = listNhanVien;
-  constructor() { }
+  listNhanVien: NhanvienModel[];
+
+  constructor(private NhanVienService: NhanvienService) {
+    this.listNhanVien = NhanVienService.findAll();
+  }
 
   ngOnInit(): void {
   }

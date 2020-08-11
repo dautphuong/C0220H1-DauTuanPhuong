@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {KhachhangModel} from '../../../model/khachhang.model';
 import {KhachhangService} from '../../../Service/khachhang.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-create-khach-hang',
@@ -12,7 +13,7 @@ export class CreateKhachHangComponent implements OnInit {
   khachHangForm: FormGroup;
   khachhang: KhachhangModel;
 
-  constructor(private fb: FormBuilder, private khachhangService: KhachhangService) {
+  constructor(private fb: FormBuilder, private khachhangService: KhachhangService, private router: Router) {
   }
 
   ngOnInit(): void {
@@ -29,7 +30,7 @@ export class CreateKhachHangComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.khachHangForm);
     this.khachhangService.save(this.khachHangForm.value);
+    this.router.navigateByUrl('');
   }
 }

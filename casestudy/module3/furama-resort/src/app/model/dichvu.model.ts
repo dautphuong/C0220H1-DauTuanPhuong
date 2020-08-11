@@ -5,8 +5,8 @@ export interface DichVuModel {
   soTang: number;
   soNguoiToiDa: number;
   chiPhiThue: number;
-  idKieuThue: string;
-  idLoaiDichVu: string;
+  idKieuThue: number;
+  idLoaiDichVu: number;
   trangThai: string;
 }
 

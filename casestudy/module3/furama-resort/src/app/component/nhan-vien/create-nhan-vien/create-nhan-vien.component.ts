@@ -1,5 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {KhachhangService} from '../../../Service/khachhang.service';
+import {Router} from '@angular/router';
+import {NhanvienService} from '../../../Service/nhanvien.service';
 
 @Component({
   selector: 'app-create-nhan-vien',
@@ -9,7 +12,8 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 export class CreateNhanVienComponent implements OnInit {
   nhanVienForm: FormGroup;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private NhanVienService: NhanvienService, private router: Router) {
+
   }
 
   ngOnInit(): void {
@@ -29,7 +33,8 @@ export class CreateNhanVienComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.nhanVienForm);
+    this.NhanVienService.save(this.nhanVienForm.value);
+    this.router.navigateByUrl('list-nhan-vien');
   }
 
 }

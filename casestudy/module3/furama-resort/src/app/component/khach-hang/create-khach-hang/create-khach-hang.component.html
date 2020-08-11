@@ -207,7 +207,7 @@
               </td>
             </tr>
           </table>
-          <input type="submit" value="Thêm khách hàng">
+          <input type="submit" value="Thêm khách hàng" [disabled]="khachHangForm.invalid">
         </form>
         {{ khachHangForm.value | json}}
       </div>

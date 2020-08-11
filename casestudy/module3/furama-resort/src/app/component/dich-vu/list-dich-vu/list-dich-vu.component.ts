@@ -1,5 +1,6 @@
-import {Component, Input, OnInit} from "@angular/core";
-import {listDichVu} from '../../../model/dichvu.model';
+import {Component, Input, OnInit} from '@angular/core';
+import {DichVuModel, listDichVu} from '../../../model/dichvu.model';
+import {DichvuService} from '../../../Service/dichvu.service';
 
 @Component({
   selector: 'app-list-dich-vu',
@@ -7,9 +8,10 @@ import {listDichVu} from '../../../model/dichvu.model';
   styleUrls: ['./list-dich-vu.component.css']
 })
 export class ListDichVuComponent implements OnInit {
-  @Input() listDichVu = listDichVu;
+  listDichVu: DichVuModel[];
 
-  constructor() {
+  constructor(private DichVuService: DichvuService) {
+    this.listDichVu = DichVuService.findAll();
   }
 
   ngOnInit(): void {
