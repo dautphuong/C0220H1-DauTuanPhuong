@@ -1,0 +1,53 @@
+<div class="row justify-content-between">
+  <h2>Danh Sách Nhân Viên</h2>
+  <div class="d-flex">
+    <input class="form-control mr-3" type="text" style="width: 150px;" placeholder="Id">
+    <input class="form-control mr-3" type="text" style="width: 150px;" placeholder="Tên">
+    <button class="btn btn-outline-success" style="height: 37px">Search</button>
+  </div>
+</div>
+
+<div class="row mt-3 px-3">
+  <button class="btn btn-success"  [routerLink]="['create']">Thêm mới</button>
+
+  <table class="table table-striped table-sm mt-3 border" style="font-size: 12px;">
+    <thead>
+    <tr>
+      <th>No.</th>
+      <th>Họ và tên</th>
+      <th>Ngày sinh</th>
+      <th>Số CMND</th>
+      <th>Số điện thoại</th>
+      <th>Email</th>
+      <th>Địa chỉ</th>
+      <th>Loại Khách</th>
+      <th>Action</th>
+
+    </tr>
+    </thead>
+    <tbody>
+<!--    <ng-container *ngFor="let khachHang of listKhachHang-->
+<!--   | paginate: { itemsPerPage: 3, currentPage: curPage }; let i = index">-->
+<!--      &lt;!&ndash;|filter:keyword (tìm kiếm nhanh không cần submit)&ndash;&gt;-->
+<!--      <tr>-->
+<!--        <td>{{khachHang.idKhachHang}}</td>-->
+<!--        <td><a [routerLink]="['detail-khach-hang', khachHang.id]">{{khachHang.hoTen}}</a></td>-->
+<!--        <td>{{khachHang.ngaySinh}}</td>-->
+<!--        <td>{{khachHang.socmnd}}</td>-->
+<!--        <td>{{khachHang.sdt}}</td>-->
+<!--        <td>{{khachHang.email}}</td>-->
+<!--        <td>{{khachHang.diaChi}}</td>-->
+<!--        <td>{{khachHang.idLoaiKhach}}</td>-->
+
+
+
+<!--        <td style="width: 12%;">-->
+<!--          <button class="btn btn-sm btn-warning mr-3">Sửa</button>-->
+<!--        <button class="btn btn-sm btn-danger">Xóa</button>-->
+<!--        </td>-->
+
+<!--      </tr>-->
+<!--    </ng-container>-->
+    </tbody>
+  </table>
+</div>

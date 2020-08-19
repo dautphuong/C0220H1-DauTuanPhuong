@@ -12,6 +12,9 @@ import {ListHopDongComponent} from './hop-dong/list-hop-dong/list-hop-dong.compo
 import {CreateHopDongComponent} from './hop-dong/create-hop-dong/create-hop-dong.component';
 import {CreateHopDongChiTietComponent} from './register-function/create-hop-dong-chi-tiet/create-hop-dong-chi-tiet.component';
 import {ReportKhachHangComponent} from './report/report-khach-hang/report-khach-hang.component';
+import {DetailKhachHangComponent} from './khach-hang/detail-khach-hang/detail-khach-hang.component';
+import {UpdateKhachHangComponent} from './khach-hang/update-khach-hang/update-khach-hang.component';
+import {DeleteKhachHangComponent} from './khach-hang/delete-khach-hang/delete-khach-hang.component';
 
 
 const routes: Routes = [
@@ -21,7 +24,9 @@ const routes: Routes = [
     children: [
       {path: '', component: ListKhachHangComponent},
       {path: 'create-khach-hang', component: CreateKhachHangComponent},
-      // {path: 'update-khach-hang/:id', component: UpdateKhachHangComponent}
+      {path: 'detail-khach-hang/:id', component: DetailKhachHangComponent},
+      {path: 'update-khach-hang/:id', component: UpdateKhachHangComponent},
+      {path: 'delete-khach-hang/:id', component: DeleteKhachHangComponent}
     ]
   },
   {

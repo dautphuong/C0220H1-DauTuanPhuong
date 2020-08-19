@@ -159,7 +159,7 @@
             </tr>
             <tr>
               <td>Ngày sinh<span>*</span></td>
-              <td><input type="date" placeholder="yyyy-mm-dd" formControlName="ngaySinh"/>
+              <td><input type="date" [placeholder]="placeholder" formControlName="ngaySinh"/>
                 <div class="notice" role="alert"
                      *ngIf="khachHangForm.get('ngaySinh').invalid && khachHangForm.get('ngaySinh').touched">
                   Không được để trống

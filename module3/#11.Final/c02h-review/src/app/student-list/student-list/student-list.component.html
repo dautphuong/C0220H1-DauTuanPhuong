@@ -1,0 +1,24 @@
+<p>student-list works!</p>
+<input type="text" [(ngModel)]="keywordId" />
+<input type="text" [(ngModel)]="keywordName" />
+<button (click)="search()">Search</button>
+<table border="1">
+  <tr>
+    <th>No</th>
+    <th>Name</th>
+    <th>Action</th>
+  </tr>
+  <ng-container *ngFor="let student of studentList
+    | paginate: { itemsPerPage: 3, currentPage: curPage }; let i = index">
+    <tr>
+    <!--  <a routerLink="student-detail/{{student.id}}">{{student.name}}</a><br>-->
+      <td><p>{{student.no}}</p></td>
+      <td><a [routerLink]="['student-detail', student.id]">{{student.name}}</a></td>
+      <td>
+        <button (click)="goUpdate(student.id)">{{student.name}}</button><br>
+        <a [routerLink]="['student-update', student.id]">{{student.name}}</a><br>
+      </td>
+    </tr>
+  </ng-container>
+</table>
+<pagination-controls (pageChange)="curPage = $event"></pagination-controls>

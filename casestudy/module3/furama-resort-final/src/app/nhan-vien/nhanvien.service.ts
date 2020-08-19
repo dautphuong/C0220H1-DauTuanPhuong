@@ -1,26 +1,27 @@
 import {Injectable} from '@angular/core';
-import {Nhanvien ,listNhanVien} from './nhan-vien';
+import {Nhanvien} from './nhan-vien';
+import {HttpClient} from '@angular/common/http';
+import {Khachhang} from '../khach-hang/khach-hang';
+import {Observable} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class NhanvienService {
-
+  API_URL = 'http://localhost:3000/listNhanVien';
   listNhanVien: Nhanvien[];
 
-  constructor() {
-    this.listNhanVien = listNhanVien;
+  constructor(private httpClient: HttpClient) {
   }
 
-  findAll(): Nhanvien[] {
-    return this.listNhanVien;
+  findAll(): Observable<Nhanvien[]> {
+    return this.httpClient.get<Nhanvien[]>(this.API_URL);
   }
 
-  findById(id: string): Nhanvien {
-    return this.listNhanVien.find(khachHang => khachHang.idNhanVien === id);
+  findById(id: string): Observable<Nhanvien> {
+    return this.httpClient.get<Nhanvien>(this.API_URL + '/' + id);
   }
 
   save(nhanvien: Nhanvien): void {
-    listNhanVien.push(nhanvien);
   }
 }

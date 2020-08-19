@@ -5,6 +5,7 @@ import { ListNhanVienComponent } from './list-nhan-vien/list-nhan-vien.component
 import {RouterModule} from '@angular/router';
 import {NhanvienService} from './nhanvien.service';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {NgxPaginationModule} from 'ngx-pagination';
 
 
 
@@ -14,7 +15,8 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     CommonModule,
     RouterModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    NgxPaginationModule
   ],
   providers: [NhanvienService],
 })

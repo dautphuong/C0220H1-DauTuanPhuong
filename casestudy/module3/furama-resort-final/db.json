@@ -1,0 +1,187 @@
+{
+  "listKhachHang": [
+    {
+      "idKhachHang": "KH-0001",
+      "hoTen": "Tiến",
+      "ngaySinh": "1999-11-11",
+      "socmnd": "0901231223123",
+      "sdt": "0901231231",
+      "email": "daut.phuong@gmail.com",
+      "diaChi": "",
+      "idLoaiKhach": "4",
+      "id": 2
+    },
+    {
+      "idKhachHang": "KH-0001",
+      "hoTen": "Phương",
+      "ngaySinh": "1999-11-11",
+      "socmnd": "0901231223123",
+      "sdt": "0901231231",
+      "email": "daut.phuong@gmail.com",
+      "diaChi": "",
+      "idLoaiKhach": "4",
+      "id": 1
+    },
+    {
+      "idKhachHang": "KH-0001",
+      "hoTen": "Phương",
+      "ngaySinh": "1999-11-11",
+      "socmnd": "0901231223123",
+      "sdt": "0901231231",
+      "email": "daut.phuong@gmail.com",
+      "diaChi": "",
+      "idLoaiKhach": "4",
+      "id": 3
+    },
+    {
+      "idKhachHang": "KH-0001",
+      "hoTen": "Phương",
+      "ngaySinh": "1999-11-11",
+      "socmnd": "0901231223123",
+      "sdt": "0901231231",
+      "email": "daut.phuong@gmail.com",
+      "diaChi": "",
+      "idLoaiKhach": "4",
+      "id": 4
+    },
+    {
+      "idKhachHang": "KH-0001",
+      "hoTen": "Phương",
+      "ngaySinh": "1999-11-11",
+      "socmnd": "0901231223123",
+      "sdt": "0901231231",
+      "email": "daut.phuong@gmail.com",
+      "diaChi": "",
+      "idLoaiKhach": "4",
+      "id": 5
+    },
+    {
+      "idKhachHang": "KH-0001",
+      "hoTen": "Phương",
+      "ngaySinh": "1999-11-11",
+      "socmnd": "0901231223123",
+      "sdt": "0901231231",
+      "email": "daut.phuong@gmail.com",
+      "diaChi": "",
+      "idLoaiKhach": "4",
+      "id": 6
+    }
+  ],
+  "listNhanVien": [
+    {
+      "id": 1,
+      "idNhanVien": "NV-0001",
+      "hoTen": "Hải",
+      "idViTri": 1,
+      "idTrinhDo": 1,
+      "idBoPhan": 1,
+      "ngaySinh": "20/8/1990",
+      "socmnd": "1000000001",
+      "sdt": "090000001",
+      "email": "Hai@gmail.com",
+      "diaChi": "Đà Nẵng",
+      "luong": "3000000"
+    },
+    {
+      "id": 2,
+      "idNhanVien": "NV-0002",
+      "hoTen": "Quân",
+      "idViTri": 2,
+      "idTrinhDo": 2,
+      "idBoPhan": 2,
+      "ngaySinh": "22/1/1990",
+      "socmnd": "1000030001",
+      "sdt": "090000022",
+      "email": "Quan@gmail.com",
+      "diaChi": "Đà Nẵng",
+      "luong": "3000000"
+    },
+    {
+      "id": 3,
+      "idNhanVien": "NV-0003",
+      "hoTen": "Châu",
+      "idViTri": 1,
+      "idTrinhDo": 3,
+      "idBoPhan": 2,
+      "ngaySinh": "13/9/1990",
+      "socmnd": "1000000007",
+      "sdt": "090000004",
+      "email": "Chau@gmail.com",
+      "diaChi": "Đà Nẵng",
+      "luong": "4000000"
+    }
+  ],
+  "listHopDong": [
+    {
+      "id": 1,
+      "idHopDong": "HD-0001",
+      "idNhanVien": "NV-0001",
+      "idKhachHang": "KH-0001",
+      "idDichVu": "DV-0001",
+      "ngayLamHopDong": "22/2/2020",
+      "ngayKetThuc": "22/3/2020",
+      "tienDatCoc": null,
+      "tongTien": null
+    },
+    {
+      "id": 2,
+      "idHopDong": "HD-0002",
+      "idNhanVien": "NV-0002",
+      "idKhachHang": "KH-0002",
+      "idDichVu": "DV-0002",
+      "ngayLamHopDong": "22/2/2020",
+      "ngayKetThuc": "22/3/2020",
+      "tienDatCoc": null,
+      "tongTien": null
+    },
+    {
+      "id": 3,
+      "idHopDong": "HD-0003",
+      "idNhanVien": "NV-0003",
+      "idKhachHang": "KH-0003",
+      "idDichVu": "DV-0003",
+      "ngayLamHopDong": "22/2/2020",
+      "ngayKetThuc": "22/3/2020",
+      "tienDatCoc": null,
+      "tongTien": null
+    }
+  ],
+  "listDichVu": [
+    {
+      "id": 1,
+      "idDichVu": "DV-0001",
+      "tenDichVu": "A",
+      "dienTich": 100,
+      "soTang": 2,
+      "soNguoiToiDa": 4,
+      "chiPhiThue": 7000000,
+      "idKieuThue": 2,
+      "idLoaiDichVu": 1,
+      "trangThai": "Trống"
+    },
+    {
+      "id": 2,
+      "idDichVu": "DV-0002",
+      "tenDichVu": "B",
+      "dienTich": 100,
+      "soTang": 2,
+      "soNguoiToiDa": 4,
+      "chiPhiThue": 7000000,
+      "idKieuThue": 2,
+      "idLoaiDichVu": 1,
+      "trangThai": "Đã thuê"
+    },
+    {
+      "id": 3,
+      "idDichVu": "DV-0003",
+      "tenDichVu": "C",
+      "dienTich": 100,
+      "soTang": 2,
+      "soNguoiToiDa": 4,
+      "chiPhiThue": 7000000,
+      "idKieuThue": 2,
+      "idLoaiDichVu": 1,
+      "trangThai": "Đã thuê"
+    }
+  ]
+}

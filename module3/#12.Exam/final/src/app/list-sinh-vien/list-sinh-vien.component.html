@@ -1,0 +1,47 @@
+<div class="row justify-content-between">
+  <h2>Danh Sách Sinh Viên</h2>
+  <div class="d-flex">
+    <input class="form-control mr-3" type="text" style="width: 150px;" placeholder="Id">
+    <input class="form-control mr-3" type="text" style="width: 150px;" placeholder="Tên">
+    <button class="btn btn-outline-success" style="height: 37px">Search</button>
+  </div>
+</div>
+
+<div class="row mt-3 px-3">
+  <button class="btn btn-success" [routerLink]="['create']">Thêm mới</button>
+
+  <table class="table table-striped table-sm mt-3 border" style="font-size: 12px;">
+    <thead>
+    <tr>
+      <th>Mã sinh viên</th>
+      <th>Tên SV</th>
+      <th>Tên nhóm</th>
+      <th>Tên đề tài</th>
+      <th>GV hướng dẫn</th>
+      <th>email</th>
+      <th>Số điện thoại</th>
+      <th>Tương tác</th>
+
+    </tr>
+    </thead>
+    <tbody>
+    <ng-container *ngFor="let sinhVien of listSinhVien">
+      <tr>
+        <td>{{sinhVien.id}}</td>
+        <td>{{sinhVien.tenSinhVien}}</td>
+        <td>{{sinhVien.tenNhom}}</td>
+        <td>{{sinhVien.tenDeTai}}</td>
+        <td>{{sinhVien.giaoVienHuongDan}}</td>
+        <td>{{sinhVien.email}}</td>
+        <td>{{sinhVien.soDienThoai}}</td>
+
+        <td style="width: 12%;">
+          <button class="btn btn-sm btn-warning mr-3" [routerLink]="['edit-student', sinhVien.id]">Sửa</button>
+          <button class="btn btn-sm btn-danger" [routerLink]="['delete-student', sinhVien.id]">Xóa</button>
+        </td>
+
+      </tr>
+    </ng-container>
+    </tbody>
+  </table>
+</div>

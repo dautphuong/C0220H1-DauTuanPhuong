@@ -9,7 +9,7 @@ import {NhanVienModule} from './nhan-vien/nhan-vien.module';
 import {KhachHangModule} from './khach-hang/khach-hang.module';
 import {HopDongModule} from './hop-dong/hop-dong.module';
 import {DichVuModule} from './dich-vu/dich-vu.module';
-import {FormsModule} from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -24,6 +24,7 @@ import {FormsModule} from '@angular/forms';
     KhachHangModule,
     HopDongModule,
     DichVuModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

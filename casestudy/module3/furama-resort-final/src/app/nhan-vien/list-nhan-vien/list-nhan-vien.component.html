@@ -1,8 +1,8 @@
-
 <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
   <div class=" col-lg-2 px-3">
     <div class="row-md-3">
-      <div class="col-md-6" style="background-color: white ; background-image: url('assets/image/cat.png');background-repeat: no-repeat;border-radius:100px;background-size: 100%">
+      <div class="col-md-6"
+           style="background-color: white ; background-image: url('assets/image/cat.png');background-repeat: no-repeat;border-radius:100px;background-size: 100%">
         <div class="pt-5"></div>
         <div class="pt-5"></div>
       </div>
@@ -16,8 +16,11 @@
     </ul>
   </div>
   <div class="col-lg-3 px-0">
-    <input class=" form-control-light w-15" type="text" placeholder="Tìm kiếm" aria-label="Search">
-    <input class=" form-control-dark w-15" type="submit" value="Tìm kiếm" aria-label="Search">
+    <input class=" form-control-light w-15" type="text" placeholder="ID" aria-label="Search"
+           [(ngModel)]="keywordId">
+    <input class=" form-control-dark w-15" type="submit" value="Tìm kiếm" aria-label="Search" (click)="search()">
+    <input class=" form-control-light w-15" type="text" placeholder="Họ Tên" aria-label="Search"
+           [(ngModel)]="keywordName">
   </div>
   <div class="col-lg-1 px-0 navbar-nav">
     <ul>
@@ -26,7 +29,8 @@
           <svg color="white" width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-person-circle"
                fill="currentColor"
                xmlns="http://www.w3.org/2000/svg">
-            <path d="M13.468 12.37C12.758 11.226 11.195 10 8 10s-4.757 1.225-5.468 2.37A6.987 6.987 0 0 0 8 15a6.987 6.987 0 0 0 5.468-2.63z"/>
+            <path
+              d="M13.468 12.37C12.758 11.226 11.195 10 8 10s-4.757 1.225-5.468 2.37A6.987 6.987 0 0 0 8 15a6.987 6.987 0 0 0 5.468-2.63z"/>
             <path fill-rule="evenodd" d="M8 9a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
             <path fill-rule="evenodd" d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1zM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8z"/>
           </svg>
@@ -132,9 +136,10 @@
     </nav>
 
     <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
-      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+      <div
+        class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
         <h1 class="h2">Danh sách nhân viên</h1>
-        <form >
+        <form>
           <div class="btn-group mr-2">
             <input type="submit" value="Tạo mới " [routerLink]="['create-nhan-vien']">
           </div>
@@ -162,125 +167,30 @@
           </tr>
           </thead>
           <tbody>
-          <tr *ngFor="let nhanVien of listNhanVien">
-            <td>{{nhanVien.idNhanVien}}</td>
-            <td>{{nhanVien.hoTen}}</td>
-            <td>{{nhanVien.ngaySinh}}</td>
-            <td>{{nhanVien.socmnd}}</td>
-            <td>{{nhanVien.sdt}}</td>
-            <td>{{nhanVien.email}}</td>
-            <td>{{nhanVien.diaChi}}</td>
-            <td>{{nhanVien.idTrinhDo}}</td>
-            <td>{{nhanVien.idViTri}}</td>
-            <td>{{nhanVien.idBoPhan}}</td>
-            <td><a href="#">Sửa</a></td>
-            <td><a href="#">Xóa</a></td>
-          </tr>
-<!--          <tr>-->
-<!--            <td>NV01</td>-->
-<!--            <td>Hải</td>-->
-<!--            <td>20/8/1990</td>-->
-<!--            <td>1000000001</td>-->
-<!--            <td>090000001</td>-->
-<!--            <td>Hai@gmail.com</td>-->
-<!--            <td>Đà Nẵng</td>-->
-<!--            <td>Đại Học</td>-->
-<!--            <td>Bảo Vệ</td>-->
-<!--            <td>Bộ phận 1</td>-->
-<!--            <td><a href="#">Sửa</a></td>-->
-<!--            <td><a href="#">Xóa</a></td>-->
-<!--          </tr>-->
-<!--          <tr>-->
-<!--            <td>NV02</td>-->
-<!--            <td>Tiến</td>-->
-<!--            <td>15/4/1990</td>-->
-<!--            <td>1000000002</td>-->
-<!--            <td>090000002</td>-->
-<!--            <td>Tien@gmail.com</td>-->
-<!--            <td>Đà Nẵng</td>-->
-<!--            <td>Đại Học</td>-->
-<!--            <td>Tiếp Tân</td>-->
-<!--            <td>Bộ phận 2</td>-->
-<!--            <td><a href="#">Sửa</a></td>-->
-<!--            <td><a href="#">Xóa</a></td>-->
-<!--          </tr>-->
-<!--          <tr>-->
-<!--            <td>NV03</td>-->
-<!--            <td>Long</td>-->
-<!--            <td>22/1/1990</td>-->
-<!--            <td>1000000003</td>-->
-<!--            <td>090000003</td>-->
-<!--            <td>Long@gmail.com</td>-->
-<!--            <td>Đà Nẵng</td>-->
-<!--            <td>Đại Học</td>-->
-<!--            <td>Dọn Phòng</td>-->
-<!--            <td>Bộ phận 3</td>-->
-<!--            <td><a href="#">Sửa</a></td>-->
-<!--            <td><a href="#">Xóa</a></td>-->
-<!--          </tr>-->
-<!--          <tr>-->
-<!--            <td>NV04</td>-->
-<!--            <td>Quân</td>-->
-<!--            <td>12/4/1990</td>-->
-<!--            <td>1000000004</td>-->
-<!--            <td>090000004</td>-->
-<!--            <td>Quan@gmail.com</td>-->
-<!--            <td>Đà Nẵng</td>-->
-<!--            <td>Đại Học</td>-->
-<!--            <td>Bảo Vệ</td>-->
-<!--            <td>Bộ phận 1</td>-->
-<!--            <td><a href="#">Sửa</a></td>-->
-<!--            <td><a href="#">Xóa</a></td>-->
-<!--          </tr>-->
-<!--          <tr>-->
-<!--            <td>NV05</td>-->
-<!--            <td>Châu</td>-->
-<!--            <td>13/9/1990</td>-->
-<!--            <td>1000000005</td>-->
-<!--            <td>090000005</td>-->
-<!--            <td>Chau@gmail.com</td>-->
-<!--            <td>Đà Nẵng</td>-->
-<!--            <td>Đại Học</td>-->
-<!--            <td>Bảo Vệ</td>-->
-<!--            <td>Bộ phận 1</td>-->
-<!--            <td><a href="#">Sửa</a></td>-->
-<!--            <td><a href="#">Xóa</a></td>-->
-<!--          </tr>-->
-<!--          <tr>-->
-<!--            <td>NV06</td>-->
-<!--            <td>Phương</td>-->
-<!--            <td>11/10/1990</td>-->
-<!--            <td>1000000006</td>-->
-<!--            <td>090000006</td>-->
-<!--            <td>Tinh@gmail.com</td>-->
-<!--            <td>Đà Nẵng</td>-->
-<!--            <td>Đại Học</td>-->
-<!--            <td>Giám độc</td>-->
-<!--            <td>Bộ phận 1</td>-->
-<!--            <td><a href="#">Sửa</a></td>-->
-<!--            <td><a href="#">Xóa</a></td>-->
-<!--          </tr>-->
+          <ng-container *ngFor="let nhanVien of listNhanVien
+   | paginate: { itemsPerPage: 3, currentPage: curPage }; let i = index">
+            <tr>
+              <td>{{nhanVien.idNhanVien}}</td>
+              <td>{{nhanVien.hoTen}}</td>
+              <td>{{nhanVien.ngaySinh}}</td>
+              <td>{{nhanVien.socmnd}}</td>
+              <td>{{nhanVien.sdt}}</td>
+              <td>{{nhanVien.email}}</td>
+              <td>{{nhanVien.diaChi}}</td>
+              <td>{{nhanVien.idTrinhDo}}</td>
+              <td>{{nhanVien.idViTri}}</td>
+              <td>{{nhanVien.idBoPhan}}</td>
+              <td><a href="#">Sửa</a></td>
+              <td><a href="#">Xóa</a></td>
+            </tr>
+          </ng-container>
 
           </tbody>
         </table>
 
         <nav aria-label="Page navigation example">
           <ul class="pagination">
-            <li class="page-item">
-              <a class="page-link" href="#" aria-label="Previous">
-                <span aria-hidden="true">&laquo;</span>
-                <span class="sr-only">Previous</span>
-              </a>
-            </li>
-            <li class="page-item"><a class="page-link" href="#">1</a></li>
-            <li class="page-item"><a class="page-link" href="#">2</a></li>
-            <li class="page-item"><a class="page-link" href="#">3</a></li>
-            <li class="page-item">
-              <a class="page-link" href="#" aria-label="Next">
-                <span aria-hidden="true">&raquo;</span>
-                <span class="sr-only">Next</span>
-              </a>
-            </li>
+            <pagination-controls (pageChange)="curPage = $event"></pagination-controls>
           </ul>
         </nav>
 

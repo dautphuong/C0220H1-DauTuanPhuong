@@ -1,0 +1,10 @@
+<p>student-update works!</p>
+<form (ngSubmit)="submitStudentForm()" [formGroup]="studentForm">
+  <label>Name: </label>
+  <input formControlName="name" /><br>
+  <label>Date of birth: </label>
+  <input formControlName="dateOfBirth" /><br>
+  <input type="submit" value="Update"/>
+</form>
+<a>Back</a>
+<a [routerLink]="['/']">Back</a>

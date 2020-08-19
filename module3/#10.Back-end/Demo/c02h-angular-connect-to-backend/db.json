@@ -1,0 +1,36 @@
+{
+  "studentList": [
+    {
+      "id": 1,
+      "name": "Phuong",
+      "dateOfBirth": "2k"
+    },
+    {
+      "id": 2,
+      "name": "Thanh Tung",
+      "dateOfBirth": "2000"
+    },
+    {
+      "id": 3,
+      "name": "Ngoc Quan",
+      "dateOfBirth": "2k3"
+    }
+  ],
+  "instructorList": [
+    {
+      "id": 1,
+      "name": "Tien",
+      "dateOfBirth": "2k"
+    },
+    {
+      "id": 2,
+      "name": "Trung",
+      "dateOfBirth": "1999"
+    },
+    {
+      "id": 3,
+      "name": "Hai",
+      "dateOfBirth": "2k1"
+    }
+  ]
+}

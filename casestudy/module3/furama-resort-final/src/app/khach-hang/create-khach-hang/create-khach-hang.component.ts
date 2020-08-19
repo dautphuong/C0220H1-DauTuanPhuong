@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Router} from '@angular/router';
 import {KhachhangService} from '../khachhang.service';
+import {Khachhang} from '../khach-hang';
 
 @Component({
   selector: 'app-create-khach-hang',
@@ -9,7 +10,9 @@ import {KhachhangService} from '../khachhang.service';
   styleUrls: ['./create-khach-hang.component.css']
 })
 export class CreateKhachHangComponent implements OnInit {
+  khachHang: Khachhang;
   khachHangForm: FormGroup;
+  placeholder: 'yyyy-mm-dd';
 
   constructor(private fb: FormBuilder, private khachhangService: KhachhangService, private router: Router) {
   }
@@ -28,7 +31,14 @@ export class CreateKhachHangComponent implements OnInit {
   }
 
   onSubmit() {
-    this.khachhangService.save(this.khachHangForm.value);
+    this.khachHang = Object.assign({}, this.khachHangForm.value);
+    this.khachhangService.save(this.khachHang).subscribe(
+      next => {
+        console.log('Create process!');
+      }, error => {
+        console.log('Create failed!');
+      }
+    );
     this.router.navigateByUrl('');
   }
 }

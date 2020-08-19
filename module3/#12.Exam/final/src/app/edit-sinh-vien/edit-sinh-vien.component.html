@@ -1,0 +1,63 @@
+<h3 class="text-center">Trang sửa Sinh Viên</h3>
+
+<form class="w-75 mx-auto" [formGroup]="sinhVienForm" (ngSubmit)="submitForm()">
+  <div class="form-group">
+    <p>Mã sinh viên</p>
+    <input type="text" class="form-control" formControlName="id" disabled>
+  </div>
+
+  <div class="form-group">
+    <p>Tên SV</p>
+    <input type="text" class="form-control" formControlName="tenSinhVien">
+    <div class="notice" role="alert"
+         *ngIf="sinhVienForm.get('tenSinhVien').invalid ">
+      Không để khoảng trắng và chứa ký tự đặc biệt
+    </div>
+  </div>
+  <div class="form-group">
+    <p>Tên nhóm</p>
+    <input type="text" class="form-control" formControlName="tenNhom">
+    <div class="notice" role="alert"
+         *ngIf="sinhVienForm.get('tenNhom').invalid">
+      Nhóm 1 , 2 or 3
+    </div>
+  </div>
+  <div class="form-group">
+    <p>Tên đề tài</p>
+    <input type="text" class="form-control" formControlName="tenDeTai">
+    <div class="notice" role="alert"
+         *ngIf="sinhVienForm.get('tenDeTai').invalid ">
+      Không được để trống
+    </div>
+  </div>
+  <div class="form-group">
+    <p>GV hướng dẫn</p>
+    <select class="form-control" formControlName="giaoVienHuongDan">
+      <option value="Trần Hoàng Nam">Trần Hoàng Nam	</option>
+      <option value="Doãn Bá Hùng">Doãn Bá Hùng</option>
+      <option value="Hoàng Thanh Sơn">Hoàng Thanh Sơn</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <p>email</p>
+    <input type="text" class="form-control" formControlName="email">
+    <div class="notice" role="alert"
+         *ngIf="sinhVienForm.get('email').invalid ">
+      Không đúng định dạng email
+    </div>
+  </div>
+  <div class="form-group">
+    <p>sdt</p>
+    <input type="text" class="form-control" formControlName="soDienThoai">
+    <div class="notice" role="alert"
+         *ngIf="sinhVienForm.get('soDienThoai').invalid">
+      Gồm 10 hoặc 12 số
+    </div>
+  </div>
+
+  <div class="row d-flex justify-content-center mt-4">
+    <input class="btn btn-success" type="submit" value="Update" [disabled]="sinhVienForm.invalid">
+  </div>
+</form>
+
+
