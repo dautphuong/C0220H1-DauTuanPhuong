@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <link rel="stylesheet" href="resource/style.css">
+    <link rel="stylesheet" href="resource/bootstrap-4.5.2-dist/css/bootstrap.min.css">
+
+</head>
+<body id="formKQ">
+<div>
+    <div id="resultFinal">
+        <div>
+            <p >Exam number 1</p>
+            <label>Time to do <span style="color: red;"><b><span class="timer" id="timeStop"></span></b></span></label>
+        </div>
+        <div>
+            <label id="result"></label><br/>
+        </div>
+    </div>
+    <table >
+        <tbody>
+        <ul class="question">
+            <li>
+                <!--câu hỏi-->
+                <b><span>Q 1: </span></b><b><span>Hello 2</span></b>
+                <!--đáp án-->
+                <input id="text1" style="visibility: hidden;" value="A"/><br/>
+                <!--câu trả lời-->
+                <input id="Cau1A" name="C1" type="radio" value="A"/><label for="Cau1A" id="C1A">1</label></span>
+                <br/>
+                <input id="Cau1B" name="C1" type="radio" value="B"/><label for="Cau1B" id="C1B">2</label></span>
+                <br/>
+                <input id="Cau1C" name="C1" type="radio" value="C"/><label for="Cau1C" id="C1C">3</label></span>
+                <br/>
+                <input id="Cau1D" name="C1" type="radio" value="D"/><label for="Cau1D" id="C1D">4</label></span>
+                <br/><br/>
+            </li>
+            <li>
+                <!--câu hỏi-->
+                <b><span>Q 2: </span></b><b><span>Hello 5</span></b>
+                <!--đáp án-->
+                <input id="text2" style="visibility: hidden;" value="B"/><br/>
+                <!--câu trả lời-->
+                <input id="Cau2A" name="C2" type="radio" value="A"/><label for="Cau2A" id="C2A">1</label></span>
+                <br/>
+                <input id="Cau2B" name="C2" type="radio" value="B"/><label for="Cau2B" id="C2B">2</label></span>
+                <br/>
+                <input id="Cau2C" name="C2" type="radio" value="C"/><label for="Cau2C" id="C2C">3</label></span>
+                <br/>
+                <input id="Cau2D" name="C2" type="radio" value="D"/><label for="Cau2D" id="C2D">4</label></span>
+                <br/><br/>
+            </li>
+        </ul>
+        </tbody>
+    </table>
+    <div>
+        <button class="btn btn-sm btn-primary" >Trở lại chọn đề</button>
+    </div>
+</div>
+
+<script src="resource/jquery-3.5.1.min.js"></script>
+<script src="resource/bootstrap-4.5.2-dist/js/bootstrap.min.js"></script>
+<script src="resource/exam.js"></script>
+<script src="resource/count-time.js"></script>
+<script src="resource/final.js"></script>
+
+</body>
+</html>
