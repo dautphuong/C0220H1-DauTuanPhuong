@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+            integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+            crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="./resources/bootstrap-4.5.2-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./resources/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Default Page</title>
+
+    <link rel="stylesheet" href="css/style-result.css">
+</head>
+
+<body>
+<div class="container-fluid p-0">
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow fixed-top">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <a class="flex-md-fill text-md-center nav-link" href="#">
+                <i class="fa fa-home" aria-hidden="true"></i> Home
+            </a>
+            <a class="flex-md-fill text-md-center nav-link" href="#">
+                <i class="fa fa-eur" aria-hidden="true"></i> Grade A
+            </a>
+            <a class="flex-md-fill text-md-center nav-link" href="#">
+                <i class="fa fa-cloud" aria-hidden="true"></i> Grade B
+            </a>
+            <a class="flex-md-fill text-md-center nav-link" href="#">
+                <i class="fa fa-wrench" aria-hidden="true"></i> Grade D
+            </a>
+            <a class="flex-md-fill text-md-center nav-link" href="#">
+                <i class="fa fa-book" aria-hidden="true"></i> IQ Test
+            </a>
+            <a class="flex-md-fill text-md-center nav-link" href="#">
+                <i class="fa fa-globe" aria-hidden="true"></i> About Us
+            </a>
+        </div>
+    </nav>
+
+    <!-- BODY -->
+    <div class="row d-flex justify-content-md-around main-comp mx-0">
+
+        <!-- LEFT COLLUMN -->
+        <div class="col-md-3">
+            <div class="border p-0 rounded">
+                <div class="card-header p-2">
+                    <i class="fa fa-thumbs-o-up" aria-hidden="true"></i> Top Ranking
+                </div>
+                <div class="card-body body-background top-ranking">
+                    <ul class="list-group">
+                        <li class="list-group-item green">
+                            <i class="fa fa-inbox pr-3" aria-hidden="true"></i>Naruto
+                            <span class="badge badge-pill badge-secondary float-right mt-1">225</span>
+                        </li>
+                        <li class="list-group-item blue">
+                            <i class="fa fa-mobile pr-3" aria-hidden="true"></i>Kakashi
+                            <span class="badge badge-pill badge-secondary float-right mt-1">200</span>
+                        </li>
+                        <li class="list-group-item yellow">
+                            <i class="fa fa-gift pr-3" aria-hidden="true"></i>Sasuke
+                            <span class="badge badge-pill badge-secondary float-right mt-1">185</span>
+                        </li>
+                        <li class="list-group-item yellow">
+                            <i class="fa fa-gift pr-3" aria-hidden="true"></i>Gaara
+                            <span class="badge badge-pill badge-secondary float-right mt-1">160</span>
+                        </li>
+                        <li class="list-group-item yellow">
+                            <i class="fa fa-gift pr-3" aria-hidden="true"></i>Obito
+                            <span class="badge badge-pill badge-secondary float-right mt-1">101</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border p-0 rounded online-support">
+                <div class="card-header p-2">
+                    <i class="fa fa-phone" aria-hidden="true"></i> Online Support
+                </div>
+                <div class="card-body body-background">
+                    <ul class="list-group">
+                        <li class="list-group-item green">
+                            <i class="fa fa-inbox pr-2" aria-hidden="true"></i> ONLINE
+                            <span class="badge badge-pill badge-secondary float-right mt-1">Skype</span>
+                        </li>
+                        <li class="list-group-item blue">
+                            <i class="fa fa-mobile pr-2" aria-hidden="true"></i> HOTLINE
+                            <span class="badge badge-pill badge-secondary float-right mt-1">092.2216.3113</span>
+                        </li>
+                    </ul>
+                    <div class="card online-support-massage">
+                        <div class="card-mess">
+                            <img src="images/messenger.jpg" alt="mess">
+                            MESSENGER
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CENTER COLLUMN -->
+
+        <div class="col-md-6">
+            <!--            Content-->
+            <div class="row d-flex justify-content-md-center">
+
+                <div>
+                    <div id="resultFinal">
+                        <div>
+                            <p>Exam number 1</p>
+                        </div>
+                        <div>
+                            <label id="result"></label><br/>
+                        </div>
+                    </div>
+                    <table>
+                        <tbody>
+                        <ul class="question">
+                            <li>
+                                <!--question-->
+                                <b><span>Q 1: </span></b><b><span>what color is the sky?</span></b>
+                                <!--correct answer-->
+                                <input id="text1" style="visibility: hidden;" value="A"/><br/>
+                                <!--answer-->
+                                <i id="Q1A" class="fa fa-check"></i>
+                                <input id="Cau1A" name="question_01" type="radio" value="A"/><label for="Cau1A"
+                                                                                                    id="C1A">blue</label></span>
+                                <br/>
+                                <i id="Q1B" class="fa fa-times" aria-hidden="false"></i>
+                                <input id="Cau1B" name="question_01" type="radio" value="B"/><label for="Cau1B"
+                                                                                                    id="C1B">red</label></span>
+                                <br/>
+                                <i id="Q1C" class="fa fa-times" aria-hidden="false"></i>
+
+                                <input id="Cau1C" name="question_01" type="radio" value="C"/><label for="Cau1C"
+                                                                                                    id="C1C">green</label></span>
+                                <br/>
+                                <i id="Q1D" class="fa fa-times" aria-hidden="false"></i>
+
+                                <input id="Cau1D" name="question_01" type="radio" value="D"/><label for="Cau1D"
+                                                                                                    id="C1D">violet</label></span>
+                                <br/><br/>
+                            </li>
+                            <li>
+                                <!--question-->
+                                <b><span>Q 2: </span></b><b><span>Is water wet?</span></b>
+                                <!--correct answer-->
+
+                                <input id="text2" style="visibility: hidden;" value="C"/><br/>
+                                <!--answer-->
+                                <i id="Q2A" class="fa fa-times" aria-hidden="false"></i>
+
+                                <input id="Cau2A" name="question_02" type="radio" value="A"/><label for="Cau2A"
+                                                                                                    id="C2A">what?</label></span>
+                                <br/>
+                                <i id="Q2B" class="fa fa-times" aria-hidden="false"></i>
+
+                                <input id="Cau2B" name="question_02" type="radio" value="B"/><label for="Cau2B"
+                                                                                                    id="C2B">No</label></span>
+                                <br/>
+                                <i id="Q2C" class="fa fa-check"></i>
+
+                                <input id="Cau2C" name="question_02" type="radio" value="C"/><label for="Cau2C"
+                                                                                                    id="C2C">Yes</label></span>
+                                <br/>
+
+                                <i id="Q2D" class="fa fa-times" aria-hidden="false"></i>
+
+                                <input id="Cau2D" name="question_02" type="radio" value="D"/><label for="Cau2D"
+                                                                                                    id="C2D">I need some
+                                coffee</label></span>
+                                <br/><br/>
+                            </li>
+                            <li>
+                                <!--question-->
+                                <b><span>Q 3: </span></b><b><span>Is water wet?</span></b>
+                                <!--correct answer-->
+                                <input id="text3" style="visibility: hidden;" value="C"/><br/>
+                                <!--answer-->
+                                <i id="Q3A" class="fa fa-times" aria-hidden="false"></i>
+                                <input id="Cau3A" name="question_03" type="radio" value="A"/><label for="Cau3A"
+                                                                                                    id="C3A">what?</label></span>
+                                <br/>
+                                <i id="Q3B" class="fa fa-times" aria-hidden="false"></i>
+
+                                <input id="Cau3B" name="question_03" type="radio" value="B"/><label for="Cau3B"
+                                                                                                    id="C3B">No</label></span>
+                                <br/>
+                                <i id="Q3C" class="fa fa-check"></i>
+
+                                <input id="Cau3C" name="question_03" type="radio" value="C"/><label for="Cau3C"
+                                                                                                    id="C3C">Yes</label></span>
+                                <br/>
+                                <i id="Q3D" class="fa fa-times" aria-hidden="false"></i>
+
+                                <input id="Cau3D" name="question_03" type="radio" value="D"/><label for="Cau3D"
+                                                                                                    id="C3D">I need some
+                                coffee</label></span>
+                                <br/><br/>
+                            </li>
+                            <li>
+                                <!--question-->
+                                <b><span>Q 4: </span></b><b><span>Is water wet?</span></b>
+                                <!--correct answer-->
+                                <input id="text4" style="visibility: hidden;" value="C"/><br/>
+                                <!--answer-->
+                                <i id="Q4A" class="fa fa-times" aria-hidden="false"></i>
+
+                                <input id="Cau4A" name="question_04" type="radio" value="A"/><label for="Cau4A"
+                                                                                                    id="C4A">what?</label></span>
+                                <br/>
+                                <i id="Q4B" class="fa fa-times" aria-hidden="false"></i>
+
+                                <input id="Cau4B" name="question_04" type="radio" value="B"/><label for="Cau4B"
+                                                                                                    id="C4B">No</label></span>
+                                <br/>
+                                <i id="Q4C" class="fa fa-check"></i>
+
+                                <input id="Cau4C" name="question_04" type="radio" value="C"/><label for="Cau4C"
+                                                                                                    id="C4C">Yes</label></span>
+                                <br/>
+                                <i id="Q4D" class="fa fa-times" aria-hidden="false"></i>
+
+                                <input id="Cau4D" name="question_04" type="radio" value="D"/><label for="Cau4D"
+                                                                                                    id="C4D">I need some
+                                coffee</label></span>
+                                <br/><br/>
+                            </li>
+                        </ul>
+                        </tbody>
+                    </table>
+                    <div>
+                        <button class="btn btn-sm  rounded">Other exam questions</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- RIGHT COLLUMN -->
+        <div class="col-md-3 pr-4">
+            <div class="border p-0 rounded">
+                <div class="card-header p-2">Customers</div>
+                <div class="card-body rounded-top login green">
+                    <form action="#">
+                        <div class="form-group row">
+                            <div class="col-md-10">
+                                <i class="fa fa-sign-in" aria-hidden="true"></i>
+                                LOGIN
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-md-12 mt-3">
+                                <div class="card">
+                                    <div class="card-body p-2">User:
+                                        <div class="username-card">demons</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="card">
+                                    <div class="card-body p-2">Information</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row mt-4">
+                            <div class="col-md-12 d-flex justify-content-center flex-column align-items-center">
+                                <button class="btn rounded">Log out</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="card-body members yellow">
+                    <form action="#">
+                        <div class="form-group row">
+                            <div class="col-md-12">
+                                <i class="fa fa-user" aria-hidden="true"></i>
+                                MEMBERS
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-md-12">
+                                <div class="card">
+                                    <div class="card-body p-2">Total
+                                        <span class="badge badge-pill badge-secondary float-right mt-1">5</span>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-body p-2">Newest
+                                        <span class="badge badge-pill badge-secondary float-right mt-1">Gaara</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="card-body blue search-box">
+                    <form action="#">
+                        <div class="form-group row">
+                            <div class="col-md-12">
+                                <i class="fa fa-search" aria-hidden="true"></i>
+                                SEARCH
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="search" placeholder="Search">
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="js/exam.js"></script>
+<script src="./resources/jquery-3.5.1.min.js"></script>
+<script src="./resources/bootstrap-4.5.2-dist/js/bootstrap.min.js"></script>
+</body>
+
+</html>
