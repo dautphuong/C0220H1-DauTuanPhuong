@@ -28,7 +28,7 @@ ul {
 }
 
 .question input[type="radio"]:checked + label {
-    color: #23ff86;
+    color: #6c1c3b;
 }
 
 .question input[type="radio"] + label:before {

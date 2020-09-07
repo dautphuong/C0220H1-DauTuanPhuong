@@ -19,8 +19,8 @@ public class CalculatorServlet extends HttpServlet {
         request.getRequestDispatcher("/result.jsp").forward(request,response);
     }
 
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-    }
+//    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+//
+//    }
 }
 
