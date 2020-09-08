@@ -172,6 +172,7 @@
    | paginate: { itemsPerPage: 3, currentPage: curPage }; let i = index">
             <!--|filter:keyword (tìm kiếm nhanh không cần submit)-->
             <tr>
+              <td>i</td>
               <td>{{khachHang.idKhachHang}}</td>
               <td><a [routerLink]="['detail-khach-hang', khachHang.id]">{{khachHang.hoTen}}</a></td>
               <td>{{khachHang.ngaySinh}}</td>

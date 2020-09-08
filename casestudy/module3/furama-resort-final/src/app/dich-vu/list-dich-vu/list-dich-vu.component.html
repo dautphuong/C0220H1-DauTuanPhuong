@@ -159,7 +159,8 @@
           </tr>
           </thead>
           <tbody>
-          <tr *ngFor="let dichvu of listDichVu">
+          <tr *ngFor="let dichvu of listDichVu; let i = index">
+            <td>i</td>
             <td>{{dichvu.idDichVu}}</td>
             <td>{{dichvu.tenDichVu}}</td>
             <td>{{dichvu.dienTich}}</td>
