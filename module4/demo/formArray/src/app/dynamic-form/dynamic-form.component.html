@@ -1,12 +1,23 @@
-
-<form [formGroup]="demoForm">
-  <div formArrayName="demoArray"
-       *ngFor="let arrayItem of arrayItems; let i=index">
-
-    <input [id]="arrayItem.id" type="radio"
-           [formControl]="demoArray[i]">
-    <label [for]="arrayItem.id" class="array-item-title">
-      {{arrayItem.title}}</label>
-  </div>
-  <input type="button" value="submit">
-</form>
+<div>
+  <form [formGroup]="examForm" (ngSubmit)="onSubmit()">
+    <div *ngFor="let control of answerArr.controls; let i=index">
+      <table>
+        <tr>
+          <td>
+            <b>Q1 :abc ?</b>
+              <input id="C1" name="C1" type="radio" value="A" [formControl]="answerArr.controls[i]"/>
+            <label for="C1">A</label>
+            <input id="C2" name="C1" type="radio" value="B" [formControl]="answerArr.controls[i]"/>
+            <label for="C2">B</label>
+            <input id="C3" name="C1" type="radio" value="C" [formControl]="answerArr.controls[i]"/>
+            <label for="C3">C</label>
+            <input id="C4" name="C1" type="radio" value="D" [formControl]="answerArr.controls[i]"/>
+            <label for="C4">D</label>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <input class="btn btn-sm  rounded" type="submit" value="Submit">
+  </form>
+  {{ examForm.value | json}}
+</div>

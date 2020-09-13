@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {FormArray, FormBuilder, FormGroup, ValidatorFn} from "@angular/forms";
+import {FormArray, FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-dynamic-form',
@@ -8,31 +8,30 @@ import {FormArray, FormBuilder, FormGroup, ValidatorFn} from "@angular/forms";
 })
 export class DynamicFormComponent implements OnInit {
 
-  demoForm: FormGroup;
+  examForm: FormGroup;
+  answerArr = new FormArray([]);
 
-  arrayItems: {
-    id: number;
-    title: string;
-  }[]
-
-
-// tslint:disable-next-line:variable-name
-  constructor(private _formBuilder: FormBuilder
-  ) {
-    this.demoForm = this._formBuilder.group({
-      demoArray: this._formBuilder.array(
-        [])
+  constructor(private fb: FormBuilder) {
+    this.examForm = this.fb.group({
+      answer: this.answerArr
     });
   }
 
 
-  ngOnInit() {
-    this.arrayItems = [{id: 1, title: 'a'}, {id: 2, title: 'b'},];
+  ngOnInit(): void {
+    this.createArrAnswer();
   }
 
-  get demoArray() {
-    return this.demoForm.get('demoArray') as FormArray;
+  // tslint:disable-next-line:typedef
+  createArrAnswer() {
+    // tslint:disable-next-line:prefer-for-of
+    for (let i = 0; i < 5; i++) {
+      this.answerArr.push(new FormControl(''));
+    }
   }
 
+  // tslint:disable-next-line:typedef
+  onSubmit() {
 
+  }
 }

@@ -33,7 +33,7 @@ export class KhachhangService {
   update(khachHang: Khachhang): Observable<void> {
     return this.httpClient.patch<void>(this.API_URL + '/' + khachHang.id, khachHang);
   }
-
+s
   delete(id: number): Observable<{}> {
     return this.httpClient.delete(this.API_URL + '/' + id);
   }
